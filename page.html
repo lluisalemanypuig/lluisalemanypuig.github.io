@@ -1,0 +1,63 @@
+<!--
+Personal webpage's scripts
+Copyright (C) 2020  Lluís Alemany Puig
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+Contact: Lluís Alemany Puig (lluis.alemany.puig@gmail.com)
+-->
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<script
+		type="text/javascript"
+		src="scripts/works.js">
+	</script>
+	<script
+		type="text/javascript"
+		src="scripts/functions.js">
+	</script>
+</head>
+
+<body>
+	<center>
+	<!-- Tags for classification according to publication year -->
+	<select id="ddYears" onchange=populateTable()>
+		<option value="all_years">All years</option>
+	</select>
+		
+	<!-- Tags for classification according to "field" -->
+	<select id="ddClassifTags" onchange=populateTable()>
+		<option value="all_tags">All tags</option>
+	</select>
+	
+	<!-- Tags for classification according to journal where the work was published -->
+	<select id="ddJournals" onchange=populateTable()>
+		<option value="all_journals">All journals</option>
+	</select>
+	
+	<!-- Tags for classification according to work type (paper, conference paper, perprint, ...) -->
+	<select id="ddWorkTypes" onchange=populateTable()>
+		<option value="all_work_types">All work types</option>
+	</select>
+	</center>
+	
+	<ul id="papersList">
+	</ul>
+	
+</body>
+
+</html>

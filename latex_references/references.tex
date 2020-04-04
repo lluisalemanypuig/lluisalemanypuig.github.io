@@ -1,0 +1,32 @@
+\documentclass[12pt]{article}
+\pdfoutput=1
+
+\usepackage{hyperref}
+\usepackage[margin=3cm]{geometry}
+\usepackage[backend=biber,sorting=ynt]{biblatex}
+\addbibresource{references.bib}
+
+\begin{document}
+
+\title{My \LaTeX-ed references}
+\author{
+	Llu\'is Alemany-Puig
+}
+
+\maketitle
+
+Citations:
+\begin{enumerate}
+	\item[\cite{Alemany2019a}] L. Alemany-Puig. ``{\em Edge crossings in linear arrangements: from theory to algorithms and applications}''. In: {\em Universitat Politècnica de Catalunya}. Handle: \url{http://hdl.handle.net/2117/168124}.
+	
+	\item[\cite{Alemany2020a}] L. Alemany-Puig and R. Ferrer-i-Cancho. ``{\em Edge crossings in random linear arrangements}''. In: {\em Journal of Statistical Mechanics: Theory and Experiment} 2020.2 (Feb 2020) p. 023403. \textsc{Doi}: \url{https://doi.org/10.1088/1742-5468/ab6845}.
+
+	\item[\cite{Alemany2020c}] L. Alemany-Puig and R. Ferrer-i-Cancho. ``{\em Fast calculation of the variance of edge crossings in random linear arrangements}''. In: {\em arXiv} (2020). arXiv: 2003.03258. URL: \url{http://arxiv.org/abs/2003.03258}.
+	
+	\item[\cite{Alemany2020b}] L. Alemany-Puig and Mora, Merc\`{e} and R. Ferrer-i-Cancho. ``{\em Reappraising the distribution of the number of edge crossings of graphs on a sphere}''. In: {\em arXiv} (2020). arXiv: 2003.03353. URL: \url{http://arxiv.org/abs/2003.03353}.
+\end{enumerate}
+
+\printbibliography
+
+\end{document}
+
