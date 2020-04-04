@@ -155,7 +155,7 @@ function populateTable() {
 		else if (work.journal == __UPC_short_name) {
 			par.appendChild(document.createTextNode(" " + CITE.when));
 			
-			par.appendChild(document.createTextNode(". Handle: "));
+			par.appendChild(document.createTextNode(". URL: "));
 			var doi_ref = document.createElement("a");
 			doi_ref.textContent = CITE.doi;
 			doi_ref.href = CITE.doi;
