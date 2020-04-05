@@ -160,7 +160,7 @@ function makeFormattedCitation(workid, work) {
 		tag_ref.textContent = __tag_relate[tag_text];
 		tags.appendChild(tag_ref);
 		if (t < work.tags.length - 1) {
-			tags.appendChild(document.createTextNode(","));
+			tags.appendChild(document.createTextNode(", "));
 		}
 	}
 	if (work.tags.length > 0) {
