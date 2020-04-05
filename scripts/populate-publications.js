@@ -150,7 +150,7 @@ function makeFormattedCitation(workid, work) {
 	}
 	for (var t = 0; t < work.tags.length; ++t) {
 		var tag_text = work.tags[t];
-		const url_tag_filt = __url_publications + "?#" + __param_tag + "=" + tag_text;
+		const url_tag_filt = __url_publications + "?" + __param_tag + "=" + tag_text;
 		
 		console.log("        Adding href for tag '" + tag_text + "'.");
 		console.log("            url '" + url_tag_filt + "'.");
