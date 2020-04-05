@@ -54,6 +54,10 @@ function format_UPC(work) {
 	par.appendChild(document.createTextNode(" \"" + CITE.title + "\"."));
 	par.appendChild(document.createTextNode(" " + CITE.authors + "."));
 	
+	if (work.work_type == __wt_MastersThesis) {
+		par.appendChild(document.createTextNode(" Masters Thesis."));
+	}
+	
 	// where published
 	par.appendChild(document.createTextNode(" In: "));
 	var journal_italics = document.createElement("i");
@@ -103,23 +107,92 @@ function format_ARXIV(work) {
 	return par;
 }
 
-function populateTable() {
-	// read values in drop downs
-	var ddYear = document.getElementById('ddYears');
-	var ddTag = document.getElementById('ddClassifTags');
-	var ddJournal = document.getElementById('ddJournals');
-	var ddWorkType = document.getElementById('ddWorkTypes');
+function makeFormattedCitation(workid, work) {
+	var par = null;
 	
+	// add DOI, or arXiv id, or handle
+	if (work.journal == __journal_ARXIV_hidden_name) {
+		par = format_ARXIV(work);
+	}
+	else if (work.journal == __journal_JSTAT_hidden_name) {
+		par = format_JSTAT(work);
+	}
+	else if (work.journal == __journal_UPC_hidden_name) {
+		par = format_UPC(work);
+	}
+	else {
+		console.error("        Formatting of citation for journal '" + work.journal + "' not implemented.");
+		return null;
+	}
+	
+	// Text area with the raw biblatex citation.
+	// I like being a nice person.
+	var ta = document.createElement("textarea");
+	ta.textContent = work.biblatex_citation;
+	ta.style = "resize : none";
+	
+	var rows = work.biblatex_citation.split("\n");
+	var maxRowLength = 0;
+	for (var i = 0; i < rows.length; ++i) {
+		if (maxRowLength < rows[i].length) {
+			maxRowLength = rows[i].length;
+		}
+	}
+	maxRowLength += 8; // tab size in characters
+	ta.cols = maxRowLength;
+	ta.rows = rows.length;
+	ta.id = "textarea_" + workid;
+	ta.readOnly = true;
+	
+	var tags = document.createElement("p");
+	if (work.tags.length > 0) {
+		tags.appendChild(document.createTextNode("Tags: "));
+	}
+	for (var t = 0; t < work.tags.length; ++t) {
+		var tag_text = work.tags[t];
+		const url_tag_filt = __url_publications + "?#" + __param_tag + "=" + tag_text;
+		
+		console.log("        Adding href for tag '" + tag_text + "'.");
+		console.log("            url '" + url_tag_filt + "'.");
+		
+		var tag_ref = document.createElement("a");
+		tag_ref.href = url_tag_filt;
+		tag_ref.textContent = __tag_relate[tag_text];
+		tags.appendChild(tag_ref);
+		if (t < work.tags.length - 1) {
+			tags.appendChild(document.createTextNode(","));
+		}
+	}
+	if (work.tags.length > 0) {
+		tags.appendChild(document.createTextNode("."));
+	}
+	
+	var full = document.createElement("li");
+	full.appendChild(par);
+	full.appendChild(ta);
+	full.append(tags);
+	
+	return full;
+};
+
+function populatePublicationList() {
 	function getTextDD(dd) { return dd.options[dd.selectedIndex].value; };
+	
+	// read values in drop downs
+	const ddYear = document.getElementById(__dd_years);
+	const ddTag = document.getElementById(__dd_tags);
+	const ddJournal = document.getElementById(__dd_journals_insts);
+	const ddWorkType = document.getElementById(__dd_wt);
+	
 	var use_year = getTextDD(ddYear);
 	var use_tag = getTextDD(ddTag);
 	var use_journal = getTextDD(ddJournal);
 	var use_work_type = getTextDD(ddWorkType);
 	
-	console.log("Contents of 'year' drop down: " + use_year);
-	console.log("Contents of 'tag' drop down: " + use_tag);
-	console.log("Contents of 'journal' drop down: " + use_journal);
-	console.log("Contents of 'work type' drop down: " + use_work_type);
+	console.log("    Contents of 'year' drop down: " + use_year);
+	console.log("    Contents of 'tag' drop down: " + use_tag);
+	console.log("    Contents of 'journal' drop down: " + use_journal);
+	console.log("    Contents of 'work type' drop down: " + use_work_type);
 	
 	// filtering functions
 	function filter_year(work) {
@@ -131,7 +204,7 @@ function populateTable() {
 		return work.tags.includes(use_tag);
 	}
 	function filter_journal(work) {
-		if (use_journal == "all_journals") { return true; }
+		if (use_journal == "all_journals_institutions") { return true; }
 		return work.journal == use_journal;
 	}
 	function filter_work_type(work) {
@@ -140,39 +213,11 @@ function populateTable() {
 	}
 	
 	// list of papers
-	var papersList = document.getElementById('papersList');
+	var papersList = document.getElementById(__ul_papers);
+	papersList.textContent = '';
 	
-	function makeFormattedCitation(work) {
-		var par = null;
-		
-		// add DOI, or arXiv id, or handle
-		if (work.journal == __ARXIV_short_name) {
-			par = format_ARXIV(work);
-		}
-		else if (work.journal == __JSTAT_short_name) {
-			par = format_JSTAT(work);
-		}
-		else if (work.journal == __UPC_short_name) {
-			par = format_UPC(work);
-		}
-		else {
-			console.log("Formatting of citation for journal '" + work.journal + "' not implemented.");
-			return null;
-		}
-		
-		var full = document.createElement("li");
-		full.appendChild(par);
-		
-		var ta = document.createElement("textarea");
-		ta.textContent = work.biblatex_citation;
-		ta.style = "resize : none";
-		ta.cols = 100;
-		ta.rows = 5;
-		ta.readOnly = true;
-		full.appendChild(ta);
-		
-		return full;
-	};
+	// largest amount of columns among textareas
+	var maxCols = 0;
 	
 	// iterate through works and filter
 	for (var i = 0; i < Object.keys(works).length; ++i) {
@@ -186,11 +231,26 @@ function populateTable() {
 			filter_work_type(workI);
 		
 		if (to_be_included) {
+			console.log("    Item: " + key + " is to be included in the list");
+			console.log("    Formatting " + key + "...");
 			
-			console.log("Item: " + key + " is to be included in the list");
-			
-			var entry = makeFormattedCitation(workI);
+			var entry = makeFormattedCitation(key, workI);
 			papersList.appendChild(entry);
+			
+			// text area
+			var textArea = entry.childNodes[1];
+			if (maxCols < textArea.cols) {
+				maxCols = textArea.cols;
+			}
 		}
+	}
+	
+	// make all text areas have the same number of columns.
+	for (var i = 0; i < papersList.childNodes.length; ++i) {
+		// item is a <li> object
+		var itemChildren = papersList.childNodes[i].childNodes;
+		// text area
+		var textArea = itemChildren[1];
+		textArea.cols = maxCols;
 	}
 }

@@ -27,6 +27,7 @@ Contact: Lluís Alemany Puig (lluis.alemany.puig@gmail.com)
 	at the beginning of each 'src=""'.
 	-->
 	
+	<script type="text/javascript" src="scripts/variables.js"> </script>
 	<script type="text/javascript" src="scripts/works.js"> </script>
 	<script type="text/javascript" src="scripts/populate-dropdowns.js"> </script>
 	<script type="text/javascript" src="scripts/populate-publications.js"> </script>
@@ -34,25 +35,22 @@ Contact: Lluís Alemany Puig (lluis.alemany.puig@gmail.com)
 </head>
 
 <body>
+		
 	<center>
 	<!-- Tags for classification according to publication year -->
-	<select id="ddYears" onchange=populateTable()>
-		<option value="all_years">All years</option>
+	<select id="ddYears" onchange=populatePublicationList()>
 	</select>
 		
 	<!-- Tags for classification according to "field" -->
-	<select id="ddClassifTags" onchange=populateTable()>
-		<option value="all_tags">All tags</option>
+	<select id="ddClassifTags" onchange=populatePublicationList()>
 	</select>
 	
 	<!-- Tags for classification according to journal where the work was published -->
-	<select id="ddJournals" onchange=populateTable()>
-		<option value="all_journals">All journals</option>
+	<select id="ddJournalsInstitutions" onchange=populatePublicationList()>
 	</select>
 	
 	<!-- Tags for classification according to work type (paper, conference paper, perprint, ...) -->
-	<select id="ddWorkTypes" onchange=populateTable()>
-		<option value="all_work_types">All work types</option>
+	<select id="ddWorkTypes" onchange=populatePublicationList()>
 	</select>
 	</center>
 	

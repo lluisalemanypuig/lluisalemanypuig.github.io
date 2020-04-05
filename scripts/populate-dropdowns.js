@@ -18,11 +18,32 @@
  * Contact: Lluís Alemany Puig (lluis.alemany.puig@gmail.com)
  */
 
+// function to compute sets of unique elements
+function onlyUnique(value, index, self) { 
+	return self.indexOf(value) === index;
+}
+
+// populate dropdown: use long names for the text, and the short
+// names for the values.
+function addToDropDown(dd, item, relate) {
+	var opt = document.createElement('option');
+	opt.value = item;
+	opt.text = relate[item];
+	dd.appendChild(opt);
+}
+
 function populateDropDowns() {
-	var all_tags = [];		// all tags used in 'works'
-	var all_years = [];		// all years used in 'works'
-	var all_journals = [];	// all journals used in 'works'
-	var all_work_types = [];// all work types used in 'works'
+	// gather all 'hidden' names
+	var all_tags = [];		// tags used in 'works'
+	var all_years = [];		// years used in 'works'
+	var all_journals = [];	// journals used in 'works'
+	var all_work_types = [];// work types used in 'works'
+	
+	// default tags
+	all_tags.push(__tag_hidden_all);
+	all_years.push(__years_hidden_all);
+	all_journals.push(__journal_hidden_all);
+	all_work_types.push(__wt_hidden_all);
 	
 	// traverse all works and gather all tags
 	for (var i = 0; i < Object.keys(works).length; ++i) {
@@ -37,40 +58,40 @@ function populateDropDowns() {
 		all_work_types.push(workI.work_type);
 	}
 	
-	// function to compute unique elements
-	function onlyUnique(value, index, self) { 
-		return self.indexOf(value) === index;
-	}
-	
 	// keep unique tags only
-	all_tags = all_tags.filter(onlyUnique);
 	all_years = all_years.filter(onlyUnique);
+	all_tags = all_tags.filter(onlyUnique);
 	all_journals = all_journals.filter(onlyUnique);
 	all_work_types = all_work_types.filter(onlyUnique);
 	
 	// post process tags
-	all_tags.sort(function(a,b){b-a});
 	all_years.sort(function(a,b){b-a});
-	all_journals.sort(function(a,b){b-a});
-	all_work_types.sort(function(a,b){b-a});
+	all_tags.sort(function(a,b){ return a.localeCompare(b); });
+	all_journals.sort(function(a,b){ return a.localeCompare(b); });
+	all_work_types.sort(function(a,b){ return a.localeCompare(b); });
 	
-	// populate dropdown
-	function addToDropDown(dd, item) {
-		var opt = document.createElement('option');
-		opt.value = item;
-		opt.text = item;
-		dd.appendChild(opt);
-	}
+	console.log("    Add " + all_years.length + " years: " + all_years);
+	console.log("    Add " + all_tags.length + " tags: " + all_tags);
+	console.log("    Add " + all_journals.length + " journals: " + all_journals);
+	console.log("    Add " + all_work_types.length + " work types: " + all_work_types);
 	
-	var ddYears = document.getElementById('ddYears');
-	all_years.forEach(function(item) { addToDropDown(ddYears, item); });
+	var ddYears = document.getElementById(__dd_years);
+	var ddTags = document.getElementById(__dd_tags);
+	var ddJournals = document.getElementById(__dd_journals_insts);
+	var ddWorkTypes = document.getElementById(__dd_wt);
 	
-	var ddTags = document.getElementById('ddClassifTags');
-	all_tags.forEach(function(item) { addToDropDown(ddTags, item); });
+	ddYears.textContent = '';
+	ddTags.textContent = '';
+	ddJournals.textContent = '';
+	ddWorkTypes.textContent = '';
 	
-	var ddJorunals = document.getElementById('ddJournals');
-	all_journals.forEach(function(item) { addToDropDown(ddJorunals, item); });
+	all_years.forEach(function(item) { addToDropDown(ddYears, item, __years_relate); });
+	all_tags.forEach(function(item) { addToDropDown(ddTags, item, __tag_relate); });
+	all_journals.forEach(function(item) { addToDropDown(ddJournals, item, __journal_relate); });
+	all_work_types.forEach(function(item) { addToDropDown(ddWorkTypes, item, __wt_relate); });
 	
-	var ddWorkTypes = document.getElementById('ddWorkTypes');
-	all_work_types.forEach(function(item) { addToDropDown(ddWorkTypes, item); });
+	console.log("    Values in years drop down: " + ddYears.childNodes.length);
+	console.log("    Values in tags drop down: " + ddTags.childNodes.length);
+	console.log("    Values in journals drop down: " + ddJournals.childNodes.length);
+	console.log("    Values in work types drop down: " + ddWorkTypes.childNodes.length);
 }

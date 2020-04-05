@@ -18,29 +18,6 @@
  * Contact: Lluís Alemany Puig (lluis.alemany.puig@gmail.com)
  */
 
-// --------------
-// -- journals --
-const __ARXIV_long_name = "arXiv";
-const __ARXIV_short_name = "arXiv";
-const __JSCS_long_name = "Journal of Statistical Computation and Simulation";
-const __JSCS_short_name = "JSCS";
-const __JSTAT_long_name = "Journal of Statistical Mechanics: Theory and Experiment";
-const __JSTAT_short_name = "JSCS";
-const __UPC_long_name = "Universitat Politècnica de Catalunya";
-const __UPC_short_name = "UPC";
-
-// ----------------
-// -- tags/fiels --
-const __tag_Networks = "Networks";
-const __tag_RandGraphs = "Random graphs";
-const __tag_LinArr = "Linear arrangements";
-
-// ----------------
-// -- work types --
-const __wt_MastersThesis = "Master Thesis";
-const __wt_JournalPaper = "Journal Paper";
-const __wt_preprint = "Preprint";
-
 // -----------------------------------------------------------
 // My works (theses, journal articles, papers, preprints, ...)
 
@@ -48,15 +25,15 @@ const works = {
 	
 	w04 : {
 		// classification of work
-		work_type : __wt_preprint,
-		journal : __ARXIV_short_name,
-		tags : [__tag_Networks, __tag_RandGraphs],
+		work_type : __wt_hidden_preprint,
+		journal : __journal_ARXIV_hidden_name,
+		tags : [__tag_hidden_Networks, __tag_hidden_RandGraphs],
 		year : 2020,
 		// "formatted" citation
 		citation : {
 			authors : "L. Alemany-Puig and R. Ferrer-i-Cancho",
 			title : "Fast calculation of the variance of edge crossings in random linear arrangements",
-			journal : __ARXIV_long_name,
+			journal : __journal_ARXIV_name,
 			when : "(2020)",
 			arxiv_id : "2003.03258",
 			arxiv_url : "http://arxiv.org/abs/2003.03258"
@@ -67,14 +44,14 @@ const works = {
 	w03 : {
 		// classification of work
 		work_type : __wt_preprint,
-		journal : __ARXIV_short_name,
-		tags : [__tag_Networks, __tag_RandGraphs, __tag_LinArr],
+		journal : __journal_ARXIV_hidden_name,
+		tags : [__tag_hidden_Networks, __tag_hidden_RandGraphs, __tag_hidden_LinArr],
 		year : 2020,
 		// "formatted" citation
 		citation : {
 			authors : "L. Alemany-Puig and Mora, Mercè and R. Ferrer-i-Cancho",
 			title : "Reappraising the distribution of the number of edge crossings of graphs on a sphere",
-			journal : __ARXIV_long_name,
+			journal : __journal_ARXIV_name,
 			when : "(2020)",
 			arxiv_id : "2003.03353",
 			arxiv_url : "http://arxiv.org/abs/2003.03353"
@@ -84,15 +61,15 @@ const works = {
 	},
 	w02 : {
 		// classification of work
-		work_type : __wt_JournalPaper,
-		journal : __JSTAT_short_name,
-		tags : [__tag_Networks, __tag_RandGraphs, __tag_LinArr],
+		work_type : __wt_hidden_JournalPaper,
+		journal : __journal_JSTAT_hidden_name,
+		tags : [__tag_hidden_Networks, __tag_hidden_RandGraphs, __tag_hidden_LinArr],
 		year : 2020,
 		// "formatted" citation
 		citation : {
 			authors : "L. Alemany-Puig and R. Ferrer-i-Cancho",
 			title : "Edge crossings in random linear arrangements",
-			journal : __JSTAT_long_name,
+			journal : __journal_JSTAT_name,
 			when : "2020.2 (Feb 2020)",
 			doi : "http://doi.org/10.1088/1742-5468/ab6845"
 		},
@@ -101,15 +78,15 @@ const works = {
 	},
 	w01 : {
 		// classification of work
-		work_type : __wt_MastersThesis,
-		journal : __UPC_short_name,
-		tags : [__tag_Networks, __tag_RandGraphs, __tag_LinArr],
+		work_type : __wt_hidden_MastersThesis,
+		journal : __journal_UPC_hidden_name,
+		tags : [__tag_hidden_Networks, __tag_hidden_RandGraphs, __tag_hidden_LinArr],
 		year : 2019,
 		// "formatted" citation
 		citation : {
 			authors : "L. Alemany-Puig",
 			title : "Edge crossings in linear arrangements: from theory to algorithms and applications",
-			journal : __UPC_long_name,
+			journal : __journal_UPC_name,
 			when : "July 2019",
 			doi : "http://hdl.handle.net/2117/168124"
 		},
