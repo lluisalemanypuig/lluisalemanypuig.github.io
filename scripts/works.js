@@ -62,7 +62,7 @@ const works = {
 			arxiv_url : "http://arxiv.org/abs/2003.03258"
 		},
 		// raw latex citation
-		biblatex_citation : "@article{Alemany2020c, archivePrefix = {arXiv}, arxivId = {2003.03258}, author = {Alemany-Puig, Llu{\\'{i}}s and Ferrer-i-Cancho, Ramon}, eprint = {2003.03258}, journal = {Arxiv}, title = {{Fast calculation of the variance of edge crossings in random linear arrangements}}, url = {http://arxiv.org/abs/2003.03258}, year = {2020}}"
+		biblatex_citation : "@article{Alemany2020c, \n\tarchivePrefix = {arXiv}, \n\tarxivId = {2003.03258}, \n\tauthor = {Alemany-Puig, Llu{\\'{i}}s and Ferrer-i-Cancho, Ramon}, \n\teprint = {2003.03258}, \n\tjournal = {Arxiv}, \n\ttitle = {{Fast calculation of the variance of edge crossings in random linear arrangements}}, \n\turl = {http://arxiv.org/abs/2003.03258}, \n\tyear = {2020}\n}"
 	},
 	w03 : {
 		// classification of work
@@ -80,7 +80,7 @@ const works = {
 			arxiv_url : "http://arxiv.org/abs/2003.03353"
 		},
 		// raw latex citation
-		biblatex_citation : "@article{Alemany2020b, archivePrefix = {arXiv}, arxivId = {2003.03353}, author = {Alemany-Puig, Llu{\\'{i}}s and Mora, Merc{\\`{e}} and Ferrer-i-Cancho, Ramon}, eprint = {2003.03353}, journal = {Arxiv}, title = {{Reappraising the distribution of the number of edge crossings of graphs on a sphere}}, url = {http://arxiv.org/abs/2003.03353}, year = {2020}}"
+		biblatex_citation : "@article{Alemany2020b, \n\tarchivePrefix = {arXiv}, \n\tarxivId = {2003.03353}, \n\tauthor = {Alemany-Puig, Llu{\\'{i}}s and Mora, Merc{\\`{e}} and Ferrer-i-Cancho, Ramon}, \n\teprint = {2003.03353}, \n\tjournal = {Arxiv}, title = {{Reappraising the distribution of the number of edge crossings of graphs on a sphere}}, \n\turl = {http://arxiv.org/abs/2003.03353}, \n\tyear = {2020}\n}"
 	},
 	w02 : {
 		// classification of work
@@ -97,7 +97,7 @@ const works = {
 			doi : "http://doi.org/10.1088/1742-5468/ab6845"
 		},
 		// raw latex citation
-		biblatex_citation : "@article{Alemany2020a, doi = {10.1088/1742-5468/ab6845}, url = {http://dx.doi.org/10.1088/1742-5468/ab6845}, year = 2020, month = {feb}, publisher = {{IOP} Publishing}, volume = {2020}, number = {2}, pages = {023403}, author = {Llu{\\'{i}}s Alemany-Puig and Ramon Ferrer-i-Cancho}, title = {Edge crossings in random linear arrangements}, journal = {Journal of Statistical Mechanics: Theory and Experiment}}"
+		biblatex_citation : "@article{Alemany2020a, \n\tdoi = {10.1088/1742-5468/ab6845}, \n\turl = {http://dx.doi.org/10.1088/1742-5468/ab6845}, \n\tyear = 2020, \n\tmonth = {feb}, \n\tpublisher = {{IOP} Publishing}, \n\tvolume = {2020}, \n\tnumber = {2}, \n\tpages = {023403}, \n\tauthor = {Llu{\\'{i}}s Alemany-Puig and Ramon Ferrer-i-Cancho}, \n\ttitle = {Edge crossings in random linear arrangements}, \n\tjournal = {Journal of Statistical Mechanics: Theory and Experiment}\n}"
 	},
 	w01 : {
 		// classification of work
@@ -114,6 +114,6 @@ const works = {
 			doi : "http://hdl.handle.net/2117/168124"
 		},
 		// raw latex citation
-		biblatex_citation : "@mastersthesis{Alemany2019a, author = {Alemany-Puig, Llu{\\'{i}}s}, number = {July}, school = {Universitat Polit{\\`{e}}cnica de Catalunya}, title = {{Edge crossings in linear arrangements: from theory to algorithms and applications}}, type = {Master Thesis}, url = {http://hdl.handle.net/2117/168124}, year = {2019}}"
+		biblatex_citation : "@mastersthesis{Alemany2019a, \n\tauthor = {Alemany-Puig, Llu{\\'{i}}s}, \n\tnumber = {July}, \n\tschool = {Universitat Polit{\\`{e}}cnica de Catalunya}, \n\ttitle = {{Edge crossings in linear arrangements: from theory to algorithms and applications}}, \n\ttype = {Master Thesis}, \n\turl = {http://hdl.handle.net/2117/168124}, \n\tyear = {2019}\n}"
 	}
 };
