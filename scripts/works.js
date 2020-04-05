@@ -43,7 +43,7 @@ const works = {
 	},
 	w03 : {
 		// classification of work
-		work_type : __wt_preprint,
+		work_type : __wt_hidden_preprint,
 		journal : __journal_ARXIV_hidden_name,
 		tags : [__tag_hidden_Networks, __tag_hidden_RandGraphs, __tag_hidden_LinArr],
 		year : 2020,
