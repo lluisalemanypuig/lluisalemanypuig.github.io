@@ -40,10 +40,10 @@ function populateDropDowns() {
 	var all_work_types = [];// work types used in 'works'
 	
 	// default tags
-	all_tags.push(__tag_hidden_all);
-	all_years.push(__years_hidden_all);
-	all_journals.push(__journal_hidden_all);
-	all_work_types.push(__wt_hidden_all);
+	all_tags.push(__tag_all);
+	all_years.push(__years_all);
+	all_journals.push(__journal_all);
+	all_work_types.push(__wt_all);
 	
 	// traverse all works and gather all tags
 	for (var i = 0; i < Object.keys(works).length; ++i) {

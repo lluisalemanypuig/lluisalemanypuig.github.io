@@ -111,13 +111,13 @@ function makeFormattedCitation(workid, work) {
 	var par = null;
 	
 	// add DOI, or arXiv id, or handle
-	if (work.journal == __journal_ARXIV_hidden_name) {
+	if (work.journal == __journal_ARXIV_name) {
 		par = format_ARXIV(work);
 	}
-	else if (work.journal == __journal_JSTAT_hidden_name) {
+	else if (work.journal == __journal_JSTAT_name) {
 		par = format_JSTAT(work);
 	}
-	else if (work.journal == __journal_UPC_hidden_name) {
+	else if (work.journal == __journal_UPC_name) {
 		par = format_UPC(work);
 	}
 	else {

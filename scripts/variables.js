@@ -26,91 +26,89 @@ const __url_publications = __url_lalemany + "/publications";
 
 // --------------
 // -- journals --
-const __journal_all = "All journals/institutions";
-const __journal_hidden_all = "all_journals_institutions";
+const __journal_show_all = "All journals/institutions";
+const __journal_all = "all_journals_institutions";
+
+const __journal_ARXIV_show_name = "arXiv";
+const __journal_JSCS_show_name = "Journal of Statistical Computation and Simulation";
+const __journal_JSTAT_show_name = "Journal of Statistical Mechanics: Theory and Experiment";
+const __journal_UPC_show_name = "Universitat Politècnica de Catalunya";
 
 const __journal_ARXIV_name = "arXiv";
-const __journal_JSCS_name = "Journal of Statistical Computation and Simulation";
-const __journal_JSTAT_name = "Journal of Statistical Mechanics: Theory and Experiment";
-const __journal_UPC_name = "Universitat Politècnica de Catalunya";
-
-const __journal_ARXIV_hidden_name = "arXiv";
-const __journal_JSCS_hidden_name = "JSCS";
-const __journal_JSTAT_hidden_name = "JSTAT";
-const __journal_UPC_hidden_name = "UPC";
+const __journal_JSCS_name = "JSCS";
+const __journal_JSTAT_name = "JSTAT";
+const __journal_UPC_name = "UPC";
 
 var __journal_relate = {};
-__journal_relate[__journal_all] = __journal_hidden_all;
-__journal_relate[__journal_hidden_all] = __journal_all;
-__journal_relate[__journal_ARXIV_name] = __journal_ARXIV_hidden_name;
-__journal_relate[__journal_ARXIV_hidden_name] = __journal_ARXIV_name;
-__journal_relate[__journal_JSCS_name] = __journal_JSCS_hidden_name;
-__journal_relate[__journal_JSCS_hidden_name] = __journal_JSCS_name;
-__journal_relate[__journal_JSTAT_name] = __journal_JSTAT_hidden_name;
-__journal_relate[__journal_JSTAT_hidden_name] = __journal_JSTAT_name;
-__journal_relate[__journal_UPC_name] = __journal_UPC_hidden_name;
-__journal_relate[__journal_UPC_hidden_name] = __journal_UPC_name;
+__journal_relate[__journal_show_all] = __journal_all;
+__journal_relate[__journal_all] = __journal_show_all;
+__journal_relate[__journal_ARXIV_show_name] = __journal_ARXIV_name;
+__journal_relate[__journal_ARXIV_name] = __journal_ARXIV_show_name;
+__journal_relate[__journal_JSCS_show_name] = __journal_JSCS_name;
+__journal_relate[__journal_JSCS_name] = __journal_JSCS_show_name;
+__journal_relate[__journal_JSTAT_show_name] = __journal_JSTAT_name;
+__journal_relate[__journal_JSTAT_name] = __journal_JSTAT_show_name;
+__journal_relate[__journal_UPC_show_name] = __journal_UPC_name;
+__journal_relate[__journal_UPC_name] = __journal_UPC_show_name;
 
 // ----------------
 // -- tags/fiels --
-const __tag_all = "All tags";
-const __tag_hidden_all = "all_tags";
+const __tag_show_all = "All tags";
+const __tag_all = "all_tags";
 
-const __tag_Networks = "Networks";
-const __tag_RandGraphs = "Random graphs";
-const __tag_LinArr = "Linear arrangements";
+const __tag_show_Networks = "Networks";
+const __tag_show_RandGraphs = "Random graphs";
+const __tag_show_LinArr = "Linear arrangements";
 
-const __tag_hidden_Networks = "networks";
-const __tag_hidden_RandGraphs = "random_graphs";
-const __tag_hidden_LinArr = "linear_arrangements";
+const __tag_Networks = "networks";
+const __tag_RandGraphs = "random_graphs";
+const __tag_LinArr = "linear_arrangements";
 
 var __tag_relate = {};
-__tag_relate[__tag_all] = __tag_hidden_all;
-__tag_relate[__tag_hidden_all] = __tag_all;
-__tag_relate[__tag_Networks] = __tag_hidden_Networks;
-__tag_relate[__tag_hidden_Networks] = __tag_Networks;
-__tag_relate[__tag_RandGraphs] = __tag_hidden_RandGraphs;
-__tag_relate[__tag_hidden_RandGraphs] = __tag_RandGraphs;
-__tag_relate[__tag_LinArr] = __tag_hidden_LinArr;
-__tag_relate[__tag_hidden_LinArr] = __tag_LinArr;
+__tag_relate[__tag_show_all] = __tag_all;
+__tag_relate[__tag_all] = __tag_show_all;
+__tag_relate[__tag_show_Networks] = __tag_Networks;
+__tag_relate[__tag_Networks] = __tag_show_Networks;
+__tag_relate[__tag_show_RandGraphs] = __tag_RandGraphs;
+__tag_relate[__tag_RandGraphs] = __tag_show_RandGraphs;
+__tag_relate[__tag_show_LinArr] = __tag_LinArr;
+__tag_relate[__tag_LinArr] = __tag_show_LinArr;
 
 // ----------------
 // -- work types --
-const __wt_all = "All work types";
-const __wt_hidden_all = "all_work_types";
+const __wt_show_all = "All work types";
+const __wt_all = "all_work_types";
 
-const __wt_preprint = "Preprint";
-const __wt_JournalPaper = "Journal Paper";
-const __wt_MastersThesis = "Master Thesis";
+const __wt_show_preprint = "Preprint";
+const __wt_show_JournalPaper = "Journal Paper";
+const __wt_show_MastersThesis = "Master Thesis";
 
-const __wt_hidden_preprint = "preprint";
-const __wt_hidden_JournalPaper = "journal_paper";
-const __wt_hidden_MastersThesis = "master_thesis";
+const __wt_preprint = "preprint";
+const __wt_JournalPaper = "journal_paper";
+const __wt_MastersThesis = "master_thesis";
 
 var __wt_relate = {};
-__wt_relate[__wt_all] = __wt_hidden_all;
-__wt_relate[__wt_hidden_all] = __wt_all;
-__wt_relate[__wt_preprint] = __wt_hidden_preprint;
-__wt_relate[__wt_hidden_preprint] = __wt_preprint;
-__wt_relate[__wt_JournalPaper] = __wt_hidden_JournalPaper;
-__wt_relate[__wt_hidden_JournalPaper] = __wt_JournalPaper;
-__wt_relate[__wt_MastersThesis] = __wt_hidden_MastersThesis;
-__wt_relate[__wt_hidden_MastersThesis] = __wt_MastersThesis;
+__wt_relate[__wt_show_all] = __wt_all;
+__wt_relate[__wt_all] = __wt_show_all;
+__wt_relate[__wt_show_preprint] = __wt_preprint;
+__wt_relate[__wt_preprint] = __wt_show_preprint;
+__wt_relate[__wt_show_JournalPaper] = __wt_JournalPaper;
+__wt_relate[__wt_JournalPaper] = __wt_show_JournalPaper;
+__wt_relate[__wt_show_MastersThesis] = __wt_MastersThesis;
+__wt_relate[__wt_MastersThesis] = __wt_show_MastersThesis;
 
 // -----------
 // -- years --
-const __years_all = "All years";
-const __years_hidden_all = "all_years";
+const __years_show_all = "All years";
+const __years_all = "all_years";
 const __year_2020 = "2020";
 const __year_2019 = "2019";
 
 var __years_relate = {};
-__years_relate[__years_all] = __years_hidden_all;
-__years_relate[__years_hidden_all] = __years_all;
+__years_relate[__years_show_all] = __years_all;
+__years_relate[__years_all] = __years_show_all;
 __years_relate[__year_2020] = "2020";
-__years_relate["2020"] = __year_2020;
 __years_relate[__year_2019] = "2019";
-__years_relate["2019"] = __year_2019;
 
 // -------------------------------------
 // -- drop down names and papers list --
