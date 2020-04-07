@@ -81,7 +81,7 @@ const __wt_all = "all_work_types";
 
 const __wt_show_preprint = "Preprint";
 const __wt_show_JournalPaper = "Journal Paper";
-const __wt_show_MastersThesis = "Master Thesis";
+const __wt_show_MastersThesis = "Masters Thesis";
 
 const __wt_preprint = "preprint";
 const __wt_JournalPaper = "journal_paper";
