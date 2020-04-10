@@ -112,11 +112,11 @@ __years_relate[__year_2019] = "2019";
 
 // -------------------------------------
 // -- drop down names and papers list --
-const __dd_years = "ddYears";
-const __dd_tags = "ddClassifTags";
-const __dd_journals_insts = "ddJournalsInstitutions";
-const __dd_wt = "ddWorkTypes";
-const __ul_papers = "papersList";
+const __dd_years_id = "ddYears";
+const __dd_tags_id = "ddClassifTags";
+const __dd_journals_insts_id = "ddJournalsInstitutions";
+const __dd_wt_id = "ddWorkTypes";
+const __div_publist = "publications_list_div";
 
 // -------------------------
 // -- names of parameters --

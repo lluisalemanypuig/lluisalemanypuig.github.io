@@ -75,10 +75,10 @@ function populateDropDowns() {
 	console.log("    Add " + all_journals.length + " journals: " + all_journals);
 	console.log("    Add " + all_work_types.length + " work types: " + all_work_types);
 	
-	var ddYears = document.getElementById(__dd_years);
-	var ddTags = document.getElementById(__dd_tags);
-	var ddJournals = document.getElementById(__dd_journals_insts);
-	var ddWorkTypes = document.getElementById(__dd_wt);
+	var ddYears = document.getElementById(__dd_years_id);
+	var ddTags = document.getElementById(__dd_tags_id);
+	var ddJournals = document.getElementById(__dd_journals_insts_id);
+	var ddWorkTypes = document.getElementById(__dd_wt_id);
 	
 	ddYears.textContent = '';
 	ddTags.textContent = '';

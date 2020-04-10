@@ -18,6 +18,12 @@
  * Contact: Lluís Alemany Puig (lluis.alemany.puig@gmail.com)
  */
 
+function add_title_h1(div, y) {
+	var h1 = document.createElement('h1');
+	h1.textContent = y;
+	div.appendChild(h1);
+}
+
 function format_JSTAT(work) {
 	var CITE = work.citation;
 	var par = document.createElement("p");
@@ -152,9 +158,6 @@ function makeFormattedCitation(workid, work) {
 		var tag_text = work.tags[t];
 		const url_tag_filt = __url_publications + "?" + __param_tag + "=" + tag_text;
 		
-		console.log("        Adding href for tag '" + tag_text + "'.");
-		console.log("            url '" + url_tag_filt + "'.");
-		
 		var tag_ref = document.createElement("a");
 		tag_ref.href = url_tag_filt;
 		tag_ref.textContent = __tag_relate[tag_text];
@@ -175,14 +178,25 @@ function makeFormattedCitation(workid, work) {
 	return full;
 };
 
+function getTextDD(dd) { return dd.options[dd.selectedIndex].value; };
+
 function populatePublicationList() {
-	function getTextDD(dd) { return dd.options[dd.selectedIndex].value; };
+	// class where to add the publications list
+	var div = document.getElementById(__div_publist);
+	
+	// prior to doing any work, first wipe the div class, namely
+	// remove all the h1 and ul objects...
+	console.log(div);
+	console.log(div.childNodes.length);
+	while (div.childNodes.length > 1) {
+		div.removeChild(div.lastChild);
+	}
 	
 	// read values in drop downs
-	const ddYear = document.getElementById(__dd_years);
-	const ddTag = document.getElementById(__dd_tags);
-	const ddJournal = document.getElementById(__dd_journals_insts);
-	const ddWorkType = document.getElementById(__dd_wt);
+	const ddYear = document.getElementById(__dd_years_id);
+	const ddTag = document.getElementById(__dd_tags_id);
+	const ddJournal = document.getElementById(__dd_journals_insts_id);
+	const ddWorkType = document.getElementById(__dd_wt_id);
 	
 	var use_year = getTextDD(ddYear);
 	var use_tag = getTextDD(ddTag);
@@ -212,12 +226,10 @@ function populatePublicationList() {
 		return work.work_type == use_work_type;
 	}
 	
-	// list of papers
-	var papersList = document.getElementById(__ul_papers);
-	papersList.textContent = '';
+	console.log("    Filtering works...");
 	
-	// largest amount of columns among textareas
-	var maxCols = 0;
+	// list of works to be listed
+	var worksList = [];
 	
 	// iterate through works and filter
 	for (var i = 0; i < Object.keys(works).length; ++i) {
@@ -231,26 +243,74 @@ function populatePublicationList() {
 			filter_work_type(workI);
 		
 		if (to_be_included) {
-			console.log("    Item: " + key + " is to be included in the list");
-			console.log("    Formatting " + key + "...");
-			
-			var entry = makeFormattedCitation(key, workI);
-			papersList.appendChild(entry);
-			
-			// text area
-			var textArea = entry.childNodes[1];
-			if (maxCols < textArea.cols) {
-				maxCols = textArea.cols;
-			}
+			console.log("        Item: " + key + " is to be included in the list");
+			worksList.push(key);
 		}
 	}
 	
-	// make all text areas have the same number of columns.
-	for (var i = 0; i < papersList.childNodes.length; ++i) {
-		// item is a <li> object
-		var itemChildren = papersList.childNodes[i].childNodes;
+	console.log("    Formatting works...");
+	
+	// current year of publication
+	var currentYear = worksList[0].year;
+	// current list of publications
+	var currentList = document.createElement('ul');
+	currentList.id = "publist_" + currentYear;
+	// ids of lists of publication lists
+	var list_ids = [currentList.id];
+	
+	// add the first year title
+	add_title_h1(div, currentYear);
+	
+	// largest amount of columns among textareas
+	var maxCols = 0;
+	for (var i = 0; i < worksList.length; ++i) {
+		var key = worksList[i];
+		var workI = works[key];
+		console.log("        Formatting " + key + "...");
+		
+		// add new year title, create new list
+		if (workI.year != currentYear) {
+			
+			// add to div the current list
+			div.appendChild(currentList);
+			
+			// update the year and add it
+			currentYear = workI.year;
+			add_title_h1(div, currentYear);
+			
+			// make a new list
+			currentList = document.createElement('ul');
+			currentList.id = "publist_" + currentYear;
+			list_ids.push(currentList.id);
+		}
+		
+		// make the entry for the current work and
+		// keep track of the maximum number of columns
+		var entry = makeFormattedCitation(key, workI);
+		currentList.appendChild(entry);
+		
 		// text area
-		var textArea = itemChildren[1];
-		textArea.cols = maxCols;
+		var textArea = entry.childNodes[1];
+		if (maxCols < textArea.cols) {
+			maxCols = textArea.cols;
+		}
 	}
+	// add the current list
+	div.appendChild(currentList);
+	
+	// make all text areas have the same number of columns.
+	for (var j = 0; j < list_ids.length; ++j) {
+		var list = document.getElementById(list_ids[j]);
+		
+		for (var i = 0; i < list.childNodes.length; ++i) {
+			// item is a <li> object
+			var itemChildren = list.childNodes[i].childNodes;
+			// text area
+			var textArea = itemChildren[1];
+			textArea.cols = maxCols;
+		}
+	}
+	
+	console.log(div);
+	console.log(div.childNodes.length);
 }

@@ -18,6 +18,38 @@
  * Contact: Lluís Alemany Puig (lluis.alemany.puig@gmail.com)
  */
 
+function createDropDowns() {
+	var div = document.getElementById(__div_publist);
+	div.innerHTML = '';
+	
+	// create the dropddowns
+	var ddYears = document.createElement('select');
+	var ddClassifTags = document.createElement('select');
+	var ddJournalsInstitutions = document.createElement('select');
+	var ddWorkTypes = document.createElement('select');
+	
+	// modify dropdowns' attributes
+	
+	// onChange
+	ddYears.onchange = populatePublicationList;
+	ddClassifTags.onchange = populatePublicationList;
+	ddJournalsInstitutions.onchange = populatePublicationList;
+	ddWorkTypes.onchange = populatePublicationList;
+	
+	// ids
+	ddYears.id = __dd_years_id;
+	ddClassifTags.id = __dd_tags_id;
+	ddJournalsInstitutions.id = __dd_journals_insts_id;
+	ddWorkTypes.id = __dd_wt_id;
+	
+	var center = document.createElement('center');
+	center.appendChild(ddYears);
+	center.appendChild(ddClassifTags);
+	center.appendChild(ddJournalsInstitutions);
+	center.appendChild(ddWorkTypes);
+	div.appendChild(center);
+}
+
 function setSelection(dd, query) {
 	// ddYears now contains the full list of years
 	var list = [];
@@ -42,21 +74,25 @@ function parseParameters() {
 	console.log("    Value of parameter: work type= " + query_worktype);
 	
 	if (query_year != null) {
-		setSelection(document.getElementById(__dd_years), query_year);
+		setSelection(document.getElementById(__dd_years_id), query_year);
 	}
 	if (query_tag != null) {
-		setSelection(document.getElementById(__dd_tags), query_tag);
+		setSelection(document.getElementById(__dd_tags_id), query_tag);
 	}
 	if (query_journal != null) {
-		setSelection(document.getElementById(__dd_journals_insts), query_journal);
+		setSelection(document.getElementById(__dd_journals_insts_id), query_journal);
 	}
 	if (query_worktype != null) {
-		setSelection(document.getElementById(__dd_wt), query_worktype);
+		setSelection(document.getElementById(__dd_wt_id), query_worktype);
 	}
 }
 
 window.onload = function() {
-	// First, populate the dropdown buttons with all the possible
+	// First, add the dropdowns in the appropriate 'div' class
+	console.log("Adding drop down menus...");
+	createDropDowns();
+	
+	// Second, populate the dropdown buttons with all the possible
 	// values. These drop downs are initialised with the defaut value
 	// "All tags", "All years", "All ...", ...
 	console.log("Populating drop down menus...");
