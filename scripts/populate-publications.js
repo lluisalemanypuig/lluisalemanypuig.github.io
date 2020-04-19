@@ -110,6 +110,31 @@ function format_ARXIV(work) {
 	par.appendChild(url_ref);
 	par.appendChild(document.createTextNode("."));
 	
+	// display submission information if available
+	if (CITE.submitted_to != null && CITE.submitted_on != null) {
+		// where submitted to
+		par.appendChild(document.createTextNode(" Submitted to: "));
+		var submitted_to_italics = document.createElement("i");
+		submitted_to_italics.textContent = CITE.submitted_to;
+		par.appendChild(submitted_to_italics);
+		par.appendChild(document.createTextNode("."));
+		
+		// when submitted
+		par.appendChild(document.createTextNode(" Submitted on: "));
+		var submitted_on_italics = document.createElement("i");
+		submitted_on_italics.textContent = CITE.submitted_on;
+		par.appendChild(submitted_on_italics);
+		par.appendChild(document.createTextNode("."));
+	}
+	else {
+		if (CITE.submitted_to == null) {
+			console.log("            Item lacks field 'submitted_to'.");
+		}
+		if (CITE.submitted_on == null) {
+			console.log("            Item lacks field 'submitted_on'.");
+		}
+	}
+	
 	return par;
 }
 
@@ -310,7 +335,4 @@ function populatePublicationList() {
 			textArea.cols = maxCols;
 		}
 	}
-	
-	console.log(div);
-	console.log(div.childNodes.length);
 }

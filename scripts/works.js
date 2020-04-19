@@ -36,7 +36,9 @@ const works = {
 			journal : __journal_ARXIV_show_name,
 			when : "(2020)",
 			arxiv_id : "2003.03258",
-			arxiv_url : "http://arxiv.org/abs/2003.03258"
+			arxiv_url : "http://arxiv.org/abs/2003.03258",
+			submitted_to : __journal_JSCS_show_name,
+			submitted_on : "February 2020"
 		},
 		// raw latex citation
 		biblatex_citation : "@article{Alemany2020c, \n\tarchivePrefix = {arXiv}, \n\tarxivId = {2003.03258}, \n\tauthor = {Alemany-Puig, Llu{\\'{i}}s and Ferrer-i-Cancho, Ramon}, \n\teprint = {2003.03258}, \n\tjournal = {Arxiv}, \n\ttitle = {{Fast calculation of the variance of edge crossings in random linear arrangements}}, \n\turl = {http://arxiv.org/abs/2003.03258}, \n\tyear = {2020}\n}"
@@ -54,7 +56,9 @@ const works = {
 			journal : __journal_ARXIV_show_name,
 			when : "(2020)",
 			arxiv_id : "2003.03353",
-			arxiv_url : "http://arxiv.org/abs/2003.03353"
+			arxiv_url : "http://arxiv.org/abs/2003.03353",
+			submitted_to : __journal_JSTAT_show_name,
+			submitted_on : "February 2020"
 		},
 		// raw latex citation
 		biblatex_citation : "@article{Alemany2020b, \n\tarchivePrefix = {arXiv}, \n\tarxivId = {2003.03353}, \n\tauthor = {Alemany-Puig, Llu{\\'{i}}s and Mora, Merc{\\`{e}} and Ferrer-i-Cancho, Ramon}, \n\teprint = {2003.03353}, \n\tjournal = {Arxiv}, \n\ttitle = {{Reappraising the distribution of the number of edge crossings of graphs on a sphere}}, \n\turl = {http://arxiv.org/abs/2003.03353}, \n\tyear = {2020}\n}"

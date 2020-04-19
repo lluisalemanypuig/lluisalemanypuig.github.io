@@ -98,10 +98,9 @@ window.onload = function() {
 	console.log("Populating drop down menus...");
 	populateDropDowns();
 	
-	console.log("Parsing parameters...");
-	
-	// Second, parse the parameters in the url.
+	// Third, parse the parameters in the url.
 	// Call the function populateTable appropriately
+	console.log("Parsing parameters...");
 	const parameters = window.location.search;
 	if (parameters.length == 0) {
 		console.log("    No parameters recorded");
