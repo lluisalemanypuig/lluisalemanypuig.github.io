@@ -19,7 +19,7 @@
  */
 
 function add_title_h1(div, y) {
-	var h1 = document.createElement('h1');
+	var h1 = document.createElement('h2');
 	h1.textContent = y;
 	div.appendChild(h1);
 }
@@ -102,7 +102,7 @@ function format_ARXIV(work) {
 	par.appendChild(document.createTextNode(" " + CITE.when));
 	
 	// url and arXiv id
-	par.appendChild(document.createTextNode(". arXiv: " + CITE.arxiv_id));
+	par.appendChild(document.createTextNode(". arXiv ID: " + CITE.arxiv_id));
 	par.appendChild(document.createTextNode(". URL: "));
 	var url_ref = document.createElement("a");
 	url_ref.textContent = CITE.arxiv_url;
