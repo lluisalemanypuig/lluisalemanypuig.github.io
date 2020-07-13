@@ -18,13 +18,35 @@
  * Contact: Lluís Alemany Puig (lluis.alemany.puig@gmail.com)
  */
 
+/*
+// sample of work
+// Name of work. Replace 'XX' by a two-digit number
+wXX : {
+	work_type : // type of work
+	journal : // journal
+	tags : // tags classifying this work
+	year : // year of publication
+	
+	// "formatted" citation. The information that used to produce the
+	// citation with formatted text (italics, bold face, ...)
+	citation : {
+		authors : // authors
+		title : // title
+		journal : // journal (show)
+		when : // year
+		doi : // DOI, if applicable
+		arxiv_url : // arxiv url, if applicable
+	},
+	biblatex_citation : // raw latex citation
+},
+*/
+
 // -----------------------------------------------------------
 // My works (theses, journal articles, papers, preprints, ...)
 
 const works = {
 	
 	w04 : {
-		// classification of work
 		work_type : __wt_preprint,
 		journal : __journal_ARXIV_name,
 		tags : [__tag_Networks, __tag_RandGraphs],
@@ -35,7 +57,7 @@ const works = {
 			title : "Fast calculation of the variance of edge crossings in random linear arrangements",
 			journal : __journal_ARXIV_show_name,
 			when : "(2020)",
-			arxiv_id : "2003.03258",
+			doi : null,
 			arxiv_url : "http://arxiv.org/abs/2003.03258"
 		},
 		// raw latex citation
@@ -53,7 +75,7 @@ const works = {
 			title : "Reappraising the distribution of the number of edge crossings of graphs on a sphere",
 			journal : __journal_ARXIV_show_name,
 			when : "(2020)",
-			arxiv_id : "2003.03353",
+			doi : null,
 			arxiv_url : "http://arxiv.org/abs/2003.03353"
 		},
 		// raw latex citation
@@ -71,7 +93,8 @@ const works = {
 			title : "Edge crossings in random linear arrangements",
 			journal : __journal_JSTAT_show_name,
 			when : "2020.2 (Feb 2020)",
-			doi : "http://doi.org/10.1088/1742-5468/ab6845"
+			doi : "http://doi.org/10.1088/1742-5468/ab6845",
+			arxiv_url : "https://arxiv.org/abs/1910.03926"
 		},
 		// raw latex citation
 		biblatex_citation : "@article{Alemany2020a, \n\tdoi = {10.1088/1742-5468/ab6845}, \n\turl = {http://dx.doi.org/10.1088/1742-5468/ab6845}, \n\tyear = 2020, \n\tmonth = {feb}, \n\tpublisher = {{IOP} Publishing}, \n\tvolume = {2020}, \n\tnumber = {2}, \n\tpages = {023403}, \n\tauthor = {Llu{\\'{i}}s Alemany-Puig and Ramon Ferrer-i-Cancho}, \n\ttitle = {Edge crossings in random linear arrangements}, \n\tjournal = {Journal of Statistical Mechanics: Theory and Experiment}\n}"
@@ -88,7 +111,9 @@ const works = {
 			title : "Edge crossings in linear arrangements: from theory to algorithms and applications",
 			journal : __journal_UPC_show_name,
 			when : "July 2019",
-			doi : "http://hdl.handle.net/2117/168124"
+			doi : "http://hdl.handle.net/2117/168124",
+			arxiv_id : null,
+			arxiv_url : null
 		},
 		// raw latex citation
 		biblatex_citation : "@mastersthesis{Alemany2019a, \n\tauthor = {Alemany-Puig, Llu{\\'{i}}s}, \n\tnumber = {July}, \n\tschool = {Universitat Polit{\\`{e}}cnica de Catalunya}, \n\ttitle = {{Edge crossings in linear arrangements: from theory to algorithms and applications}}, \n\ttype = {Master Thesis}, \n\turl = {http://hdl.handle.net/2117/168124}, \n\tyear = {2019}\n}"

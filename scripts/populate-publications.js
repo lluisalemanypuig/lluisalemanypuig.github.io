@@ -24,6 +24,20 @@ function add_title_h1(div, y) {
 	div.appendChild(h1);
 }
 
+function make_arXiv_url(CITE, par, with_dot) {
+	if (with_dot) {
+		par.appendChild(document.createTextNode(". arXiv url: "));
+	}
+	else {
+		par.appendChild(document.createTextNode(" arXiv url: "));
+	}
+	var url_ref = document.createElement("a");
+	url_ref.textContent = CITE.arxiv_url;
+	url_ref.href = CITE.arxiv_url;
+	par.appendChild(url_ref);
+	par.appendChild(document.createTextNode("."));
+}
+
 function format_JSTAT(work) {
 	var CITE = work.citation;
 	var par = document.createElement("p");
@@ -49,6 +63,9 @@ function format_JSTAT(work) {
 	par.appendChild(doi_ref);
 	par.appendChild(document.createTextNode("."));
 	
+	// arXiv url
+	make_arXiv_url(CITE, par, false)
+	
 	return par;
 }
 
@@ -73,7 +90,7 @@ function format_UPC(work) {
 	// when published
 	par.appendChild(document.createTextNode(" " + CITE.when));
 	
-	// url
+	// url (UPC handle)
 	par.appendChild(document.createTextNode(". URL: "));
 	var doi_ref = document.createElement("a");
 	doi_ref.textContent = CITE.doi;
@@ -101,14 +118,8 @@ function format_ARXIV(work) {
 	// when published
 	par.appendChild(document.createTextNode(" " + CITE.when));
 	
-	// url and arXiv id
-	par.appendChild(document.createTextNode(". arXiv ID: " + CITE.arxiv_id));
-	par.appendChild(document.createTextNode(". URL: "));
-	var url_ref = document.createElement("a");
-	url_ref.textContent = CITE.arxiv_url;
-	url_ref.href = CITE.arxiv_url;
-	par.appendChild(url_ref);
-	par.appendChild(document.createTextNode("."));
+	// arXiv url
+	make_arXiv_url(CITE, par, true)
 	
 	return par;
 }
