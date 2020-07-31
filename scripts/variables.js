@@ -57,10 +57,14 @@ const __tag_show_all = "All tags";
 const __tag_all = "all_tags";
 
 const __tag_show_Networks = "Networks";
+const __tag_show_NetworkScience = "Network Science";
+const __tag_show_WordOrder = "Word order";
 const __tag_show_RandGraphs = "Random graphs";
 const __tag_show_LinArr = "Linear arrangements";
 
 const __tag_Networks = "networks";
+const __tag_NetworkScience = "network_science";
+const __tag_WordOrder = "word_order";
 const __tag_RandGraphs = "random_graphs";
 const __tag_LinArr = "linear_arrangements";
 
@@ -69,6 +73,10 @@ __tag_relate[__tag_show_all] = __tag_all;
 __tag_relate[__tag_all] = __tag_show_all;
 __tag_relate[__tag_show_Networks] = __tag_Networks;
 __tag_relate[__tag_Networks] = __tag_show_Networks;
+__tag_relate[__tag_NetworkScience] = __tag_show_NetworkScience;
+__tag_relate[__tag_show_NetworkScience] = __tag_NetworkScience;
+__tag_relate[__tag_WordOrder] = __tag_show_WordOrder;
+__tag_relate[__tag_show_WordOrder] = __tag_WordOrder;
 __tag_relate[__tag_show_RandGraphs] = __tag_RandGraphs;
 __tag_relate[__tag_RandGraphs] = __tag_show_RandGraphs;
 __tag_relate[__tag_show_LinArr] = __tag_LinArr;

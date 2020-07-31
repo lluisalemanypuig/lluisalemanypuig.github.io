@@ -46,10 +46,27 @@ wXX : {
 
 const works = {
 	
+	w05 : {
+		work_type : __wt_preprint,
+		journal : __journal_ARXIV_name,
+		tags : [__tag_Networks, __tag_NetworkScience, __tag_LinArr],
+		year : 2020,
+		// "formatted" citation
+		citation : {
+			authors : "R. Ferrer-i-Cancho and C. Gómez-Rodríguez and J. L. Esteban and L. Alemany-Puig",
+			title : "The optimality of syntactic dependency distances",
+			journal : __journal_ARXIV_show_name,
+			when : "(2020)",
+			doi : null,
+			arxiv_url : "http://arxiv.org/abs/2007.15342"
+		},
+		// raw latex citation
+		biblatex_citation : "@article{Ferrer2020a, \n\tarchivePrefix = {arXiv}, \n\tarxivId = {2007.15342}, \n\tauthor = {Ferrer-i-Cancho, Ramon and G{\\'{o}}mez-Rodr{\\'{i}}guez, Carlos and Esteban, Juan Luis and Alemany-Puig, Llu{\\'{i}}s}, \n\teprint = {2007.15342}, \n\tjournal = {Arxiv}, \n\ttitle = {{The optimality of syntactic dependency distances}}, \n\turl = {http://arxiv.org/abs/2007.15342}, \n\tyear = {2020}\n}"
+	},
 	w04 : {
 		work_type : __wt_preprint,
 		journal : __journal_ARXIV_name,
-		tags : [__tag_Networks, __tag_RandGraphs],
+		tags : [__tag_Networks, __tag_NetworkScience, __tag_RandGraphs],
 		year : 2020,
 		// "formatted" citation
 		citation : {
@@ -85,7 +102,7 @@ const works = {
 		// classification of work
 		work_type : __wt_JournalPaper,
 		journal : __journal_JSTAT_name,
-		tags : [__tag_Networks, __tag_RandGraphs, __tag_LinArr],
+		tags : [__tag_Networks, __tag_NetworkScience, __tag_RandGraphs, __tag_LinArr],
 		year : 2020,
 		// "formatted" citation
 		citation : {
