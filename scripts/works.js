@@ -55,7 +55,7 @@ const works = {
 		citation : {
 			authors : "R. Ferrer-i-Cancho and C. Gómez-Rodríguez and J. L. Esteban and L. Alemany-Puig",
 			title : "The optimality of syntactic dependency distances",
-			journal : __journal_ARXIV_show_name,
+			journal : __journal_show_ARXIV_name,
 			when : "(2020)",
 			doi : null,
 			arxiv_url : "http://arxiv.org/abs/2007.15342"
@@ -72,7 +72,7 @@ const works = {
 		citation : {
 			authors : "L. Alemany-Puig and R. Ferrer-i-Cancho",
 			title : "Fast calculation of the variance of edge crossings in random linear arrangements",
-			journal : __journal_ARXIV_show_name,
+			journal : __journal_show_ARXIV_name,
 			when : "(2020)",
 			doi : null,
 			arxiv_url : "http://arxiv.org/abs/2003.03258"
@@ -90,7 +90,7 @@ const works = {
 		citation : {
 			authors : "L. Alemany-Puig and Mora, Mercè and R. Ferrer-i-Cancho",
 			title : "Reappraising the distribution of the number of edge crossings of graphs on a sphere",
-			journal : __journal_ARXIV_show_name,
+			journal : __journal_show_ARXIV_name,
 			when : "(2020)",
 			doi : null,
 			arxiv_url : "http://arxiv.org/abs/2003.03353"
@@ -108,7 +108,7 @@ const works = {
 		citation : {
 			authors : "L. Alemany-Puig and R. Ferrer-i-Cancho",
 			title : "Edge crossings in random linear arrangements",
-			journal : __journal_JSTAT_show_name,
+			journal : __journal_show_JSTAT_name,
 			when : "2020.2 (Feb 2020)",
 			doi : "http://doi.org/10.1088/1742-5468/ab6845",
 			arxiv_url : "https://arxiv.org/abs/1910.03926"
@@ -126,7 +126,7 @@ const works = {
 		citation : {
 			authors : "L. Alemany-Puig",
 			title : "Edge crossings in linear arrangements: from theory to algorithms and applications",
-			journal : __journal_UPC_show_name,
+			journal : __journal_show_UPC_name,
 			when : "July 2019",
 			doi : "http://hdl.handle.net/2117/168124",
 			arxiv_id : null,
