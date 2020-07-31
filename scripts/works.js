@@ -49,7 +49,7 @@ const works = {
 	w05 : {
 		work_type : __wt_preprint,
 		journal : __journal_ARXIV_name,
-		tags : [__tag_Networks, __tag_NetworkScience, __tag_LinArr],
+		tags : [__tag_Networks, __tag_NetworkScience, __tag_LinArr, __tag_WordOrder],
 		year : 2020,
 		// "formatted" citation
 		citation : {
