@@ -124,7 +124,11 @@ const __dd_years_id = "ddYears";
 const __dd_tags_id = "ddClassifTags";
 const __dd_journals_insts_id = "ddJournalsInstitutions";
 const __dd_wt_id = "ddWorkTypes";
+
+// -------------------
+// -- html elements --
 const __div_publist = "publications_list_div";
+const __par_item_count_id = "item_count";
 
 // -------------------------
 // -- names of parameters --
