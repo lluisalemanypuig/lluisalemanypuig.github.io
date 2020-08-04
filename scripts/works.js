@@ -88,7 +88,7 @@ const works = {
 		year : 2020,
 		// "formatted" citation
 		citation : {
-			authors : "L. Alemany-Puig and Mora, Mercè and R. Ferrer-i-Cancho",
+			authors : "L. Alemany-Puig and M. Mora and R. Ferrer-i-Cancho",
 			title : "Reappraising the distribution of the number of edge crossings of graphs on a sphere",
 			journal : __journal_show_JSTAT_name,
 			when : "2020.8 (Aug 2020)",
