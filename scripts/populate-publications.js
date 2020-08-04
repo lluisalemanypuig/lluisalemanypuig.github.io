@@ -140,7 +140,6 @@ function format_ARXIV(work) {
 function makeFormattedCitation(workid, work) {
 	var par = null;
 	
-	// add DOI, or arXiv id, or handle
 	if (work.journal == __journal_ARXIV_name) {
 		par = format_ARXIV(work);
 	}
