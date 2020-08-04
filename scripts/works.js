@@ -82,21 +82,21 @@ const works = {
 	},
 	w03 : {
 		// classification of work
-		work_type : __wt_preprint,
-		journal : __journal_ARXIV_name,
+		work_type : __wt_JournalPaper,
+		journal : __journal_JSTAT_name,
 		tags : [__tag_Networks, __tag_RandGraphs, __tag_LinArr],
 		year : 2020,
 		// "formatted" citation
 		citation : {
 			authors : "L. Alemany-Puig and Mora, Mercè and R. Ferrer-i-Cancho",
 			title : "Reappraising the distribution of the number of edge crossings of graphs on a sphere",
-			journal : __journal_show_ARXIV_name,
-			when : "(2020)",
-			doi : null,
+			journal : __journal_show_JSTAT_name,
+			when : "2020.8 (Aug 2020)",
+			doi : "10.1088/1742-5468/aba0ab",
 			arxiv_url : "http://arxiv.org/abs/2003.03353"
 		},
 		// raw latex citation
-		biblatex_citation : "@article{Alemany2020b, \n\tarchivePrefix = {arXiv}, \n\tarxivId = {2003.03353}, \n\tauthor = {Alemany-Puig, Llu{\\'{i}}s and Mora, Merc{\\`{e}} and Ferrer-i-Cancho, Ramon}, \n\teprint = {2003.03353}, \n\tjournal = {Arxiv}, \n\ttitle = {{Reappraising the distribution of the number of edge crossings of graphs on a sphere}}, \n\turl = {http://arxiv.org/abs/2003.03353}, \n\tyear = {2020}\n}"
+		biblatex_citation : "@article{Alemany2020b, \n\tdoi = {10.1088/1742-5468/aba0ab}, \n\turl = {http://dx.doi.org/10.1088/1742-5468/aba0ab}, \n\tyear = 2020, \n\tmonth = {aug}, \n\tpublisher = {{IOP} Publishing}, \n\tvolume = {2020}, \n\tnumber = {8}, \n\tpages = {083401}, \n\tauthor = {Llu{\'{\i}}s Alemany-Puig and Merc{\`{e}} Mora and Ramon Ferrer-i-Cancho}, \n\ttitle = {Reappraising the distribution of the number of edge crossings of graphs on a sphere}, \n\tjournal = {Journal of Statistical Mechanics: Theory and Experiment}\n}"
 	},
 	w02 : {
 		// classification of work
