@@ -18,6 +18,19 @@
  * Contact: Lluís Alemany Puig (lluis.alemany.puig@gmail.com)
  */
 
+function createCounter() {
+	var div = document.getElementById(__div_publist);
+	var itemCount = document.createElement("p");
+	itemCount.id = __par_item_count_id;
+	div.appendChild(itemCount);
+}
+
+function setCounterText(n) {
+	var itemCount = document.getElementById(__par_item_count_id);
+	itemCount.innerHTML = '';
+	itemCount.appendChild(document.createTextNode("Amount of items returned: " + n.toString()));
+}
+
 function add_title_h1(div, y) {
 	var h1 = document.createElement('h2');
 	h1.textContent = y;
@@ -196,12 +209,14 @@ function populatePublicationList() {
 	var div = document.getElementById(__div_publist);
 	
 	// prior to doing any work, first wipe the div class, namely
-	// remove all the h1 and ul objects...
-	console.log(div);
-	console.log(div.childNodes.length);
+	// remove all the h1 and ul objects except the dropdowns
 	while (div.childNodes.length > 1) {
 		div.removeChild(div.lastChild);
 	}
+	
+	// ******* Add message 'placeholder'
+	console.log("Create 'counter text'");
+	createCounter();
 	
 	// read values in drop downs
 	const ddYear = document.getElementById(__dd_years_id);
@@ -321,4 +336,8 @@ function populatePublicationList() {
 			textArea.cols = maxCols;
 		}
 	}
+	
+	// ******* Set counter text
+	console.log("Setting 'counter''s text'");
+	setCounterText(worksList.length);
 }

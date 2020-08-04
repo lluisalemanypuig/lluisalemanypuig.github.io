@@ -20,6 +20,7 @@
 
 function createDropDowns() {
 	var div = document.getElementById(__div_publist);
+	// clean up the whole thing
 	div.innerHTML = '';
 	
 	// create the dropddowns
@@ -88,17 +89,17 @@ function parseParameters() {
 }
 
 window.onload = function() {
-	// First, add the dropdowns in the appropriate 'div' class
+	// ****** Add the dropdowns in the appropriate 'div' class
 	console.log("Adding drop down menus...");
 	createDropDowns();
 	
-	// Second, populate the dropdown buttons with all the possible
+	// ****** Populate the dropdown buttons with all the possible
 	// values. These drop downs are initialised with the defaut value
 	// "All tags", "All years", "All ...", ...
 	console.log("Populating drop down menus...");
 	populateDropDowns();
 	
-	// Third, parse the parameters in the url.
+	// ****** Parse the parameters in the url.
 	// Call the function populateTable appropriately
 	console.log("Parsing parameters...");
 	const parameters = window.location.search;
@@ -111,6 +112,7 @@ window.onload = function() {
 		parseParameters();
 	}
 	
+	// populate the publications list
 	console.log("Populating publication list...");
 	populatePublicationList();
 };
