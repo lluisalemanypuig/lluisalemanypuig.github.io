@@ -19,7 +19,7 @@
  */
 
 function createDropDowns() {
-	var div = document.getElementById(__pubs_div_publist);
+	var div = document.getElementById(__div_publist);
 	// clean up the whole thing
 	div.innerHTML = '';
 	

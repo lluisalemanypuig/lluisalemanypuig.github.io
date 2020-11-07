@@ -19,14 +19,14 @@
  */
 
 function createCounter() {
-	var div = document.getElementById(__pubs_div_publist);
+	var div = document.getElementById(__div_publist);
 	var itemCount = document.createElement("p");
-	itemCount.id = __pubs_par_item_count_id;
+	itemCount.id = __par_pubs_item_count_id;
 	div.appendChild(itemCount);
 }
 
 function setCounterText(n) {
-	var itemCount = document.getElementById(__pubs_par_item_count_id);
+	var itemCount = document.getElementById(__par_pubs_item_count_id);
 	itemCount.innerHTML = '';
 	itemCount.appendChild(document.createTextNode("Amount of items returned: " + n.toString()));
 }
@@ -199,13 +199,11 @@ function makeFormattedCitation(workid, work) {
 	full.append(tags);
 	
 	return full;
-};
-
-function getTextDD(dd) { return dd.options[dd.selectedIndex].value; };
+}
 
 function populatePublicationList() {
 	// class where to add the publications list
-	var div = document.getElementById(__pubs_div_publist);
+	var div = document.getElementById(__div_publist);
 	
 	// prior to doing any work, first wipe the div class, namely
 	// remove all the h1 and ul objects except the dropdowns
@@ -223,6 +221,7 @@ function populatePublicationList() {
 	const ddJournal = document.getElementById(__pubs_dd_journals_insts_id);
 	const ddWorkType = document.getElementById(__pubs_dd_wt_id);
 	
+	function getTextDD(dd) { return dd.options[dd.selectedIndex].value; }
 	var use_year = getTextDD(ddYear);
 	var use_tag = getTextDD(ddTag);
 	var use_journal = getTextDD(ddJournal);

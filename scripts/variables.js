@@ -24,25 +24,36 @@ const __url_cqllab = "https://cqllab.upc.edu";
 const __url_lalemany = __url_cqllab + "/people/lalemany";
 const __url_publications = __url_lalemany + "/publications";
 
-// --------------------------------
-// -- places (insitution/cities) --
-const __place_show_all = "All places";
-const __place_all = "all_places";
+// -----------------
+// -- Insitutions --
+const __institution_show_all = "All insitutions";
+const __institution_all = "all_institutions";
 
-const __place_show_UPC = "Universitat Politècnica de Catalunya";
-const __place_UPC = "UPC";
+const __institution_show_UPC = "Universitat Politècnica de Catalunya";
+const __institution_UPC = "UPC";
 
-const __place_show_Barcelona = "Barcelona";
-const __place_Barcelona = "barcelona";
+var __institution_relate = {};
+__institution_relate[__institution_show_all] = __institution_all;
+__institution_relate[__institution_all] = __institution_show_all;
+__institution_relate[__institution_show_UPC] = __institution_UPC;
+__institution_relate[__institution_UPC] = __institution_show_UPC;
 
-var __place_relate = {};
-__place_relate[__place_show_UPC] = __place_UPC;
-__place_relate[__place_UPC] = __place_show_UPC;
-__place_relate[__place_show_Barcelona] = __place_Barcelona;
-__place_relate[__place_Barcelona] = __place_show_Barcelona;
+// ------------
+// -- Cities --
+const __city_show_all = "All cities";
+const __city_all = "all_cities";
+
+const __city_show_Barcelona = "Barcelona";
+const __city_Barcelona = "barcelona";
+
+var __city_relate = {};
+__city_relate[__city_show_all] = __city_all;
+__city_relate[__city_all] = __city_show_all;
+__city_relate[__city_show_Barcelona] = __city_Barcelona;
+__city_relate[__city_Barcelona] = __city_show_Barcelona;
 
 // --------------
-// -- journals --
+// -- Journals --
 const __journal_show_all = "All journals/institutions";
 const __journal_all = "all_journals_institutions";
 
@@ -68,8 +79,8 @@ __journal_relate[__journal_JSTAT_name] = __journal_show_JSTAT_name;
 __journal_relate[__journal_show_UPC_name] = __journal_UPC_name;
 __journal_relate[__journal_UPC_name] = __journal_show_UPC_name;
 
-// ----------------
-// -- tags/fiels --
+// ----------
+// -- Tags --
 const __tag_show_all = "All tags";
 const __tag_all = "all_tags";
 
@@ -100,7 +111,7 @@ __tag_relate[__tag_show_LinArr] = __tag_LinArr;
 __tag_relate[__tag_LinArr] = __tag_show_LinArr;
 
 // ----------------
-// -- work types --
+// -- Work types --
 const __wt_show_all = "All work types";
 const __wt_all = "all_work_types";
 
@@ -124,7 +135,7 @@ __wt_relate[__wt_show_MastersThesis] = __wt_MastersThesis;
 __wt_relate[__wt_MastersThesis] = __wt_show_MastersThesis;
 
 // ----------------
-// -- talk types --
+// -- Talk types --
 const __tt_show_all = "All talk types";
 const __tt_all = "all_talk_types";
 
@@ -142,18 +153,32 @@ __tt_relate[__tt_seminar] = __tt_show_seminar;
 __tt_relate[__tt_show_conference] = __tt_conference;
 __tt_relate[__tt_conference] = __tt_show_conference;
 
+// ----------------
+// -- Talk names --
+const __talkname_show_all = "All seminars/conferences";
+const __talkname_all = "all_seminars_conferences";
+
+const __talkname_show_LIMDA = "LIMDA";
+const __talkname_LIMDA = "limda";
+
+var __talkname_relate = {};
+__talkname_relate[__talkname_show_all] = __talkname_all;
+__talkname_relate[__talkname_all] = __talkname_show_all;
+__talkname_relate[__talkname_show_LIMDA] = __talkname_LIMDA;
+__talkname_relate[__talkname_LIMDA] = __talkname_show_LIMDA;
+
 // -----------
-// -- years --
-const __years_show_all = "All years";
-const __years_all = "all_years";
+// -- Years --
+const __year_show_all = "All years";
+const __year_all = "all_years";
 const __year_2020 = "2020";
 const __year_2019 = "2019";
 
-var __years_relate = {};
-__years_relate[__years_show_all] = __years_all;
-__years_relate[__years_all] = __years_show_all;
-__years_relate[__year_2020] = "2020";
-__years_relate[__year_2019] = "2019";
+var __year_relate = {};
+__year_relate[__year_show_all] = __year_all;
+__year_relate[__year_all] = __year_show_all;
+__year_relate[__year_2020] = "2020";
+__year_relate[__year_2019] = "2019";
 
 // ---------------------------------------
 // -- PUBLCATIONS PAGE: drop down names --
@@ -171,13 +196,14 @@ const __talks_dd_cities = "talks_ddCities";
 
 // -------------------
 // -- html elements --
-const __pubs_div_publist = "publications_list_div";
-const __pubs_par_item_count_id = "pubs_item_count";
-const __talks_div_publist = "talks_list_div";
-const __talks_par_item_count_id = "talks_item_count";
+const __div_publist = "publications_list_div";
+const __par_pubs_item_count_id = "pubs_item_count";
+
+const __div_talklist = "talks_list_div";
+const __par_talks_item_count_id = "talks_item_count";
 
 // -------------------------
-// -- names of parameters --
+// -- Names of parameters --
 const __param_year = "lapyear";
 const __param_tag = "laptag";
 const __param_journal = "lapjournal_inst";

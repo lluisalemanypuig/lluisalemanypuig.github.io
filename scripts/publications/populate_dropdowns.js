@@ -41,7 +41,7 @@ function populateDropDowns() {
 	
 	// default tags
 	all_tags.push(__tag_all);
-	all_years.push(__years_all);
+	all_years.push(__year_all);
 	all_journals.push(__journal_all);
 	all_work_types.push(__wt_all);
 	
@@ -85,7 +85,7 @@ function populateDropDowns() {
 	ddJournals.textContent = '';
 	ddWorkTypes.textContent = '';
 	
-	all_years.forEach(function(item) { addToDropDown(ddYears, item, __years_relate); });
+	all_years.forEach(function(item) { addToDropDown(ddYears, item, __year_relate); });
 	all_tags.forEach(function(item) { addToDropDown(ddTags, item, __tag_relate); });
 	all_journals.forEach(function(item) { addToDropDown(ddJournals, item, __journal_relate); });
 	all_work_types.forEach(function(item) { addToDropDown(ddWorkTypes, item, __wt_relate); });
