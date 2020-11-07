@@ -26,32 +26,32 @@ function createDropDowns() {
 	// create the dropddowns
 	var ddYears = document.createElement('select');
 	var ddClassifTags = document.createElement('select');
+	var ddSeminarConf = document.createElement('select');
 	var ddInstitutions = document.createElement('select');
 	var ddCities = document.createElement('select');
-	var ddSeminarConf = document.createElement('select');
 	
 	// modify dropdowns' attributes
 	
 	// onChange
 	ddYears.onchange = populateTalksList;
 	ddClassifTags.onchange = populateTalksList;
+	ddSeminarConf.onchange = populateTalksList;
 	ddInstitutions.onchange = populateTalksList;
 	ddCities.onchange = populateTalksList;
-	ddSeminarConf.onchange = populateTalksList;
 	
 	// ids
 	ddYears.id = __talks_dd_years_id;
 	ddClassifTags.id = __talks_dd_tags_id;
+	ddSeminarConf.id = __talks_dd_seminar_conference;
 	ddInstitutions.id = __talks_dd_institutions;
 	ddCities.id = __talks_dd_cities;
-	ddSeminarConf.id = __talks_dd_seminar_conference;
 	
 	var center = document.createElement('center');
 	center.appendChild(ddYears);
 	center.appendChild(ddClassifTags);
+	center.appendChild(ddSeminarConf);
 	center.appendChild(ddInstitutions);
 	center.appendChild(ddCities);
-	center.appendChild(ddSeminarConf);
 	div.appendChild(center);
 }
 
@@ -70,15 +70,15 @@ function parseParameters() {
 	
 	const query_year = urlParams.get(__param_year);
 	const query_tag = urlParams.get(__param_tag);
+	const query_seminar_conf = urlParams.get(__param_seminar_conf);
 	const query_institution = urlParams.get(__param_institution);
 	const query_city = urlParams.get(__param_city);
-	const query_seminar_conf = urlParams.get(__param_seminar_conf);
 	
 	console.log("    Value of parameter: year= " + query_year);
 	console.log("    Value of parameter: tag= " + query_tag);
+	console.log("    Value of parameter: seminar_conference= " + query_seminar_conf);
 	console.log("    Value of parameter: institution= " + query_institution);
 	console.log("    Value of parameter: city= " + query_city);
-	console.log("    Value of parameter: seminar_conference= " + query_seminar_conf);
 	
 	if (query_year != null) {
 		setSelection(document.getElementById(__talks_dd_years_id), query_year);
@@ -86,14 +86,14 @@ function parseParameters() {
 	if (query_tag != null) {
 		setSelection(document.getElementById(__talks_dd_tags_id), query_tag);
 	}
+	if (query_seminar_conf != null) {
+		setSelection(document.getElementById(__talks_dd_seminar_conference), query_seminar_conf);
+	}
 	if (query_institution != null) {
 		setSelection(document.getElementById(__talks_dd_institutions), query_institution);
 	}
 	if (query_city != null) {
 		setSelection(document.getElementById(__talks_dd_cities), query_city);
-	}
-	if (query_seminar_conf != null) {
-		setSelection(document.getElementById(__talks_dd_seminar_conference), query_seminar_conf);
 	}
 }
 

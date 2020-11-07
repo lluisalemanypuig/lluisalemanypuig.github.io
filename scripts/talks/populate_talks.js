@@ -41,7 +41,13 @@ function makeFormattedTalk(talkid, talk) {
 	var par = document.createElement("p");
 	
 	// add title of the talk
-	par.appendChild(document.createTextNode(talk.title + "."));
+	par.appendChild(document.createTextNode("Title of the talk: "));
+	{
+	var title_italics = document.createElement("i");
+	title_italics.textContent = talk.title;
+	par.appendChild(title_italics);
+	}
+	par.appendChild(document.createTextNode("."));
 	
 	// add url to seminar/conference
 	if (talk.what_talk == __talkname_LIMDA) {
@@ -130,22 +136,22 @@ function populateTalksList() {
 	// read values in drop downs
 	const ddYear = document.getElementById(__talks_dd_years_id);
 	const ddTag = document.getElementById(__talks_dd_tags_id);
+	const ddSemConf = document.getElementById(__talks_dd_seminar_conference);
 	const ddInstitutions = document.getElementById(__talks_dd_institutions);
 	const ddCities = document.getElementById(__talks_dd_cities);
-	const ddSemConf = document.getElementById(__talks_dd_seminar_conference);
 	
 	function getTextDD(dd) { return dd.options[dd.selectedIndex].value; };
 	var use_year = getTextDD(ddYear);
 	var use_tag = getTextDD(ddTag);
+	var use_semconf = getTextDD(ddSemConf);
 	var use_institution = getTextDD(ddInstitutions);
 	var use_city = getTextDD(ddCities);
-	var use_semconf = getTextDD(ddSemConf);
 	
 	console.log("    Contents of 'year' drop down: " + use_year);
 	console.log("    Contents of 'tag' drop down: " + use_tag);
+	console.log("    Contents of 'seminar conference' drop down: " + use_semconf);
 	console.log("    Contents of 'institution' drop down: " + use_institution);
 	console.log("    Contents of 'city' drop down: " + use_city);
-	console.log("    Contents of 'seminar conference' drop down: " + use_semconf);
 	
 	// filtering functions
 	function filter_year(talk) {
@@ -156,6 +162,10 @@ function populateTalksList() {
 		if (use_tag == __tag_all) { return true; }
 		return talk.tags.includes(use_tag);
 	}
+	function filter_semconf(talk) {
+		if (use_semconf == __talkname_all) { return true; }
+		return use_semconf == talk.what_talk;
+	}
 	function filter_institution(talk) {
 		if (use_institution == __institution_all) { return true; }
 		return use_institution == talk.institution;
@@ -163,10 +173,6 @@ function populateTalksList() {
 	function filter_city(talk) {
 		if (use_city == __city_all) { return true; }
 		return use_city == talk.city;
-	}
-	function filter_semconf(talk) {
-		if (use_semconf == __talkname_all) { return true; }
-		return use_semconf == talk.what_talk;
 	}
 	
 	console.log("    Filtering works...");
@@ -182,9 +188,9 @@ function populateTalksList() {
 		var to_be_included = 
 			filter_year(talkI) &&
 			filter_tag(talkI) &&
+			filter_semconf(talkI) &&
 			filter_institution(talkI) &&
-			filter_city(talkI) &&
-			filter_semconf(talkI);
+			filter_city(talkI);
 		
 		if (to_be_included) {
 			console.log("        Item: " + key + " is to be included in the list");
