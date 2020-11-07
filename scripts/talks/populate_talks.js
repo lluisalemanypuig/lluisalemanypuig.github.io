@@ -39,7 +39,7 @@ function add_title_h1(div, y) {
 
 function format_institution_UPC(talk) {
 	var url = document.createElement("a");
-	url.textContent = "Institution URL";
+	url.textContent = "UPC";
 	url.href = "https://www.upc.edu/ca";
 	url.appendChild(document.createTextNode("."));
 	return url;
@@ -47,7 +47,15 @@ function format_institution_UPC(talk) {
 
 function format_talk_LIMDA(talk) {
 	var url = document.createElement("a");
-	url.textContent = "Seminar LIMDA URL";
+	url.textContent = "Seminar LIMDA";
+	url.href = "https://gapcomb.upc.edu/en/seminar-en/";
+	url.appendChild(document.createTextNode("."));
+	return url;
+}
+
+function format_talk_ConfMath(talk) {
+	var url = document.createElement("a");
+	url.textContent = "Great Conference of mathematics";
 	url.href = "https://gapcomb.upc.edu/en/seminar-en/";
 	url.appendChild(document.createTextNode("."));
 	return url;
@@ -56,8 +64,26 @@ function format_talk_LIMDA(talk) {
 function makeFormattedTalk(talkid, talk) {
 	var par = document.createElement("p");
 	
+	// add title of the talk
 	par.appendChild(document.createTextNode(talk.title + "."));
 	
+	// add url to seminar/conference
+	if (talk.what_talk == __talkname_LIMDA) {
+		var html_talk = format_talk_LIMDA(talk);
+		par.appendChild(document.createTextNode(" "));
+		par.appendChild(html_talk);
+	}
+	else if (talk.what_talk == __talkname_ConfMath) {
+		var html_talk = format_talk_ConfMath(talk);
+		par.appendChild(document.createTextNode(" "));
+		par.appendChild(html_talk);
+	}
+	else {
+		console.error("        Formatting of talk '" + talk.what_talk + "' not implemented.");
+		return null;
+	}
+	
+	// add url to institution
 	if (talk.institution == __institution_UPC) {
 		var html_inst = format_institution_UPC(talk);
 		par.appendChild(document.createTextNode(" "));
@@ -68,16 +94,10 @@ function makeFormattedTalk(talkid, talk) {
 		return null;
 	}
 	
-	if (talk.what_talk == __talkname_LIMDA) {
-		var html_talk = format_talk_LIMDA(talk);
-		par.appendChild(document.createTextNode(" "));
-		par.appendChild(html_talk);
-	}
-	else {
-		console.error("        Formatting of talk '" + talk.what_talk + "' not implemented.");
-		return null;
-	}
+	// add city
+	par.appendChild(document.createTextNode(" " + __city_relate[talk.city] + "."));
 	
+	// add file to url slides
 	if (talk.slides_url != null) {
 		var url = document.createElement("a");
 		url.textContent = "Slides";
@@ -133,17 +153,20 @@ function populateTalksList() {
 	const ddTag = document.getElementById(__talks_dd_tags_id);
 	const ddInstitutions = document.getElementById(__talks_dd_institutions);
 	const ddCities = document.getElementById(__talks_dd_cities);
+	const ddSemConf = document.getElementById(__talks_dd_seminar_conference);
 	
 	function getTextDD(dd) { return dd.options[dd.selectedIndex].value; };
 	var use_year = getTextDD(ddYear);
 	var use_tag = getTextDD(ddTag);
 	var use_institution = getTextDD(ddInstitutions);
 	var use_city = getTextDD(ddCities);
+	var use_semconf = getTextDD(ddSemConf);
 	
 	console.log("    Contents of 'year' drop down: " + use_year);
 	console.log("    Contents of 'tag' drop down: " + use_tag);
 	console.log("    Contents of 'institution' drop down: " + use_institution);
 	console.log("    Contents of 'city' drop down: " + use_city);
+	console.log("    Contents of 'seminar conference' drop down: " + use_semconf);
 	
 	// filtering functions
 	function filter_year(talk) {
@@ -162,6 +185,10 @@ function populateTalksList() {
 		if (use_city == __city_all) { return true; }
 		return use_city == talk.city;
 	}
+	function filter_semconf(talk) {
+		if (use_semconf == __talkname_all) { return true; }
+		return use_semconf == talk.what_talk;
+	}
 	
 	console.log("    Filtering works...");
 	
@@ -177,7 +204,8 @@ function populateTalksList() {
 			filter_year(talkI) &&
 			filter_tag(talkI) &&
 			filter_institution(talkI) &&
-			filter_city(talkI);
+			filter_city(talkI) &&
+			filter_semconf(talkI);
 		
 		if (to_be_included) {
 			console.log("        Item: " + key + " is to be included in the list");

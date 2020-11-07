@@ -46,6 +46,6 @@ const talks = {
 		tags : [__tag_Networks, __tag_NetworkScience, __tag_LinArr, __tag_RandGraphs],
 		year : 2019,
 		title : "Edge crossings in random arrangements",
-		slides_url : "https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/talks_files/LIMDA_2020_12_18.pdf"
+		slides_url : "https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/talks_files/LIMDA_2019_12_18.pdf"
 	}
 };

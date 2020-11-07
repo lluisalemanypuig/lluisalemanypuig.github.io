@@ -26,7 +26,7 @@ const __url_publications = __url_lalemany + "/publications";
 
 // -----------------
 // -- Insitutions --
-const __institution_show_all = "All insitutions";
+const __institution_show_all = "All institutions";
 const __institution_all = "all_institutions";
 
 const __institution_show_UPC = "Universitat Politècnica de Catalunya";
@@ -193,6 +193,7 @@ const __talks_dd_years_id = "talks_ddYears";
 const __talks_dd_tags_id = "talks_ddClassifTags";
 const __talks_dd_institutions = "talks_ddInstitutions";
 const __talks_dd_cities = "talks_ddCities";
+const __talks_dd_seminar_conference = "talks_ddSeminarConference";
 
 // -------------------
 // -- html elements --
@@ -210,3 +211,4 @@ const __param_journal = "lapjournal_inst";
 const __param_wt = "lapwork_type";
 const __param_institution = "lapinst";
 const __param_city = "lapcity";
+const __param_seminar_conf = "lapsemconf";
