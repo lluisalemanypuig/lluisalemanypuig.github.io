@@ -19,7 +19,7 @@
  */
 
 function createDropDowns() {
-	var div = document.getElementById(__publs_div_publist);
+	var div = document.getElementById(__pubs_div_publist);
 	// clean up the whole thing
 	div.innerHTML = '';
 	
@@ -38,10 +38,10 @@ function createDropDowns() {
 	ddWorkTypes.onchange = populatePublicationList;
 	
 	// ids
-	ddYears.id = __publs_dd_years_id;
-	ddClassifTags.id = __publs_dd_tags_id;
-	ddJournalsInstitutions.id = __publs_dd_journals_insts_id;
-	ddWorkTypes.id = __publs_dd_wt_id;
+	ddYears.id = __pubs_dd_years_id;
+	ddClassifTags.id = __pubs_dd_tags_id;
+	ddJournalsInstitutions.id = __pubs_dd_journals_insts_id;
+	ddWorkTypes.id = __pubs_dd_wt_id;
 	
 	var center = document.createElement('center');
 	center.appendChild(ddYears);
@@ -75,16 +75,16 @@ function parseParameters() {
 	console.log("    Value of parameter: work type= " + query_worktype);
 	
 	if (query_year != null) {
-		setSelection(document.getElementById(__publs_dd_years_id), query_year);
+		setSelection(document.getElementById(__pubs_dd_years_id), query_year);
 	}
 	if (query_tag != null) {
-		setSelection(document.getElementById(__publs_dd_tags_id), query_tag);
+		setSelection(document.getElementById(__pubs_dd_tags_id), query_tag);
 	}
 	if (query_journal != null) {
-		setSelection(document.getElementById(__publs_dd_journals_insts_id), query_journal);
+		setSelection(document.getElementById(__pubs_dd_journals_insts_id), query_journal);
 	}
 	if (query_worktype != null) {
-		setSelection(document.getElementById(__publs_dd_wt_id), query_worktype);
+		setSelection(document.getElementById(__pubs_dd_wt_id), query_worktype);
 	}
 }
 

@@ -24,17 +24,22 @@ const __url_cqllab = "https://cqllab.upc.edu";
 const __url_lalemany = __url_cqllab + "/people/lalemany";
 const __url_publications = __url_lalemany + "/publications";
 
-// ------------
-// -- places --
+// --------------------------------
+// -- places (insitution/cities) --
 const __place_show_all = "All places";
 const __place_all = "all_places";
 
-const __place_show_UPC_name = "Universitat Politècnica de Catalunya";
-const __place_UPC_name = "UPC";
+const __place_show_UPC = "Universitat Politècnica de Catalunya";
+const __place_UPC = "UPC";
+
+const __place_show_Barcelona = "Barcelona";
+const __place_Barcelona = "barcelona";
 
 var __place_relate = {};
-__place_relate[__place_show_UPC_name] = __place_UPC_name;
-__place_relate[__place_UPC_name] = __place_show_UPC_name;
+__place_relate[__place_show_UPC] = __place_UPC;
+__place_relate[__place_UPC] = __place_show_UPC;
+__place_relate[__place_show_Barcelona] = __place_Barcelona;
+__place_relate[__place_Barcelona] = __place_show_Barcelona;
 
 // --------------
 // -- journals --
@@ -100,11 +105,12 @@ const __wt_show_all = "All work types";
 const __wt_all = "all_work_types";
 
 const __wt_show_preprint = "Preprint";
-const __wt_show_JournalPaper = "Journal Paper";
-const __wt_show_MastersThesis = "Masters Thesis";
-
 const __wt_preprint = "preprint";
+
+const __wt_show_JournalPaper = "Journal Paper";
 const __wt_JournalPaper = "journal_paper";
+
+const __wt_show_MastersThesis = "Masters Thesis";
 const __wt_MastersThesis = "master_thesis";
 
 var __wt_relate = {};
@@ -116,6 +122,25 @@ __wt_relate[__wt_show_JournalPaper] = __wt_JournalPaper;
 __wt_relate[__wt_JournalPaper] = __wt_show_JournalPaper;
 __wt_relate[__wt_show_MastersThesis] = __wt_MastersThesis;
 __wt_relate[__wt_MastersThesis] = __wt_show_MastersThesis;
+
+// ----------------
+// -- talk types --
+const __tt_show_all = "All talk types";
+const __tt_all = "all_talk_types";
+
+const __tt_show_seminar = "Seminar";
+const __tt_seminar = "seminar";
+
+const __tt_show_conference = "Conference";
+const __tt_conference = "conference";
+
+var __tt_relate = {};
+__tt_relate[__tt_show_all] = __tt_all;
+__tt_relate[__tt_all] = __tt_show_all;
+__tt_relate[__tt_show_seminar] = __tt_seminar;
+__tt_relate[__tt_seminar] = __tt_show_seminar;
+__tt_relate[__tt_show_conference] = __tt_conference;
+__tt_relate[__tt_conference] = __tt_show_conference;
 
 // -----------
 // -- years --
@@ -132,22 +157,24 @@ __years_relate[__year_2019] = "2019";
 
 // ---------------------------------------
 // -- PUBLCATIONS PAGE: drop down names --
-const __publs_dd_years_id = "publs_ddYears";
-const __publs_dd_tags_id = "publs_ddClassifTags";
-const __publs_dd_journals_insts_id = "publs_ddJournalsInstitutions";
-const __publs_dd_wt_id = "publs_ddWorkTypes";
+const __pubs_dd_years_id = "pubs_ddYears";
+const __pubs_dd_tags_id = "pubs_ddClassifTags";
+const __pubs_dd_journals_insts_id = "pubs_ddJournalsInstitutions";
+const __pubs_dd_wt_id = "pubs_ddWorkTypes";
 
 // ---------------------------------
 // -- TALKS PAGE: drop down names --
 const __talks_dd_years_id = "talks_ddYears";
 const __talks_dd_tags_id = "talks_ddClassifTags";
-const __talks_dd_places = "talks_ddPlaces";
+const __talks_dd_institutions = "talks_ddInstitutions";
+const __talks_dd_cities = "talks_ddCities";
 
 // -------------------
 // -- html elements --
-const __publs_div_publist = "publications_list_div";
+const __pubs_div_publist = "publications_list_div";
+const __pubs_par_item_count_id = "pubs_item_count";
 const __talks_div_publist = "talks_list_div";
-const __publs_par_item_count_id = "item_count";
+const __talks_par_item_count_id = "talks_item_count";
 
 // -------------------------
 // -- names of parameters --
@@ -155,4 +182,5 @@ const __param_year = "lapyear";
 const __param_tag = "laptag";
 const __param_journal = "lapjournal_inst";
 const __param_wt = "lapwork_type";
-const __param_place = "lapplace";
+const __param_institution = "lapinst";
+const __param_city = "lapcity";

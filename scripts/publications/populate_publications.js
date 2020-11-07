@@ -19,14 +19,14 @@
  */
 
 function createCounter() {
-	var div = document.getElementById(__publs_div_publist);
+	var div = document.getElementById(__pubs_div_publist);
 	var itemCount = document.createElement("p");
-	itemCount.id = __publs_par_item_count_id;
+	itemCount.id = __pubs_par_item_count_id;
 	div.appendChild(itemCount);
 }
 
 function setCounterText(n) {
-	var itemCount = document.getElementById(__publs_par_item_count_id);
+	var itemCount = document.getElementById(__pubs_par_item_count_id);
 	itemCount.innerHTML = '';
 	itemCount.appendChild(document.createTextNode("Amount of items returned: " + n.toString()));
 }
@@ -205,7 +205,7 @@ function getTextDD(dd) { return dd.options[dd.selectedIndex].value; };
 
 function populatePublicationList() {
 	// class where to add the publications list
-	var div = document.getElementById(__publs_div_publist);
+	var div = document.getElementById(__pubs_div_publist);
 	
 	// prior to doing any work, first wipe the div class, namely
 	// remove all the h1 and ul objects except the dropdowns
@@ -218,10 +218,10 @@ function populatePublicationList() {
 	createCounter();
 	
 	// read values in drop downs
-	const ddYear = document.getElementById(__publs_dd_years_id);
-	const ddTag = document.getElementById(__publs_dd_tags_id);
-	const ddJournal = document.getElementById(__publs_dd_journals_insts_id);
-	const ddWorkType = document.getElementById(__publs_dd_wt_id);
+	const ddYear = document.getElementById(__pubs_dd_years_id);
+	const ddTag = document.getElementById(__pubs_dd_tags_id);
+	const ddJournal = document.getElementById(__pubs_dd_journals_insts_id);
+	const ddWorkType = document.getElementById(__pubs_dd_wt_id);
 	
 	var use_year = getTextDD(ddYear);
 	var use_tag = getTextDD(ddTag);
