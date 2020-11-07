@@ -37,30 +37,6 @@ function add_title_h1(div, y) {
 	div.appendChild(h1);
 }
 
-function format_institution_UPC(talk) {
-	var url = document.createElement("a");
-	url.textContent = "UPC";
-	url.href = "https://www.upc.edu/ca";
-	url.appendChild(document.createTextNode("."));
-	return url;
-}
-
-function format_talk_LIMDA(talk) {
-	var url = document.createElement("a");
-	url.textContent = "Seminar LIMDA";
-	url.href = "https://gapcomb.upc.edu/en/seminar-en/";
-	url.appendChild(document.createTextNode("."));
-	return url;
-}
-
-function format_talk_ConfMath(talk) {
-	var url = document.createElement("a");
-	url.textContent = "Great Conference of mathematics";
-	url.href = "https://gapcomb.upc.edu/en/seminar-en/";
-	url.appendChild(document.createTextNode("."));
-	return url;
-}
-
 function makeFormattedTalk(talkid, talk) {
 	var par = document.createElement("p");
 	
@@ -69,14 +45,13 @@ function makeFormattedTalk(talkid, talk) {
 	
 	// add url to seminar/conference
 	if (talk.what_talk == __talkname_LIMDA) {
-		var html_talk = format_talk_LIMDA(talk);
+		var url = document.createElement("a");
+		url.textContent = "Seminar LIMDA";
+		url.href = "https://gapcomb.upc.edu/en/seminar-en/";
+		
 		par.appendChild(document.createTextNode(" "));
-		par.appendChild(html_talk);
-	}
-	else if (talk.what_talk == __talkname_ConfMath) {
-		var html_talk = format_talk_ConfMath(talk);
-		par.appendChild(document.createTextNode(" "));
-		par.appendChild(html_talk);
+		par.appendChild(url);
+		par.appendChild(document.createTextNode("."));
 	}
 	else {
 		console.error("        Formatting of talk '" + talk.what_talk + "' not implemented.");
@@ -85,9 +60,13 @@ function makeFormattedTalk(talkid, talk) {
 	
 	// add url to institution
 	if (talk.institution == __institution_UPC) {
-		var html_inst = format_institution_UPC(talk);
+		var url = document.createElement("a");
+		url.textContent = "UPC";
+		url.href = "https://www.upc.edu/ca";
+		
 		par.appendChild(document.createTextNode(" "));
-		par.appendChild(html_inst);
+		par.appendChild(url);
+		par.appendChild(document.createTextNode("."));
 	}
 	else {
 		console.error("        Formatting of institution '" + talk.institution + "' not implemented.");
@@ -100,7 +79,7 @@ function makeFormattedTalk(talkid, talk) {
 	// add file to url slides
 	if (talk.slides_url != null) {
 		var url = document.createElement("a");
-		url.textContent = "Slides";
+		url.textContent = "Slides of the talk";
 		url.href = talk.slides_url;
 		url.appendChild(document.createTextNode("."));
 		par.appendChild(document.createTextNode(" "));
