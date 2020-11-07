@@ -24,6 +24,18 @@ const __url_cqllab = "https://cqllab.upc.edu";
 const __url_lalemany = __url_cqllab + "/people/lalemany";
 const __url_publications = __url_lalemany + "/publications";
 
+// ------------
+// -- places --
+const __place_show_all = "All places";
+const __place_all = "all_places";
+
+const __place_show_UPC_name = "Universitat Politècnica de Catalunya";
+const __place_UPC_name = "UPC";
+
+var __place_relate = {};
+__place_relate[__place_show_UPC_name] = __place_UPC_name;
+__place_relate[__place_UPC_name] = __place_show_UPC_name;
+
 // --------------
 // -- journals --
 const __journal_show_all = "All journals/institutions";
@@ -118,17 +130,24 @@ __years_relate[__years_all] = __years_show_all;
 __years_relate[__year_2020] = "2020";
 __years_relate[__year_2019] = "2019";
 
-// -------------------------------------
-// -- drop down names and papers list --
-const __dd_years_id = "ddYears";
-const __dd_tags_id = "ddClassifTags";
-const __dd_journals_insts_id = "ddJournalsInstitutions";
-const __dd_wt_id = "ddWorkTypes";
+// ---------------------------------------
+// -- PUBLCATIONS PAGE: drop down names --
+const __publs_dd_years_id = "publs_ddYears";
+const __publs_dd_tags_id = "publs_ddClassifTags";
+const __publs_dd_journals_insts_id = "publs_ddJournalsInstitutions";
+const __publs_dd_wt_id = "publs_ddWorkTypes";
+
+// ---------------------------------
+// -- TALKS PAGE: drop down names --
+const __talks_dd_years_id = "talks_ddYears";
+const __talks_dd_tags_id = "talks_ddClassifTags";
+const __talks_dd_places = "talks_ddPlaces";
 
 // -------------------
 // -- html elements --
-const __div_publist = "publications_list_div";
-const __par_item_count_id = "item_count";
+const __publs_div_publist = "publications_list_div";
+const __talks_div_publist = "talks_list_div";
+const __publs_par_item_count_id = "item_count";
 
 // -------------------------
 // -- names of parameters --
@@ -136,3 +155,4 @@ const __param_year = "lapyear";
 const __param_tag = "laptag";
 const __param_journal = "lapjournal_inst";
 const __param_wt = "lapwork_type";
+const __param_place = "lapplace";
