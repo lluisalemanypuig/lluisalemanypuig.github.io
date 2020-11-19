@@ -114,7 +114,7 @@ const works = {
 			arxiv_url : "https://arxiv.org/abs/1910.03926"
 		},
 		// raw latex citation
-		biblatex_citation : "@article{Alemany2020a, \n\tdoi = {10.1088/1742-5468/ab6845}, \n\turl = {https://arxiv.org/abs/1910.03926}, \n\tyear = 2020, \n\tmonth = {feb}, \n\tpublisher = {{IOP} Publishing}, \n\tvolume = {2020}, \n\tnumber = {2}, \n\tpages = {023403}, \n\tauthor = {Llu{\\'{i}}s Alemany-Puig and Ramon Ferrer-i-Cancho}, \n\ttitle = {Edge crossings in random linear arrangements}, \n\tjournal = {Journal of Statistical Mechanics: Theory and Experiment}\n}"
+		biblatex_citation : "@article{Alemany2020a, \n\tdoi = {10.1088/1742-5468/ab6845}, \n\turl = {http://dx.doi.org/10.1088/1742-5468/ab6845}, \n\tyear = 2020, \n\tmonth = {feb}, \n\tpublisher = {{IOP} Publishing}, \n\tvolume = {2020}, \n\tnumber = {2}, \n\tpages = {023403}, \n\tauthor = {Llu{\\'{i}}s Alemany-Puig and Ramon Ferrer-i-Cancho}, \n\ttitle = {Edge crossings in random linear arrangements}, \n\tjournal = {Journal of Statistical Mechanics: Theory and Experiment}\n}"
 	},
 	w01 : {
 		// classification of work
