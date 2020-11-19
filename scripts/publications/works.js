@@ -92,7 +92,7 @@ const works = {
 			title : "Reappraising the distribution of the number of edge crossings of graphs on a sphere",
 			journal : __journal_show_JSTAT_name,
 			when : "2020.8 (Aug 2020)",
-			doi : "10.1088/1742-5468/aba0ab",
+			doi : "http://doi.org/10.1088/1742-5468/aba0ab",
 			arxiv_url : "http://arxiv.org/abs/2003.03353"
 		},
 		// raw latex citation
