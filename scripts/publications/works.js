@@ -45,6 +45,23 @@ wXX : {
 // My works (theses, journal articles, papers, preprints, ...)
 
 const works = {
+	w06 : {
+		work_type : __wt_preprint,
+		journal : __journal_ARXIV_name,
+		tags : [__tag_LinArr, __tag_Minimization, __tag_Algos],
+		year : 2021,
+		// "formatted" citation
+		citation : {
+			authors : "L. Alemany-Puig and J. L. Esteban and R. Ferrer-i-Cancho",
+			title : "Minimum projective linearization of trees in linear time",
+			journal : __journal_show_ARXIV_name,
+			when : "(2021)",
+			doi : null,
+			arxiv_url : "http://arxiv.org/abs/2102.02377"
+		},
+		// raw latex citation
+		biblatex_citation : "@article{Alemany2021a,\n\tarchivePrefix = {arXiv},\n\tarxivId = {2102.03277},\n\tauthor = {Alemany-Puig, Llu{\\'{i}}s and Esteban, Juan Luis and Ferrer-i-Cancho, Ramon},\n\teprint = {2102.03277},\n\tjournal = {Arxiv},\n\ttitle = {{Minimum projective linearizations of trees in linear time}},\n\turl = {http://arxiv.org/abs/2102.03277},\n\tyear = {2021}\n}"
+	},
 	
 	w05 : {
 		work_type : __wt_preprint,
@@ -96,7 +113,7 @@ const works = {
 			arxiv_url : "http://arxiv.org/abs/2003.03353"
 		},
 		// raw latex citation
-		biblatex_citation : "@article{Alemany2020b, \n\tdoi = {10.1088/1742-5468/aba0ab}, \n\turl = {http://dx.doi.org/10.1088/1742-5468/aba0ab}, \n\tyear = 2020, \n\tmonth = {aug}, \n\tpublisher = {{IOP} Publishing}, \n\tvolume = {2020}, \n\tnumber = {8}, \n\tpages = {083401}, \n\tauthor = {Llu{\'{\i}}s Alemany-Puig and Merc{\`{e}} Mora and Ramon Ferrer-i-Cancho}, \n\ttitle = {Reappraising the distribution of the number of edge crossings of graphs on a sphere}, \n\tjournal = {Journal of Statistical Mechanics: Theory and Experiment}\n}"
+		biblatex_citation : "@article{Alemany2020b, \n\tdoi = {10.1088/1742-5468/aba0ab}, \n\turl = {http://dx.doi.org/10.1088/1742-5468/aba0ab}, \n\tyear = 2020, \n\tmonth = {aug}, \n\tpublisher = {{IOP} Publishing}, \n\tvolume = {2020}, \n\tnumber = {8}, \n\tpages = {083401}, \n\tauthor = {Llu{\\'{i}}s Alemany-Puig and Merc{\\`{e}} Mora and Ramon Ferrer-i-Cancho}, \n\ttitle = {Reappraising the distribution of the number of edge crossings of graphs on a sphere}, \n\tjournal = {Journal of Statistical Mechanics: Theory and Experiment}\n}"
 	},
 	w02 : {
 		// classification of work
