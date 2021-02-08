@@ -89,26 +89,41 @@ const __tag_show_NetworkScience = "Network Science";
 const __tag_show_WordOrder = "Word order";
 const __tag_show_RandGraphs = "Random graphs";
 const __tag_show_LinArr = "Linear arrangements";
+const __tag_show_Algos = "Algorithms";
+const __tag_show_Minimizaion = "Minimization";
 
 const __tag_Networks = "networks";
 const __tag_NetworkScience = "network_science";
 const __tag_WordOrder = "word_order";
 const __tag_RandGraphs = "random_graphs";
 const __tag_LinArr = "linear_arrangements";
+const __tag_Algos = "algorithms";
+const __tag_Minimization = "minimization";
 
 var __tag_relate = {};
 __tag_relate[__tag_show_all] = __tag_all;
 __tag_relate[__tag_all] = __tag_show_all;
+
 __tag_relate[__tag_show_Networks] = __tag_Networks;
 __tag_relate[__tag_Networks] = __tag_show_Networks;
+
 __tag_relate[__tag_NetworkScience] = __tag_show_NetworkScience;
 __tag_relate[__tag_show_NetworkScience] = __tag_NetworkScience;
+
 __tag_relate[__tag_WordOrder] = __tag_show_WordOrder;
 __tag_relate[__tag_show_WordOrder] = __tag_WordOrder;
+
 __tag_relate[__tag_show_RandGraphs] = __tag_RandGraphs;
 __tag_relate[__tag_RandGraphs] = __tag_show_RandGraphs;
+
 __tag_relate[__tag_show_LinArr] = __tag_LinArr;
 __tag_relate[__tag_LinArr] = __tag_show_LinArr;
+
+__tag_relate[__tag_show_Algos] = __tag_Algos;
+__tag_relate[__tag_Algos] = __tag_show_Algos;
+
+__tag_relate[__tag_show_Minimizaion] = __tag_Minimization;
+__tag_relate[__tag_Minimization] = __tag_show_Minimizaion;
 
 // ----------------
 // -- Work types --
@@ -171,14 +186,16 @@ __talkname_relate[__talkname_LIMDA] = __talkname_show_LIMDA;
 // -- Years --
 const __year_show_all = "All years";
 const __year_all = "all_years";
-const __year_2020 = "2020";
 const __year_2019 = "2019";
+const __year_2020 = "2020";
+const __year_2021 = "2021";
 
 var __year_relate = {};
 __year_relate[__year_show_all] = __year_all;
 __year_relate[__year_all] = __year_show_all;
-__year_relate[__year_2020] = "2020";
 __year_relate[__year_2019] = "2019";
+__year_relate[__year_2020] = "2020";
+__year_relate[__year_2021] = "2021";
 
 // ---------------------------------------
 // -- PUBLCATIONS PAGE: drop down names --
