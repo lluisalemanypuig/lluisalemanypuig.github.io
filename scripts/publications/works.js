@@ -57,7 +57,7 @@ const works = {
 			journal : __journal_show_ARXIV_name,
 			when : "(2021)",
 			doi : null,
-			arxiv_url : "http://arxiv.org/abs/2102.02377"
+			arxiv_url : "http://arxiv.org/abs/2102.03277"
 		},
 		// raw latex citation
 		biblatex_citation : "@article{Alemany2021a,\n\tarchivePrefix = {arXiv},\n\tarxivId = {2102.03277},\n\tauthor = {Alemany-Puig, Llu{\\'{i}}s and Esteban, Juan Luis and Ferrer-i-Cancho, Ramon},\n\teprint = {2102.03277},\n\tjournal = {Arxiv},\n\ttitle = {{Minimum projective linearizations of trees in linear time}},\n\turl = {http://arxiv.org/abs/2102.03277},\n\tyear = {2021}\n}"
