@@ -212,7 +212,7 @@ function populatePublicationList() {
 	}
 	
 	// ******* Add message 'placeholder'
-	console.log("Create 'counter text'");
+	console.log("    Create 'counter text'");
 	createCounter();
 	
 	// read values in drop downs
@@ -250,7 +250,7 @@ function populatePublicationList() {
 		return work.work_type == use_work_type;
 	}
 	
-	console.log("    Filtering works...");
+	console.log("    Filtering works... (" + Object.keys(works).length + " found)");
 	
 	// list of works to be listed
 	var worksList = [];
@@ -269,6 +269,9 @@ function populatePublicationList() {
 		if (to_be_included) {
 			console.log("        Item: " + key + " is to be included in the list");
 			worksList.push(key);
+		}
+		else {
+			console.log("        Item: " + key + " is NOT to be included in the list");
 		}
 	}
 	
