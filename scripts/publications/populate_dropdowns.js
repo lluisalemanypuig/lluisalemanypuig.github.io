@@ -65,10 +65,34 @@ function populateDropDowns() {
 	all_work_types = all_work_types.filter(onlyUnique);
 	
 	// post process tags
-	all_years.sort(function(a,b){b-a});
-	all_tags.sort(function(a,b){ return a.localeCompare(b); });
-	all_journals.sort(function(a,b){ return a.localeCompare(b); });
-	all_work_types.sort(function(a,b){ return a.localeCompare(b); });
+	all_years.sort(
+		function(a,b) {
+			if (a == __year_all) { return -1; }
+			if (b == __year_all) { return  1; }
+			return a - b;
+		}
+	);
+	all_tags.sort(
+		function(a,b) {
+			if (a == __tag_all) { return -1; }
+			if (b == __tag_all) { return  1; }
+			return a.localeCompare(b);
+		}
+	);
+	all_journals.sort(
+		function(a,b) {
+			if (a == __journal_all) { return -1; }
+			if (b == __journal_all) { return  1; }
+			return a.localeCompare(b);
+		}
+	);
+	all_work_types.sort(
+		function(a,b) {
+			if (a == __wt_all) { return -1; }
+			if (b == __wt_all) { return  1; }
+			return a.localeCompare(b);
+		}
+	);
 	
 	console.log("    Add " + all_years.length + " years: " + all_years);
 	console.log("    Add " + all_tags.length + " tags: " + all_tags);
