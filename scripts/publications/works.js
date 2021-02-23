@@ -88,14 +88,14 @@ const works = {
 		// "formatted" citation
 		citation : {
 			authors : "L. Alemany-Puig and R. Ferrer-i-Cancho",
-			title : "Fast calculation of the variance of edge crossings in random linear arrangements",
+			title : "Fast calculation of the variance of edge crossings in random arrangements",
 			journal : __journal_show_ARXIV_name,
 			when : "(2020)",
 			doi : null,
 			arxiv_url : "http://arxiv.org/abs/2003.03258"
 		},
 		// raw latex citation
-		biblatex_citation : "@article{Alemany2020c, \n\tarchivePrefix = {arXiv}, \n\tarxivId = {2003.03258}, \n\tauthor = {Alemany-Puig, Llu{\\'{i}}s and Ferrer-i-Cancho, Ramon}, \n\teprint = {2003.03258}, \n\tjournal = {Arxiv}, \n\ttitle = {{Fast calculation of the variance of edge crossings in random linear arrangements}}, \n\turl = {http://arxiv.org/abs/2003.03258}, \n\tyear = {2020}\n}"
+		biblatex_citation : "@article{Alemany2020c, \n\tarchivePrefix = {arXiv}, \n\tarxivId = {2003.03258}, \n\tauthor = {Alemany-Puig, Llu{\\'{i}}s and Ferrer-i-Cancho, Ramon}, \n\teprint = {2003.03258}, \n\tjournal = {Arxiv}, \n\ttitle = {{Fast calculation of the variance of edge crossings in random arrangements}}, \n\turl = {http://arxiv.org/abs/2003.03258}, \n\tyear = {2020}\n}"
 	},
 	w03 : {
 		// classification of work
