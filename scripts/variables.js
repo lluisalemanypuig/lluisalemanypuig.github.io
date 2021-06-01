@@ -32,11 +32,18 @@ const __institution_all = "all_institutions";
 const __institution_show_UPC = "Universitat Politècnica de Catalunya";
 const __institution_UPC = "UPC";
 
+const __institution_show_Zheihang_University = "Zeijhang University";
+const __institution_Zheihang_University = "zheijang_university";
+
 var __institution_relate = {};
 __institution_relate[__institution_show_all] = __institution_all;
 __institution_relate[__institution_all] = __institution_show_all;
+
 __institution_relate[__institution_show_UPC] = __institution_UPC;
 __institution_relate[__institution_UPC] = __institution_show_UPC;
+
+__institution_relate[__institution_show_Zheihang_University] = __institution_Zheihang_University;
+__institution_relate[__institution_Zheihang_University] = __institution_show_Zheihang_University;
 
 // ------------
 // -- Cities --
@@ -46,11 +53,16 @@ const __city_all = "all_cities";
 const __city_show_Barcelona = "Barcelona";
 const __city_Barcelona = "barcelona";
 
+const __city_show_Hangzhou = "Hangzhou";
+const __city_Hangzhou = "hangzhou";
+
 var __city_relate = {};
 __city_relate[__city_show_all] = __city_all;
 __city_relate[__city_all] = __city_show_all;
 __city_relate[__city_show_Barcelona] = __city_Barcelona;
 __city_relate[__city_Barcelona] = __city_show_Barcelona;
+__city_relate[__city_show_Hangzhou] = __city_Hangzhou;
+__city_relate[__city_Hangzhou] = __city_show_Hangzhou;
 
 // --------------
 // -- Journals --
@@ -91,6 +103,7 @@ const __tag_show_RandGraphs = "Random graphs";
 const __tag_show_LinArr = "Linear arrangements";
 const __tag_show_Algos = "Algorithms";
 const __tag_show_Minimizaion = "Minimization";
+const __tag_show_Linear_Arrangement_Library = "Linear Arrangement Library";
 
 const __tag_Networks = "networks";
 const __tag_NetworkScience = "network_science";
@@ -99,6 +112,7 @@ const __tag_RandGraphs = "random_graphs";
 const __tag_LinArr = "linear_arrangements";
 const __tag_Algos = "algorithms";
 const __tag_Minimization = "minimization";
+const __tag_Linear_Arrangement_Library = "LAL";
 
 var __tag_relate = {};
 __tag_relate[__tag_show_all] = __tag_all;
@@ -124,6 +138,9 @@ __tag_relate[__tag_Algos] = __tag_show_Algos;
 
 __tag_relate[__tag_show_Minimizaion] = __tag_Minimization;
 __tag_relate[__tag_Minimization] = __tag_show_Minimizaion;
+
+__tag_relate[__tag_show_Linear_Arrangement_Library] = __tag_Linear_Arrangement_Library;
+__tag_relate[__tag_Linear_Arrangement_Library] = __tag_show_Linear_Arrangement_Library;
 
 // ----------------
 // -- Work types --
@@ -176,11 +193,18 @@ const __talkname_all = "all_seminars_conferences";
 const __talkname_show_LIMDA = "LIMDA";
 const __talkname_LIMDA = "limda";
 
+const __talkname_show_Zheijang_University_Python_06_2021 = "Zheijang University Python 2021";
+const __talkname_Zheijang_University_Python_06_2021 = "zheijang_university_python_2021";
+
 var __talkname_relate = {};
 __talkname_relate[__talkname_show_all] = __talkname_all;
 __talkname_relate[__talkname_all] = __talkname_show_all;
+
 __talkname_relate[__talkname_show_LIMDA] = __talkname_LIMDA;
 __talkname_relate[__talkname_LIMDA] = __talkname_show_LIMDA;
+
+__talkname_relate[__talkname_show_Zheijang_University_Python_06_2021] = __talkname_Zheijang_University_Python_06_2021;
+__talkname_relate[__talkname_Zheijang_University_Python_06_2021] = __talkname_show_Zheijang_University_Python_06_2021;
 
 // -----------
 // -- Years --

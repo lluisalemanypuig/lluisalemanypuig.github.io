@@ -49,8 +49,23 @@ function makeFormattedTalk(talkid, talk) {
 	}
 	par.appendChild(document.createTextNode("."));
 	
+	if (talk.hasOwnProperty("session")) {
+		par.appendChild(document.createTextNode(" Session: " + talk.session + "."));
+	}
+	
+	par.appendChild(document.createTextNode(" " + talk.year + " (" + talk.date + ")."));
+	
 	// add url to seminar/conference
-	if (talk.what_talk == __talkname_LIMDA) {
+	if (talk.what_talk == __talkname_Zheijang_University_Python_06_2021) {
+		var url = document.createElement("a");
+		url.textContent = "Python Seminar Hangzhou 2021 (no URL)";
+		//url.href = "https://gapcomb.upc.edu/en/seminar-en/";
+		
+		par.appendChild(document.createTextNode(" "));
+		par.appendChild(url);
+		par.appendChild(document.createTextNode("."));
+	}
+	else if (talk.what_talk == __talkname_LIMDA) {
 		var url = document.createElement("a");
 		url.textContent = "Seminar LIMDA";
 		url.href = "https://gapcomb.upc.edu/en/seminar-en/";
@@ -67,8 +82,17 @@ function makeFormattedTalk(talkid, talk) {
 	// add url to institution
 	if (talk.institution == __institution_UPC) {
 		var url = document.createElement("a");
-		url.textContent = "UPC";
+		url.textContent = "Universitat Politècnica de Catalunya - BarcelonaTech (UPC)";
 		url.href = "https://www.upc.edu/ca";
+		
+		par.appendChild(document.createTextNode(" "));
+		par.appendChild(url);
+		par.appendChild(document.createTextNode("."));
+	}
+	else if (talk.institution == __institution_Zheihang_University) {
+		var url = document.createElement("a");
+		url.textContent = "Zheijang University";
+		url.href = "https://www.zju.edu.cn/english/main.htm";
 		
 		par.appendChild(document.createTextNode(" "));
 		par.appendChild(url);
