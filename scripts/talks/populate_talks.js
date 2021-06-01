@@ -57,13 +57,7 @@ function makeFormattedTalk(talkid, talk) {
 	
 	// add url to seminar/conference
 	if (talk.what_talk == __talkname_Zheijang_University_Python_06_2021) {
-		var url = document.createElement("a");
-		url.textContent = "Python Seminar Hangzhou 2021 (no URL)";
-		//url.href = "https://gapcomb.upc.edu/en/seminar-en/";
-		
-		par.appendChild(document.createTextNode(" "));
-		par.appendChild(url);
-		par.appendChild(document.createTextNode("."));
+		par.appendChild(document.createTextNode(" Python Seminar Hangzhou 2021 (no URL)."));
 	}
 	else if (talk.what_talk == __talkname_LIMDA) {
 		var url = document.createElement("a");
