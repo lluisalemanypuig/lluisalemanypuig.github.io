@@ -98,7 +98,7 @@ function makeFormattedTalk(talkid, talk) {
 	}
 	
 	// add city
-	par.appendChild(document.createTextNode(" " + __city_relate[talk.city] + "."));
+	par.appendChild(document.createTextNode(" " + __city_country_relate[talk.city] + "."));
 	
 	// add file to url slides
 	if (talk.slides_url != null) {

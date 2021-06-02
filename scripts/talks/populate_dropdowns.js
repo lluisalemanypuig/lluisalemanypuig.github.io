@@ -97,7 +97,7 @@ function populateDropDowns() {
 	all_tags.forEach(function(item) { addToDropDown(ddTags, item, __tag_relate); });
 	all_semconf.forEach(function(item) { addToDropDown(ddSeminarConf, item, __talkname_relate); });
 	all_insts.forEach(function(item) { addToDropDown(ddInstitutions, item, __institution_relate); });
-	all_cities.forEach(function(item) { addToDropDown(ddCities, item, __city_relate); });
+	all_cities.forEach(function(item) { addToDropDown(ddCities, item, __city_country_relate); });
 	
 	console.log("    Values in years drop down: " + ddYears.childNodes.length);
 	console.log("    Values in tags drop down: " + ddTags.childNodes.length);

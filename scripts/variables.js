@@ -45,10 +45,10 @@ __institution_relate[__institution_UPC] = __institution_show_UPC;
 __institution_relate[__institution_show_Zheihang_University] = __institution_Zheihang_University;
 __institution_relate[__institution_Zheihang_University] = __institution_show_Zheihang_University;
 
-// ------------
-// -- Cities --
-const __city_show_all = "All cities";
-const __city_all = "all_cities";
+// ----------------------
+// -- Cities/Countries --
+const __city_show_all = "All cities/countries";
+const __city_all = "all_cities_countries";
 
 const __city_show_Barcelona = "Barcelona";
 const __city_Barcelona = "barcelona";
@@ -56,13 +56,18 @@ const __city_Barcelona = "barcelona";
 const __city_show_Hangzhou = "Hangzhou";
 const __city_Hangzhou = "hangzhou";
 
-var __city_relate = {};
-__city_relate[__city_show_all] = __city_all;
-__city_relate[__city_all] = __city_show_all;
-__city_relate[__city_show_Barcelona] = __city_Barcelona;
-__city_relate[__city_Barcelona] = __city_show_Barcelona;
-__city_relate[__city_show_Hangzhou] = __city_Hangzhou;
-__city_relate[__city_Hangzhou] = __city_show_Hangzhou;
+const __country_show_China = "China";
+const __country_China = "china";
+
+var __city_country_relate = {};
+__city_country_relate[__city_show_all] = __city_all;
+__city_country_relate[__city_all] = __city_show_all;
+__city_country_relate[__city_show_Barcelona] = __city_Barcelona;
+__city_country_relate[__city_Barcelona] = __city_show_Barcelona;
+__city_country_relate[__city_show_Hangzhou] = __city_Hangzhou;
+__city_country_relate[__city_Hangzhou] = __city_show_Hangzhou;
+__city_country_relate[__country_show_China] = __country_China;
+__city_country_relate[__country_China] = __country_show_China;
 
 // --------------
 // -- Journals --
@@ -103,7 +108,7 @@ const __tag_show_RandGraphs = "Random graphs";
 const __tag_show_LinArr = "Linear arrangements";
 const __tag_show_Algos = "Algorithms";
 const __tag_show_Minimizaion = "Minimization";
-const __tag_show_Linear_Arrangement_Library = "Linear Arrangement Library";
+const __tag_show_Linear_Arrangement_Library = "Linear Arrangement Library (LAL)";
 
 const __tag_Networks = "networks";
 const __tag_NetworkScience = "network_science";

@@ -45,12 +45,12 @@ const talks = {
 		what_talk : __talkname_Zheijang_University_Python_06_2021,
 		
 		institution : __institution_Zheihang_University,
-		city : __city_Hangzhou,
-		tags : [__tag_Networks, __tag_Linear_Arrangement_Library],
+		city : __country_China,
+		tags : [__tag_Networks, __tag_LinArr, __tag_Linear_Arrangement_Library],
 		year : 2021,
 		date : "2021/06/01",
 		title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
-		slides_url : "https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/talks_files/Hangzhou_Python_seminar_2021_06_01.pdf",
+		slides_url : "https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/talks_files/China_Python_seminar_2021_06_01.pdf",
 		
 		session : "1"
 	},
