@@ -57,7 +57,7 @@ function makeFormattedTalk(talkid, talk) {
 	
 	// add url to seminar/conference
 	if (talk.what_talk == __talkname_Zheijang_University_Python_06_2021) {
-		par.appendChild(document.createTextNode(" Python Seminar Hangzhou 2021 (no URL)."));
+		par.appendChild(document.createTextNode(" Python Seminar June 2021 : 1st, 3rd, 4th."));
 	}
 	else if (talk.what_talk == __talkname_LIMDA) {
 		var url = document.createElement("a");
