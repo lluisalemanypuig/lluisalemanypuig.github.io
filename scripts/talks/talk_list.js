@@ -50,7 +50,7 @@ const talks = {
 		year : 2021,
 		date : "2021/06/01",
 		title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
-		slides_url : "https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/talks_files/China_Python_seminar_2021_06_01.pdf",
+		slides_url : "https://mydisk.cs.upc.edu/s/bG3WcAmzpzfZQc2",
 		
 		session : "1"
 	},
