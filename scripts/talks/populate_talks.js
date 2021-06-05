@@ -41,7 +41,7 @@ function makeFormattedTalk(talkid, talk) {
 	var par = document.createElement("p");
 	
 	// add title of the talk
-	par.appendChild(document.createTextNode("Title of the talk: "));
+	par.appendChild(document.createTextNode("Title of the " + talk.talk_type + ": "));
 	{
 	var title_italics = document.createElement("i");
 	title_italics.textContent = talk.title;
@@ -98,7 +98,7 @@ function makeFormattedTalk(talkid, talk) {
 	}
 	
 	// add city
-	par.appendChild(document.createTextNode(" " + __city_country_relate[talk.city] + "."));
+	par.appendChild(document.createTextNode(" " + __location_relate[talk.location] + "."));
 	
 	// add file to url slides
 	if (talk.slides_url != null) {
@@ -189,8 +189,8 @@ function populateTalksList() {
 		return use_institution == talk.institution;
 	}
 	function filter_city(talk) {
-		if (use_city == __city_all) { return true; }
-		return use_city == talk.city;
+		if (use_city == __location_all) { return true; }
+		return use_city == talk.location;
 	}
 	
 	console.log("    Filtering works...");

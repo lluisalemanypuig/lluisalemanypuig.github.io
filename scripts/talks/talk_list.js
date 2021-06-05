@@ -25,7 +25,7 @@ wXX : {
 	talk_type : // type of the talk (at a seminar, at a conference)
 	
 	institution : // insitution where the talk was given
-	city : // city where the talk was given
+	location : // city where the talk was given
 	tags : // tags classifying this work
 	year : // year of publication
 	date : // the exact date when I gave the talk
@@ -40,12 +40,42 @@ wXX : {
 // My works (theses, journal articles, papers, preprints, ...)
 
 const talks = {
-	HANGZHOU_2021_06_01 : {
+	CHINA_2021_06_04 : {
 		talk_type : __tt_seminar,
 		what_talk : __talkname_Zheijang_University_Python_06_2021,
 		
 		institution : __institution_Zheihang_University,
-		city : __country_China,
+		location : __location_China,
+		tags : [__tag_Networks, __tag_LinArr, __tag_Linear_Arrangement_Library],
+		year : 2021,
+		date : "2021/06/04",
+		title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
+		slides_url : "https://mydisk.cs.upc.edu/s/Hoacc7mF4m8FdST",
+		
+		session : "3"
+	},
+	
+	CHINA_2021_06_03 : {
+		talk_type : __tt_seminar,
+		what_talk : __talkname_Zheijang_University_Python_06_2021,
+		
+		institution : __institution_Zheihang_University,
+		location : __location_China,
+		tags : [__tag_Networks, __tag_LinArr, __tag_Linear_Arrangement_Library],
+		year : 2021,
+		date : "2021/06/03",
+		title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
+		slides_url : "https://mydisk.cs.upc.edu/s/cTEySQPDrapbLKz",
+		
+		session : "2"
+	},
+	
+	CHINA_2021_06_01 : {
+		talk_type : __tt_seminar,
+		what_talk : __talkname_Zheijang_University_Python_06_2021,
+		
+		institution : __institution_Zheihang_University,
+		location : __location_China,
 		tags : [__tag_Networks, __tag_LinArr, __tag_Linear_Arrangement_Library],
 		year : 2021,
 		date : "2021/06/01",
@@ -60,7 +90,7 @@ const talks = {
 		what_talk : __talkname_LIMDA,
 		
 		institution : __institution_UPC,
-		city : __city_Barcelona,
+		location : __location_Barcelona,
 		tags : [__tag_Networks, __tag_NetworkScience, __tag_LinArr, __tag_RandGraphs],
 		year : 2019,
 		date : "2019/12/18",

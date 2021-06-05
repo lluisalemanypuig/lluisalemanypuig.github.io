@@ -46,28 +46,28 @@ __institution_relate[__institution_show_Zheihang_University] = __institution_Zhe
 __institution_relate[__institution_Zheihang_University] = __institution_show_Zheihang_University;
 
 // ----------------------
-// -- Cities/Countries --
-const __city_show_all = "All cities/countries";
-const __city_all = "all_cities_countries";
+// -- Locations --
+const __location_show_all = "All cities/countries";
+const __location_all = "all_cities_countries";
 
-const __city_show_Barcelona = "Barcelona";
-const __city_Barcelona = "barcelona";
+const __location_show_Barcelona = "Barcelona";
+const __location_Barcelona = "barcelona";
 
-const __city_show_Hangzhou = "Hangzhou";
-const __city_Hangzhou = "hangzhou";
+const __location_show_Hangzhou = "Hangzhou";
+const __location_Hangzhou = "hangzhou";
 
-const __country_show_China = "China";
-const __country_China = "china";
+const __location_show_China = "China";
+const __location_China = "china";
 
-var __city_country_relate = {};
-__city_country_relate[__city_show_all] = __city_all;
-__city_country_relate[__city_all] = __city_show_all;
-__city_country_relate[__city_show_Barcelona] = __city_Barcelona;
-__city_country_relate[__city_Barcelona] = __city_show_Barcelona;
-__city_country_relate[__city_show_Hangzhou] = __city_Hangzhou;
-__city_country_relate[__city_Hangzhou] = __city_show_Hangzhou;
-__city_country_relate[__country_show_China] = __country_China;
-__city_country_relate[__country_China] = __country_show_China;
+var __location_relate = {};
+__location_relate[__location_show_all] = __location_all;
+__location_relate[__location_all] = __location_show_all;
+__location_relate[__location_show_Barcelona] = __location_Barcelona;
+__location_relate[__location_Barcelona] = __location_show_Barcelona;
+__location_relate[__location_show_Hangzhou] = __location_Hangzhou;
+__location_relate[__location_Hangzhou] = __location_show_Hangzhou;
+__location_relate[__location_show_China] = __location_China;
+__location_relate[__location_China] = __location_show_China;
 
 // --------------
 // -- Journals --
@@ -198,8 +198,8 @@ const __talkname_all = "all_seminars_conferences";
 const __talkname_show_LIMDA = "LIMDA";
 const __talkname_LIMDA = "limda";
 
-const __talkname_show_Zheijang_University_Python_06_2021 = "Zheijang University Python 2021";
-const __talkname_Zheijang_University_Python_06_2021 = "zheijang_university_python_2021";
+const __talkname_show_Zheijang_University_Python_06_2021 = "Zheijang University Python - June 2021";
+const __talkname_Zheijang_University_Python_06_2021 = "zheijang_university_python_june_2021";
 
 var __talkname_relate = {};
 __talkname_relate[__talkname_show_all] = __talkname_all;
