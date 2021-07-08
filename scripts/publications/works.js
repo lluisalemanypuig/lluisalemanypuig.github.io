@@ -45,6 +45,25 @@ wXX : {
 // My works (theses, journal articles, papers, preprints, ...)
 
 const works = {
+	
+	w07 : {
+		work_type : __wt_preprint,
+		journal : __journal_ARXIV_name,
+		tags : [__tag_LinArr, __tag_Expected_Values, __tag_Algos],
+		year : 2021,
+		// "formatted" citation
+		citation : {
+			authors : "L. Alemany-Puig and R. Ferrer-i-Cancho",
+			title : "Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees",
+			journal : __journal_show_ARXIV_name,
+			when : "(2021)",
+			doi : null,
+			arxiv_url : "http://arxiv.org/abs/2107.03277"
+		},
+		// raw latex citation
+		biblatex_citation : "@article{Alemany2021b,\n\tarchivePrefix = {arXiv},\n\tarxivId = {2107.03277},\n\tauthor = {{Alemany-Puig}, Llu{\\'{i}}s and {Ferrer-i-Cancho}, Ramon},\n\teprint = {2107.03277},\n\tjournal = {Arxiv},\n\ttitle = {{Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees}},\n\turl = {http://arxiv.org/abs/2107.03277},\n\tyear = {2021}\n}"
+	},
+	
 	w06 : {
 		work_type : __wt_preprint,
 		journal : __journal_ARXIV_name,
@@ -60,7 +79,7 @@ const works = {
 			arxiv_url : "http://arxiv.org/abs/2102.03277"
 		},
 		// raw latex citation
-		biblatex_citation : "@article{Alemany2021a,\n\tarchivePrefix = {arXiv},\n\tarxivId = {2102.03277},\n\tauthor = {Alemany-Puig, Llu{\\'{i}}s and Esteban, Juan Luis and Ferrer-i-Cancho, Ramon},\n\teprint = {2102.03277},\n\tjournal = {Arxiv},\n\ttitle = {{Minimum projective linearizations of trees in linear time}},\n\turl = {http://arxiv.org/abs/2102.03277},\n\tyear = {2021}\n}"
+		biblatex_citation : "@article{Alemany2021a,\n\tarchivePrefix = {arXiv},\n\tarxivId = {2102.03277},\n\tauthor = {{Alemany-Puig}, Llu{\\'{i}}s and Esteban, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\teprint = {2102.03277},\n\tjournal = {Arxiv},\n\ttitle = {{Minimum projective linearizations of trees in linear time}},\n\turl = {http://arxiv.org/abs/2102.03277},\n\tyear = {2021}\n}"
 	},
 	
 	w05 : {
@@ -78,7 +97,7 @@ const works = {
 			arxiv_url : "http://arxiv.org/abs/2007.15342"
 		},
 		// raw latex citation
-		biblatex_citation : "@article{Ferrer2020a, \n\tarchivePrefix = {arXiv}, \n\tarxivId = {2007.15342}, \n\tauthor = {Ferrer-i-Cancho, Ramon and G{\\'{o}}mez-Rodr{\\'{i}}guez, Carlos and Esteban, Juan Luis and Alemany-Puig, Llu{\\'{i}}s}, \n\teprint = {2007.15342}, \n\tjournal = {Arxiv}, \n\ttitle = {{The optimality of syntactic dependency distances}}, \n\turl = {http://arxiv.org/abs/2007.15342}, \n\tyear = {2020}\n}"
+		biblatex_citation : "@article{Ferrer2020a, \n\tarchivePrefix = {arXiv}, \n\tarxivId = {2007.15342}, \n\tauthor = {{Ferrer-i-Cancho}, Ramon and G{\\'{o}}mez-Rodr{\\'{i}}guez, Carlos and Esteban, {Juan Luis} and {Alemany-Puig}, Llu{\\'{i}}s}, \n\teprint = {2007.15342}, \n\tjournal = {Arxiv}, \n\ttitle = {{The optimality of syntactic dependency distances}}, \n\turl = {http://arxiv.org/abs/2007.15342}, \n\tyear = {2020}\n}"
 	},
 	w04 : {
 		work_type : __wt_preprint,
@@ -95,7 +114,7 @@ const works = {
 			arxiv_url : "http://arxiv.org/abs/2003.03258"
 		},
 		// raw latex citation
-		biblatex_citation : "@article{Alemany2020c, \n\tarchivePrefix = {arXiv}, \n\tarxivId = {2003.03258}, \n\tauthor = {Alemany-Puig, Llu{\\'{i}}s and Ferrer-i-Cancho, Ramon}, \n\teprint = {2003.03258}, \n\tjournal = {Arxiv}, \n\ttitle = {{Fast calculation of the variance of edge crossings in random arrangements}}, \n\turl = {http://arxiv.org/abs/2003.03258}, \n\tyear = {2020}\n}"
+		biblatex_citation : "@article{Alemany2020c, \n\tarchivePrefix = {arXiv}, \n\tarxivId = {2003.03258}, \n\tauthor = {{Alemany-Puig}, Llu{\\'{i}}s and {Ferrer-i-Cancho}, Ramon}, \n\teprint = {2003.03258}, \n\tjournal = {Arxiv}, \n\ttitle = {{Fast calculation of the variance of edge crossings in random arrangements}}, \n\turl = {http://arxiv.org/abs/2003.03258}, \n\tyear = {2020}\n}"
 	},
 	w03 : {
 		// classification of work
@@ -150,6 +169,6 @@ const works = {
 			arxiv_url : null
 		},
 		// raw latex citation
-		biblatex_citation : "@mastersthesis{Alemany2019a, \n\tauthor = {Alemany-Puig, Llu{\\'{i}}s}, \n\tnumber = {July}, \n\tschool = {Universitat Polit{\\`{e}}cnica de Catalunya}, \n\ttitle = {{Edge crossings in linear arrangements: from theory to algorithms and applications}}, \n\ttype = {Master Thesis}, \n\turl = {http://hdl.handle.net/2117/168124}, \n\tyear = {2019}\n}"
+		biblatex_citation : "@mastersthesis{Alemany2019a, \n\tauthor = {{Alemany-Puig}, Llu{\\'{i}}s}, \n\tnumber = {July}, \n\tschool = {Universitat Polit{\\`{e}}cnica de Catalunya}, \n\ttitle = {{Edge crossings in linear arrangements: from theory to algorithms and applications}}, \n\ttype = {Master Thesis}, \n\turl = {http://hdl.handle.net/2117/168124}, \n\tyear = {2019}\n}"
 	}
 };

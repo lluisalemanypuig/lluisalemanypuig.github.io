@@ -109,6 +109,7 @@ const __tag_show_LinArr = "Linear arrangements";
 const __tag_show_Algos = "Algorithms";
 const __tag_show_Minimizaion = "Minimization";
 const __tag_show_Linear_Arrangement_Library = "Linear Arrangement Library (LAL)";
+const __tag_show_Expected_Values = "Expected Values";
 
 const __tag_Networks = "networks";
 const __tag_NetworkScience = "network_science";
@@ -118,6 +119,7 @@ const __tag_LinArr = "linear_arrangements";
 const __tag_Algos = "algorithms";
 const __tag_Minimization = "minimization";
 const __tag_Linear_Arrangement_Library = "LAL";
+const __tag_Expected_Values = "exp_values";
 
 var __tag_relate = {};
 __tag_relate[__tag_show_all] = __tag_all;
@@ -146,6 +148,9 @@ __tag_relate[__tag_Minimization] = __tag_show_Minimizaion;
 
 __tag_relate[__tag_show_Linear_Arrangement_Library] = __tag_Linear_Arrangement_Library;
 __tag_relate[__tag_Linear_Arrangement_Library] = __tag_show_Linear_Arrangement_Library;
+
+__tag_relate[__tag_show_Expected_Values] = __tag_Expected_Values;
+__tag_relate[__tag_Expected_Values] = __tag_show_Expected_Values;
 
 // ----------------
 // -- Work types --
