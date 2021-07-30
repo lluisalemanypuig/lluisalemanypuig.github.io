@@ -49,7 +49,7 @@ const works = {
 	w07 : {
 		work_type : __wt_preprint,
 		journal : __journal_ARXIV_name,
-		tags : [__tag_LinArr, __tag_Expected_Values, __tag_Algos],
+		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Expected_Values, __tag_Algos],
 		year : 2021,
 		// "formatted" citation
 		citation : {
