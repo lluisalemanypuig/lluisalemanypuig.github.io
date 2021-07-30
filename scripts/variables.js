@@ -35,6 +35,9 @@ const __institution_UPC = "UPC";
 const __institution_show_Zheihang_University = "Zeijhang University";
 const __institution_Zheihang_University = "zheijang_university";
 
+const __institution_show_IQLA_GIAT_Summer_School = "IQLA-GIAT";
+const __institution_IQLA_GIAT_Summer_School = "iqla_giat";
+
 var __institution_relate = {};
 __institution_relate[__institution_show_all] = __institution_all;
 __institution_relate[__institution_all] = __institution_show_all;
@@ -44,6 +47,9 @@ __institution_relate[__institution_UPC] = __institution_show_UPC;
 
 __institution_relate[__institution_show_Zheihang_University] = __institution_Zheihang_University;
 __institution_relate[__institution_Zheihang_University] = __institution_show_Zheihang_University;
+
+__institution_relate[__institution_show_IQLA_GIAT_Summer_School] = __institution_IQLA_GIAT_Summer_School;
+__institution_relate[__institution_IQLA_GIAT_Summer_School] = __institution_show_IQLA_GIAT_Summer_School;
 
 // ----------------------
 // -- Locations --
@@ -59,6 +65,9 @@ const __location_Hangzhou = "hangzhou";
 const __location_show_China = "China";
 const __location_China = "china";
 
+const __location_show_Italy = "Italy";
+const __location_Italy = "italy";
+
 var __location_relate = {};
 __location_relate[__location_show_all] = __location_all;
 __location_relate[__location_all] = __location_show_all;
@@ -68,6 +77,8 @@ __location_relate[__location_show_Hangzhou] = __location_Hangzhou;
 __location_relate[__location_Hangzhou] = __location_show_Hangzhou;
 __location_relate[__location_show_China] = __location_China;
 __location_relate[__location_China] = __location_show_China;
+__location_relate[__location_show_Italy] = __location_Italy;
+__location_relate[__location_Italy] = __location_show_Italy;
 
 // --------------
 // -- Journals --
@@ -110,6 +121,7 @@ const __tag_show_Algos = "Algorithms";
 const __tag_show_Minimizaion = "Minimization";
 const __tag_show_Linear_Arrangement_Library = "Linear Arrangement Library (LAL)";
 const __tag_show_Expected_Values = "Expected Values";
+const __tag_show_Quantitative_Dependency_Syntax = "Quantitative Dependency Syntax";
 
 const __tag_Networks = "networks";
 const __tag_NetworkScience = "network_science";
@@ -120,6 +132,7 @@ const __tag_Algos = "algorithms";
 const __tag_Minimization = "minimization";
 const __tag_Linear_Arrangement_Library = "LAL";
 const __tag_Expected_Values = "exp_values";
+const __tag_Quantitative_Dependency_Syntax = "quant_dep_syntax";
 
 var __tag_relate = {};
 __tag_relate[__tag_show_all] = __tag_all;
@@ -151,6 +164,9 @@ __tag_relate[__tag_Linear_Arrangement_Library] = __tag_show_Linear_Arrangement_L
 
 __tag_relate[__tag_show_Expected_Values] = __tag_Expected_Values;
 __tag_relate[__tag_Expected_Values] = __tag_show_Expected_Values;
+
+__tag_relate[__tag_show_Quantitative_Dependency_Syntax] = __tag_Quantitative_Dependency_Syntax;
+__tag_relate[__tag_Quantitative_Dependency_Syntax] = __tag_show_Quantitative_Dependency_Syntax;
 
 // ----------------
 // -- Work types --
@@ -187,6 +203,9 @@ const __tt_seminar = "seminar";
 const __tt_show_conference = "Conference";
 const __tt_conference = "conference";
 
+const __tt_show_workshop = "Workshop";
+const __tt_workshop = "workshop";
+
 var __tt_relate = {};
 __tt_relate[__tt_show_all] = __tt_all;
 __tt_relate[__tt_all] = __tt_show_all;
@@ -194,6 +213,8 @@ __tt_relate[__tt_show_seminar] = __tt_seminar;
 __tt_relate[__tt_seminar] = __tt_show_seminar;
 __tt_relate[__tt_show_conference] = __tt_conference;
 __tt_relate[__tt_conference] = __tt_show_conference;
+__tt_relate[__tt_show_workshop] = __tt_workshop;
+__tt_relate[__tt_workshop] = __tt_show_workshop;
 
 // ----------------
 // -- Talk names --
@@ -206,6 +227,9 @@ const __talkname_LIMDA = "limda";
 const __talkname_show_Zheijang_University_Python_06_2021 = "Zheijang University Python - June 2021";
 const __talkname_Zheijang_University_Python_06_2021 = "zheijang_university_python_june_2021";
 
+const __talkname_show_IQLA_GIAT_2021_07 = "IQLA-GIAT Summer School - July 2021";
+const __talkname_IQLA_GIAT_2021_07 = "iqla_giat_summer_school_2021_07";
+
 var __talkname_relate = {};
 __talkname_relate[__talkname_show_all] = __talkname_all;
 __talkname_relate[__talkname_all] = __talkname_show_all;
@@ -215,6 +239,9 @@ __talkname_relate[__talkname_LIMDA] = __talkname_show_LIMDA;
 
 __talkname_relate[__talkname_show_Zheijang_University_Python_06_2021] = __talkname_Zheijang_University_Python_06_2021;
 __talkname_relate[__talkname_Zheijang_University_Python_06_2021] = __talkname_show_Zheijang_University_Python_06_2021;
+
+__talkname_relate[__talkname_show_IQLA_GIAT_2021_07] = __talkname_IQLA_GIAT_2021_07;
+__talkname_relate[__talkname_IQLA_GIAT_2021_07] = __talkname_show_IQLA_GIAT_2021_07;
 
 // -----------
 // -- Years --

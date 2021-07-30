@@ -49,6 +49,7 @@ function makeFormattedTalk(talkid, talk) {
 	}
 	par.appendChild(document.createTextNode("."));
 	
+	// add session number
 	if (talk.hasOwnProperty("session")) {
 		par.appendChild(document.createTextNode(" Session: " + talk.session + "."));
 	}
@@ -58,6 +59,11 @@ function makeFormattedTalk(talkid, talk) {
 	// add url to seminar/conference
 	if (talk.what_talk == __talkname_Zheijang_University_Python_06_2021) {
 		par.appendChild(document.createTextNode(" Python Seminar June 2021 : 1st, 3rd, 4th."));
+	}
+	else if (talk.what_talk == __talkname_IQLA_GIAT_2021_07) {
+		par.appendChild(document.createTextNode(
+			" " + __talkname_relate[__talkname_IQLA_GIAT_2021_07] + ". "
+		));
 	}
 	else if (talk.what_talk == __talkname_LIMDA) {
 		var url = document.createElement("a");
@@ -92,6 +98,15 @@ function makeFormattedTalk(talkid, talk) {
 		par.appendChild(url);
 		par.appendChild(document.createTextNode("."));
 	}
+	else if (talk.institution == __institution_IQLA_GIAT_Summer_School) {
+		var url = document.createElement("a");
+		url.textContent = "IQLA-GIAT Summer school";
+		url.href = "http://www.giat.org/?page_id=11&lang=en";
+		
+		par.appendChild(document.createTextNode(" "));
+		par.appendChild(url);
+		par.appendChild(document.createTextNode("."));
+	}
 	else {
 		console.error("        Formatting of institution '" + talk.institution + "' not implemented.");
 		return null;
@@ -108,6 +123,17 @@ function makeFormattedTalk(talkid, talk) {
 		url.appendChild(document.createTextNode("."));
 		par.appendChild(document.createTextNode(" "));
 		par.appendChild(url);
+	}
+	
+	// add link to the course (if any)
+	if (talk.hasOwnProperty("part_of_the_course")) {
+		var url = document.createElement("a");
+		url.textContent = "Link to the course";
+		url.href = talk.part_of_the_course;
+		
+		par.appendChild(document.createTextNode(" "));
+		par.appendChild(url);
+		par.appendChild(document.createTextNode("."));
 	}
 	
 	var tags = document.createElement("p");

@@ -32,7 +32,8 @@ wXX : {
 	title : // title of the talk
 	
 	// OPTIONAL
-	session : // if the seminar has more than one session, 
+	session : // if the seminar has more than one session,
+	part_of_the_course : // if the seminar is part of a course which has a public url (like LAL's courses)
 },
 */
 
@@ -40,19 +41,52 @@ wXX : {
 // My works (theses, journal articles, papers, preprints, ...)
 
 const talks = {
+	IQLA_GIAT_2021_07__2 : {
+		talk_type : __tt_workshop,
+		what_talk : __talkname_IQLA_GIAT_2021_07,
+		
+		institution : __institution_IQLA_GIAT_Summer_School,
+		location : __location_Italy,
+		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Linear_Arrangement_Library],
+		year : 2021,
+		date : "2021/07/29",
+		title : "An introduction to Quantitative Dependency Syntax with the Linear Arrangement Library",
+		slides_url : "https://mydisk.cs.upc.edu/s/Jrp4pAB23Y3DgEQ",
+		
+		session : "2",
+		part_of_the_course : "https://cqllab.upc.edu/lal/course_iqla_giat_july_2021/"
+	},
+	
+	IQLA_GIAT_2021_07__1 : {
+		talk_type : __tt_workshop,
+		what_talk : __talkname_IQLA_GIAT_2021_07,
+		
+		institution : __institution_IQLA_GIAT_Summer_School,
+		location : __location_Italy,
+		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Linear_Arrangement_Library],
+		year : 2021,
+		date : "2021/07/29",
+		title : "An introduction to Quantitative Dependency Syntax with the Linear Arrangement Library",
+		slides_url : "https://mydisk.cs.upc.edu/s/znEWkrZbLbAmrZ9",
+		
+		session : "1",
+		part_of_the_course : "https://cqllab.upc.edu/lal/course_iqla_giat_july_2021/"
+	},
+	
 	CHINA_2021_06_04 : {
 		talk_type : __tt_seminar,
 		what_talk : __talkname_Zheijang_University_Python_06_2021,
 		
 		institution : __institution_Zheihang_University,
 		location : __location_China,
-		tags : [__tag_Networks, __tag_LinArr, __tag_Linear_Arrangement_Library],
+		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Linear_Arrangement_Library],
 		year : 2021,
 		date : "2021/06/04",
 		title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
 		slides_url : "https://mydisk.cs.upc.edu/s/Hoacc7mF4m8FdST",
 		
-		session : "3"
+		session : "3",
+		part_of_the_course : "https://cqllab.upc.edu/lal/course_china_june_2021/"
 	},
 	
 	CHINA_2021_06_03 : {
@@ -61,13 +95,14 @@ const talks = {
 		
 		institution : __institution_Zheihang_University,
 		location : __location_China,
-		tags : [__tag_Networks, __tag_LinArr, __tag_Linear_Arrangement_Library],
+		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Linear_Arrangement_Library],
 		year : 2021,
 		date : "2021/06/03",
 		title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
 		slides_url : "https://mydisk.cs.upc.edu/s/cTEySQPDrapbLKz",
 		
-		session : "2"
+		session : "2",
+		part_of_the_course : "https://cqllab.upc.edu/lal/course_china_june_2021/"
 	},
 	
 	CHINA_2021_06_01 : {
@@ -76,13 +111,14 @@ const talks = {
 		
 		institution : __institution_Zheihang_University,
 		location : __location_China,
-		tags : [__tag_Networks, __tag_LinArr, __tag_Linear_Arrangement_Library],
+		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Linear_Arrangement_Library],
 		year : 2021,
 		date : "2021/06/01",
 		title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
 		slides_url : "https://mydisk.cs.upc.edu/s/bG3WcAmzpzfZQc2",
 		
-		session : "1"
+		session : "1",
+		part_of_the_course : "https://cqllab.upc.edu/lal/course_china_june_2021/"
 	},
 	
 	LIMDA_2019_12_18 : {
