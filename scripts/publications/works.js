@@ -64,7 +64,7 @@ const works = {
 			arxiv_url : "http://arxiv.org/abs/2102.03277"
 		},
 		// raw latex citation
-		biblatex_citation : "@article{Alemany2022a,\n\ttitle = {Minimum projective linearizations of trees in linear time},\n\tjournal = {Information Processing Letters},\n\tauthor = {Alemany-Puig, Llu\'is and Esteban, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\teprint = {2102.03277},\n\turl = {http://arxiv.org/abs/2102.03277},\n\tvolume = {174},\n\tpages = {106204},\n\tyear = {2022},\n\tissn = {0020-0190},\n\tdoi = {https://doi.org/10.1016/j.ipl.2021.106204}\n}"
+		biblatex_citation : "@article{Alemany2022a,\n\ttitle = {Minimum projective linearizations of trees in linear time},\n\tjournal = {Information Processing Letters},\n\tauthor = {Alemany-Puig, Llu{\\'{i}}s and Esteban, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\teprint = {2102.03277},\n\turl = {http://arxiv.org/abs/2102.03277},\n\tvolume = {174},\n\tpages = {106204},\n\tyear = {2022},\n\tissn = {0020-0190},\n\tdoi = {https://doi.org/10.1016/j.ipl.2021.106204}\n}"
 	},
 	
 	// -----------------------------------------------------------------
