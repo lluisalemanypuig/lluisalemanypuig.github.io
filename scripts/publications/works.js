@@ -46,6 +46,30 @@ wXX : {
 
 const works = {
 	
+	// -----------------------------------------------------------------
+	// 2022
+	
+	w06 : {
+		work_type : __wt_JournalPaper,
+		journal : __journal_IPL_name,
+		tags : [__tag_LinArr, __tag_Minimization, __tag_Algos],
+		year : 2022,
+		// "formatted" citation
+		citation : {
+			authors : "L. Alemany-Puig and J. L. Esteban and R. Ferrer-i-Cancho",
+			title : "Minimum projective linearization of trees in linear time",
+			journal : __journal_show_IPL_name,
+			when : "174 (2022)",
+			doi : "https://doi.org/10.1016/j.ipl.2021.106204",
+			arxiv_url : "http://arxiv.org/abs/2102.03277"
+		},
+		// raw latex citation
+		biblatex_citation : "@article{Alemany2022a,\n\ttitle = {Minimum projective linearizations of trees in linear time},\n\tjournal = {Information Processing Letters},\n\tauthor = {Alemany-Puig, Llu\'is and Esteban, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\teprint = {2102.03277},\n\turl = {http://arxiv.org/abs/2102.03277},\n\tvolume = {174},\n\tpages = {106204},\n\tyear = {2022},\n\tissn = {0020-0190},\n\tdoi = {https://doi.org/10.1016/j.ipl.2021.106204}\n}"
+	},
+	
+	// -----------------------------------------------------------------
+	// 2021
+	
 	w07 : {
 		work_type : __wt_preprint,
 		journal : __journal_ARXIV_name,
@@ -64,23 +88,8 @@ const works = {
 		biblatex_citation : "@article{Alemany2021b,\n\tarchivePrefix = {arXiv},\n\tarxivId = {2107.03277},\n\tauthor = {{Alemany-Puig}, Llu{\\'{i}}s and {Ferrer-i-Cancho}, Ramon},\n\teprint = {2107.03277},\n\tjournal = {Arxiv},\n\ttitle = {{Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees}},\n\turl = {http://arxiv.org/abs/2107.03277},\n\tyear = {2021}\n}"
 	},
 	
-	w06 : {
-		work_type : __wt_preprint,
-		journal : __journal_ARXIV_name,
-		tags : [__tag_LinArr, __tag_Minimization, __tag_Algos],
-		year : 2021,
-		// "formatted" citation
-		citation : {
-			authors : "L. Alemany-Puig and J. L. Esteban and R. Ferrer-i-Cancho",
-			title : "Minimum projective linearization of trees in linear time",
-			journal : __journal_show_ARXIV_name,
-			when : "(2021)",
-			doi : null,
-			arxiv_url : "http://arxiv.org/abs/2102.03277"
-		},
-		// raw latex citation
-		biblatex_citation : "@article{Alemany2021a,\n\tarchivePrefix = {arXiv},\n\tarxivId = {2102.03277},\n\tauthor = {{Alemany-Puig}, Llu{\\'{i}}s and Esteban, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\teprint = {2102.03277},\n\tjournal = {Arxiv},\n\ttitle = {{Minimum projective linearizations of trees in linear time}},\n\turl = {http://arxiv.org/abs/2102.03277},\n\tyear = {2021}\n}"
-	},
+	// -----------------------------------------------------------------
+	// 2020
 	
 	w05 : {
 		work_type : __wt_preprint,
@@ -152,6 +161,10 @@ const works = {
 		// raw latex citation
 		biblatex_citation : "@article{Alemany2020a, \n\tdoi = {10.1088/1742-5468/ab6845}, \n\turl = {http://dx.doi.org/10.1088/1742-5468/ab6845}, \n\tyear = 2020, \n\tmonth = {feb}, \n\tpublisher = {{IOP} Publishing}, \n\tvolume = {2020}, \n\tnumber = {2}, \n\tpages = {023403}, \n\tauthor = {Llu{\\'{i}}s Alemany-Puig and Ramon Ferrer-i-Cancho}, \n\ttitle = {Edge crossings in random linear arrangements}, \n\tjournal = {Journal of Statistical Mechanics: Theory and Experiment}\n}"
 	},
+	
+	// -----------------------------------------------------------------
+	// 20219
+	
 	w01 : {
 		// classification of work
 		work_type : __wt_MastersThesis,

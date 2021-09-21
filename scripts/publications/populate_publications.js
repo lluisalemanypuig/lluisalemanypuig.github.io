@@ -51,6 +51,29 @@ function make_arXiv_url(CITE, par, with_dot) {
 	par.appendChild(document.createTextNode("."));
 }
 
+function format_ARXIV(work) {
+	var CITE = work.citation;
+	var par = document.createElement("p");
+	
+	// title and author
+	par.appendChild(document.createTextNode(" \"" + CITE.title + "\"."));
+	par.appendChild(document.createTextNode(" " + CITE.authors + "."));
+	
+	// where published
+	par.appendChild(document.createTextNode(" In: "));
+	var journal_italics = document.createElement("i");
+	journal_italics.textContent = CITE.journal;
+	par.appendChild(journal_italics);
+	
+	// when published
+	par.appendChild(document.createTextNode(" " + CITE.when));
+	
+	// arXiv url
+	make_arXiv_url(CITE, par, true)
+	
+	return par;
+}
+
 function format_JSTAT(work) {
 	var CITE = work.citation;
 	var par = document.createElement("p");
@@ -114,7 +137,7 @@ function format_UPC(work) {
 	return par;
 }
 
-function format_ARXIV(work) {
+function format_IPL(work) {
 	var CITE = work.citation;
 	var par = document.createElement("p");
 	
@@ -131,8 +154,16 @@ function format_ARXIV(work) {
 	// when published
 	par.appendChild(document.createTextNode(" " + CITE.when));
 	
+	// DOI
+	par.appendChild(document.createTextNode(". DOI: "));
+	var doi_ref = document.createElement("a");
+	doi_ref.textContent = CITE.doi;
+	doi_ref.href = CITE.doi;
+	par.appendChild(doi_ref);
+	par.appendChild(document.createTextNode("."));
+	
 	// arXiv url
-	make_arXiv_url(CITE, par, true)
+	make_arXiv_url(CITE, par, false)
 	
 	return par;
 }
@@ -148,6 +179,9 @@ function makeFormattedCitation(workid, work) {
 	}
 	else if (work.journal == __journal_UPC_name) {
 		par = format_UPC(work);
+	}
+	else if (work.journal == __journal_IPL_name) {
+		par = format_IPL(work);
 	}
 	else {
 		console.error("        Formatting of citation for journal '" + work.journal + "' not implemented.");
