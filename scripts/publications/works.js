@@ -85,7 +85,7 @@ const works = {
 			arxiv_url : "http://arxiv.org/abs/2107.03277"
 		},
 		// raw latex citation
-		biblatex_citation : "@article{Alemany2021b,\n\tarchivePrefix = {arXiv},\n\tarxivId = {2107.03277},\n\tauthor = {{Alemany-Puig}, Llu{\\'{i}}s and {Ferrer-i-Cancho}, Ramon},\n\teprint = {2107.03277},\n\tjournal = {Arxiv},\n\ttitle = {{Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees}},\n\turl = {http://arxiv.org/abs/2107.03277},\n\tyear = {2021}\n}"
+		biblatex_citation : "@article{Alemany2021a,\n\tarchivePrefix = {arXiv},\n\tarxivId = {2107.03277},\n\tauthor = {{Alemany-Puig}, Llu{\\'{i}}s and {Ferrer-i-Cancho}, Ramon},\n\teprint = {2107.03277},\n\tjournal = {Arxiv},\n\ttitle = {{Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees}},\n\turl = {http://arxiv.org/abs/2107.03277},\n\tyear = {2021}\n}"
 	},
 	
 	// -----------------------------------------------------------------
