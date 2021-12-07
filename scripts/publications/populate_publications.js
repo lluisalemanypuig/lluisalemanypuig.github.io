@@ -37,12 +37,12 @@ function add_title_h1(div, y) {
 	div.appendChild(h1);
 }
 
-function make_url(text, url, par) {
+function make_url(header, text, url, par) {
 	if (url == null) { return; }
 	
-	par.appendChild(document.createTextNode(text));
+	par.appendChild(document.createTextNode(header));
 	var url_ref = document.createElement("a");
-	url_ref.textContent = url;
+	url_ref.textContent = text;
 	url_ref.href = url;
 	par.appendChild(url_ref);
 }
@@ -51,26 +51,24 @@ function format_thesis(par, work) {
 	var CITE = work.citation;
 	
 	// title and author
-	par.appendChild(document.createTextNode(" \"" + CITE.title + "\"."));
-	par.appendChild(document.createTextNode(" " + CITE.authors + "."));
+	par.appendChild(document.createTextNode(" \"" + CITE.title + "\""));
+	par.appendChild(document.createTextNode(". " + CITE.authors));
 	
-	par.appendChild(document.createTextNode(" " + __wt_relate[work.work_type] + "."));
+	par.appendChild(document.createTextNode(". " + __wt_relate[work.work_type]));
 	
-	// where published
-	par.appendChild(document.createTextNode(" School: "));
-	var journal_italics = document.createElement("i");
-	journal_italics.textContent = CITE.school;
-	par.appendChild(journal_italics);
+	// school
+	console.log(CITE.school_url)
+	make_url(". School: ", CITE.school, CITE.school_url, par);
 	
 	// when published
 	par.appendChild(document.createTextNode(". " + CITE.when));
 	
 	// url
-	make_url(". URL: ", CITE.url, par);
+	make_url(". URL: ", CITE.url, CITE.url, par);
 	// DOI
-	make_url(". DOI: ", CITE.doi, par);
+	make_url(". DOI: ", CITE.doi, CITE.doi, par);
 	// arXiv url
-	make_url(". arXiv url: ", CITE.arxiv_url, par);
+	make_url(". arXiv url: ", CITE.arxiv_url, CITE.arxiv_url, par);
 	par.appendChild(document.createTextNode("."));
 }
 
@@ -91,9 +89,9 @@ function format_journal_generic(par, work) {
 	par.appendChild(document.createTextNode(". " + CITE.when));
 	
 	// DOI
-	make_url(". DOI: ", CITE.doi, par)
+	make_url(". DOI: ", CITE.doi, CITE.doi, par)
 	// arXiv url
-	make_url(". arXiv url: ", CITE.arxiv_url, par)
+	make_url(". arXiv url: ", CITE.arxiv_url, CITE.arxiv_url, par)
 	par.appendChild(document.createTextNode("."));
 }
 
