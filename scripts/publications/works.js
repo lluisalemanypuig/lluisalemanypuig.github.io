@@ -23,12 +23,11 @@
 // Name of work. Replace 'XX' by a two-digit number
 wXX : {
 	work_type : // type of work
-	journal : // journal
 	tags : // tags classifying this work
 	year : // year of publication
 	
-	// "formatted" citation. The information that used to produce the
-	// citation with formatted text (italics, bold face, ...)
+	// "formatted" citation for journal articles. The information that used to
+	// produce the citation with formatted text (italics, bold face, ...)
 	citation : {
 		authors : // authors
 		title : // title
@@ -36,7 +35,21 @@ wXX : {
 		when : // year
 		doi : // DOI, if applicable
 		arxiv_url : // arxiv url, if applicable
+		url : null // other urls, if applicable
 	},
+	
+	// "formatted" citation for theses. The information that used to
+	// produce the citation with formatted text (italics, bold face, ...)
+	citation : {
+		authors : // authors
+		title : // title
+		school : // University/School
+		school_url : // A url to the school
+		doi : // DOI, if applicable
+		arxiv_url : // arxiv url, if applicable
+		url : null // other urls (typically handles), if applicable
+	},
+	
 	biblatex_citation : // raw latex citation
 },
 */
@@ -51,7 +64,6 @@ const works = {
 	
 	w08 : {
 		work_type : __wt_JournalPaper,
-		journal : __journal_IPL_name,
 		tags : [__tag_LinArr, __tag_Minimization, __tag_Algos],
 		year : 2022,
 		// "formatted" citation
@@ -73,7 +85,6 @@ const works = {
 	
 	w07 : {
 		work_type : __wt_preprint,
-		journal : __journal_ARXIV_name,
 		tags : [__tag_Linear_Arrangement_Library, __tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Expected_Values, __tag_Algos],
 		year : 2021,
 		// "formatted" citation
@@ -92,7 +103,6 @@ const works = {
 	
 	w06 : {
 		work_type : __wt_preprint,
-		journal : __journal_ARXIV_name,
 		tags : [__tag_Networks, __tag_NetworkScience, __tag_RandGraphs],
 		year : 2021,
 		// "formatted" citation
@@ -111,7 +121,6 @@ const works = {
 	
 	w05 : {
 		work_type : __wt_preprint,
-		journal : __journal_ARXIV_name,
 		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Expected_Values, __tag_Algos],
 		year : 2021,
 		// "formatted" citation
@@ -130,7 +139,6 @@ const works = {
 	
 	w04 : {
 		work_type : __wt_JournalPaper,
-		journal : __journal_PRE_name,
 		tags : [__tag_Networks, __tag_NetworkScience, __tag_LinArr, __tag_WordOrder],
 		year : 2021,
 		// "formatted" citation
@@ -153,7 +161,6 @@ const works = {
 	w03 : {
 		// classification of work
 		work_type : __wt_JournalPaper,
-		journal : __journal_JSTAT_name,
 		tags : [__tag_Networks, __tag_RandGraphs, __tag_LinArr],
 		year : 2020,
 		// "formatted" citation
@@ -173,7 +180,6 @@ const works = {
 	w02 : {
 		// classification of work
 		work_type : __wt_JournalPaper,
-		journal : __journal_JSTAT_name,
 		tags : [__tag_Networks, __tag_NetworkScience, __tag_RandGraphs, __tag_LinArr],
 		year : 2020,
 		// "formatted" citation
@@ -196,7 +202,6 @@ const works = {
 	w01 : {
 		// classification of work
 		work_type : __wt_MastersThesis,
-		school : __journal_UPC_name,
 		tags : [__tag_Networks, __tag_RandGraphs, __tag_LinArr],
 		year : 2019,
 		// "formatted" citation
@@ -204,6 +209,7 @@ const works = {
 			authors : "L. Alemany-Puig",
 			title : "Edge crossings in linear arrangements: from theory to algorithms and applications",
 			school : __journal_show_UPC_name,
+			school_url : "https://www.upc.edu/ca",
 			when : "July 2019",
 			doi : null,
 			arxiv_url : null,
