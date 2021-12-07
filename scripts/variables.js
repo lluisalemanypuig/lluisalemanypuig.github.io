@@ -25,7 +25,7 @@ const __url_lalemany = __url_cqllab + "/people/lalemany";
 const __url_publications = __url_lalemany + "/publications";
 
 // -----------------
-// -- Insitutions --
+// -- Institutions --
 const __institution_show_all = "All institutions";
 const __institution_all = "all_institutions";
 
@@ -90,12 +90,14 @@ const __journal_show_JSCS_name = "Journal of Statistical Computation and Simulat
 const __journal_show_JSTAT_name = "Journal of Statistical Mechanics: Theory and Experiment";
 const __journal_show_UPC_name = "Universitat Politècnica de Catalunya";
 const __journal_show_IPL_name = "Information Processing Letters";
+const __journal_show_PRE_name = "Physical Review E";
 
 const __journal_ARXIV_name = "arXiv";
 const __journal_JSCS_name = "JSCS";
 const __journal_JSTAT_name = "JSTAT";
 const __journal_UPC_name = "UPC";
 const __journal_IPL_name = "IPL";
+const __journal_PRE_name = "PRE";
 
 var __journal_relate = {};
 __journal_relate[__journal_show_all] = __journal_all;
@@ -110,6 +112,8 @@ __journal_relate[__journal_show_UPC_name] = __journal_UPC_name;
 __journal_relate[__journal_UPC_name] = __journal_show_UPC_name;
 __journal_relate[__journal_show_IPL_name] = __journal_IPL_name;
 __journal_relate[__journal_IPL_name] = __journal_show_IPL_name;
+__journal_relate[__journal_show_PRE_name] = __journal_PRE_name;
+__journal_relate[__journal_PRE_name] = __journal_show_PRE_name;
 
 // ----------
 // -- Tags --
