@@ -82,7 +82,7 @@ function format_journal_generic(par, work) {
 	// where published
 	par.appendChild(document.createTextNode(" In: "));
 	var journal_italics = document.createElement("i");
-	journal_italics.textContent = CITE.journal;
+	journal_italics.textContent = __journal_relate[CITE.journal] + " (" + CITE.journal + ")";
 	par.appendChild(journal_italics);
 	
 	// when published
