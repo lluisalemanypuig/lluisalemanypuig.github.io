@@ -37,122 +37,82 @@ function add_title_h1(div, y) {
 	div.appendChild(h1);
 }
 
-function makeFormattedTalk(talkid, talk) {
+function make_info_url(header, text, url, par) {
+	par.appendChild(document.createTextNode(header));
+	
+	if (url != null) {
+		var url_ref = document.createElement("a");
+		url_ref.textContent = text;
+		url_ref.href = url;
+		par.appendChild(url_ref);
+	}
+	else {
+		par.appendChild(document.createTextNode(text));
+	}
+}
+
+function makeFormattedTalk(talkid, TALK) {
 	var par = document.createElement("p");
 	
 	// add title of the talk
-	par.appendChild(document.createTextNode("Title of the " + talk.talk_type + ": "));
+	par.appendChild(document.createTextNode("Title of the " + TALK.talk_type + ": "));
 	{
 	var title_italics = document.createElement("i");
-	title_italics.textContent = talk.title;
+	title_italics.textContent = TALK.talk_title;
 	par.appendChild(title_italics);
 	}
-	par.appendChild(document.createTextNode("."));
 	
 	// add session number
-	if (talk.hasOwnProperty("session")) {
-		par.appendChild(document.createTextNode(" Session: " + talk.session + "."));
+	if (TALK.session != null) {
+		par.appendChild(document.createTextNode(". Session: " + TALK.session));
 	}
 	
-	par.appendChild(document.createTextNode(" " + talk.year + " (" + talk.date + ")."));
+	// add date
+	par.appendChild(document.createTextNode(". " + TALK.year + " (" + TALK.date + ")"));
 	
-	// add url to seminar/conference
-	if (talk.what_talk == __talkname_Zheijang_University_Python_06_2021) {
-		par.appendChild(document.createTextNode(" Python Seminar June 2021 : 1st, 3rd, 4th."));
+	// add seminar name (and url if applicable)
+	make_info_url(". " + __tt_relate[TALK.talk_type] + ": ", __talkname_relate[TALK.what_talk], TALK.talk_url, par);
+	
+	// add location
+	{
+	var full_location = __location_relate[TALK.location];
+	if (TALK.location_mode != null) {
+		full_location += " " + TALK.location_mode
 	}
-	else if (talk.what_talk == __talkname_IQLA_GIAT_2021_07) {
-		par.appendChild(document.createTextNode(
-			" " + __talkname_relate[__talkname_IQLA_GIAT_2021_07] + ". "
-		));
-	}
-	else if (talk.what_talk == __talkname_LIMDA) {
-		var url = document.createElement("a");
-		url.textContent = "Seminar LIMDA";
-		url.href = "https://gapcomb.upc.edu/en/seminar-en/";
-		
-		par.appendChild(document.createTextNode(" "));
-		par.appendChild(url);
-		par.appendChild(document.createTextNode("."));
-	}
-	else {
-		console.error("        Formatting of talk '" + talk.what_talk + "' not implemented.");
-		return null;
+	par.appendChild(document.createTextNode(". " + full_location));
 	}
 	
-	// add url to institution
-	if (talk.institution == __institution_UPC) {
-		var url = document.createElement("a");
-		url.textContent = "Universitat Politècnica de Catalunya - BarcelonaTech (UPC)";
-		url.href = "https://www.upc.edu/ca";
-		
-		par.appendChild(document.createTextNode(" "));
-		par.appendChild(url);
-		par.appendChild(document.createTextNode("."));
-	}
-	else if (talk.institution == __institution_Zheihang_University) {
-		var url = document.createElement("a");
-		url.textContent = "Zheijang University";
-		url.href = "https://www.zju.edu.cn/english/main.htm";
-		
-		par.appendChild(document.createTextNode(" "));
-		par.appendChild(url);
-		par.appendChild(document.createTextNode("."));
-	}
-	else if (talk.institution == __institution_IQLA_GIAT_Summer_School) {
-		var url = document.createElement("a");
-		url.textContent = "IQLA-GIAT Summer school";
-		url.href = "http://www.giat.org/?page_id=11&lang=en";
-		
-		par.appendChild(document.createTextNode(" "));
-		par.appendChild(url);
-		par.appendChild(document.createTextNode("."));
-	}
-	else {
-		console.error("        Formatting of institution '" + talk.institution + "' not implemented.");
-		return null;
+	// add institution name (and url if applicable)
+	make_info_url( ". ", __institution_relate[TALK.institution], TALK.institution_url, par);
+	
+	// add url to the slides
+	make_info_url(". ", "Slides", TALK.slides_url, par);
+	
+	// add url to the course
+	if (TALK.course_url != null) {
+		make_info_url(". ", "Link to the full " + TALK.talk_type, TALK.course_url, par);
 	}
 	
-	// add city
-	par.appendChild(document.createTextNode(" " + __location_relate[talk.location] + "."));
-	
-	// add file to url slides
-	if (talk.slides_url != null) {
-		var url = document.createElement("a");
-		url.textContent = "Slides of the talk";
-		url.href = talk.slides_url;
-		url.appendChild(document.createTextNode("."));
-		par.appendChild(document.createTextNode(" "));
-		par.appendChild(url);
-	}
-	
-	// add link to the course (if any)
-	if (talk.hasOwnProperty("part_of_the_course")) {
-		var url = document.createElement("a");
-		url.textContent = "Link to the course";
-		url.href = talk.part_of_the_course;
-		
-		par.appendChild(document.createTextNode(" "));
-		par.appendChild(url);
-		par.appendChild(document.createTextNode("."));
-	}
+	// finish
+	par.appendChild(document.createTextNode("."));
 	
 	var tags = document.createElement("p");
-	if (talk.tags.length > 0) {
+	if (TALK.tags.length > 0) {
 		tags.appendChild(document.createTextNode("Tags: "));
 	}
-	for (var t = 0; t < talk.tags.length; ++t) {
-		var tag_text = talk.tags[t];
+	for (var t = 0; t < TALK.tags.length; ++t) {
+		var tag_text = TALK.tags[t];
 		const url_tag_filt = __url_publications + "?" + __param_tag + "=" + tag_text;
 		
 		var tag_ref = document.createElement("a");
 		tag_ref.href = url_tag_filt;
 		tag_ref.textContent = __tag_relate[tag_text];
 		tags.appendChild(tag_ref);
-		if (t < talk.tags.length - 1) {
+		if (t < TALK.tags.length - 1) {
 			tags.appendChild(document.createTextNode(", "));
 		}
 	}
-	if (talk.tags.length > 0) {
+	if (TALK.tags.length > 0) {
 		tags.appendChild(document.createTextNode("."));
 	}
 	

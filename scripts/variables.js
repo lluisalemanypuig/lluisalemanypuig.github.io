@@ -29,13 +29,13 @@ const __url_publications = __url_lalemany + "/publications";
 const __institution_show_all = "All institutions";
 const __institution_all = "all_institutions";
 
-const __institution_show_UPC = "Universitat Politècnica de Catalunya";
+const __institution_show_UPC = "Universitat Politècnica de Catalunya - BarcelonaTech (UPC)";
 const __institution_UPC = "UPC";
 
 const __institution_show_Zheihang_University = "Zeijhang University";
 const __institution_Zheihang_University = "zheijang_university";
 
-const __institution_show_IQLA_GIAT_Summer_School = "IQLA-GIAT";
+const __institution_show_IQLA_GIAT_Summer_School = "IQLA-GIAT Summer school";
 const __institution_IQLA_GIAT_Summer_School = "iqla_giat";
 
 var __institution_relate = {};
@@ -232,10 +232,10 @@ const __talkname_all = "all_seminars_conferences";
 const __talkname_show_LIMDA = "LIMDA";
 const __talkname_LIMDA = "limda";
 
-const __talkname_show_Zheijang_University_Python_06_2021 = "Zheijang University Python - June 2021";
+const __talkname_show_Zheijang_University_Python_06_2021 = "Zheijang University -- Python Seminar (June 2021)";
 const __talkname_Zheijang_University_Python_06_2021 = "zheijang_university_python_june_2021";
 
-const __talkname_show_IQLA_GIAT_2021_07 = "IQLA-GIAT Summer School - July 2021";
+const __talkname_show_IQLA_GIAT_2021_07 = "IQLA-GIAT Summer School (July 2021)";
 const __talkname_IQLA_GIAT_2021_07 = "iqla_giat_summer_school_2021_07";
 
 var __talkname_relate = {};
