@@ -37,23 +37,45 @@ function add_title_h1(div, y) {
 	div.appendChild(h1);
 }
 
-function make_arXiv_url(CITE, par, with_dot) {
-	if (with_dot) {
-		par.appendChild(document.createTextNode(". arXiv url: "));
-	}
-	else {
-		par.appendChild(document.createTextNode(" arXiv url: "));
-	}
+function make_url(text, url, par) {
+	if (url == null) { return; }
+	
+	par.appendChild(document.createTextNode(text));
 	var url_ref = document.createElement("a");
-	url_ref.textContent = CITE.arxiv_url;
-	url_ref.href = CITE.arxiv_url;
+	url_ref.textContent = url;
+	url_ref.href = url;
 	par.appendChild(url_ref);
+}
+
+function format_thesis(par, work) {
+	var CITE = work.citation;
+	
+	// title and author
+	par.appendChild(document.createTextNode(" \"" + CITE.title + "\"."));
+	par.appendChild(document.createTextNode(" " + CITE.authors + "."));
+	
+	par.appendChild(document.createTextNode(" " + __wt_relate[work.work_type] + "."));
+	
+	// where published
+	par.appendChild(document.createTextNode(" School: "));
+	var journal_italics = document.createElement("i");
+	journal_italics.textContent = CITE.school;
+	par.appendChild(journal_italics);
+	
+	// when published
+	par.appendChild(document.createTextNode(". " + CITE.when));
+	
+	// url
+	make_url(". URL: ", CITE.url, par);
+	// DOI
+	make_url(". DOI: ", CITE.doi, par);
+	// arXiv url
+	make_url(". arXiv url: ", CITE.arxiv_url, par);
 	par.appendChild(document.createTextNode("."));
 }
 
-function format_ARXIV(work) {
+function format_journal_generic(par, work) {
 	var CITE = work.citation;
-	var par = document.createElement("p");
 	
 	// title and author
 	par.appendChild(document.createTextNode(" \"" + CITE.title + "\"."));
@@ -66,167 +88,33 @@ function format_ARXIV(work) {
 	par.appendChild(journal_italics);
 	
 	// when published
-	par.appendChild(document.createTextNode(" (" + CITE.when + ")"));
-	
-	// arXiv url
-	make_arXiv_url(CITE, par, true)
-	
-	return par;
-}
-
-function format_JSTAT(work) {
-	var CITE = work.citation;
-	var par = document.createElement("p");
-	
-	// title and author
-	par.appendChild(document.createTextNode(" \"" + CITE.title + "\"."));
-	par.appendChild(document.createTextNode(" " + CITE.authors + "."));
-	
-	// where published
-	par.appendChild(document.createTextNode(" In: "));
-	var journal_italics = document.createElement("i");
-	journal_italics.textContent = CITE.journal;
-	par.appendChild(journal_italics);
-	
-	// when published
-	par.appendChild(document.createTextNode(" " + CITE.when));
+	par.appendChild(document.createTextNode(". " + CITE.when));
 	
 	// DOI
-	par.appendChild(document.createTextNode(". DOI: "));
-	var doi_ref = document.createElement("a");
-	doi_ref.textContent = CITE.doi;
-	doi_ref.href = CITE.doi;
-	par.appendChild(doi_ref);
-	par.appendChild(document.createTextNode("."));
-	
+	make_url(". DOI: ", CITE.doi, par)
 	// arXiv url
-	make_arXiv_url(CITE, par, false)
-	
-	return par;
-}
-
-function format_UPC(work) {
-	var CITE = work.citation;
-	var par = document.createElement("p");
-	
-	// title and author
-	par.appendChild(document.createTextNode(" \"" + CITE.title + "\"."));
-	par.appendChild(document.createTextNode(" " + CITE.authors + "."));
-	
-	if (work.work_type == __wt_MastersThesis) {
-		par.appendChild(document.createTextNode(" Masters Thesis."));
-	}
-	
-	// where published
-	par.appendChild(document.createTextNode(" In: "));
-	var journal_italics = document.createElement("i");
-	journal_italics.textContent = CITE.journal;
-	par.appendChild(journal_italics);
-	
-	// when published
-	par.appendChild(document.createTextNode(" " + CITE.when));
-	
-	// url (UPC handle)
-	par.appendChild(document.createTextNode(". URL: "));
-	var doi_ref = document.createElement("a");
-	doi_ref.textContent = CITE.doi;
-	doi_ref.href = CITE.doi;
-	par.appendChild(doi_ref);
+	make_url(". arXiv url: ", CITE.arxiv_url, par)
 	par.appendChild(document.createTextNode("."));
-	
-	return par;
-}
-
-function format_IPL(work) {
-	var CITE = work.citation;
-	var par = document.createElement("p");
-	
-	// title and author
-	par.appendChild(document.createTextNode(" \"" + CITE.title + "\"."));
-	par.appendChild(document.createTextNode(" " + CITE.authors + "."));
-	
-	// where published
-	par.appendChild(document.createTextNode(" In: "));
-	var journal_italics = document.createElement("i");
-	journal_italics.textContent = CITE.journal;
-	par.appendChild(journal_italics);
-	
-	// when published
-	par.appendChild(document.createTextNode(" " + CITE.when));
-	
-	// DOI
-	par.appendChild(document.createTextNode(". DOI: "));
-	var doi_ref = document.createElement("a");
-	doi_ref.textContent = CITE.doi;
-	doi_ref.href = CITE.doi;
-	par.appendChild(doi_ref);
-	par.appendChild(document.createTextNode("."));
-	
-	// arXiv url
-	make_arXiv_url(CITE, par, false)
-	
-	return par;
-}
-
-function format_PRE(work) {
-	var CITE = work.citation;
-	var par = document.createElement("p");
-	
-	// title and author
-	par.appendChild(document.createTextNode(" \"" + CITE.title + "\"."));
-	par.appendChild(document.createTextNode(" " + CITE.authors + "."));
-	
-	// where published
-	par.appendChild(document.createTextNode(" In: "));
-	var journal_italics = document.createElement("i");
-	journal_italics.textContent = CITE.journal;
-	par.appendChild(journal_italics);
-	
-	// when published
-	par.appendChild(document.createTextNode(" " + CITE.when));
-	
-	// DOI
-	par.appendChild(document.createTextNode(". DOI: "));
-	var doi_ref = document.createElement("a");
-	doi_ref.textContent = CITE.doi;
-	doi_ref.href = CITE.doi;
-	par.appendChild(doi_ref);
-	par.appendChild(document.createTextNode("."));
-	
-	// arXiv url
-	make_arXiv_url(CITE, par, false)
-	
-	return par;
 }
 
 function makeFormattedCitation(workid, work) {
-	var par = null;
+	var par = document.createElement("p");
 	
-	if (work.journal == __journal_ARXIV_name) {
-		par = format_ARXIV(work);
+	if (work.work_type == __wt_JournalPaper || work.work_type == __wt_preprint) {
+		format_journal_generic(par, work);
 	}
-	else if (work.journal == __journal_JSTAT_name) {
-		par = format_JSTAT(work);
-	}
-	else if (work.journal == __journal_UPC_name) {
-		par = format_UPC(work);
-	}
-	else if (work.journal == __journal_IPL_name) {
-		par = format_IPL(work);
-	}
-	else if (work.journal == __journal_PRE_name) {
-		par = format_PRE(work);
+	else if (work.work_type == __wt_MastersThesis) {
+		format_thesis(par, work);
 	}
 	else {
-		console.error("        Formatting of citation for journal '" + work.journal + "' not implemented.");
+		console.error("        Formatting of citation for work type '" + work.work_type + "' not implemented.");
 		return null;
 	}
 	
 	// Text area with the raw biblatex citation.
-	// I like being a nice person.
-	var ta = document.createElement("textarea");
-	ta.textContent = work.biblatex_citation;
-	ta.style = "resize : none";
+	var textarea = document.createElement("textarea");
+	textarea.textContent = work.biblatex_citation;
+	textarea.style = "resize : none";
 	
 	var rows = work.biblatex_citation.split("\n");
 	var maxRowLength = 0;
@@ -236,10 +124,10 @@ function makeFormattedCitation(workid, work) {
 		}
 	}
 	maxRowLength += 8; // tab size in characters
-	ta.cols = maxRowLength;
-	ta.rows = rows.length;
-	ta.id = "textarea_" + workid;
-	ta.readOnly = true;
+	textarea.cols = maxRowLength;
+	textarea.rows = rows.length;
+	textarea.id = "textarea_" + workid;
+	textarea.readOnly = true;
 	
 	var tags = document.createElement("p");
 	if (work.tags.length > 0) {
@@ -263,7 +151,7 @@ function makeFormattedCitation(workid, work) {
 	
 	var full = document.createElement("li");
 	full.appendChild(par);
-	full.appendChild(ta);
+	full.appendChild(textarea);
 	full.append(tags);
 	
 	return full;
