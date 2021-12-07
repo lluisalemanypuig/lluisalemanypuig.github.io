@@ -70,6 +70,26 @@ const works = {
 	// -----------------------------------------------------------------
 	// 2021
 	
+	w08 : {
+		work_type : __wt_preprint,
+		journal : __journal_ARXIV_name,
+		tags : [__tag_Linear_Arrangement_Library, __tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Expected_Values, __tag_Algos],
+		year : 2021,
+		// "formatted" citation
+		citation : {
+			authors : "L. Alemany-Puig and J. L. Esteban and R. Ferrer-i-Cancho",
+			title : "The Linear Arrangement Library. A new tool for research on syntactic dependency structures",
+			journal : __journal_show_ARXIV_name,
+			when : "(2021)",
+			doi : null,
+			arxiv_url : "https://arxiv.org/abs/2112.02512"
+		},
+		// raw latex citation
+		biblatex_citation : "@article{Alemany2021a,\n\tarchivePrefix = {arXiv},\n\tarxivId = {2107.03277},\n\tauthor = {{Alemany-Puig}, {Llu{\\'{i}}s} and Esteban, {Juan Luis} {Ferrer-i-Cancho}, {Ramon}},\n\teprint = {2112.02512},\n\tjournal = {Arxiv},\n\ttitle = {{The Linear Arrangement Library. A new tool for research on syntactic dependency structures}},\n\turl = {http://arxiv.org/abs/2112.02512},\n\tyear = {2021}\n}"
+	},
+	
+	
+	
 	w07 : {
 		work_type : __wt_preprint,
 		journal : __journal_ARXIV_name,
