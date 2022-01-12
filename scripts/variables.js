@@ -103,6 +103,7 @@ const __tag_Minimization = "Minimization";
 const __tag_Linear_Arrangement_Library = "Linear Arrangement Library (LAL)";
 const __tag_Expected_Values = "Expected Values";
 const __tag_Quantitative_Dependency_Syntax = "Quantitative Dependency Syntax";
+const __tag_Optimality = "Optimality of Dependency Distances";
 
 // ----------------
 // -- Work types --
