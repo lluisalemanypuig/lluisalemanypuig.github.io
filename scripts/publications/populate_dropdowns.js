@@ -42,7 +42,7 @@ function populateDropDowns() {
 	// default tags
 	all_tags.push(__tag_all);
 	all_years.push(__year_all);
-	all_journals.push(__journal_all);
+	all_journals.push(__rejoin_all);
 	all_work_types.push(__wt_all);
 	
 	// traverse all works
@@ -57,9 +57,17 @@ function populateDropDowns() {
 		all_years.push(workI.year);
 		// gather work types
 		all_work_types.push(workI.work_type);
-		// gather journals
 		
-		all_journals.push(workI.citation.journal);
+		// gather journals
+		if (workI.work_type == __wt_JournalPaper) {
+			all_journals.push(workI.citation.journal);
+		}
+		else if (workI.work_type == __wt_preprint) {
+			all_journals.push(workI.citation.repository);
+		}
+		else if (workI.work_type == __wt_MastersThesis) {
+			all_journals.push(workI.citation.school);
+		}
 	}
 	
 	// keep unique tags only
@@ -85,8 +93,8 @@ function populateDropDowns() {
 	);
 	all_journals.sort(
 		function(a,b) {
-			if (a == __journal_all) { return -1; }
-			if (b == __journal_all) { return  1; }
+			if (a == __rejoin_all) { return -1; }
+			if (b == __rejoin_all) { return  1; }
 			return a.localeCompare(b);
 		}
 	);

@@ -82,7 +82,7 @@ function format_journal_generic(par, work) {
 	// where published
 	par.appendChild(document.createTextNode(" In: "));
 	var journal_italics = document.createElement("i");
-	journal_italics.textContent = CITE.journal + " (" + __journal_relate[CITE.journal] + ")";
+	journal_italics.textContent = CITE.journal + " (" + __rejoin_relate[CITE.journal] + ")";
 	par.appendChild(journal_italics);
 	
 	// when published
@@ -196,7 +196,7 @@ function populatePublicationList() {
 		return work.tags.includes(use_tag);
 	}
 	function filter_journal(work) {
-		if (use_journal == __journal_all) { return true; }
+		if (use_journal == __rejoin_all) { return true; }
 		return work.journal == use_journal;
 	}
 	function filter_work_type(work) {
