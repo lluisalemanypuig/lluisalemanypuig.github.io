@@ -45,7 +45,7 @@ function populateDropDowns() {
 	all_journals.push(__journal_all);
 	all_work_types.push(__wt_all);
 	
-	// traverse all works and gather all tags
+	// traverse all works
 	for (var i = 0; i < Object.keys(works).length; ++i) {
 		var key = Object.keys(works)[i];
 		var workI = works[key];
@@ -53,9 +53,13 @@ function populateDropDowns() {
 			all_tags.push(workI.tags[j]);
 		}
 		
+		// gather years
 		all_years.push(workI.year);
-		all_journals.push(workI.journal);
+		// gather work types
 		all_work_types.push(workI.work_type);
+		// gather journals
+		
+		all_journals.push(workI.citation.journal);
 	}
 	
 	// keep unique tags only
