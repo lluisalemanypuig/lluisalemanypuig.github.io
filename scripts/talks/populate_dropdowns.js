@@ -25,10 +25,10 @@ function onlyUnique(value, index, self) {
 
 // populate dropdown: use long names for the text, and the short
 // names for the values.
-function addToDropDown(dd, item, relate) {
+function addToDropDown(dd, item) {
 	var opt = document.createElement('option');
 	opt.value = item;
-	opt.text = relate[item];
+	opt.text = item;
 	dd.appendChild(opt);
 }
 
@@ -93,11 +93,11 @@ function populateDropDowns() {
 	ddInstitutions.textContent = '';
 	ddCities.textContent = '';
 	
-	all_years.forEach(function(item) { addToDropDown(ddYears, item, __year_relate); });
-	all_tags.forEach(function(item) { addToDropDown(ddTags, item, __tag_relate); });
-	all_semconf.forEach(function(item) { addToDropDown(ddSeminarConf, item, __talkname_relate); });
-	all_insts.forEach(function(item) { addToDropDown(ddInstitutions, item, __institution_relate); });
-	all_locations.forEach(function(item) { addToDropDown(ddCities, item, __location_relate); });
+	all_years.forEach(function(item) { addToDropDown(ddYears, item); });
+	all_tags.forEach(function(item) { addToDropDown(ddTags, item); });
+	all_semconf.forEach(function(item) { addToDropDown(ddSeminarConf, item); });
+	all_insts.forEach(function(item) { addToDropDown(ddInstitutions, item); });
+	all_locations.forEach(function(item) { addToDropDown(ddCities, item); });
 	
 	console.log("    Values in years drop down: " + ddYears.childNodes.length);
 	console.log("    Values in tags drop down: " + ddTags.childNodes.length);

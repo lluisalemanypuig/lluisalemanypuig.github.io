@@ -71,11 +71,11 @@ function makeFormattedTalk(talkid, TALK) {
 	par.appendChild(document.createTextNode(". " + TALK.year + " (" + TALK.date + ")"));
 	
 	// add seminar name (and url if applicable)
-	make_info_url(". " + __tt_relate[TALK.talk_type] + ": ", __talkname_relate[TALK.what_talk], TALK.talk_url, par);
+	make_info_url(". " + TALK.talk_type + ": ", TALK.what_talk, TALK.talk_url, par);
 	
 	// add location
 	{
-	var full_location = __location_relate[TALK.location];
+	var full_location = TALK.location;
 	if (TALK.location_mode != null) {
 		full_location += " " + TALK.location_mode
 	}
@@ -83,7 +83,7 @@ function makeFormattedTalk(talkid, TALK) {
 	}
 	
 	// add institution name (and url if applicable)
-	make_info_url( ". ", __institution_relate[TALK.institution], TALK.institution_url, par);
+	make_info_url( ". ", TALK.institution, TALK.institution_url, par);
 	
 	// add url to the slides
 	make_info_url(". ", "Slides", TALK.slides_url, par);
@@ -106,7 +106,7 @@ function makeFormattedTalk(talkid, TALK) {
 		
 		var tag_ref = document.createElement("a");
 		tag_ref.href = url_tag_filt;
-		tag_ref.textContent = __tag_relate[tag_text];
+		tag_ref.textContent = tag_text;
 		tags.appendChild(tag_ref);
 		if (t < TALK.tags.length - 1) {
 			tags.appendChild(document.createTextNode(", "));

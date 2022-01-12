@@ -54,7 +54,7 @@ function format_thesis(par, work) {
 	par.appendChild(document.createTextNode(" \"" + CITE.title + "\""));
 	par.appendChild(document.createTextNode(". " + CITE.authors));
 	
-	par.appendChild(document.createTextNode(". " + __wt_relate[work.work_type]));
+	par.appendChild(document.createTextNode(". " + work.work_type));
 	
 	// school
 	console.log(CITE.school_url)
@@ -82,7 +82,7 @@ function format_journal_generic(par, work) {
 	// where published
 	par.appendChild(document.createTextNode(" In: "));
 	var journal_italics = document.createElement("i");
-	journal_italics.textContent = __journal_relate[CITE.journal] + " (" + CITE.journal + ")";
+	journal_italics.textContent = CITE.journal + " (" + __journal_relate[CITE.journal] + ")";
 	par.appendChild(journal_italics);
 	
 	// when published
@@ -137,7 +137,7 @@ function makeFormattedCitation(workid, work) {
 		
 		var tag_ref = document.createElement("a");
 		tag_ref.href = url_tag_filt;
-		tag_ref.textContent = __tag_relate[tag_text];
+		tag_ref.textContent = tag_text;
 		tags.appendChild(tag_ref);
 		if (t < work.tags.length - 1) {
 			tags.appendChild(document.createTextNode(", "));
@@ -188,19 +188,19 @@ function populatePublicationList() {
 	
 	// filtering functions
 	function filter_year(work) {
-		if (use_year == "all_years") { return true; }
+		if (use_year == __year_all) { return true; }
 		return work.year == use_year;
 	}
 	function filter_tag(work) {
-		if (use_tag == "all_tags") { return true; }
+		if (use_tag == __tag_all) { return true; }
 		return work.tags.includes(use_tag);
 	}
 	function filter_journal(work) {
-		if (use_journal == "all_journals_institutions") { return true; }
+		if (use_journal == __journal_all) { return true; }
 		return work.journal == use_journal;
 	}
 	function filter_work_type(work) {
-		if (use_work_type == "all_work_types") { return true; }
+		if (use_work_type == __wt_all) { return true; }
 		return work.work_type == use_work_type;
 	}
 	

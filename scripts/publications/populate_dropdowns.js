@@ -25,10 +25,10 @@ function onlyUnique(value, index, self) {
 
 // populate dropdown: use long names for the text, and the short
 // names for the values.
-function addToDropDown(dd, item, relate) {
+function addToDropDown(dd, item) {
 	var opt = document.createElement('option');
 	opt.value = item;
-	opt.text = relate[item];
+	opt.text = item;
 	dd.appendChild(opt);
 }
 
@@ -113,10 +113,10 @@ function populateDropDowns() {
 	ddJournals.textContent = '';
 	ddWorkTypes.textContent = '';
 	
-	all_years.forEach(function(item) { addToDropDown(ddYears, item, __year_relate); });
-	all_tags.forEach(function(item) { addToDropDown(ddTags, item, __tag_relate); });
-	all_journals.forEach(function(item) { addToDropDown(ddJournals, item, __journal_relate); });
-	all_work_types.forEach(function(item) { addToDropDown(ddWorkTypes, item, __wt_relate); });
+	all_years.forEach(function(item) { addToDropDown(ddYears, item); });
+	all_tags.forEach(function(item) { addToDropDown(ddTags, item); });
+	all_journals.forEach(function(item) { addToDropDown(ddJournals, item); });
+	all_work_types.forEach(function(item) { addToDropDown(ddWorkTypes, item); });
 	
 	console.log("    Values in years drop down: " + ddYears.childNodes.length);
 	console.log("    Values in tags drop down: " + ddTags.childNodes.length);
