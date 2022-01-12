@@ -69,7 +69,7 @@ function populateDropDowns() {
 		function(a,b) {
 			if (a == __year_all) { return -1; }
 			if (b == __year_all) { return  1; }
-			return a - b;
+			return b - a;
 		}
 	);
 	all_tags.sort(
