@@ -95,11 +95,37 @@ function format_journal_generic(par, work) {
 	par.appendChild(document.createTextNode("."));
 }
 
+function format_preprint_generic(par, work) {
+	var CITE = work.citation;
+	
+	// title and author
+	par.appendChild(document.createTextNode(" \"" + CITE.title + "\"."));
+	par.appendChild(document.createTextNode(" " + CITE.authors + "."));
+	
+	// where published
+	par.appendChild(document.createTextNode(" In repository: "));
+	var journal_italics = document.createElement("i");
+	journal_italics.textContent = CITE.repository + " (" + __rejoin_relate[CITE.repository] + ")";
+	par.appendChild(journal_italics);
+	
+	// when published
+	par.appendChild(document.createTextNode(". " + CITE.when));
+	
+	// DOI
+	make_url(". DOI: ", CITE.doi, CITE.doi, par)
+	// arXiv url
+	make_url(". arXiv url: ", CITE.arxiv_url, CITE.arxiv_url, par)
+	par.appendChild(document.createTextNode("."));
+}
+
 function makeFormattedCitation(workid, work) {
 	var par = document.createElement("p");
 	
-	if (work.work_type == __wt_JournalPaper || work.work_type == __wt_preprint) {
+	if (work.work_type == __wt_JournalPaper) {
 		format_journal_generic(par, work);
+	}
+	else if (work.work_type == __wt_preprint) {
+		format_preprint_generic(par, work);
 	}
 	else if (work.work_type == __wt_MastersThesis) {
 		format_thesis(par, work);
