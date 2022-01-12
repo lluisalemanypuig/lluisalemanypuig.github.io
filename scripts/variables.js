@@ -258,6 +258,7 @@ const __year_all = "all_years";
 const __year_2019 = "2019";
 const __year_2020 = "2020";
 const __year_2021 = "2021";
+const __year_2022 = "2022";
 
 var __year_relate = {};
 __year_relate[__year_show_all] = __year_all;
@@ -265,6 +266,7 @@ __year_relate[__year_all] = __year_show_all;
 __year_relate[__year_2019] = "2019";
 __year_relate[__year_2020] = "2020";
 __year_relate[__year_2021] = "2021";
+__year_relate[__year_2022] = "2022";
 
 // ---------------------------------------
 // -- PUBLCATIONS PAGE: drop down names --
