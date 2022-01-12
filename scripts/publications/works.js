@@ -70,7 +70,7 @@ const works = {
 		citation : {
 			authors : "L. Alemany-Puig and J. L. Esteban and R. Ferrer-i-Cancho",
 			title : "Minimum projective linearization of trees in linear time",
-			journal : __rejoin_IPL_name,
+			journal : __rejoinproc_IPL_name,
 			when : "Volume 174 (2022)",
 			doi : "https://doi.org/10.1016/j.ipl.2021.106204",
 			arxiv_url : "http://arxiv.org/abs/2102.03277",
@@ -84,22 +84,24 @@ const works = {
 	// 2021
 	
 	w07 : {
-		work_type : __wt_preprint,
+		work_type : __wt_ConferenceProceedings,
 		tags : [__tag_Linear_Arrangement_Library, __tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Expected_Values, __tag_Algos],
 		year : 2021,
 		// "formatted" citation
 		citation : {
 			authors : "L. Alemany-Puig and J. L. Esteban and R. Ferrer-i-Cancho",
 			title : "The Linear Arrangement Library. A new tool for research on syntactic dependency structures",
-			repository : __rejoin_ARXIV_name,
+			proceedings : __rejoinproc_SyntaxFestQuasy2021_name,
 			when : "2021",
 			doi : null,
 			arxiv_url : "https://arxiv.org/abs/2112.02512",
-			url : null
+			proceedings_url : "https://aclanthology.org/volumes/2021.quasy-1/",
+			url : "https://aclanthology.org/2021.quasy-1.1"
 		},
 		// raw latex citation
-		biblatex_citation : "@article{Alemany2021d,\n\tarchivePrefix = {arXiv},\n\tarxivId = {2107.03277},\n\tauthor = {{Alemany-Puig}, {Llu{\\'{i}}s} and {Esteban}, {Juan Luis} {Ferrer-i-Cancho}, {Ramon}},\n\teprint = {2112.02512},\n\tjournal = {arXiv},\n\ttitle = {{The Linear Arrangement Library. A new tool for research on syntactic dependency structures}},\n\turl = {http://arxiv.org/abs/2112.02512},\n\tyear = {2021}\n}"
+		biblatex_citation : "@inproceedings{Alemany2021d,\n\tauthor = {{Alemany-Puig}, {Llu{\\'{i}}s} and {Esteban}, {Juan Luis} {Ferrer-i-Cancho}, {Ramon}},\n\tarxivId = {2112.02512},\n\ttitle = {{The Linear Arrangement Library. A new tool for research on syntactic dependency structures}},\n\tbooktitle = {Proceedings of the {S}econd {W}orkshop on {Q}uantitative {S}yntax ({Q}uasy, {S}yntaxFest 2021)},\n\turl = {https://aclanthology.org/2021.quasy-1.1},\n\tmonth = {dec},\n\tyear = {2021},\n\taddress = {Sofia, Bulgaria},\n\tpublisher = {Association for {C}omputational {L}inguistics},\n\tpages = {1--16}\n}"
 	},
+
 	
 	w06 : {
 		work_type : __wt_preprint,
@@ -109,7 +111,7 @@ const works = {
 		citation : {
 			authors : "L. Alemany-Puig and R. Ferrer-i-Cancho",
 			title : "Fast calculation of the variance of edge crossings in random arrangements",
-			repository : __rejoin_ARXIV_name,
+			repository : __rejoinproc_ARXIV_name,
 			when : "2021",
 			doi : null,
 			arxiv_url : "http://arxiv.org/abs/2003.03258",
@@ -127,7 +129,7 @@ const works = {
 		citation : {
 			authors : "L. Alemany-Puig and R. Ferrer-i-Cancho",
 			title : "Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees",
-			repository : __rejoin_ARXIV_name,
+			repository : __rejoinproc_ARXIV_name,
 			when : "2021",
 			doi : null,
 			arxiv_url : "http://arxiv.org/abs/2107.03277",
@@ -145,7 +147,7 @@ const works = {
 		citation : {
 			authors : "R. Ferrer-i-Cancho and C. Gómez-Rodríguez and J. L. Esteban and L. Alemany-Puig",
 			title : "The optimality of syntactic dependency distances",
-			journal : __rejoin_PRE_name,
+			journal : __rejoinproc_PRE_name,
 			when : "(in press)",
 			doi : null,
 			arxiv_url : "http://arxiv.org/abs/2007.15342",
@@ -167,7 +169,7 @@ const works = {
 		citation : {
 			authors : "L. Alemany-Puig and M. Mora and R. Ferrer-i-Cancho",
 			title : "Reappraising the distribution of the number of edge crossings of graphs on a sphere",
-			journal : __rejoin_JSTAT_name,
+			journal : __rejoinproc_JSTAT_name,
 			when : "2020.8 (Aug 2020)",
 			doi : "http://doi.org/10.1088/1742-5468/aba0ab",
 			arxiv_url : "http://arxiv.org/abs/2003.03353",
@@ -186,7 +188,7 @@ const works = {
 		citation : {
 			authors : "L. Alemany-Puig and R. Ferrer-i-Cancho",
 			title : "Edge crossings in random linear arrangements",
-			journal : __rejoin_JSTAT_name,
+			journal : __rejoinproc_JSTAT_name,
 			when : "2020.2 (Feb 2020)",
 			doi : "http://doi.org/10.1088/1742-5468/ab6845",
 			arxiv_url : "https://arxiv.org/abs/1910.03926",
@@ -208,7 +210,7 @@ const works = {
 		citation : {
 			authors : "L. Alemany-Puig",
 			title : "Edge crossings in linear arrangements: from theory to algorithms and applications",
-			school : __rejoin_UPC_name,
+			school : __rejoinproc_UPC_name,
 			school_url : "https://www.upc.edu/en",
 			when : "July 2019",
 			doi : null,

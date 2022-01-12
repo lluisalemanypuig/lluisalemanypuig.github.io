@@ -41,41 +41,54 @@ const __location_Italy = "Italy";
 
 // --------------
 // -- Journals --
-const __rejoin_all = "All repositories/journals/institutions";
+const __rejoinproc_all = "All repositories/journals/institutions/proceedings";
+const __rejoinproc_short_all = __rejoinproc_all;
 
-const __rejoin_ARXIV_name = "arXiv";
-const __rejoin_short_ARXIV_name = "arXiv";
+const __rejoinproc_ARXIV_name = "arXiv";
+const __rejoinproc_short_ARXIV_name = "arXiv";
 
-const __rejoin_JSCS_name = "Journal of Statistical Computation and Simulation";
-const __rejoin_short_JSCS_name = "JSCS";
+const __rejoinproc_JSCS_name = "Journal of Statistical Computation and Simulation";
+const __rejoinproc_short_JSCS_name = "JSCS";
 
-const __rejoin_JSTAT_name = "Journal of Statistical Mechanics: Theory and Experiment";
-const __rejoin_short_JSTAT_name = "JSTAT";
+const __rejoinproc_JSTAT_name = "Journal of Statistical Mechanics: Theory and Experiment";
+const __rejoinproc_short_JSTAT_name = "JSTAT";
 
-const __rejoin_UPC_name = "Universitat Politècnica de Catalunya";
-const __rejoin_short_UPC_name = "UPC";
+const __rejoinproc_UPC_name = "Universitat Politècnica de Catalunya";
+const __rejoinproc_short_UPC_name = "UPC";
 
-const __rejoin_IPL_name = "Information Processing Letters";
-const __rejoin_short_IPL_name = "IPL";
+const __rejoinproc_IPL_name = "Information Processing Letters";
+const __rejoinproc_short_IPL_name = "IPL";
 
-const __rejoin_PRE_name = "Physical Review E";
-const __rejoin_short_PRE_name = "PRE";
+const __rejoinproc_PRE_name = "Physical Review E";
+const __rejoinproc_short_PRE_name = "PRE";
 
-var __rejoin_relate = {};
-__rejoin_relate[__rejoin_all] = __rejoin_short_ARXIV_name;
-__rejoin_relate[__rejoin_short_ARXIV_name] = __rejoin_all;
-__rejoin_relate[__rejoin_ARXIV_name] = __rejoin_short_ARXIV_name;
-__rejoin_relate[__rejoin_short_ARXIV_name] = __rejoin_ARXIV_name;
-__rejoin_relate[__rejoin_JSCS_name] = __rejoin_short_JSCS_name;
-__rejoin_relate[__rejoin_short_JSCS_name] = __rejoin_JSCS_name;
-__rejoin_relate[__rejoin_JSTAT_name] = __rejoin_short_JSTAT_name;
-__rejoin_relate[__rejoin_short_JSTAT_name] = __rejoin_JSTAT_name;
-__rejoin_relate[__rejoin_UPC_name] = __rejoin_short_UPC_name;
-__rejoin_relate[__rejoin_short_UPC_name] = __rejoin_UPC_name;
-__rejoin_relate[__rejoin_IPL_name] = __rejoin_short_IPL_name;
-__rejoin_relate[__rejoin_short_IPL_name] = __rejoin_IPL_name;
-__rejoin_relate[__rejoin_PRE_name] = __rejoin_short_PRE_name;
-__rejoin_relate[__rejoin_short_PRE_name] = __rejoin_PRE_name;
+const __rejoinproc_SyntaxFestQuasy2021_name = "Proceedings of the Second Workshop on Quantitative Syntax (Quasy, SyntaxFest 2021)";
+const __rejoinproc_short_SyntaxFestQuasy2021_name = "Quasy, SyntaxFest 2021";
+
+var __rejoinproc_relate = {};
+__rejoinproc_relate[__rejoinproc_all] = __rejoinproc_short_all;
+__rejoinproc_relate[__rejoinproc_short_all] = __rejoinproc_all;
+
+__rejoinproc_relate[__rejoinproc_ARXIV_name] = __rejoinproc_short_ARXIV_name;
+__rejoinproc_relate[__rejoinproc_short_ARXIV_name] = __rejoinproc_ARXIV_name;
+
+__rejoinproc_relate[__rejoinproc_JSCS_name] = __rejoinproc_short_JSCS_name;
+__rejoinproc_relate[__rejoinproc_short_JSCS_name] = __rejoinproc_JSCS_name;
+
+__rejoinproc_relate[__rejoinproc_JSTAT_name] = __rejoinproc_short_JSTAT_name;
+__rejoinproc_relate[__rejoinproc_short_JSTAT_name] = __rejoinproc_JSTAT_name;
+
+__rejoinproc_relate[__rejoinproc_UPC_name] = __rejoinproc_short_UPC_name;
+__rejoinproc_relate[__rejoinproc_short_UPC_name] = __rejoinproc_UPC_name;
+
+__rejoinproc_relate[__rejoinproc_IPL_name] = __rejoinproc_short_IPL_name;
+__rejoinproc_relate[__rejoinproc_short_IPL_name] = __rejoinproc_IPL_name;
+
+__rejoinproc_relate[__rejoinproc_PRE_name] = __rejoinproc_short_PRE_name;
+__rejoinproc_relate[__rejoinproc_short_PRE_name] = __rejoinproc_PRE_name;
+
+__rejoinproc_relate[__rejoinproc_SyntaxFestQuasy2021_name] = __rejoinproc_short_SyntaxFestQuasy2021_name;
+__rejoinproc_relate[__rejoinproc_short_SyntaxFestQuasy2021_name] = __rejoinproc_SyntaxFestQuasy2021_name;
 
 // ----------
 // -- Tags --
@@ -97,6 +110,7 @@ const __wt_all = "All work types";
 const __wt_preprint = "Preprint";
 const __wt_JournalPaper = "Journal Paper";
 const __wt_MastersThesis = "Masters Thesis";
+const __wt_ConferenceProceedings = "Conference Proceedings";
 
 // ----------------
 // -- Talk types --

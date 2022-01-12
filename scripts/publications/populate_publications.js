@@ -47,6 +47,13 @@ function make_url(header, text, url, par) {
 	par.appendChild(url_ref);
 }
 
+function full_name_plus_short(full_name, short_name) {
+	if (full_name.search(short_name) == -1) {
+		return full_name + " (" + short_name + ")";
+	}
+	return full_name;
+}
+
 function format_thesis(par, work) {
 	var CITE = work.citation;
 	
@@ -57,7 +64,6 @@ function format_thesis(par, work) {
 	par.appendChild(document.createTextNode(". " + work.work_type));
 	
 	// school
-	console.log(CITE.school_url)
 	make_url(". School: ", CITE.school, CITE.school_url, par);
 	
 	// when published
@@ -72,6 +78,33 @@ function format_thesis(par, work) {
 	par.appendChild(document.createTextNode("."));
 }
 
+function format_preprint_generic(par, work) {
+	var CITE = work.citation;
+	
+	// title and author
+	par.appendChild(document.createTextNode(" \"" + CITE.title + "\"."));
+	par.appendChild(document.createTextNode(" " + CITE.authors + "."));
+	
+	// where published
+	{
+	par.appendChild(document.createTextNode(" In repository: "));
+	var preprint_italics = document.createElement("i");
+	preprint_italics.textContent = full_name_plus_short(CITE.repository, __rejoinproc_relate[CITE.repository]);
+	par.appendChild(preprint_italics);
+	}
+	
+	// when published
+	par.appendChild(document.createTextNode(". " + CITE.when));
+	
+	// DOI
+	make_url(". DOI: ", CITE.doi, CITE.doi, par)
+	// arXiv url
+	make_url(". arXiv url: ", CITE.arxiv_url, CITE.arxiv_url, par)
+	
+	// finish
+	par.appendChild(document.createTextNode("."));
+}
+
 function format_journal_generic(par, work) {
 	var CITE = work.citation;
 	
@@ -81,9 +114,13 @@ function format_journal_generic(par, work) {
 	
 	// where published
 	par.appendChild(document.createTextNode(" In: "));
+	{
 	var journal_italics = document.createElement("i");
-	journal_italics.textContent = CITE.journal + " (" + __rejoin_relate[CITE.journal] + ")";
+	journal_italics.textContent =
+		full_name_plus_short(CITE.journal, __rejoinproc_relate[CITE.journal]);
+	
 	par.appendChild(journal_italics);
+	}
 	
 	// when published
 	par.appendChild(document.createTextNode(". " + CITE.when));
@@ -92,10 +129,12 @@ function format_journal_generic(par, work) {
 	make_url(". DOI: ", CITE.doi, CITE.doi, par)
 	// arXiv url
 	make_url(". arXiv url: ", CITE.arxiv_url, CITE.arxiv_url, par)
+	
+	// finish
 	par.appendChild(document.createTextNode("."));
 }
 
-function format_preprint_generic(par, work) {
+function format_conference_proceedings(par, work) {
 	var CITE = work.citation;
 	
 	// title and author
@@ -103,32 +142,56 @@ function format_preprint_generic(par, work) {
 	par.appendChild(document.createTextNode(" " + CITE.authors + "."));
 	
 	// where published
-	par.appendChild(document.createTextNode(" In repository: "));
-	var journal_italics = document.createElement("i");
-	journal_italics.textContent = CITE.repository + " (" + __rejoin_relate[CITE.repository] + ")";
-	par.appendChild(journal_italics);
+	par.appendChild(document.createTextNode(" In: "));
+	
+	if (CITE.proceedings_url != null) {
+		var proceedings_italics = document.createElement("i");
+		
+		var url_ref = document.createElement("a");
+		url_ref.textContent =
+			full_name_plus_short(CITE.proceedings, __rejoinproc_relate[CITE.proceedings]);
+		
+		url_ref.href = CITE.proceedings_url;
+		
+		proceedings_italics.appendChild(url_ref);
+		par.appendChild(proceedings_italics);
+	}
+	else {
+		var proceedings_italics = document.createElement("i");
+		proceedings_italics.textContent =
+			full_name_plus_short(CITE.proceedings, __rejoinproc_relate[CITE.proceedings]);
+		
+		par.appendChild(proceedings_italics);
+	}
 	
 	// when published
 	par.appendChild(document.createTextNode(". " + CITE.when));
 	
 	// DOI
-	make_url(". DOI: ", CITE.doi, CITE.doi, par)
+	make_url(". DOI: ", CITE.doi, CITE.doi, par);
 	// arXiv url
-	make_url(". arXiv url: ", CITE.arxiv_url, CITE.arxiv_url, par)
+	make_url(". arXiv url: ", CITE.arxiv_url, CITE.arxiv_url, par);
+	// url to proceedings paper
+	make_url(". Online at: ", CITE.url, CITE.url, par);
+	
+	// finish
 	par.appendChild(document.createTextNode("."));
 }
 
 function makeFormattedCitation(workid, work) {
 	var par = document.createElement("p");
 	
-	if (work.work_type == __wt_JournalPaper) {
-		format_journal_generic(par, work);
-	}
-	else if (work.work_type == __wt_preprint) {
+	if (work.work_type == __wt_preprint) {
 		format_preprint_generic(par, work);
+	}
+	else if (work.work_type == __wt_JournalPaper) {
+		format_journal_generic(par, work);
 	}
 	else if (work.work_type == __wt_MastersThesis) {
 		format_thesis(par, work);
+	}
+	else if (work.work_type == __wt_ConferenceProceedings) {
+		format_conference_proceedings(par, work);
 	}
 	else {
 		console.error("        Formatting of citation for work type '" + work.work_type + "' not implemented.");
@@ -198,18 +261,18 @@ function populatePublicationList() {
 	// read values in drop downs
 	const ddYear = document.getElementById(__pubs_dd_years_id);
 	const ddTag = document.getElementById(__pubs_dd_tags_id);
-	const ddJournal = document.getElementById(__pubs_dd_journals_insts_id);
+	const ddReJoInProc = document.getElementById(__pubs_dd_journals_insts_id);
 	const ddWorkType = document.getElementById(__pubs_dd_wt_id);
 	
 	function getTextDD(dd) { return dd.options[dd.selectedIndex].value; }
 	var use_year = getTextDD(ddYear);
 	var use_tag = getTextDD(ddTag);
-	var use_journal = getTextDD(ddJournal);
+	var use_rejoinproc = getTextDD(ddReJoInProc);
 	var use_work_type = getTextDD(ddWorkType);
 	
 	console.log("    Contents of 'year' drop down: " + use_year);
 	console.log("    Contents of 'tag' drop down: " + use_tag);
-	console.log("    Contents of 'journal' drop down: " + use_journal);
+	console.log("    Contents of 'journal' drop down: " + use_rejoinproc);
 	console.log("    Contents of 'work type' drop down: " + use_work_type);
 	
 	// filtering functions
@@ -221,9 +284,23 @@ function populatePublicationList() {
 		if (use_tag == __tag_all) { return true; }
 		return work.tags.includes(use_tag);
 	}
-	function filter_journal(work) {
-		if (use_journal == __rejoin_all) { return true; }
-		return work.journal == use_journal;
+	function filter_rejoinproc(work) {
+		if (use_rejoinproc == __rejoinproc_all) { return true; }
+		
+		var data = null;
+		if (work.work_type == __wt_preprint) {
+			data = work.citation.repository;
+		}
+		else if (work.work_type == __wt_JournalPaper) {
+			data = work.citation.journal;
+		}
+		else if (work.work_type == __wt_MastersThesis) {
+			data = work.citation.school;
+		}
+		else if (work.work_type == __wt_ConferenceProceedings) {
+			data = work.citation.proceedings;
+		}
+		return data == use_rejoinproc;
 	}
 	function filter_work_type(work) {
 		if (use_work_type == __wt_all) { return true; }
@@ -243,7 +320,7 @@ function populatePublicationList() {
 		var to_be_included = 
 			filter_year(workI) &&
 			filter_tag(workI) &&
-			filter_journal(workI) &&
+			filter_rejoinproc(workI) &&
 			filter_work_type(workI);
 		
 		if (to_be_included) {
