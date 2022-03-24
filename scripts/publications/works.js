@@ -62,6 +62,22 @@ const works = {
 	// -----------------------------------------------------------------
 	// 2022
 	
+	w05 : {
+		work_type : __wt_JournalPaper,
+		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Expected_Values, __tag_Algos],
+		year : 2022,
+		citation : {
+			authors : "L. Alemany-Puig and R. Ferrer-i-Cancho",
+			title : "Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees",
+			journal : __rejoinproc_CL_name,
+			when : "2022 (in press)",
+			doi : null,
+			arxiv_url : "http://arxiv.org/abs/2107.03277",
+			url : null
+		},
+		biblatex_citation : "@article{Alemany2022b,\n\ttitle = {{Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees}},\n\tarxivId = {2107.03277},\n\tauthor = {{Alemany-Puig}, {Llu{\\'{i}}s} and {Ferrer-i-Cancho}, {Ramon}},\n\tjournal = {Computational Linguistics},\n\tpages = {in press}\n\turl = {http://arxiv.org/abs/2107.03277},\n\tyear = {2022}\n}"
+	},
+	
 	w04 : {
 		work_type : __wt_JournalPaper,
 		tags : [__tag_Networks, __tag_NetworkScience, __tag_LinArr, __tag_WordOrder, __tag_Optimality],
@@ -114,22 +130,6 @@ const works = {
 		biblatex_citation : "@inproceedings{Alemany2021d,\n\tauthor = {{Alemany-Puig}, Llu{\\'{i}}s and {Esteban}, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\tarxivId = {2112.02512},\n\ttitle = {{The Linear Arrangement Library. A new tool for research on syntactic dependency structures}},\n\tbooktitle = {{P}roceedings of the {S}econd {W}orkshop on {Q}uantitative {S}yntax ({Q}uasy, {S}yntaxFest 2021)},\n\turl = {https://aclanthology.org/2021.quasy-1.1},\n\tmonth = {dec},\n\tyear = {2021},\n\taddress = {Sofia, Bulgaria},\n\tpublisher = {Association for Computational Linguistics},\n\tpages = {1--16}\n}"
 	},
 	
-	w05 : {
-		work_type : __wt_preprint,
-		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Expected_Values, __tag_Algos],
-		year : 2021,
-		citation : {
-			authors : "L. Alemany-Puig and R. Ferrer-i-Cancho",
-			title : "Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees",
-			repository : __rejoinproc_ARXIV_name,
-			when : "2021",
-			doi : null,
-			arxiv_url : "http://arxiv.org/abs/2107.03277",
-			url : null
-		},
-		biblatex_citation : "@article{Alemany2021a,\n\ttitle = {{Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees}},\n\tarchivePrefix = {arXiv},\n\tarxivId = {2107.03277},\n\tauthor = {{Alemany-Puig}, {Llu{\\'{i}}s} and {Ferrer-i-Cancho}, {Ramon}},\n\tjournal = {arXiv},\n\turl = {http://arxiv.org/abs/2107.03277},\n\tyear = {2021}\n}"
-	},
-	
 	// -----------------------------------------------------------------
 	// 2020
 	
@@ -146,7 +146,7 @@ const works = {
 			arxiv_url : "http://arxiv.org/abs/2003.03258",
 			url : null
 		},
-		biblatex_citation : "@article{Alemany2020c, \n\tarchivePrefix = {arXiv}, \n\tarxivId = {2003.03258}, \n\tauthor = {{Alemany-Puig}, {Llu{\\'{i}}s} and {Ferrer-i-Cancho}, {Ramon}},\n\tjournal = {arXiv},\n\ttitle = {{Fast calculation of the variance of edge crossings in random arrangements}},\n\turl = {http://arxiv.org/abs/2003.03258}, \n\tyear = {2020}\n}"
+		biblatex_citation : "@article{Alemany2020c, \n\tarxivId = {2003.03258}, \n\tauthor = {{Alemany-Puig}, {Llu{\\'{i}}s} and {Ferrer-i-Cancho}, {Ramon}},\n\tjournal = {arXiv},\n\ttitle = {{Fast calculation of the variance of edge crossings in random arrangements}},\n\turl = {http://arxiv.org/abs/2003.03258}, \n\tyear = {2020}\n}"
 	},
 	
 	w03 : {

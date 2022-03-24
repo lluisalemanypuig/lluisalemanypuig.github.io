@@ -62,6 +62,9 @@ const __rejoinproc_short_IPL_name = "IPL";
 const __rejoinproc_PRE_name = "Physical Review E";
 const __rejoinproc_short_PRE_name = "PRE";
 
+const __rejoinproc_CL_name = "Computational Linguistics";
+const __rejoinproc_short_CL_name = "CL";
+
 const __rejoinproc_SyntaxFestQuasy2021_name = "Proceedings of the Second Workshop on Quantitative Syntax (Quasy, SyntaxFest 2021)";
 const __rejoinproc_short_SyntaxFestQuasy2021_name = "Quasy, SyntaxFest 2021";
 
@@ -86,6 +89,9 @@ __rejoinproc_relate[__rejoinproc_short_IPL_name] = __rejoinproc_IPL_name;
 
 __rejoinproc_relate[__rejoinproc_PRE_name] = __rejoinproc_short_PRE_name;
 __rejoinproc_relate[__rejoinproc_short_PRE_name] = __rejoinproc_PRE_name;
+
+__rejoinproc_relate[__rejoinproc_CL_name] = __rejoinproc_short_CL_name;
+__rejoinproc_relate[__rejoinproc_short_CL_name] = __rejoinproc_CL_name;
 
 __rejoinproc_relate[__rejoinproc_SyntaxFestQuasy2021_name] = __rejoinproc_short_SyntaxFestQuasy2021_name;
 __rejoinproc_relate[__rejoinproc_short_SyntaxFestQuasy2021_name] = __rejoinproc_SyntaxFestQuasy2021_name;
