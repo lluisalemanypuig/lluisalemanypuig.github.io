@@ -173,6 +173,8 @@ function format_conference_proceedings(par, work) {
 	make_url(". arXiv url: ", CITE.arxiv_url, CITE.arxiv_url, par);
 	// url to proceedings paper
 	make_url(". Online at: ", CITE.url, CITE.url, par);
+	// url to poster paper
+	make_url(". Poster: ", CITE.poster_url, CITE.poster_url, par);
 	
 	// finish
 	par.appendChild(document.createTextNode("."));

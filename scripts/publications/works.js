@@ -125,9 +125,10 @@ const works = {
 			doi : null,
 			arxiv_url : "https://arxiv.org/abs/2112.02512",
 			proceedings_url : "https://aclanthology.org/volumes/2021.quasy-1/",
-			url : "https://aclanthology.org/2021.quasy-1.1"
+			url : "https://aclanthology.org/2021.quasy-1.1",
+			poster_url : "https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/talks_files/SyntaxFest2021_LAL_poster.pdf"
 		},
-		biblatex_citation : "@inproceedings{Alemany2021d,\n\tauthor = {{Alemany-Puig}, Llu{\\'{i}}s and {Esteban}, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\tarxivId = {2112.02512},\n\ttitle = {{The Linear Arrangement Library. A new tool for research on syntactic dependency structures}},\n\tbooktitle = {{P}roceedings of the {S}econd {W}orkshop on {Q}uantitative {S}yntax ({Q}uasy, {S}yntaxFest 2021)},\n\turl = {https://aclanthology.org/2021.quasy-1.1},\n\tmonth = {dec},\n\tyear = {2021},\n\taddress = {Sofia, Bulgaria},\n\tpublisher = {Association for Computational Linguistics},\n\tpages = {1--16}\n}"
+		biblatex_citation : "@inproceedings{Alemany2021a,\n\tauthor = {{Alemany-Puig}, Llu{\\'{i}}s and {Esteban}, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\tarxivId = {2112.02512},\n\ttitle = {{The Linear Arrangement Library. A new tool for research on syntactic dependency structures}},\n\tbooktitle = {{P}roceedings of the {S}econd {W}orkshop on {Q}uantitative {S}yntax ({Q}uasy, {S}yntaxFest 2021)},\n\turl = {https://aclanthology.org/2021.quasy-1.1},\n\tmonth = {dec},\n\tyear = {2021},\n\taddress = {Sofia, Bulgaria},\n\tpublisher = {Association for Computational Linguistics},\n\tpages = {1--16}\n}"
 	},
 	
 	// -----------------------------------------------------------------
