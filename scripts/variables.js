@@ -106,6 +106,7 @@ const __tag_RandGraphs = "Random graphs";
 const __tag_LinArr = "Linear arrangements";
 const __tag_Algos = "Algorithms";
 const __tag_Minimization = "Minimization";
+const __tag_Maximization = "Maximization";
 const __tag_Linear_Arrangement_Library = "Linear Arrangement Library (LAL)";
 const __tag_Expected_Values = "Expected Values";
 const __tag_Quantitative_Dependency_Syntax = "Quantitative Dependency Syntax";
