@@ -62,6 +62,22 @@ const works = {
 	// -----------------------------------------------------------------
 	// 2022
 	
+	w10 : {
+		work_type : __wt_preprint,
+		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Expected_Values, __tag_Algos],
+		year : 2022,
+		citation : {
+			authors : "L. Alemany-Puig, and R. Ferrer-i-Cancho",
+			title : "Linear-time calculation of the expected sum of edge lengths in random planar linearizations of trees",
+			repository : __rejoinproc_ARXIV_name,
+			when : "2022",
+			doi : null,
+			arxiv_url : "https://arxiv.org/abs/2207.05564",
+			url : null
+		},
+		biblatex_citation : "@article{Alemany2022d, \n\tarxivId = {2003.03258}, \n\tauthor = {{Alemany-Puig}, {Llu{\\'{i}}s} and {Ferrer-i-Cancho}, {Ramon}},\n\tjournal = {arXiv},\n\ttitle = {{Linear-time calculation of the expected sum of edge lengths in random planar linearizations of trees}},\n\turl = {https://arxiv.org/abs/2207.05564}, \n\tyear = {2022}\n}"
+	},
+	
 	w09 : {
 		work_type : __wt_preprint,
 		tags : [__tag_LinArr, __tag_Maximization, __tag_Algos],
@@ -91,7 +107,7 @@ const works = {
 			arxiv_url : "https://arxiv.org/abs/2107.03277",
 			url : null
 		},
-		biblatex_citation : "@article{Alemany2022b,\n\ttitle = {{Linear-time calculation of the expected sum of edge lengths in projective linearizations of trees}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tjournal = {Computational Linguistics},\n\tmonth = {09},\n\tyear = {2022},\n\tpages = {1-25},\n\tissn = {0891-2017},\n\tdoi = {https://doi.org/10.1162/coli_a_00442},\n\turl = {https://arxiv.org/abs/2107.03277}\n}"
+		biblatex_citation : "@article{Alemany2022b,\n\ttitle = {{Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tjournal = {Computational Linguistics},\n\tmonth = {09},\n\tyear = {2022},\n\tpages = {1-25},\n\tissn = {0891-2017},\n\tdoi = {https://doi.org/10.1162/coli_a_00442},\n\turl = {https://arxiv.org/abs/2107.03277}\n}"
 	},
 	
 	w04 : {
