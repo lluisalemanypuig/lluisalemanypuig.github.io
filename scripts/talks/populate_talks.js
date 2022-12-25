@@ -162,7 +162,7 @@ function populateTalksList() {
 		if (use_year == __year_all) { return true; }
 		return use_year == talk.year;
 	}
-	function filter_tag(work) {
+	function filter_tag(talk) {
 		if (use_tag == __tag_all) { return true; }
 		return talk.tags.includes(use_tag);
 	}
