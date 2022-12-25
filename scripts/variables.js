@@ -164,13 +164,3 @@ const __par_pubs_item_count_id = "pubs_item_count";
 
 const __div_talklist = "talks_list_div";
 const __par_talks_item_count_id = "talks_item_count";
-
-// -------------------------
-// -- Names of parameters --
-const __param_year = "lapyear";
-const __param_tag = "laptag";
-const __param_journal = "lapjournal_inst";
-const __param_wt = "lapwork_type";
-const __param_institution = "lapinst";
-const __param_city = "lapcity";
-const __param_seminar_conf = "lapsemconf";

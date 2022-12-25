@@ -51,43 +51,6 @@ function createDropDowns() {
 	div.appendChild(center);
 }
 
-function setSelection(dd, query) {
-	// ddYears now contains the full list of years
-	var list = [];
-	for (var i = 0; i < dd.childNodes.length; ++i) {
-		list.push(dd.childNodes[i].value);
-	}
-	dd.selectedIndex = list.indexOf(query);
-}
-
-function parseParameters() {
-	const urlParams = new URLSearchParams(window.location.search);
-	console.log("    Parameters: " + urlParams);
-	
-	const query_year = urlParams.get(__param_year);
-	const query_tag = urlParams.get(__param_tag);
-	const query_journal = urlParams.get(__param_journal);
-	const query_worktype = urlParams.get(__param_wt);
-	
-	console.log("    Value of parameter: year= " + query_year);
-	console.log("    Value of parameter: tag= " + query_tag);
-	console.log("    Value of parameter: journal= " + query_journal);
-	console.log("    Value of parameter: work type= " + query_worktype);
-	
-	if (query_year != null) {
-		setSelection(document.getElementById(__pubs_dd_years_id), query_year);
-	}
-	if (query_tag != null) {
-		setSelection(document.getElementById(__pubs_dd_tags_id), query_tag);
-	}
-	if (query_journal != null) {
-		setSelection(document.getElementById(__pubs_dd_journals_insts_id), query_journal);
-	}
-	if (query_worktype != null) {
-		setSelection(document.getElementById(__pubs_dd_wt_id), query_worktype);
-	}
-}
-
 window.onload = function() {
 	// ****** Add the dropdowns in the appropriate 'div' class
 	console.log("Adding drop down menus...");
@@ -98,19 +61,6 @@ window.onload = function() {
 	// "All tags", "All years", "All ...", ...
 	console.log("Populating drop down menus...");
 	populateDropDowns();
-	
-	// ****** Parse the parameters in the url.
-	// Call the function populateTable appropriately
-	console.log("Parsing parameters...");
-	const parameters = window.location.search;
-	if (parameters.length == 0) {
-		console.log("    No parameters recorded");
-		// no need to set the values of the dropdowns
-	}
-	else {
-		// parse parameters and set values to dropdowns
-		parseParameters();
-	}
 	
 	// populate the publications list
 	console.log("Populating publication list...");

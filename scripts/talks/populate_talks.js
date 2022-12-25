@@ -18,6 +18,15 @@
  * Contact: Lluís Alemany Puig (lluis.alemany.puig@gmail.com)
  */
 
+function setSelection(dd, query) {
+	// ddYears now contains the full list of years
+	var list = [];
+	for (var i = 0; i < dd.childNodes.length; ++i) {
+		list.push(dd.childNodes[i].value);
+	}
+	dd.selectedIndex = list.indexOf(query);
+}
+
 function createCounter() {
 	var div = document.getElementById(__div_talklist);
 	var itemCount = document.createElement("p");
@@ -104,9 +113,17 @@ function makeFormattedTalk(talkid, TALK) {
 		var tag_text = TALK.tags[t];
 		const url_tag_filt = __url_publications + "?" + __param_tag + "=" + tag_text;
 		
+		var tagClicked = function(event) {
+			console.log("Clicked on talks type tag:", event.target.textContent);
+			setSelection(document.getElementById(__talks_dd_tags_id), event.target.textContent);
+			populateTalksList();
+		};
+		
 		var tag_ref = document.createElement("a");
-		tag_ref.href = url_tag_filt;
+		tag_ref.onclick = tagClicked;
+		tag_ref.style = "color:blue;text-decoration:underline";
 		tag_ref.textContent = tag_text;
+		
 		tags.appendChild(tag_ref);
 		if (t < TALK.tags.length - 1) {
 			tags.appendChild(document.createTextNode(", "));

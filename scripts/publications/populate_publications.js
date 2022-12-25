@@ -17,6 +17,14 @@
  * 
  * Contact: Lluís Alemany Puig (lluis.alemany.puig@gmail.com)
  */
+ 
+function setSelection(dd, query) {
+	var list = [];
+	for (var i = 0; i < dd.childNodes.length; ++i) {
+		list.push(dd.childNodes[i].value);
+	}
+	dd.selectedIndex = list.indexOf(query);
+}
 
 function createCounter() {
 	var div = document.getElementById(__div_publist);
@@ -224,10 +232,16 @@ function makeFormattedCitation(workid, work) {
 	}
 	for (var t = 0; t < work.tags.length; ++t) {
 		var tag_text = work.tags[t];
-		const url_tag_filt = __url_publications + "?" + __param_tag + "=" + tag_text;
+		
+		var tagClicked = function(event) {
+			console.log("Clicked on publication type tag:", event.target.textContent);
+			setSelection(document.getElementById(__pubs_dd_tags_id), event.target.textContent);
+			populatePublicationList();
+		};
 		
 		var tag_ref = document.createElement("a");
-		tag_ref.href = url_tag_filt;
+		tag_ref.onclick = tagClicked;
+		tag_ref.style = "color:blue;text-decoration:underline";
 		tag_ref.textContent = tag_text;
 		tags.appendChild(tag_ref);
 		if (t < work.tags.length - 1) {
