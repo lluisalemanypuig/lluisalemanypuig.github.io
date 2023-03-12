@@ -211,7 +211,7 @@ function makeFormattedCitation(workid, work) {
 	// Text area with the raw biblatex citation.
 	var textarea = document.createElement("textarea");
 	textarea.textContent = work.biblatex_citation;
-	textarea.style = "resize : none";
+	textarea.style = "resize:none";
 	
 	var rows = work.biblatex_citation.split("\n");
 	var maxRowLength = 0;
@@ -241,7 +241,7 @@ function makeFormattedCitation(workid, work) {
 		
 		var tag_ref = document.createElement("a");
 		tag_ref.onclick = tagClicked;
-		tag_ref.style = "color:blue;text-decoration:underline";
+		tag_ref.style = "color:blue;text-decoration:underline;cursor:pointer";
 		tag_ref.textContent = tag_text;
 		tags.appendChild(tag_ref);
 		if (t < work.tags.length - 1) {
