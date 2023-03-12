@@ -111,7 +111,6 @@ function makeFormattedTalk(talkid, TALK) {
 	}
 	for (var t = 0; t < TALK.tags.length; ++t) {
 		var tag_text = TALK.tags[t];
-		const url_tag_filt = __url_publications + "?" + __param_tag + "=" + tag_text;
 		
 		var tagClicked = function(event) {
 			console.log("Clicked on talks type tag:", event.target.textContent);
