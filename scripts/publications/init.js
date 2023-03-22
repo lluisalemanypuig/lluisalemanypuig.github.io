@@ -28,6 +28,7 @@ function createDropDowns() {
 	var ddClassifTags = document.createElement('select');
 	var ddJournalsInstitutions = document.createElement('select');
 	var ddWorkTypes = document.createElement('select');
+	var ddAuthors = document.createElement('select');
 	
 	// modify dropdowns' attributes
 	
@@ -36,18 +37,21 @@ function createDropDowns() {
 	ddClassifTags.onchange = populatePublicationList;
 	ddJournalsInstitutions.onchange = populatePublicationList;
 	ddWorkTypes.onchange = populatePublicationList;
+	ddAuthors.onchange = populatePublicationList;
 	
 	// ids
 	ddYears.id = __pubs_dd_years_id;
 	ddClassifTags.id = __pubs_dd_tags_id;
 	ddJournalsInstitutions.id = __pubs_dd_journals_insts_id;
-	ddWorkTypes.id = __pubs_dd_wt_id;
+	ddWorkTypes.id = __pubs_dd_worktype_id;
+	ddAuthors.id = __pubs_dd_authors_id;
 	
 	var center = document.createElement('center');
 	center.appendChild(ddYears);
 	center.appendChild(ddClassifTags);
 	center.appendChild(ddJournalsInstitutions);
 	center.appendChild(ddWorkTypes);
+	center.appendChild(ddAuthors);
 	div.appendChild(center);
 }
 

@@ -44,7 +44,7 @@ wXX : {
 
 const talks = {
 	IQLA_GIAT_2021_07__2 : {
-		talk_type : __tt_workshop,
+		talk_type : __talktype_workshop,
 		what_talk : __talkname_IQLA_GIAT_2021_07,
 		
 		talk_title : "An introduction to Quantitative Dependency Syntax with the Linear Arrangement Library",
@@ -69,7 +69,7 @@ const talks = {
 	},
 	
 	IQLA_GIAT_2021_07__1 : {
-		talk_type : __tt_workshop,
+		talk_type : __talktype_workshop,
 		what_talk : __talkname_IQLA_GIAT_2021_07,
 		
 		talk_title : "An introduction to Quantitative Dependency Syntax with the Linear Arrangement Library",
@@ -94,7 +94,7 @@ const talks = {
 	},
 	
 	CHINA_2021_06_04 : {
-		talk_type : __tt_seminar,
+		talk_type : __talktype_seminar,
 		what_talk : __talkname_Zheijang_University_Python_06_2021,
 		
 		talk_title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
@@ -119,7 +119,7 @@ const talks = {
 	},
 	
 	CHINA_2021_06_03 : {
-		talk_type : __tt_seminar,
+		talk_type : __talktype_seminar,
 		what_talk : __talkname_Zheijang_University_Python_06_2021,
 		
 		talk_title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
@@ -144,7 +144,7 @@ const talks = {
 	},
 	
 	CHINA_2021_06_01 : {
-		talk_type : __tt_seminar,
+		talk_type : __talktype_seminar,
 		what_talk : __talkname_Zheijang_University_Python_06_2021,
 		
 		talk_title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
@@ -169,7 +169,7 @@ const talks = {
 	},
 	
 	LIMDA_2019_12_18 : {
-		talk_type : __tt_seminar,
+		talk_type : __talktype_seminar,
 		what_talk : __talkname_LIMDA,
 		
 		talk_title : "Edge crossings in random arrangements",

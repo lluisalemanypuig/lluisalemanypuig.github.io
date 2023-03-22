@@ -18,6 +18,15 @@
  * Contact: Lluís Alemany Puig (lluis.alemany.puig@gmail.com)
  */
 
+// ---------------
+// -- authors --
+const __author_all = "All authors";
+const __author_me = "L. Alemany-Puig";
+const __author_JLEsteban = "J. L. Esteban";
+const __author_RFerreriCancho = "R. Ferrer-i-Cancho";
+const __author_MMora = "M. Mora";
+const __author_CGomezRodriguez = "C. Gómez-Rodríguez";
+
 // ----------
 // -- urls --
 const __url_cqllab = "https://cqllab.upc.edu";
@@ -114,18 +123,18 @@ const __tag_Optimality = "Optimality of Dependency Distances";
 
 // ----------------
 // -- Work types --
-const __wt_all = "All work types";
-const __wt_preprint = "Preprint";
-const __wt_JournalPaper = "Journal Paper";
-const __wt_MastersThesis = "Masters Thesis";
-const __wt_ConferenceProceedings = "Conference Proceedings";
+const __worktype_all = "All work types";
+const __worktype_preprint = "Preprint";
+const __worktype_JournalPaper = "Journal Paper";
+const __worktype_MastersThesis = "Masters Thesis";
+const __worktype_ConferenceProceedings = "Conference Proceedings";
 
 // ----------------
 // -- Talk types --
-const __tt_all = "All talk types";
-const __tt_seminar = "Seminar";
-const __tt_conference = "Conference";
-const __tt_workshop = "Workshop";
+const __talktype_all = "All talk types";
+const __talktype_seminar = "Seminar";
+const __talktype_conference = "Conference";
+const __talktype_workshop = "Workshop";
 
 // ----------------
 // -- Talk names --
@@ -147,7 +156,8 @@ const __year_2022 = "2022";
 const __pubs_dd_years_id = "pubs_ddYears";
 const __pubs_dd_tags_id = "pubs_ddClassifTags";
 const __pubs_dd_journals_insts_id = "pubs_ddJournalsInstitutions";
-const __pubs_dd_wt_id = "pubs_ddWorkTypes";
+const __pubs_dd_worktype_id = "pubs_ddWorkTypes";
+const __pubs_dd_authors_id = "pubs_ddAuthors";
 
 // ---------------------------------
 // -- TALKS PAGE: drop down names --

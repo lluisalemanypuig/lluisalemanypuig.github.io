@@ -41,24 +41,26 @@ function addToDropDown(dd, item, relate) {
 
 function populateDropDowns() {
 	// gather all 'hidden' names
-	var all_tags = [];		// tags used in 'works'
-	var all_years = [];		// years used in 'works'
+	var all_tags = [];			// tags used in 'works'
+	var all_years = [];			// years used in 'works'
 	var all_rejoinproc = [];	// journals used in 'works'
-	var all_work_types = [];// work types used in 'works'
+	var all_work_types = [];	// work types used in 'works'
+	var all_authors = [];		// authors in 'works'
 	
 	// default tags
 	all_tags.push(__tag_all);
 	all_years.push(__year_all);
 	all_rejoinproc.push(__rejoinproc_all);
-	all_work_types.push(__wt_all);
+	all_work_types.push(__worktype_all);
+	all_authors.push(__author_all);
 	
 	// traverse all works
 	for (var i = 0; i < Object.keys(works).length; ++i) {
 		var key = Object.keys(works)[i];
 		var workI = works[key];
-		for (var j = 0; j < workI.tags.length; ++j) {
-			all_tags.push(workI.tags[j]);
-		}
+		
+		all_tags = all_tags.concat(workI.tags);
+		all_authors = all_authors.concat(workI.citation.authors);
 		
 		// gather years
 		all_years.push(workI.year);
@@ -66,16 +68,16 @@ function populateDropDowns() {
 		all_work_types.push(workI.work_type);
 		
 		// gather reposiroties/journals/institutions/proceedings
-		if (workI.work_type == __wt_preprint) {
+		if (workI.work_type == __worktype_preprint) {
 			all_rejoinproc.push(workI.citation.repository);
 		}
-		else if (workI.work_type == __wt_JournalPaper) {
+		else if (workI.work_type == __worktype_JournalPaper) {
 			all_rejoinproc.push(workI.citation.journal);
 		}
-		else if (workI.work_type == __wt_MastersThesis) {
+		else if (workI.work_type == __worktype_MastersThesis) {
 			all_rejoinproc.push(workI.citation.school);
 		}
-		else if (workI.work_type == __wt_ConferenceProceedings) {
+		else if (workI.work_type == __worktype_ConferenceProceedings) {
 			all_rejoinproc.push(workI.citation.proceedings);
 		}
 	}
@@ -85,6 +87,8 @@ function populateDropDowns() {
 	all_tags = all_tags.filter(onlyUnique);
 	all_rejoinproc = all_rejoinproc.filter(onlyUnique);
 	all_work_types = all_work_types.filter(onlyUnique);
+	all_authors = all_authors.filter(onlyUnique);
+	all_authors = all_authors.filter(function(a) { return a != __author_me; });
 	
 	// post process tags
 	all_years.sort(
@@ -110,8 +114,15 @@ function populateDropDowns() {
 	);
 	all_work_types.sort(
 		function(a,b) {
-			if (a == __wt_all) { return -1; }
-			if (b == __wt_all) { return  1; }
+			if (a == __worktype_all) { return -1; }
+			if (b == __worktype_all) { return  1; }
+			return a.localeCompare(b);
+		}
+	);
+	all_authors.sort(
+		function(a,b) {
+			if (a == __worktype_all) { return -1; }
+			if (b == __worktype_all) { return  1; }
 			return a.localeCompare(b);
 		}
 	);
@@ -120,24 +131,29 @@ function populateDropDowns() {
 	console.log("    Add " + all_tags.length + " tags: " + all_tags);
 	console.log("    Add " + all_rejoinproc.length + " journals: " + all_rejoinproc);
 	console.log("    Add " + all_work_types.length + " work types: " + all_work_types);
+	console.log("    Add " + all_authors.length + " authors: " + all_authors);
 	
 	var ddYears = document.getElementById(__pubs_dd_years_id);
 	var ddTags = document.getElementById(__pubs_dd_tags_id);
 	var ddJournals = document.getElementById(__pubs_dd_journals_insts_id);
-	var ddWorkTypes = document.getElementById(__pubs_dd_wt_id);
+	var ddWorkTypes = document.getElementById(__pubs_dd_worktype_id);
+	var ddAuthors = document.getElementById(__pubs_dd_authors_id);
 	
 	ddYears.textContent = '';
 	ddTags.textContent = '';
 	ddJournals.textContent = '';
 	ddWorkTypes.textContent = '';
+	ddAuthors.textContent = '';
 	
 	all_years.forEach(function(item) { addToDropDown(ddYears, item, null); });
 	all_tags.forEach(function(item) { addToDropDown(ddTags, item, null); });
 	all_rejoinproc.forEach(function(item) { addToDropDown(ddJournals, item, __rejoinproc_relate); });
 	all_work_types.forEach(function(item) { addToDropDown(ddWorkTypes, item, null); });
+	all_authors.forEach(function(item) { addToDropDown(ddAuthors, item, null); });
 	
 	console.log("    Values in years drop down: " + ddYears.childNodes.length);
 	console.log("    Values in tags drop down: " + ddTags.childNodes.length);
 	console.log("    Values in journals drop down: " + ddJournals.childNodes.length);
 	console.log("    Values in work types drop down: " + ddWorkTypes.childNodes.length);
+	console.log("    Values in authors drop down: " + ddAuthors.childNodes.length);
 }

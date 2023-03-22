@@ -63,11 +63,11 @@ const works = {
 	// 2022
 	
 	w10 : {
-		work_type : __wt_preprint,
+		work_type : __worktype_preprint,
 		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Expected_Values, __tag_Algos],
 		year : 2022,
 		citation : {
-			authors : "L. Alemany-Puig, and R. Ferrer-i-Cancho",
+			authors : [__author_me, __author_RFerreriCancho],
 			title : "Linear-time calculation of the expected sum of edge lengths in random planar linearizations of trees",
 			repository : __rejoinproc_ARXIV_name,
 			when : "2022",
@@ -79,11 +79,11 @@ const works = {
 	},
 	
 	w09 : {
-		work_type : __wt_preprint,
+		work_type : __worktype_preprint,
 		tags : [__tag_LinArr, __tag_Maximization, __tag_Algos],
 		year : 2022,
 		citation : {
-			authors : "L. Alemany-Puig, J. L. Esteban and R. Ferrer-i-Cancho",
+			authors : [__author_me, __author_JLEsteban, __author_RFerreriCancho],
 			title : "The Maximum Linear Arrangement for trees under projectivity and planarity",
 			repository : __rejoinproc_ARXIV_name,
 			when : "2022",
@@ -95,11 +95,11 @@ const works = {
 	},
 	
 	w05 : {
-		work_type : __wt_JournalPaper,
+		work_type : __worktype_JournalPaper,
 		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Expected_Values, __tag_Algos],
 		year : 2022,
 		citation : {
-			authors : "L. Alemany-Puig and R. Ferrer-i-Cancho",
+			authors : [__author_me, __author_RFerreriCancho],
 			title : "Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees",
 			journal : __rejoinproc_CL_name,
 			when : "September 2022",
@@ -107,15 +107,15 @@ const works = {
 			arxiv_url : "https://arxiv.org/abs/2107.03277",
 			url : null
 		},
-		biblatex_citation : "@article{Alemany2022b,\n\ttitle = {{Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tjournal = {Computational Linguistics},\n\tmonth = {09},\n\tyear = {2022},\n\tpages = {1-25},\n\tissn = {0891-2017},\n\tdoi = {https://doi.org/10.1162/coli_a_00442},\n\turl = {https://arxiv.org/abs/2107.03277}\n}"
+		biblatex_citation : "@article{Alemany2022b,\n\ttitle = {{Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees}},\n\tauthor = {{Alemany-Puig}, {Llu\\'{i}s} and {Ferrer-i-Cancho}, {Ramon}},\n\tjournal = {Computational Linguistics},\n\tmonth = {09},\n\tyear = {2022},\n\tpages = {1-25},\n\tissn = {0891-2017},\n\tdoi = {https://doi.org/10.1162/coli_a_00442},\n\turl = {https://arxiv.org/abs/2107.03277}\n}"
 	},
 	
 	w04 : {
-		work_type : __wt_JournalPaper,
+		work_type : __worktype_JournalPaper,
 		tags : [__tag_Networks, __tag_NetworkScience, __tag_LinArr, __tag_WordOrder, __tag_Optimality],
 		year : 2022,
 		citation : {
-			authors : "R. Ferrer-i-Cancho and C. Gómez-Rodríguez and J. L. Esteban and L. Alemany-Puig",
+			authors : [__author_RFerreriCancho, __author_CGomezRodriguez, __author_JLEsteban, __author_me],
 			title : "The optimality of syntactic dependency distances",
 			journal : __rejoinproc_PRE_name,
 			when : "Volume 105 (1) -- 18 January",
@@ -123,15 +123,15 @@ const works = {
 			arxiv_url : "https://arxiv.org/abs/2007.15342",
 			url : null
 		},
-		biblatex_citation : "@article{Ferrer2022a,\n\ttitle = {{Optimality of syntactic dependency distances}},\n\tauthor = {{Ferrer-i-Cancho}, Ramon and {G\\'{o}mez-Rodr\\'{i}guez}, Carlos and Esteban, {Juan Luis} and {Alemany-Puig}, Llu\\'{i}s},\n\tjournal = {Physical Review E},\n\tvolume = {105},\n\tissue = {1},\n\tpages = {014308},\n\tnumpages = {34},\n\tyear = {2022},\n\tmonth = {Jan},\n\tpublisher = {American Physical Society},\n\tdoi = {https://doi.org/10.1088/1742-5468/aba0ab},\n\turl = {https://link.aps.org/doi/10.1103/PhysRevE.105.014308}\n}"
+		biblatex_citation : "@article{Ferrer2022a,\n\ttitle = {{Optimality of syntactic dependency distances}},\n\tauthor = {{Ferrer-i-Cancho}, {Ramon} and {G\\'{o}mez-Rodr\\'{i}guez}, {Carlos} and {Esteban}, {Juan Luis} and {Alemany-Puig}, {Llu\\'{i}s}},\n\tjournal = {Physical Review E},\n\tvolume = {105},\n\tissue = {1},\n\tpages = {014308},\n\tnumpages = {34},\n\tyear = {2022},\n\tmonth = {Jan},\n\tpublisher = {American Physical Society},\n\tdoi = {https://doi.org/10.1088/1742-5468/aba0ab},\n\turl = {https://link.aps.org/doi/10.1103/PhysRevE.105.014308}\n}"
 	},
 	
 	w08 : {
-		work_type : __wt_JournalPaper,
+		work_type : __worktype_JournalPaper,
 		tags : [__tag_LinArr, __tag_Minimization, __tag_Algos],
 		year : 2022,
 		citation : {
-			authors : "L. Alemany-Puig and J. L. Esteban and R. Ferrer-i-Cancho",
+			authors : [__author_me, __author_JLEsteban, __author_RFerreriCancho],
 			title : "Minimum projective linearization of trees in linear time",
 			journal : __rejoinproc_IPL_name,
 			when : "Volume 174 (2022)",
@@ -139,18 +139,18 @@ const works = {
 			arxiv_url : "https://arxiv.org/abs/2102.03277",
 			url : null
 		},
-		biblatex_citation : "@article{Alemany2022a,\n\ttitle = {{Minimum projective linearizations of trees in linear time}},\n\tjournal = {Information Processing Letters},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and Esteban, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\tarxivId = {2102.03277},\n\tvolume = {174},\n\tpages = {106204},\n\tyear = {2022},\n\tissn = {0020-0190},\n\tdoi = {https://doi.org/10.1016/j.ipl.2021.106204}\n}"
+		biblatex_citation : "@article{Alemany2022a,\n\ttitle = {{Minimum projective linearizations of trees in linear time}},\n\tjournal = {Information Processing Letters},\n\tauthor = {{Alemany-Puig}, {Llu\\'{i}s} and {Esteban}, {Juan Luis} and {Ferrer-i-Cancho}, {Ramon}},\n\tarxivId = {2102.03277},\n\tvolume = {174},\n\tpages = {106204},\n\tyear = {2022},\n\tissn = {0020-0190},\n\tdoi = {https://doi.org/10.1016/j.ipl.2021.106204}\n}"
 	},
 	
 	// -----------------------------------------------------------------
 	// 2021
 	
 	w07 : {
-		work_type : __wt_ConferenceProceedings,
+		work_type : __worktype_ConferenceProceedings,
 		tags : [__tag_Linear_Arrangement_Library, __tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Algos],
 		year : 2021,
 		citation : {
-			authors : "L. Alemany-Puig and J. L. Esteban and R. Ferrer-i-Cancho",
+			authors : [__author_me, __author_JLEsteban, __author_RFerreriCancho],
 			title : "The Linear Arrangement Library. A new tool for research on syntactic dependency structures",
 			proceedings : __rejoinproc_SyntaxFestQuasy2021_name,
 			when : "2021",
@@ -160,18 +160,18 @@ const works = {
 			url : "https://aclanthology.org/2021.quasy-1.1",
 			poster_url : "https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/talks_files/SyntaxFest2021_LAL_poster.pdf"
 		},
-		biblatex_citation : "@inproceedings{Alemany2021a,\n\tauthor = {{Alemany-Puig}, Llu{\\'{i}}s and {Esteban}, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\tarxivId = {2112.02512},\n\ttitle = {{The Linear Arrangement Library. A new tool for research on syntactic dependency structures}},\n\tbooktitle = {{P}roceedings of the {S}econd {W}orkshop on {Q}uantitative {S}yntax ({Q}uasy, {S}yntaxFest 2021)},\n\turl = {https://aclanthology.org/2021.quasy-1.1},\n\tmonth = {dec},\n\tyear = {2021},\n\taddress = {Sofia, Bulgaria},\n\tpublisher = {Association for Computational Linguistics},\n\tpages = {1--16}\n}"
+		biblatex_citation : "@inproceedings{Alemany2021a,\n\tauthor = {{Alemany-Puig}, Llu{\\'{i}}s and {Esteban}, {Juan Luis} and {Ferrer-i-Cancho}, {Ramon}},\n\tarxivId = {2112.02512},\n\ttitle = {{The Linear Arrangement Library. A new tool for research on syntactic dependency structures}},\n\tbooktitle = {{P}roceedings of the {S}econd {W}orkshop on {Q}uantitative {S}yntax ({Q}uasy, {S}yntaxFest 2021)},\n\turl = {https://aclanthology.org/2021.quasy-1.1},\n\tmonth = {dec},\n\tyear = {2021},\n\taddress = {Sofia, Bulgaria},\n\tpublisher = {Association for Computational Linguistics},\n\tpages = {1--16}\n}"
 	},
 	
 	// -----------------------------------------------------------------
 	// 2020
 	
 	w06 : {
-		work_type : __wt_preprint,
+		work_type : __worktype_preprint,
 		tags : [__tag_Networks, __tag_NetworkScience, __tag_RandGraphs, __tag_Algos],
 		year : 2020,
 		citation : {
-			authors : "L. Alemany-Puig and R. Ferrer-i-Cancho",
+			authors : [__author_me, __author_RFerreriCancho],
 			title : "Fast calculation of the variance of edge crossings in random arrangements",
 			repository : __rejoinproc_ARXIV_name,
 			when : "2020",
@@ -183,11 +183,11 @@ const works = {
 	},
 	
 	w03 : {
-		work_type : __wt_JournalPaper,
+		work_type : __worktype_JournalPaper,
 		tags : [__tag_Networks, __tag_RandGraphs],
 		year : 2020,
 		citation : {
-			authors : "L. Alemany-Puig and M. Mora and R. Ferrer-i-Cancho",
+			authors : [__author_me, __author_MMora, __author_RFerreriCancho],
 			title : "Reappraising the distribution of the number of edge crossings of graphs on a sphere",
 			journal : __rejoinproc_JSTAT_name,
 			when : "2020.8 (Aug 2020)",
@@ -199,11 +199,11 @@ const works = {
 	},
 	
 	w02 : {
-		work_type : __wt_JournalPaper,
+		work_type : __worktype_JournalPaper,
 		tags : [__tag_Networks, __tag_NetworkScience, __tag_RandGraphs, __tag_LinArr],
 		year : 2020,
 		citation : {
-			authors : "L. Alemany-Puig and R. Ferrer-i-Cancho",
+			authors : [__author_me, __author_RFerreriCancho],
 			title : "Edge crossings in random linear arrangements",
 			journal : __rejoinproc_JSTAT_name,
 			when : "2020.2 (Feb 2020)",
@@ -218,11 +218,11 @@ const works = {
 	// 2019
 	
 	w01 : {
-		work_type : __wt_MastersThesis,
+		work_type : __worktype_MastersThesis,
 		tags : [__tag_Networks, __tag_RandGraphs, __tag_LinArr],
 		year : 2019,
 		citation : {
-			authors : "L. Alemany-Puig",
+			authors : [__author_me],
 			title : "Edge crossings in linear arrangements: from theory to algorithms and applications",
 			school : __rejoinproc_UPC_name,
 			school_url : "https://www.upc.edu/en",
