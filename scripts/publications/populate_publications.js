@@ -65,21 +65,21 @@ function full_name_plus_short(full_name, short_name) {
 function format_authors(par, author_list) {
 	par.appendChild(document.createTextNode(" "));
 	for (var a = 0; a < author_list.length; ++a) {
-		var author_text = author_list[a];
-		
-		var authorClicked = function(event) {
-			console.log("Clicked on author tag:", event.target.textContent);
-			//setSelection(document.getElementById(/* */), event.target.textContent);
-			populatePublicationList();
-		};
-		
 		var author_ref = document.createElement("a");
 		
-		if (author_text != __author_me) {
+		var author_name = author_list[a];
+		if (author_name != __author_me) {
+			
+			var authorClicked = function(event) {
+				console.log("Clicked on author tag:", event.target.textContent);
+				setSelection(document.getElementById(__pubs_dd_authors_id), event.target.textContent);
+				populatePublicationList();
+			};
+			
 			author_ref.onclick = authorClicked;
 			author_ref.style = "color:blue;text-decoration:underline;cursor:pointer";
 		}
-		author_ref.textContent = author_text;
+		author_ref.textContent = author_name;
 		
 		par.appendChild(author_ref);
 		if (a < author_list.length - 1) {
