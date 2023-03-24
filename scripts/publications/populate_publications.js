@@ -62,22 +62,31 @@ function full_name_plus_short(full_name, short_name) {
 	return full_name;
 }
 
-function format_authors(par, author_list) {
+// what to do when author tag is clicked
+var authorTagClicked = function(event) {
+	console.log("Clicked on author tag:", event.target.textContent);
+	setSelection(document.getElementById(__pubs_dd_authors_id), event.target.textContent);
+	populatePublicationList();
+};
+
+// what to do when type tag is clicked
+var typeTagClicked = function(event) {
+	console.log("Clicked on publication type tag:", event.target.textContent);
+	setSelection(document.getElementById(__pubs_dd_tags_id), event.target.textContent);
+	populatePublicationList();
+};
+
+function append_authors_list(par, author_list) {
+	
 	par.appendChild(document.createTextNode(" "));
 	for (var a = 0; a < author_list.length; ++a) {
+		var author_name = author_list[a];
+		
 		var author_ref = document.createElement("a");
 		
-		var author_name = author_list[a];
 		if (author_name != __author_me) {
-			
-			var authorClicked = function(event) {
-				console.log("Clicked on author tag:", event.target.textContent);
-				setSelection(document.getElementById(__pubs_dd_authors_id), event.target.textContent);
-				populatePublicationList();
-			};
-			
-			author_ref.onclick = authorClicked;
-			author_ref.style = "color:blue;text-decoration:underline;cursor:pointer";
+			author_ref.onclick = authorTagClicked;
+			author_ref.style = "color:red;text-decoration:underline;cursor:pointer";
 		}
 		author_ref.textContent = author_name;
 		
@@ -89,12 +98,37 @@ function format_authors(par, author_list) {
 	par.appendChild(document.createTextNode("."));
 }
 
+function make_tags_list(tag_list) {
+	var tags = document.createElement("p");
+	if (tag_list.length > 0) {
+		tags.appendChild(document.createTextNode("Tags: "));
+	}
+	for (var t = 0; t < tag_list.length; ++t) {
+		var tag_text = tag_list[t];
+		
+		var tag_ref = document.createElement("a");
+		tag_ref.onclick = typeTagClicked;
+		tag_ref.style = "color:green;text-decoration:underline;cursor:pointer";
+		tag_ref.textContent = tag_text;
+		
+		tags.appendChild(tag_ref);
+		if (t < tag_list.length - 1) {
+			tags.appendChild(document.createTextNode(", "));
+		}
+	}
+	if (tag_list.length > 0) {
+		tags.appendChild(document.createTextNode("."));
+	}
+	
+	return tags;
+}
+
 function format_thesis(par, work) {
 	var CITE = work.citation;
 	
 	// title and author
 	par.appendChild(document.createTextNode(" \"" + CITE.title + "\""));
-	format_authors(par, CITE.authors);
+	append_authors_list(par, CITE.authors);
 	
 	par.appendChild(document.createTextNode(". " + work.work_type));
 	
@@ -118,7 +152,7 @@ function format_preprint_generic(par, work) {
 	
 	// title
 	par.appendChild(document.createTextNode(" \"" + CITE.title + "\"."));
-	format_authors(par, CITE.authors);
+	append_authors_list(par, CITE.authors);
 	
 	// where published
 	{
@@ -145,7 +179,7 @@ function format_journal_generic(par, work) {
 	
 	// title and author
 	par.appendChild(document.createTextNode(" \"" + CITE.title + "\"."));
-	format_authors(par, CITE.authors);
+	append_authors_list(par, CITE.authors);
 	
 	// where published
 	par.appendChild(document.createTextNode(" In: "));
@@ -174,7 +208,7 @@ function format_conference_proceedings(par, work) {
 	
 	// title and author
 	par.appendChild(document.createTextNode(" \"" + CITE.title + "\"."));
-	format_authors(par, CITE.authors);
+	append_authors_list(par, CITE.authors);
 	
 	// where published
 	par.appendChild(document.createTextNode(" In: "));
@@ -253,31 +287,7 @@ function makeFormattedCitation(workid, work) {
 	textarea.id = "textarea_" + workid;
 	textarea.readOnly = true;
 	
-	var tags = document.createElement("p");
-	if (work.tags.length > 0) {
-		tags.appendChild(document.createTextNode("Tags: "));
-	}
-	for (var t = 0; t < work.tags.length; ++t) {
-		var tag_text = work.tags[t];
-		
-		var tagClicked = function(event) {
-			console.log("Clicked on publication type tag:", event.target.textContent);
-			setSelection(document.getElementById(__pubs_dd_tags_id), event.target.textContent);
-			populatePublicationList();
-		};
-		
-		var tag_ref = document.createElement("a");
-		tag_ref.onclick = tagClicked;
-		tag_ref.style = "color:blue;text-decoration:underline;cursor:pointer";
-		tag_ref.textContent = tag_text;
-		tags.appendChild(tag_ref);
-		if (t < work.tags.length - 1) {
-			tags.appendChild(document.createTextNode(", "));
-		}
-	}
-	if (work.tags.length > 0) {
-		tags.appendChild(document.createTextNode("."));
-	}
+	var tags = make_tags_list(work.tags);
 	
 	var full = document.createElement("li");
 	full.appendChild(par);
@@ -385,64 +395,66 @@ function populatePublicationList() {
 	
 	console.log("    Formatting works...");
 	
-	// current year of publication
-	var currentYear = worksList[0].year;
-	// current list of publications
-	var currentList = document.createElement('ul');
-	currentList.id = "publist_" + currentYear;
-	// ids of lists of publication lists
-	var list_ids = [currentList.id];
-	
-	// add the first year title
-	add_title_h1(div, currentYear);
-	
-	// largest amount of columns among textareas
-	var maxCols = 0;
-	for (var i = 0; i < worksList.length; ++i) {
-		var key = worksList[i];
-		var workI = works[key];
-		console.log("        Formatting " + key + "...");
+	if (worksList.length > 0) {
+		// current year of publication
+		var currentYear = worksList[0].year;
+		// current list of publications
+		var currentList = document.createElement('ul');
+		currentList.id = "publist_" + currentYear;
+		// ids of lists of publication lists
+		var list_ids = [currentList.id];
 		
-		// add new year title, create new list
-		if (workI.year != currentYear) {
+		// add the first year title
+		add_title_h1(div, currentYear);
+		
+		// largest amount of columns among textareas
+		var maxCols = 0;
+		for (var i = 0; i < worksList.length; ++i) {
+			var key = worksList[i];
+			var workI = works[key];
+			console.log("        Formatting " + key + "...");
 			
-			// add to div the current list
-			div.appendChild(currentList);
+			// add new year title, create new list
+			if (workI.year != currentYear) {
+				
+				// add to div the current list
+				div.appendChild(currentList);
+				
+				// update the year and add it
+				currentYear = workI.year;
+				add_title_h1(div, currentYear);
+				
+				// make a new list
+				currentList = document.createElement('ul');
+				currentList.id = "publist_" + currentYear;
+				list_ids.push(currentList.id);
+			}
 			
-			// update the year and add it
-			currentYear = workI.year;
-			add_title_h1(div, currentYear);
+			// make the entry for the current work and
+			// keep track of the maximum number of columns
+			var entry = makeFormattedCitation(key, workI);
+			currentList.appendChild(entry);
 			
-			// make a new list
-			currentList = document.createElement('ul');
-			currentList.id = "publist_" + currentYear;
-			list_ids.push(currentList.id);
-		}
-		
-		// make the entry for the current work and
-		// keep track of the maximum number of columns
-		var entry = makeFormattedCitation(key, workI);
-		currentList.appendChild(entry);
-		
-		// text area
-		var textArea = entry.childNodes[1];
-		if (maxCols < textArea.cols) {
-			maxCols = textArea.cols;
-		}
-	}
-	// add the current list
-	div.appendChild(currentList);
-	
-	// make all text areas have the same number of columns.
-	for (var j = 0; j < list_ids.length; ++j) {
-		var list = document.getElementById(list_ids[j]);
-		
-		for (var i = 0; i < list.childNodes.length; ++i) {
-			// item is a <li> object
-			var itemChildren = list.childNodes[i].childNodes;
 			// text area
-			var textArea = itemChildren[1];
-			textArea.cols = maxCols;
+			var textArea = entry.childNodes[1];
+			if (maxCols < textArea.cols) {
+				maxCols = textArea.cols;
+			}
+		}
+		// add the current list
+		div.appendChild(currentList);
+		
+		// make all text areas have the same number of columns.
+		for (var j = 0; j < list_ids.length; ++j) {
+			var list = document.getElementById(list_ids[j]);
+			
+			for (var i = 0; i < list.childNodes.length; ++i) {
+				// item is a <li> object
+				var itemChildren = list.childNodes[i].childNodes;
+				// text area
+				var textArea = itemChildren[1];
+				textArea.cols = maxCols;
+			}
 		}
 	}
 	
