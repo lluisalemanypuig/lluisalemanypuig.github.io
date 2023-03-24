@@ -82,15 +82,20 @@ function append_authors_list(par, author_list) {
 	for (var a = 0; a < author_list.length; ++a) {
 		var author_name = author_list[a];
 		
-		var author_ref = document.createElement("a");
-		
 		if (author_name != __author_me) {
+			var author_ref = document.createElement("a");
+			
 			author_ref.onclick = authorTagClicked;
 			author_ref.style = "color:red;text-decoration:underline;cursor:pointer";
+			
+			author_ref.textContent = author_name;
+			
+			par.appendChild(author_ref);
 		}
-		author_ref.textContent = author_name;
+		else {
+			par.appendChild(document.createTextNode(author_name));
+		}
 		
-		par.appendChild(author_ref);
 		if (a < author_list.length - 1) {
 			par.appendChild(document.createTextNode(", "));
 		}
