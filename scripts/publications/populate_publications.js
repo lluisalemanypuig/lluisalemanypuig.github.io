@@ -76,9 +76,14 @@ var typeTagClicked = function(event) {
 	populatePublicationList();
 };
 
-function make_DOI(doi, par) {
-	console.log(doi);
-	make_url(" DOI: ", doi, (doi == null ? null : "https://doi.org/" + doi), par);
+function make_DOI_url(doi, par, prefix = "") {
+	var url = (doi == null ? null : "https://doi.org/" + doi);
+	make_url(prefix + " DOI: ", doi, url, par);
+}
+
+function make_ARXIV_url(arxivid, par, prefix = "") {
+	var url = (arxivid == null ? null : "https://arxiv.org/abs/" + arxivid);
+	make_url(prefix + " arXiv: ", arxivid, url, par);
 }
 
 function append_authors_list(par, author_list) {
@@ -89,12 +94,9 @@ function append_authors_list(par, author_list) {
 		
 		if (author_name != __author_me) {
 			var author_ref = document.createElement("a");
-			
 			author_ref.onclick = authorTagClicked;
 			author_ref.style = "color:red;text-decoration:underline;cursor:pointer";
-			
 			author_ref.textContent = author_name;
-			
 			par.appendChild(author_ref);
 		}
 		else {
@@ -151,9 +153,9 @@ function format_thesis(par, work) {
 	// url
 	make_url(". URL: ", CITE.url, CITE.url, par);
 	// DOI
-	make_DOI(CITE.doi, par);
+	make_DOI_url(CITE.doi, par, ".");
 	// arXiv url
-	make_url(". arXiv url: ", CITE.arxiv_url, CITE.arxiv_url, par);
+	make_ARXIV_url(CITE.arxiv_id, par, ".");
 	par.appendChild(document.createTextNode("."));
 }
 
@@ -176,9 +178,9 @@ function format_preprint_generic(par, work) {
 	par.appendChild(document.createTextNode(". " + CITE.when));
 	
 	// DOI
-	make_DOI(CITE.doi, par);
+	make_DOI_url(CITE.doi, par, ".");
 	// arXiv url
-	make_url(". arXiv url: ", CITE.arxiv_url, CITE.arxiv_url, par)
+	make_ARXIV_url(CITE.arxiv_id, par, ".");
 	
 	// finish
 	par.appendChild(document.createTextNode("."));
@@ -205,9 +207,9 @@ function format_journal_generic(par, work) {
 	par.appendChild(document.createTextNode(". " + CITE.when));
 	
 	// DOI
-	make_DOI(CITE.doi, par);
+	make_DOI_url(CITE.doi, par, ".");
 	// arXiv url
-	make_url(". arXiv url: ", CITE.arxiv_url, CITE.arxiv_url, par)
+	make_ARXIV_url(CITE.arxiv_id, par, ".");
 	
 	// finish
 	par.appendChild(document.createTextNode("."));
@@ -247,11 +249,11 @@ function format_conference_proceedings(par, work) {
 	par.appendChild(document.createTextNode(". " + CITE.when));
 	
 	// DOI
-	make_DOI(CITE.doi, par);
+	make_DOI_url(CITE.doi, par, ".");
 	// arXiv url
-	make_url(". arXiv url: ", CITE.arxiv_url, CITE.arxiv_url, par);
+	make_ARXIV_url(CITE.arxiv_id, par, ".");
 	// url to proceedings paper
-	make_url(". Online at: ", CITE.url, CITE.url, par);
+	make_url(". Online at: ", CITE.proceedings_url, CITE.proceedings_url, par);
 	// url to poster paper
 	make_url(". Poster: ", CITE.poster_url, CITE.poster_url, par);
 	
