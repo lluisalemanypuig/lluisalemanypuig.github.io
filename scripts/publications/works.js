@@ -103,7 +103,7 @@ const works = {
 			title : "Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees",
 			journal : __rejoinproc_CL_name,
 			when : "September 2022",
-			doi : "https://doi.org/10.1162/coli_a_00442",
+			doi : "10.1162/coli_a_00442",
 			arxiv_url : "https://arxiv.org/abs/2107.03277",
 			url : null
 		},
@@ -119,7 +119,7 @@ const works = {
 			title : "The optimality of syntactic dependency distances",
 			journal : __rejoinproc_PRE_name,
 			when : "Volume 105 (1) -- 18 January",
-			doi : "https://doi.org/10.1088/1742-5468/aba0ab",
+			doi : "10.1088/1742-5468/aba0ab",
 			arxiv_url : "https://arxiv.org/abs/2007.15342",
 			url : null
 		},
@@ -135,7 +135,7 @@ const works = {
 			title : "Minimum projective linearization of trees in linear time",
 			journal : __rejoinproc_IPL_name,
 			when : "Volume 174 (2022)",
-			doi : "https://doi.org/10.1016/j.ipl.2021.106204",
+			doi : "10.1016/j.ipl.2021.106204",
 			arxiv_url : "https://arxiv.org/abs/2102.03277",
 			url : null
 		},
@@ -191,7 +191,7 @@ const works = {
 			title : "Reappraising the distribution of the number of edge crossings of graphs on a sphere",
 			journal : __rejoinproc_JSTAT_name,
 			when : "2020.8 (Aug 2020)",
-			doi : "https://doi.org/10.1088/1742-5468/aba0ab",
+			doi : "10.1088/1742-5468/aba0ab",
 			arxiv_url : "https://arxiv.org/abs/2003.03353",
 			url : null
 		},
@@ -207,7 +207,7 @@ const works = {
 			title : "Edge crossings in random linear arrangements",
 			journal : __rejoinproc_JSTAT_name,
 			when : "2020.2 (Feb 2020)",
-			doi : "https://doi.org/10.1088/1742-5468/ab6845",
+			doi : "10.1088/1742-5468/ab6845",
 			arxiv_url : "https://arxiv.org/abs/1910.03926",
 			url : null
 		},

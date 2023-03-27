@@ -76,6 +76,11 @@ var typeTagClicked = function(event) {
 	populatePublicationList();
 };
 
+function make_DOI(doi, par) {
+	console.log(doi);
+	make_url(" DOI: ", doi, (doi == null ? null : "https://doi.org/" + doi), par);
+}
+
 function append_authors_list(par, author_list) {
 	
 	par.appendChild(document.createTextNode(" "));
@@ -146,7 +151,7 @@ function format_thesis(par, work) {
 	// url
 	make_url(". URL: ", CITE.url, CITE.url, par);
 	// DOI
-	make_url(". DOI: ", CITE.doi, CITE.doi, par);
+	make_DOI(CITE.doi, par);
 	// arXiv url
 	make_url(". arXiv url: ", CITE.arxiv_url, CITE.arxiv_url, par);
 	par.appendChild(document.createTextNode("."));
@@ -171,7 +176,7 @@ function format_preprint_generic(par, work) {
 	par.appendChild(document.createTextNode(". " + CITE.when));
 	
 	// DOI
-	make_url(". DOI: ", CITE.doi, CITE.doi, par)
+	make_DOI(CITE.doi, par);
 	// arXiv url
 	make_url(". arXiv url: ", CITE.arxiv_url, CITE.arxiv_url, par)
 	
@@ -200,7 +205,7 @@ function format_journal_generic(par, work) {
 	par.appendChild(document.createTextNode(". " + CITE.when));
 	
 	// DOI
-	make_url(". DOI: ", CITE.doi, CITE.doi, par)
+	make_DOI(CITE.doi, par);
 	// arXiv url
 	make_url(". arXiv url: ", CITE.arxiv_url, CITE.arxiv_url, par)
 	
@@ -242,7 +247,7 @@ function format_conference_proceedings(par, work) {
 	par.appendChild(document.createTextNode(". " + CITE.when));
 	
 	// DOI
-	make_url(". DOI: ", CITE.doi, CITE.doi, par);
+	make_DOI(CITE.doi, par);
 	// arXiv url
 	make_url(". arXiv url: ", CITE.arxiv_url, CITE.arxiv_url, par);
 	// url to proceedings paper
