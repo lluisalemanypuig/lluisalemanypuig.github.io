@@ -107,7 +107,7 @@ const works = {
 			arxiv_url : "https://arxiv.org/abs/2107.03277",
 			url : null
 		},
-		biblatex_citation : "@article{Alemany2022b,\n\ttitle = {{Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees}},\n\tauthor = {{Alemany-Puig}, {Llu\\'{i}s} and {Ferrer-i-Cancho}, {Ramon}},\n\tjournal = {Computational Linguistics},\n\tmonth = {09},\n\tyear = {2022},\n\tpages = {1-25},\n\tissn = {0891-2017},\n\tdoi = {https://doi.org/10.1162/coli_a_00442},\n\turl = {https://arxiv.org/abs/2107.03277}\n}"
+		biblatex_citation : "@article{Alemany2022b,\n\ttitle = {{Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees}},\n\tauthor = {{Alemany-Puig}, {Llu\\'{i}s} and {Ferrer-i-Cancho}, {Ramon}},\n\tjournal = {Computational Linguistics},\n\tmonth = {09},\n\tyear = {2022},\n\tpages = {1-25},\n\tissn = {0891-2017},\n\tdoi = {10.1162/coli_a_00442},\n\turl = {https://arxiv.org/abs/2107.03277}\n}"
 	},
 	
 	w04 : {
@@ -123,7 +123,7 @@ const works = {
 			arxiv_url : "https://arxiv.org/abs/2007.15342",
 			url : null
 		},
-		biblatex_citation : "@article{Ferrer2022a,\n\ttitle = {{Optimality of syntactic dependency distances}},\n\tauthor = {{Ferrer-i-Cancho}, {Ramon} and {G\\'{o}mez-Rodr\\'{i}guez}, {Carlos} and {Esteban}, {Juan Luis} and {Alemany-Puig}, {Llu\\'{i}s}},\n\tjournal = {Physical Review E},\n\tvolume = {105},\n\tissue = {1},\n\tpages = {014308},\n\tnumpages = {34},\n\tyear = {2022},\n\tmonth = {Jan},\n\tpublisher = {American Physical Society},\n\tdoi = {https://doi.org/10.1088/1742-5468/aba0ab},\n\turl = {https://link.aps.org/doi/10.1103/PhysRevE.105.014308}\n}"
+		biblatex_citation : "@article{Ferrer2022a,\n\ttitle = {{Optimality of syntactic dependency distances}},\n\tauthor = {{Ferrer-i-Cancho}, {Ramon} and {G\\'{o}mez-Rodr\\'{i}guez}, {Carlos} and {Esteban}, {Juan Luis} and {Alemany-Puig}, {Llu\\'{i}s}},\n\tjournal = {Physical Review E},\n\tvolume = {105},\n\tissue = {1},\n\tpages = {014308},\n\tnumpages = {34},\n\tyear = {2022},\n\tmonth = {Jan},\n\tpublisher = {American Physical Society},\n\tdoi = {10.1088/1742-5468/aba0ab},\n\turl = {https://arxiv.org/abs/2007.15342}\n}"
 	},
 	
 	w08 : {
@@ -139,7 +139,7 @@ const works = {
 			arxiv_url : "https://arxiv.org/abs/2102.03277",
 			url : null
 		},
-		biblatex_citation : "@article{Alemany2022a,\n\ttitle = {{Minimum projective linearizations of trees in linear time}},\n\tjournal = {Information Processing Letters},\n\tauthor = {{Alemany-Puig}, {Llu\\'{i}s} and {Esteban}, {Juan Luis} and {Ferrer-i-Cancho}, {Ramon}},\n\tarxivId = {2102.03277},\n\tvolume = {174},\n\tpages = {106204},\n\tyear = {2022},\n\tissn = {0020-0190},\n\tdoi = {https://doi.org/10.1016/j.ipl.2021.106204}\n}"
+		biblatex_citation : "@article{Alemany2022a,\n\ttitle = {{Minimum projective linearizations of trees in linear time}},\n\tjournal = {Information Processing Letters},\n\tauthor = {{Alemany-Puig}, {Llu\\'{i}s} and {Esteban}, {Juan Luis} and {Ferrer-i-Cancho}, {Ramon}},\n\turl = {https://arxiv.org/abs/2102.03277},\n\tvolume = {174},\n\tpages = {106204},\n\tyear = {2022},\n\tissn = {0020-0190},\n\tdoi = {10.1016/j.ipl.2021.106204}\n}"
 	},
 	
 	// -----------------------------------------------------------------
@@ -195,7 +195,7 @@ const works = {
 			arxiv_url : "https://arxiv.org/abs/2003.03353",
 			url : null
 		},
-		biblatex_citation : "@article{Alemany2020b, \n\tdoi = {10.1088/1742-5468/aba0ab}, \n\turl = {https://dx.doi.org/10.1088/1742-5468/aba0ab}, \n\tyear = 2020, \n\tmonth = {aug}, \n\tpublisher = {{IOP} {P}ublishing}, \n\tvolume = {2020}, \n\tnumber = {8}, \n\tpages = {083401}, \n\tauthor = {{Alemany-Puig}, {Llu{\\'{i}}s} and {Mora}, {Merc{\\`{e}}} and {Ferrer-i-Cancho}, {Ramon}}, \n\ttitle = {{Reappraising the distribution of the number of edge crossings of graphs on a sphere}}, \n\tjournal = {Journal of Statistical Mechanics: Theory and Experiment}\n}"
+		biblatex_citation : "@article{Alemany2020b, \n\tdoi = {10.1088/1742-5468/aba0ab}, \n\turl = {https://arxiv.org/abs/2003.03353}, \n\tyear = 2020, \n\tmonth = {aug}, \n\tpublisher = {{IOP} {P}ublishing}, \n\tvolume = {2020}, \n\tnumber = {8}, \n\tpages = {083401}, \n\tauthor = {{Alemany-Puig}, {Llu{\\'{i}}s} and {Mora}, {Merc{\\`{e}}} and {Ferrer-i-Cancho}, {Ramon}}, \n\ttitle = {{Reappraising the distribution of the number of edge crossings of graphs on a sphere}}, \n\tjournal = {Journal of Statistical Mechanics: Theory and Experiment}\n}"
 	},
 	
 	w02 : {
@@ -211,7 +211,7 @@ const works = {
 			arxiv_url : "https://arxiv.org/abs/1910.03926",
 			url : null
 		},
-		biblatex_citation : "@article{Alemany2020a, \n\tdoi = {10.1088/1742-5468/ab6845}, \n\turl = {https://dx.doi.org/10.1088/1742-5468/ab6845}, \n\tyear = 2020, \n\tmonth = {feb}, \n\tpublisher = {{IOP} {P}ublishing}, \n\tvolume = {2020}, \n\tnumber = {2}, \n\tpages = {023403}, \n\tauthor = {{Alemany-Puig}, {Llu{\\'{i}}s} and {Ferrer-i-Cancho}, {Ramon}}, \n\ttitle = {{Edge crossings in random linear arrangements}}, \n\tjournal = {Journal of Statistical Mechanics: Theory and Experiment}\n}"
+		biblatex_citation : "@article{Alemany2020a, \n\tdoi = {10.1088/1742-5468/ab6845}, \n\turl = {https://arxiv.org/abs/1910.03926}, \n\tyear = 2020, \n\tmonth = {feb}, \n\tpublisher = {{IOP} {P}ublishing}, \n\tvolume = {2020}, \n\tnumber = {2}, \n\tpages = {023403}, \n\tauthor = {{Alemany-Puig}, {Llu{\\'{i}}s} and {Ferrer-i-Cancho}, {Ramon}}, \n\ttitle = {{Edge crossings in random linear arrangements}}, \n\tjournal = {Journal of Statistical Mechanics: Theory and Experiment}\n}"
 	},
 	
 	// -----------------------------------------------------------------
