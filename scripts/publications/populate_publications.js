@@ -151,7 +151,7 @@ function format_thesis(par, work) {
 	par.appendChild(document.createTextNode(". " + CITE.when));
 	
 	// url
-	make_url(". URL: ", CITE.url, CITE.url, par);
+	make_url(". Online at: ", CITE.url, CITE.url, par);
 	// DOI
 	make_DOI_url(CITE.doi, par, ".");
 	// arXiv url
