@@ -60,6 +60,24 @@ wXX : {
 const works = {
 	
 	// -----------------------------------------------------------------
+	// 2023
+	
+	w09 : {
+		work_type : __worktype_JournalPaper,
+		tags : [__tag_LinArr, __tag_Maximization, __tag_Algos],
+		year : 2023,
+		citation : {
+			authors : [__author_me, __author_JLEsteban, __author_RFerreriCancho],
+			title : "The maximum linear arrangement problem for trees under projectivity and planarity",
+			journal : __rejoinproc_IPL_name,
+			when : "Volume ? (2023)",
+			doi : "10.1016/j.ipl.2023.106400",
+			arxiv_id : "2206.06924"
+		},
+		biblatex_citation : "@article{Alemany2023a,\n\ttitle = {{The maximum linear arrangement problem for trees under projectivity and planarity}},\n\tjournal = {Information Processing Letters},\n\tauthor = {{Alemany-Puig}, {Llu\\'{i}s} and {Esteban}, {Juan Luis} and {Ferrer-i-Cancho}, {Ramon}},\n\turl = {https://arxiv.org/abs/2206.06924},\n\tvolume = {?},\n\tpages = {106400},\n\tyear = {2023},\n\tissn = {0020-0190},\n\tdoi = {10.1016/j.ipl.2023.106400}\n}"
+	},
+	
+	// -----------------------------------------------------------------
 	// 2022
 	
 	w10 : {
@@ -75,21 +93,6 @@ const works = {
 			arxiv_id : "2207.05564"
 		},
 		biblatex_citation : "@article{Alemany2022d, \n\tarxivId = {2003.03258}, \n\tauthor = {{Alemany-Puig}, {Llu{\\'{i}}s} and {Ferrer-i-Cancho}, {Ramon}},\n\tjournal = {arXiv},\n\ttitle = {{Linear-time calculation of the expected sum of edge lengths in random planar linearizations of trees}},\n\turl = {https://arxiv.org/abs/2207.05564}, \n\tyear = {2022}\n}"
-	},
-	
-	w09 : {
-		work_type : __worktype_preprint,
-		tags : [__tag_LinArr, __tag_Maximization, __tag_Algos],
-		year : 2022,
-		citation : {
-			authors : [__author_me, __author_JLEsteban, __author_RFerreriCancho],
-			title : "The Maximum Linear Arrangement for trees under projectivity and planarity",
-			repository : __rejoinproc_ARXIV_name,
-			when : "2022",
-			doi : null,
-			arxiv_id : "2206.06924"
-		},
-		biblatex_citation : "@article{Alemany2022c, \n\tarxivId = {2003.03258}, \n\tauthor = {{Alemany-Puig}, {Llu{\\'{i}}s} and {Esteban}, {Juan Luis} and {Ferrer-i-Cancho}, {Ramon}},\n\tjournal = {arXiv},\n\ttitle = {{The Maximum Linear Arrangement for trees under projectivity and planarity}},\n\turl = {https://arxiv.org/abs/2206.06924}, \n\tyear = {2022}\n}"
 	},
 	
 	w05 : {
