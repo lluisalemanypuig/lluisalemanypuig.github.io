@@ -60,21 +60,21 @@ wXX : {
 const works = {
 	
 	// -----------------------------------------------------------------
-	// 2023
+	// 2024
 	
 	w09 : {
 		work_type : __worktype_JournalPaper,
 		tags : [__tag_LinArr, __tag_Maximization, __tag_Algos],
-		year : 2023,
+		year : 2024,
 		citation : {
 			authors : [__author_me, __author_JLEsteban, __author_RFerreriCancho],
 			title : "The maximum linear arrangement problem for trees under projectivity and planarity",
 			journal : __rejoinproc_IPL_name,
-			when : "Volume ? (2023)",
+			when : "Volume 183 (2024)",
 			doi : "10.1016/j.ipl.2023.106400",
 			arxiv_id : "2206.06924"
 		},
-		biblatex_citation : "@article{Alemany2023a,\n\ttitle = {{The maximum linear arrangement problem for trees under projectivity and planarity}},\n\tjournal = {Information Processing Letters},\n\tauthor = {{Alemany-Puig}, {Llu\\'{i}s} and {Esteban}, {Juan Luis} and {Ferrer-i-Cancho}, {Ramon}},\n\turl = {https://arxiv.org/abs/2206.06924},\n\tvolume = {?},\n\tpages = {106400},\n\tyear = {2023},\n\tissn = {0020-0190},\n\tdoi = {10.1016/j.ipl.2023.106400}\n}"
+		biblatex_citation : "@article{Alemany2023a,\n\ttitle = {{The maximum linear arrangement problem for trees under projectivity and planarity}},\n\tjournal = {Information Processing Letters},\n\tauthor = {{Alemany-Puig}, {Llu\\'{i}s} and {Esteban}, {Juan Luis} and {Ferrer-i-Cancho}, {Ramon}},\n\turl = {https://arxiv.org/abs/2206.06924},\n\tvolume = {183},\n\tpages = {106400},\n\tyear = {2024},\n\tissn = {0020-0190},\n\tdoi = {10.1016/j.ipl.2023.106400}\n}"
 	},
 	
 	// -----------------------------------------------------------------
