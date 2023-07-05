@@ -29,6 +29,7 @@ function createDropDowns() {
 	var ddSeminarConf = document.createElement('select');
 	var ddInstitutions = document.createElement('select');
 	var ddCities = document.createElement('select');
+	var ddAuthors = document.createElement('select');
 	
 	// modify dropdowns' attributes
 	
@@ -38,6 +39,7 @@ function createDropDowns() {
 	ddSeminarConf.onchange = populateTalksList;
 	ddInstitutions.onchange = populateTalksList;
 	ddCities.onchange = populateTalksList;
+	ddAuthors.onchange = populateTalksList;
 	
 	// ids
 	ddYears.id = __talks_dd_years_id;
@@ -45,6 +47,7 @@ function createDropDowns() {
 	ddSeminarConf.id = __talks_dd_seminar_conference;
 	ddInstitutions.id = __talks_dd_institutions;
 	ddCities.id = __talks_dd_cities;
+	ddAuthors.id = __pubs_dd_authors_id;
 	
 	var center = document.createElement('center');
 	center.appendChild(ddYears);
@@ -52,6 +55,7 @@ function createDropDowns() {
 	center.appendChild(ddSeminarConf);
 	center.appendChild(ddInstitutions);
 	center.appendChild(ddCities);
+	center.appendChild(ddAuthors);
 	div.appendChild(center);
 }
 

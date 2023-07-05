@@ -39,6 +39,7 @@ function populateDropDowns() {
 	var all_semconf = [];	// seminars/cities used in 'talks'
 	var all_insts = [];		// institutions used in 'talks'
 	var all_locations = [];	// cities used in 'talks'
+	var all_authors = [];		// authors in 'works'
 	
 	// default tags
 	all_years.push(__year_all);
@@ -46,6 +47,7 @@ function populateDropDowns() {
 	all_semconf.push(__talkname_all);
 	all_insts.push(__institution_all);
 	all_locations.push(__location_all);
+	all_authors.push(__author_all);
 	
 	// traverse all talks and gather all tags
 	for (var i = 0; i < Object.keys(talks).length; ++i) {
@@ -59,6 +61,7 @@ function populateDropDowns() {
 		all_semconf.push(talkI.name);
 		all_insts.push(talkI.institution);
 		all_locations.push(talkI.location);
+		all_authors = all_authors.concat(talkI.authors);
 	}
 	
 	// keep unique tags only
@@ -67,6 +70,8 @@ function populateDropDowns() {
 	all_semconf = all_semconf.filter(onlyUnique);
 	all_insts = all_insts.filter(onlyUnique);
 	all_locations = all_locations.filter(onlyUnique);
+	all_authors = all_authors.filter(onlyUnique);
+	all_authors = all_authors.filter(function(a) { return a != __author_me; });
 	
 	// post process tags
 	all_years.sort(function(a,b){b-a});
@@ -74,34 +79,46 @@ function populateDropDowns() {
 	all_semconf.sort(function(a,b){ return a.localeCompare(b); });
 	all_insts.sort(function(a,b){ return a.localeCompare(b); });
 	all_locations.sort(function(a,b){ return a.localeCompare(b); });
+	all_authors.sort(
+		function(a,b) {
+			if (a == __worktype_all) { return -1; }
+			if (b == __worktype_all) { return  1; }
+			return a.localeCompare(b);
+		}
+	);
 	
 	console.log("    Add " + all_years.length + " years: " + all_years);
 	console.log("    Add " + all_tags.length + " tags: " + all_tags);
 	console.log("    Add " + all_semconf.length + " semianrs/conferences: " + all_semconf);
 	console.log("    Add " + all_insts.length + " institutions: " + all_insts);
 	console.log("    Add " + all_locations.length + " cities: " + all_locations);
+	console.log("    Add " + all_authors.length + " authors: " + all_authors);
 	
 	var ddYears = document.getElementById(__talks_dd_years_id);
 	var ddTags = document.getElementById(__talks_dd_tags_id);
 	var ddSeminarConf = document.getElementById(__talks_dd_seminar_conference);
 	var ddInstitutions = document.getElementById(__talks_dd_institutions);
 	var ddCities = document.getElementById(__talks_dd_cities);
+	var ddAuthors = document.getElementById(__pubs_dd_authors_id);
 	
 	ddYears.textContent = '';
 	ddTags.textContent = '';
 	ddSeminarConf.textContent = '';
 	ddInstitutions.textContent = '';
 	ddCities.textContent = '';
+	ddAuthors.textContent = '';
 	
 	all_years.forEach(function(item) { addToDropDown(ddYears, item); });
 	all_tags.forEach(function(item) { addToDropDown(ddTags, item); });
 	all_semconf.forEach(function(item) { addToDropDown(ddSeminarConf, item); });
 	all_insts.forEach(function(item) { addToDropDown(ddInstitutions, item); });
 	all_locations.forEach(function(item) { addToDropDown(ddCities, item); });
+	all_authors.forEach(function(item) { addToDropDown(ddAuthors, item, null); });
 	
 	console.log("    Values in years drop down: " + ddYears.childNodes.length);
 	console.log("    Values in tags drop down: " + ddTags.childNodes.length);
 	console.log("    Values in seminars/conferences drop down: " + ddSeminarConf.childNodes.length);
 	console.log("    Values in institutions drop down: " + ddInstitutions.childNodes.length);
 	console.log("    Values in cities drop down: " + ddCities.childNodes.length);
+	console.log("    Values in authors drop down: " + ddAuthors.childNodes.length);
 }

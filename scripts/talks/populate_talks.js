@@ -40,6 +40,20 @@ function setCounterText(n) {
 	itemCount.appendChild(document.createTextNode("Amount of items returned: " + n.toString()));
 }
 
+// what to do when author tag is clicked
+var authorTagClicked = function(event) {
+	console.log("Clicked on author tag:", event.target.textContent);
+	setSelection(document.getElementById(__pubs_dd_authors_id), event.target.textContent);
+	populateTalksList();
+};
+
+// what to do when type tag is clicked
+var tagClicked = function(event) {
+	console.log("Clicked on publication type tag:", event.target.textContent);
+	setSelection(document.getElementById(__pubs_dd_tags_id), event.target.textContent);
+	populateTalksList();
+};
+
 function add_title_h1(div, y) {
 	var h1 = document.createElement('h2');
 	h1.textContent = y;
@@ -56,6 +70,30 @@ function make_info_url(header, text, url, par) {
 	par.appendChild(url_ref);
 }
 
+function append_authors_list(par, author_list) {
+	
+	par.appendChild(document.createTextNode(" "));
+	for (var a = 0; a < author_list.length; ++a) {
+		var author_name = author_list[a];
+		
+		if (author_name != __author_me) {
+			var author_ref = document.createElement("a");
+			author_ref.onclick = authorTagClicked;
+			author_ref.style = "color:red;text-decoration:underline;cursor:pointer";
+			author_ref.textContent = author_name;
+			par.appendChild(author_ref);
+		}
+		else {
+			par.appendChild(document.createTextNode(author_name));
+		}
+		
+		if (a < author_list.length - 1) {
+			par.appendChild(document.createTextNode(", "));
+		}
+	}
+	par.appendChild(document.createTextNode("."));
+}
+
 function makeFormattedTalk(talkid, TALK) {
 	var par = document.createElement("p");
 	
@@ -67,9 +105,11 @@ function makeFormattedTalk(talkid, TALK) {
 	par.appendChild(title_italics);
 	}
 	
+	append_authors_list(par, TALK.authors);
+	
 	// add session number
 	if (TALK.session != null) {
-		par.appendChild(document.createTextNode(". Session: " + TALK.session));
+		par.appendChild(document.createTextNode(" Session: " + TALK.session));
 	}
 	
 	// add date
@@ -117,12 +157,6 @@ function makeFormattedTalk(talkid, TALK) {
 	for (var t = 0; t < TALK.tags.length; ++t) {
 		var tag_text = TALK.tags[t];
 		
-		var tagClicked = function(event) {
-			console.log("Clicked on talks type tag:", event.target.textContent);
-			setSelection(document.getElementById(__talks_dd_tags_id), event.target.textContent);
-			populateTalksList();
-		};
-		
 		var tag_ref = document.createElement("a");
 		tag_ref.onclick = tagClicked;
 		tag_ref.style = "color:blue;text-decoration:underline";
@@ -164,6 +198,7 @@ function populateTalksList() {
 	const ddSemConf = document.getElementById(__talks_dd_seminar_conference);
 	const ddInstitutions = document.getElementById(__talks_dd_institutions);
 	const ddCities = document.getElementById(__talks_dd_cities);
+	const ddAuthors = document.getElementById(__pubs_dd_authors_id);
 	
 	function getTextDD(dd) { return dd.options[dd.selectedIndex].value; };
 	var use_year = getTextDD(ddYear);
@@ -171,12 +206,14 @@ function populateTalksList() {
 	var use_semconf = getTextDD(ddSemConf);
 	var use_institution = getTextDD(ddInstitutions);
 	var use_city = getTextDD(ddCities);
+	var use_author = getTextDD(ddAuthors);
 	
 	console.log("    Contents of 'year' drop down: " + use_year);
 	console.log("    Contents of 'tag' drop down: " + use_tag);
 	console.log("    Contents of 'seminar conference' drop down: " + use_semconf);
 	console.log("    Contents of 'institution' drop down: " + use_institution);
 	console.log("    Contents of 'city' drop down: " + use_city);
+	console.log("    Contents of 'author' drop down: " + use_author);
 	
 	// filtering functions
 	function filter_year(talk) {
@@ -199,6 +236,10 @@ function populateTalksList() {
 		if (use_city == __location_all) { return true; }
 		return use_city == talk.location;
 	}
+	function filter_author(talk) {
+		if (use_author == __author_all) { return true; }
+		return talk.authors.includes(use_author);
+	}
 	
 	console.log("    Filtering works...");
 	
@@ -215,7 +256,8 @@ function populateTalksList() {
 			filter_tag(talkI) &&
 			filter_semconf(talkI) &&
 			filter_institution(talkI) &&
-			filter_city(talkI);
+			filter_city(talkI) &&
+			filter_author(talkI);
 		
 		if (to_be_included) {
 			console.log("        Item: " + key + " is to be included in the list");
