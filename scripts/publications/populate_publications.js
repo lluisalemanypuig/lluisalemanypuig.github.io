@@ -139,7 +139,7 @@ function format_thesis(par, work) {
 	var CITE = work.citation;
 	
 	// title and author
-	par.appendChild(document.createTextNode(" \"" + CITE.title + "\""));
+	par.appendChild(document.createTextNode(" \"" + CITE.title + "\"."));
 	append_authors_list(par, CITE.authors);
 	
 	par.appendChild(document.createTextNode(". " + work.work_type));
