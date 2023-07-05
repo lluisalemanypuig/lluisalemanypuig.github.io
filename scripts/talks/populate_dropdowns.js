@@ -56,7 +56,7 @@ function populateDropDowns() {
 		}
 		
 		all_years.push(talkI.year);
-		all_semconf.push(talkI.what_talk);
+		all_semconf.push(talkI.name);
 		all_insts.push(talkI.institution);
 		all_locations.push(talkI.location);
 	}

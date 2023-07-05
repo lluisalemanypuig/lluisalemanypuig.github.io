@@ -47,27 +47,23 @@ function add_title_h1(div, y) {
 }
 
 function make_info_url(header, text, url, par) {
-	par.appendChild(document.createTextNode(header));
+	if (url == null) { return; }
 	
-	if (url != null) {
-		var url_ref = document.createElement("a");
-		url_ref.textContent = text;
-		url_ref.href = url;
-		par.appendChild(url_ref);
-	}
-	else {
-		par.appendChild(document.createTextNode(text));
-	}
+	par.appendChild(document.createTextNode(header));
+	var url_ref = document.createElement("a");
+	url_ref.textContent = text;
+	url_ref.href = url;
+	par.appendChild(url_ref);
 }
 
 function makeFormattedTalk(talkid, TALK) {
 	var par = document.createElement("p");
 	
 	// add title of the talk
-	par.appendChild(document.createTextNode("Title of the " + TALK.talk_type + ": "));
+	par.appendChild(document.createTextNode(TALK.type + ": "));
 	{
 	var title_italics = document.createElement("i");
-	title_italics.textContent = TALK.talk_title;
+	title_italics.textContent = TALK.title;
 	par.appendChild(title_italics);
 	}
 	
@@ -80,7 +76,7 @@ function makeFormattedTalk(talkid, TALK) {
 	par.appendChild(document.createTextNode(". " + TALK.year + " (" + TALK.date + ")"));
 	
 	// add seminar name (and url if applicable)
-	make_info_url(". " + TALK.talk_type + ": ", TALK.what_talk, TALK.talk_url, par);
+	make_info_url(". ", TALK.name, TALK.url, par);
 	
 	// add location
 	{
@@ -92,15 +88,24 @@ function makeFormattedTalk(talkid, TALK) {
 	}
 	
 	// add institution name (and url if applicable)
-	make_info_url( ". ", TALK.institution, TALK.institution_url, par);
+	if (TALK.institution != null) {
+		make_info_url( ". Organized by: ", TALK.institution, TALK.institution_url, par);
+	}
+	else {
+		par.appendChild(document.createTextNode(". Organized by:"));
+		for (var i = 0; i < TALK.institutions.length; ++i) {
+			if (i == 0) {
+				par.appendChild(document.createTextNode(" "));
+			}
+			make_info_url("", TALK.institutions[i], TALK.institutions_url[i], par);
+			if (i < TALK.institutions.length - 1) {
+				par.appendChild(document.createTextNode(", "));
+			}
+		}
+	}
 	
 	// add url to the slides
 	make_info_url(". ", "Slides", TALK.slides_url, par);
-	
-	// add url to the course
-	if (TALK.course_url != null) {
-		make_info_url(". ", "Link to the full " + TALK.talk_type, TALK.course_url, par);
-	}
 	
 	// finish
 	par.appendChild(document.createTextNode("."));

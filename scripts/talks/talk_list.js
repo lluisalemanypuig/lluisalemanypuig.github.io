@@ -22,87 +22,120 @@
 // sample of a talk
 // Name of talk. Replace 'XX' by a two-digit number
 wXX : {
-	talk_type : // type of the talk (at a seminar, at a conference)
+	type : // type of the talk (at a seminar, at a conference)
+	name : // name of the workshop/conference/seminar/...
+	url : // url to the workshop/conference/seminar/...
 	
-	institution : // insitution where the talk was given
-	institution_url : // a url to the insitution where the talk was given
-	
-	location : // city where the talk was given
-	tags : // tags classifying this work
+	title : // title of the workshop/conference/seminar/...
 	year : // year of publication
 	date : // the exact date when I gave the talk
-	talk_title : // talk_title of the talk
+	session : // the session number (optional)
 	
-	// OPTIONAL
-	session : // if the seminar has more than one session,
-	course_url : // if the seminar is part of a course which has a public url (like LAL's courses)
+	slides_url : // url to the slides used
+	
+	// either this
+	institution : // insitution where the talk was given
+	institution_url : // a url to the insitution where the talk was given
+	//
+	// or this
+	institutions : // insitution where the talk was given
+	institutions_url : // a url to the insitution where the talk was given
+	
+	location : // city where the talk was given
+	location_mode : // (online) / (in person)
+	
+	tags : // tags classifying this work
+	
+	info_url : // an url for extra information (optional)
 },
 */
 
 // -----------------------------------------------------------
-// My works (theses, journal articles, papers, preprints, ...)
+// My talks (workshops, conferences, seminars, ...)
 
 const talks = {
+	QUALICO_2023 : {
+		type : __talktype_conference,
+		name : __talkname_QUALICO,
+		url : "https://wp.unil.ch/qualico2023/",
+		
+		title : "Syntactic development and optimality of dependency distances for Japanese as a second language",
+		authors : [__author_SKomori, __author_MSugiura, __author_RFerreriCancho, __author_me, __author_Wli],
+		
+		year : 2023,
+		date : "2023/06/28 -- 2023/07/30",
+		session : "A5 -- Dependencies 3 -- Talk 2",
+		
+		slides_url : null,
+		
+		institutions : [__institution_IQLA, __institution_UNIL],
+		institutions_url : ["http://iqla.org/", "https://www.unil.ch/central/en/home.html"],
+		
+		location : __location_Lausanne,
+		location_mode : "(in person)",
+		
+		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Optimality, __tag_Measuring_Learners_Proficiency]
+	},
+	
 	IQLA_GIAT_2021_07__2 : {
-		talk_type : __talktype_workshop,
-		what_talk : __talkname_IQLA_GIAT_2021_07,
+		type : __talktype_workshop,
+		name : __talkname_IQLA_GIAT_summer_school,
+		url : "http://www.giat.org/?page_id=11&lang=en",
 		
-		talk_title : "An introduction to Quantitative Dependency Syntax with the Linear Arrangement Library",
-		
-		institution : __institution_IQLA_GIAT_Summer_School,
-		institution_url : "http://www.giat.org/",
-		
-		talk_url : "http://www.giat.org/?page_id=11&lang=en",
-		
-		slides_url : "https://mydisk.cs.upc.edu/s/Jrp4pAB23Y3DgEQ",
-		
-		location : __location_Italy,
-		location_mode : "(online)",
-		
-		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Linear_Arrangement_Library],
+		title : "An introduction to Quantitative Dependency Syntax with the Linear Arrangement Library",
+		authors : [__author_me, __author_RFerreriCancho],
 		
 		year : 2021,
 		date : "2021/07/29",
 		session : "2/2",
 		
-		course_url : "https://cqllab.upc.edu/lal/course_iqla_giat_july_2021/"
-	},
-	
-	IQLA_GIAT_2021_07__1 : {
-		talk_type : __talktype_workshop,
-		what_talk : __talkname_IQLA_GIAT_2021_07,
+		slides_url : "https://mydisk.cs.upc.edu/s/Jrp4pAB23Y3DgEQ",
 		
-		talk_title : "An introduction to Quantitative Dependency Syntax with the Linear Arrangement Library",
+		institutions : [__institution_IQLA, __institution_GIAT],
+		institutions_url : ["http://iqla.org/", "http://www.giat.org/"],
 		
-		institution : __institution_IQLA_GIAT_Summer_School,
-		institution_url : "http://www.giat.org/",
-		
-		talk_url : "http://www.giat.org/?page_id=11&lang=en",
-		
-		slides_url : "https://mydisk.cs.upc.edu/s/znEWkrZbLbAmrZ9",
-		
-		location : __location_Italy,
+		location : __location_Padova,
 		location_mode : "(online)",
 		
 		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Linear_Arrangement_Library],
+		
+		info_url : "https://cqllab.upc.edu/lal/course_iqla_giat_july_2021/"
+	},
+	IQLA_GIAT_2021_07__1 : {
+		type : __talktype_workshop,
+		name : __talkname_IQLA_GIAT_summer_school,
+		url : "http://www.giat.org/?page_id=11&lang=en",
+		
+		title : "An introduction to Quantitative Dependency Syntax with the Linear Arrangement Library",
+		authors : [__author_me, __author_RFerreriCancho],
 		
 		year : 2021,
 		date : "2021/07/29",
 		session : "1/2",
 		
-		course_url : "https://cqllab.upc.edu/lal/course_iqla_giat_july_2021/"
+		slides_url : "https://mydisk.cs.upc.edu/s/znEWkrZbLbAmrZ9",
+		
+		institutions : [__institution_IQLA, __institution_GIAT],
+		institutions_url : ["http://iqla.org/", "http://www.giat.org/"],
+		
+		location : __location_Padova,
+		location_mode : "(online)",
+		
+		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Linear_Arrangement_Library],
+		
+		info_url : "https://cqllab.upc.edu/lal/course_iqla_giat_july_2021/"
 	},
 	
 	CHINA_2021_06_04 : {
-		talk_type : __talktype_seminar,
-		what_talk : __talkname_Zheijang_University_Python_06_2021,
+		type : __talktype_workshop,
+		name : __talkname_Zheijang_University_Python_seminar,
+		url : "https://cqllab.upc.edu/lal/course_china_june_2021/",
 		
-		talk_title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
+		title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
+		authors : [__author_me, __author_RFerreriCancho, __author_JLEsteban],
 		
 		institution : __institution_Zheihang_University,
 		institution_url : "https://www.zju.edu.cn/english/main.htm",
-		
-		talk_url : null,
 		
 		slides_url : "https://mydisk.cs.upc.edu/s/Hoacc7mF4m8FdST",
 		
@@ -113,21 +146,18 @@ const talks = {
 		
 		year : 2021,
 		date : "2021/06/04",
-		session : "3/3",
-		
-		course_url : "https://cqllab.upc.edu/lal/course_china_june_2021/"
+		session : "3/3"
 	},
-	
 	CHINA_2021_06_03 : {
-		talk_type : __talktype_seminar,
-		what_talk : __talkname_Zheijang_University_Python_06_2021,
+		type : __talktype_workshop,
+		name : __talkname_Zheijang_University_Python_seminar,
+		url : "https://cqllab.upc.edu/lal/course_china_june_2021/",
 		
-		talk_title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
+		title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
+		authors : [__author_me, __author_RFerreriCancho, __author_JLEsteban],
 		
 		institution : __institution_Zheihang_University,
 		institution_url : "https://www.zju.edu.cn/english/main.htm",
-		
-		talk_url : null,
 		
 		slides_url : "https://mydisk.cs.upc.edu/s/cTEySQPDrapbLKz",
 		
@@ -138,21 +168,18 @@ const talks = {
 		
 		year : 2021,
 		date : "2021/06/03",
-		session : "2/3",
-		
-		course_url : "https://cqllab.upc.edu/lal/course_china_june_2021/"
+		session : "2/3"
 	},
-	
 	CHINA_2021_06_01 : {
-		talk_type : __talktype_seminar,
-		what_talk : __talkname_Zheijang_University_Python_06_2021,
+		type : __talktype_workshop,
+		name : __talkname_Zheijang_University_Python_seminar,
+		url : "https://cqllab.upc.edu/lal/course_china_june_2021/",
 		
-		talk_title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
+		title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
+		authors : [__author_me, __author_RFerreriCancho, __author_JLEsteban],
 		
 		institution : __institution_Zheihang_University,
 		institution_url : "https://www.zju.edu.cn/english/main.htm",
-		
-		talk_url : null,
 		
 		slides_url : "https://mydisk.cs.upc.edu/s/bG3WcAmzpzfZQc2",
 		
@@ -163,25 +190,24 @@ const talks = {
 		
 		year : 2021,
 		date : "2021/06/01",
-		session : "1/3",
-		
-		course_url : "https://cqllab.upc.edu/lal/course_china_june_2021/"
+		session : "1/3"
 	},
 	
 	LIMDA_2019_12_18 : {
-		talk_type : __talktype_seminar,
-		what_talk : __talkname_LIMDA,
+		type : __talktype_seminar,
+		name : __talkname_LIMDA,
+		url : "https://gapcomb.upc.edu/en/seminar-en/",
 		
-		talk_title : "Edge crossings in random arrangements",
+		title : "Edge crossings in random arrangements",
+		authors : [__author_me, __author_RFerreriCancho],
 		
 		institution : __institution_UPC,
 		institution_url : "https://www.upc.edu/en",
 		
-		talk_url : "https://gapcomb.upc.edu/en/seminar-en/",
-		
 		slides_url : "https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/talks_files/LIMDA_2019_12_18.pdf",
 		
 		location : __location_Barcelona,
+		location_mode : "(in person)",
 		
 		tags : [__tag_Networks, __tag_NetworkScience, __tag_LinArr, __tag_RandGraphs],
 		

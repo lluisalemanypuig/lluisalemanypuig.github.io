@@ -26,6 +26,9 @@ const __author_JLEsteban = "J. L. Esteban";
 const __author_RFerreriCancho = "R. Ferrer-i-Cancho";
 const __author_MMora = "M. Mora";
 const __author_CGomezRodriguez = "C. Gómez-Rodríguez";
+const __author_MSugiura = "M. Sugiura";
+const __author_SKomori = "S. Komori";
+const __author_Wli = "W. Li";
 
 // ----------
 // -- urls --
@@ -38,15 +41,18 @@ const __url_publications = __url_lalemany + "/publications";
 const __institution_all = "All institutions";
 const __institution_UPC = "Universitat Politècnica de Catalunya - BarcelonaTech (UPC)";
 const __institution_Zheihang_University = "Zeijhang University";
-const __institution_IQLA_GIAT_Summer_School = "IQLA-GIAT Summer school";
+const __institution_GIAT = "GIAT";
+const __institution_IQLA = "IQLA";
+const __institution_UNIL = "University of Lausanne";
 
 // ----------------------
 // -- Locations --
 const __location_all = "All cities/countries";
-const __location_Barcelona = "Barcelona";
-const __location_Hangzhou = "Hangzhou";
+const __location_Barcelona = "Barcelona, Catalonia";
+const __location_Hangzhou = "Hangzhou, China";
 const __location_China = "China";
-const __location_Italy = "Italy";
+const __location_Padova = "Padova, Italy";
+const __location_Lausanne = "Lausanne, Switzerland";
 
 // --------------
 // -- Journals --
@@ -120,6 +126,7 @@ const __tag_Linear_Arrangement_Library = "Linear Arrangement Library (LAL)";
 const __tag_Expected_Values = "Expected Values";
 const __tag_Quantitative_Dependency_Syntax = "Quantitative Dependency Syntax";
 const __tag_Optimality = "Optimality of Dependency Distances";
+const __tag_Measuring_Learners_Proficiency = "Measuring Learners Proficiency";
 
 // ----------------
 // -- Work types --
@@ -140,8 +147,9 @@ const __talktype_workshop = "Workshop";
 // -- Talk names --
 const __talkname_all = "All seminars/conferences";
 const __talkname_LIMDA = "LIMDA";
-const __talkname_Zheijang_University_Python_06_2021 = "Zheijang University -- Python Seminar (June 2021)";
-const __talkname_IQLA_GIAT_2021_07 = "IQLA-GIAT Summer School (July 2021)";
+const __talkname_Zheijang_University_Python_seminar = "Zheijang University -- Python Seminar";
+const __talkname_IQLA_GIAT_summer_school = "IQLA-GIAT Summer School";
+const __talkname_QUALICO = "QUALICO";
 
 // -----------
 // -- Years --
@@ -150,6 +158,7 @@ const __year_2019 = "2019";
 const __year_2020 = "2020";
 const __year_2021 = "2021";
 const __year_2022 = "2022";
+const __year_2023 = "2023";
 
 // ---------------------------------------
 // -- PUBLCATIONS PAGE: drop down names --
