@@ -227,7 +227,7 @@ function populateTalksList() {
 	}
 	function filter_semconf(talk) {
 		if (use_semconf == __talkname_all) { return true; }
-		return use_semconf == talk.what_talk;
+		return use_semconf == talk.name;
 	}
 	function filter_institution(talk) {
 		if (use_institution == __institution_all) { return true; }
