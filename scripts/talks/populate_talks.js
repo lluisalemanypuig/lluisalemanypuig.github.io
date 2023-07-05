@@ -98,11 +98,12 @@ function makeFormattedTalk(talkid, TALK) {
 	var par = document.createElement("p");
 	
 	// add title of the talk
-	par.appendChild(document.createTextNode(TALK.type + ": "));
 	{
+	par.appendChild(document.createTextNode(TALK.type + ": \""));
 	var title_italics = document.createElement("i");
 	title_italics.textContent = TALK.title;
 	par.appendChild(title_italics);
+	par.appendChild(document.createTextNode("\"."));
 	}
 	
 	append_authors_list(par, TALK.authors);
