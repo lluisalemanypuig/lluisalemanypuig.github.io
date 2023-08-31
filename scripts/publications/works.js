@@ -86,13 +86,13 @@ const works = {
 		year : 2022,
 		citation : {
 			authors : [__author_me, __author_RFerreriCancho],
-			title : "Linear-time calculation of the expected sum of edge lengths in random planar linearizations of trees",
+			title : "The expected sum of edge lengths in planar linearizations of trees. Theory and applications.",
 			repository : __rejoinproc_ARXIV_name,
 			when : "2022",
 			doi : null,
 			arxiv_id : "2207.05564"
 		},
-		biblatex_citation : "@article{Alemany2022d, \n\tarxivId = {2003.03258}, \n\tauthor = {Alemany-Puig, Llu\\'{i}s and Ferrer-i-Cancho, Ramon},\n\tjournal = {arXiv},\n\ttitle = {{Linear-time calculation of the expected sum of edge lengths in random planar linearizations of trees}},\n\turl = {https://arxiv.org/abs/2207.05564}, \n\tyear = {2022}\n}"
+		biblatex_citation : "@article{Alemany2022d, \n\ttitle = {{The expected sum of edge lengths in planar linearizations of trees. Theory and applications.}},\n\tauthor = {Alemany-Puig, Llu\\'{i}s and Ferrer-i-Cancho, Ramon}, \n\tjournal = {arXiv},\n\tarxivId = {2003.03258}, \n\turl = {https://arxiv.org/abs/2207.05564}, \n\tyear = {2022}\n}"
 	},
 	
 	w05 : {
@@ -158,7 +158,7 @@ const works = {
 			paper_url : "https://aclanthology.org/2021.quasy-1.1/",
 			poster_url : "https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/talks_files/SyntaxFest2021_LAL_poster.pdf"
 		},
-		biblatex_citation : "@inproceedings{Alemany2021a,\n\tauthor = {Alemany-Puig, Llu\\'{i}s and Esteban, {Juan Luis} and Ferrer-i-Cancho, Ramon},\n\tarxivId = {2112.02512},\n\ttitle = {{The Linear Arrangement Library. A new tool for research on syntactic dependency structures}},\n\tbooktitle = {{P}roceedings of the {S}econd {W}orkshop on {Q}uantitative {S}yntax ({Q}uasy, {S}yntaxFest 2021)},\n\turl = {https://aclanthology.org/2021.quasy-1.1},\n\tmonth = {dec},\n\tyear = {2021},\n\taddress = {Sofia, Bulgaria},\n\tpublisher = {Association for Computational Linguistics},\n\tpages = {1--16}\n}"
+		biblatex_citation : "@inproceedings{Alemany2021a,\n\ttitle = {{The Linear Arrangement Library. A new tool for research on syntactic dependency structures}},\n\tauthor = {Alemany-Puig, Llu\\'{i}s and Esteban, {Juan Luis} and Ferrer-i-Cancho, Ramon},\n\tarxivId = {2112.02512},\n\tbooktitle = {{P}roceedings of the {S}econd {W}orkshop on {Q}uantitative {S}yntax ({Q}uasy, {S}yntaxFest 2021)},\n\turl = {https://aclanthology.org/2021.quasy-1.1},\n\tmonth = {dec},\n\tyear = {2021},\n\taddress = {Sofia, Bulgaria},\n\tpublisher = {Association for Computational Linguistics},\n\tpages = {1--16}\n}"
 	},
 	
 	// -----------------------------------------------------------------
@@ -176,7 +176,7 @@ const works = {
 			doi : null,
 			arxiv_id : "2003.03258"
 		},
-		biblatex_citation : "@article{Alemany2020c, \n\tarxivId = {2003.03258}, \n\tauthor = {Alemany-Puig, Llu\\'{i}s and Ferrer-i-Cancho, Ramon},\n\tjournal = {arXiv},\n\ttitle = {{Fast calculation of the variance of edge crossings in random arrangements}},\n\turl = {https://arxiv.org/abs/2003.03258}, \n\tyear = {2020}\n}"
+		biblatex_citation : "@article{Alemany2020c, \n\ttitle = {{Fast calculation of the variance of edge crossings in random arrangements}}, \n\tauthor = {Alemany-Puig, Llu\\'{i}s and Ferrer-i-Cancho, Ramon}, \n\tarxivId = {2003.03258}, \n\tjournal = {arXiv},\n\turl = {https://arxiv.org/abs/2003.03258}, \n\tyear = {2020}\n}"
 	},
 	
 	w03 : {
