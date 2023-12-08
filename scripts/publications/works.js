@@ -78,6 +78,24 @@ const works = {
 	},
 	
 	// -----------------------------------------------------------------
+	// 2023
+	
+	w11 : {
+		work_type : __worktype_preprint,
+		tags : [__tag_LinArr, __tag_Maximization, __tag_Algos],
+		year : 2023,
+		citation : {
+			authors : [__author_me, __author_JLEsteban, __author_RFerreriCancho],
+			title : "On The Maximum Linear Arrangement Problem for Trees",
+			repository : __rejoinproc_ARXIV_name,
+			when : "2023",
+			doi : null,
+			arxiv_id : "2312.04487"
+		},
+		biblatex_citation : "@article{Alemany2023a, \n\ttitle = {{On The Maximum Linear Arrangement Problem for Trees}},\n\tauthor = {Alemany-Puig, Llu\\'{i}s and Esteban, {Juan Luis} and Ferrer-i-Cancho, Ramon}, \n\tjournal = {arXiv},\n\tarxivId = {2312.04487}, \n\turl = {https://arxiv.org/abs/2312.04487}, \n\tyear = {2023}\n}"
+	},
+	
+	// -----------------------------------------------------------------
 	// 2022
 	
 	w10 : {
