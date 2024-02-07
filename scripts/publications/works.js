@@ -104,13 +104,13 @@ const works = {
 		year : 2022,
 		citation : {
 			authors : [__author_me, __author_RFerreriCancho],
-			title : "The expected sum of edge lengths in planar linearizations of trees. Theory and applications.",
+			title : "The expected sum of edge lengths in planar linearizations of trees",
 			repository : __rejoinproc_ARXIV_name,
 			when : "2022",
 			doi : null,
 			arxiv_id : "2207.05564"
 		},
-		biblatex_citation : "@article{Alemany2022d, \n\ttitle = {{The expected sum of edge lengths in planar linearizations of trees. Theory and applications.}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and {Ferrer-i-Cancho}, Ramon}, \n\tjournal = {arXiv},\n\tarxivId = {2003.03258}, \n\turl = {https://arxiv.org/abs/2207.05564}, \n\tyear = {2022}\n}"
+		biblatex_citation : "@article{Alemany2022d, \n\ttitle = {{The expected sum of edge lengths in planar linearizations of trees}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and {Ferrer-i-Cancho}, Ramon}, \n\tjournal = {arXiv},\n\tarxivId = {2003.03258}, \n\turl = {https://arxiv.org/abs/2207.05564}, \n\tyear = {2022}\n}"
 	},
 	
 	w05 : {
