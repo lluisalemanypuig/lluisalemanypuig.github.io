@@ -206,6 +206,14 @@ function format_journal_generic(par, work) {
 	// when published
 	par.appendChild(document.createTextNode(". " + CITE.when));
 	
+	// pages in issue
+	if (CITE.pages.indexOf('-') != -1) {
+		par.appendChild(document.createTextNode(". pp. " + CITE.pages));
+	}
+	else {
+		par.appendChild(document.createTextNode(". p. " + CITE.pages));
+	}
+	
 	// DOI
 	make_DOI_url(CITE.doi, par, ".");
 	// arXiv url
