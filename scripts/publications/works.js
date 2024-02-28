@@ -78,6 +78,22 @@ const works = {
 		biblatex_citation : "@article{Alemany2024a,\n\ttitle = {{The maximum linear arrangement problem for trees under projectivity and planarity}},\n\tjournal = {Information Processing Letters},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and Esteban, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\turl = {https://arxiv.org/abs/2206.06924},\n\tvolume = {183},\n\tpages = {106400},\n\tyear = {2024},\n\tissn = {0020-0190},\n\tdoi = {10.1016/j.ipl.2023.106400}\n}"
 	},
 	
+	w10 : {
+		work_type : __worktype_JournalPaper,
+		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Expected_Values, __tag_Algos],
+		year : 2024,
+		citation : {
+			authors : [__author_me, __author_RFerreriCancho],
+			title : "The expected sum of edge lengths in planar linearizations of trees",
+			journal : __rejoinproc_JLM_name,
+			when : "1 (Feb. 2024)",
+			pages : "1--42",
+			doi : "10.15398/jlm.v12i1.362",
+			arxiv_id : "2207.05564"
+		},
+		biblatex_citation : "@article{Alemany2024b,\n\ttitle = {{The expected sum of edge lengths in planar linearizations of trees}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tjournal = {Journal of Language Modelling},\n\tarxivId = {2207.05564},\n\tdoi = {10.15398/jlm.v12i1.362},\n\turl = {https://arxiv.org/abs/2207.05564},\n\tvol = {12},\n\tnumber = {1},\n\tpages = {1--42},\n\tmonth = {2},\n\tyear = {2024}\n}"
+	},
+	
 	// -----------------------------------------------------------------
 	// 2023
 	
@@ -98,21 +114,6 @@ const works = {
 	
 	// -----------------------------------------------------------------
 	// 2022
-	
-	w10 : {
-		work_type : __worktype_preprint,
-		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Expected_Values, __tag_Algos],
-		year : 2022,
-		citation : {
-			authors : [__author_me, __author_RFerreriCancho],
-			title : "The expected sum of edge lengths in planar linearizations of trees",
-			repository : __rejoinproc_ARXIV_name,
-			when : "2022",
-			doi : null,
-			arxiv_id : "2207.05564"
-		},
-		biblatex_citation : "@article{Alemany2022d, \n\ttitle = {{The expected sum of edge lengths in planar linearizations of trees}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and {Ferrer-i-Cancho}, Ramon}, \n\tjournal = {arXiv},\n\tarxivId = {2003.03258}, \n\turl = {https://arxiv.org/abs/2207.05564}, \n\tyear = {2022}\n}"
-	},
 	
 	w05 : {
 		work_type : __worktype_JournalPaper,

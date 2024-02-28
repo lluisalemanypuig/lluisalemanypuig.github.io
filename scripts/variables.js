@@ -83,6 +83,9 @@ const __rejoinproc_short_CL_name = "CL";
 const __rejoinproc_SyntaxFestQuasy2021_name = "Proceedings of the Second Workshop on Quantitative Syntax (Quasy, SyntaxFest 2021)";
 const __rejoinproc_short_SyntaxFestQuasy2021_name = "Quasy, SyntaxFest 2021";
 
+const __rejoinproc_JLM_name = "Journal of Language Modelling";
+const __rejoinproc_short_JLM_name = "JLM";
+
 var __rejoinproc_relate = {};
 __rejoinproc_relate[__rejoinproc_all] = __rejoinproc_short_all;
 __rejoinproc_relate[__rejoinproc_short_all] = __rejoinproc_all;
@@ -110,6 +113,9 @@ __rejoinproc_relate[__rejoinproc_short_CL_name] = __rejoinproc_CL_name;
 
 __rejoinproc_relate[__rejoinproc_SyntaxFestQuasy2021_name] = __rejoinproc_short_SyntaxFestQuasy2021_name;
 __rejoinproc_relate[__rejoinproc_short_SyntaxFestQuasy2021_name] = __rejoinproc_SyntaxFestQuasy2021_name;
+
+__rejoinproc_relate[__rejoinproc_JLM_name] = __rejoinproc_short_JLM_name;
+__rejoinproc_relate[__rejoinproc_short_JLM_name] = __rejoinproc_JLM_name;
 
 // ----------
 // -- Tags --
