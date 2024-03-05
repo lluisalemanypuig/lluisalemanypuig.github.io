@@ -86,12 +86,12 @@ const works = {
 			authors : [__author_me, __author_RFerreriCancho],
 			title : "The expected sum of edge lengths in planar linearizations of trees",
 			journal : __rejoinproc_JLM_name,
-			when : "1 (Feb. 2024)",
+			when : "12.1 (Feb. 2024)",
 			pages : "1--42",
 			doi : "10.15398/jlm.v12i1.362",
 			arxiv_id : "2207.05564"
 		},
-		biblatex_citation : "@article{Alemany2024b,\n\ttitle = {{The expected sum of edge lengths in planar linearizations of trees}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tjournal = {Journal of Language Modelling},\n\tarxivId = {2207.05564},\n\tdoi = {10.15398/jlm.v12i1.362},\n\turl = {https://arxiv.org/abs/2207.05564},\n\tvol = {12},\n\tnumber = {1},\n\tpages = {1--42},\n\tmonth = {2},\n\tyear = {2024}\n}"
+		biblatex_citation : "@article{Alemany2024b,\n\ttitle = {{The expected sum of edge lengths in planar linearizations of trees}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tjournal = {Journal of Language Modelling},\n\tarxivId = {2207.05564},\n\tdoi = {10.15398/jlm.v12i1.362},\n\turl = {https://arxiv.org/abs/2207.05564},\n\tvolume = {12},\n\tnumber = {1},\n\tpages = {1--42},\n\tmonth = {2},\n\tyear = {2024}\n}"
 	},
 	
 	// -----------------------------------------------------------------
