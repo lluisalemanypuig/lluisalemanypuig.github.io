@@ -194,7 +194,7 @@ function format_journal_generic(par, work) {
 	append_authors_list(par, CITE.authors);
 	
 	// where published
-	par.appendChild(document.createTextNode(" In: "));
+	par.appendChild(document.createTextNode(" "));
 	{
 	var journal_italics = document.createElement("i");
 	journal_italics.textContent =
