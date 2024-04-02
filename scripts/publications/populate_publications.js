@@ -231,7 +231,7 @@ function format_conference_proceedings(par, work) {
 	append_authors_list(par, CITE.authors);
 	
 	// where published
-	par.appendChild(document.createTextNode(" In: "));
+	par.appendChild(document.createTextNode(" In "));
 	
 	if (CITE.proceedings_url != null) {
 		var proceedings_italics = document.createElement("i");
