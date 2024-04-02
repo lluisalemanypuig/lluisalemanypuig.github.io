@@ -307,11 +307,22 @@ function makeFormattedCitation(workid, work) {
 	textarea.id = "textarea_" + workid;
 	textarea.readOnly = true;
 	
+	var notes_paragraph = null;
+	if (work.notes != null) {
+		notes_paragraph = document.createElement("p");
+		notes_paragraph.appendChild(
+			document.createTextNode("Notes: " + work.notes)
+		);
+	}
+	
 	var tags = make_tags_list(work.tags);
 	
 	var full = document.createElement("li");
 	full.appendChild(par);
 	full.appendChild(textarea);
+	if (work.notes != null) {
+		full.append(notes_paragraph);
+	}
 	full.append(tags);
 	
 	return full;
