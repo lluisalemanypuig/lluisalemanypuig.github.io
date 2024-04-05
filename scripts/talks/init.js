@@ -47,7 +47,7 @@ function createDropDowns() {
 	ddSeminarConf.id = __talks_dd_seminar_conference;
 	ddInstitutions.id = __talks_dd_institutions;
 	ddCities.id = __talks_dd_cities;
-	ddAuthors.id = __pubs_dd_authors_id;
+	ddAuthors.id = __talks_dd_authors_id;
 	
 	var center = document.createElement('center');
 	center.appendChild(ddYears);
