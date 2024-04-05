@@ -160,7 +160,7 @@ function makeFormattedTalk(talkid, TALK) {
 		
 		var tag_ref = document.createElement("a");
 		tag_ref.onclick = typeTagClicked;
-		tag_ref.style = "color:blue;text-decoration:underline";
+		tag_ref.style = "color:green;text-decoration:underline;cursor:pointer";
 		tag_ref.textContent = tag_text;
 		
 		tags.appendChild(tag_ref);
