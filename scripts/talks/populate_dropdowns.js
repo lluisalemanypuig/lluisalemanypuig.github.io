@@ -99,7 +99,7 @@ function populateDropDowns() {
 	var ddSeminarConf = document.getElementById(__talks_dd_seminar_conference);
 	var ddInstitutions = document.getElementById(__talks_dd_institutions);
 	var ddCities = document.getElementById(__talks_dd_cities);
-	var ddAuthors = document.getElementById(__pubs_dd_authors_id);
+	var ddAuthors = document.getElementById(__talks_dd_authors_id);
 	
 	ddYears.textContent = '';
 	ddTags.textContent = '';

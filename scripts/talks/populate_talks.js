@@ -43,14 +43,14 @@ function setCounterText(n) {
 // what to do when author tag is clicked
 var authorTagClicked = function(event) {
 	console.log("Clicked on author tag:", event.target.textContent);
-	setSelection(document.getElementById(__pubs_dd_authors_id), event.target.textContent);
+	setSelection(document.getElementById(__talks_dd_authors_id), event.target.textContent);
 	populateTalksList();
 };
 
 // what to do when type tag is clicked
-var tagClicked = function(event) {
+var typeTagClicked = function(event) {
 	console.log("Clicked on publication type tag:", event.target.textContent);
-	setSelection(document.getElementById(__pubs_dd_tags_id), event.target.textContent);
+	setSelection(document.getElementById(__talks_dd_tags_id), event.target.textContent);
 	populateTalksList();
 };
 
@@ -159,7 +159,7 @@ function makeFormattedTalk(talkid, TALK) {
 		var tag_text = TALK.tags[t];
 		
 		var tag_ref = document.createElement("a");
-		tag_ref.onclick = tagClicked;
+		tag_ref.onclick = typeTagClicked;
 		tag_ref.style = "color:blue;text-decoration:underline";
 		tag_ref.textContent = tag_text;
 		
@@ -174,7 +174,7 @@ function makeFormattedTalk(talkid, TALK) {
 	
 	var full = document.createElement("li");
 	full.appendChild(par);
-	full.append(tags);
+	full.appendChild(tags);
 	
 	return full;
 }
@@ -199,7 +199,7 @@ function populateTalksList() {
 	const ddSemConf = document.getElementById(__talks_dd_seminar_conference);
 	const ddInstitutions = document.getElementById(__talks_dd_institutions);
 	const ddCities = document.getElementById(__talks_dd_cities);
-	const ddAuthors = document.getElementById(__pubs_dd_authors_id);
+	const ddAuthors = document.getElementById(__talks_dd_authors_id);
 	
 	function getTextDD(dd) { return dd.options[dd.selectedIndex].value; };
 	var use_year = getTextDD(ddYear);
