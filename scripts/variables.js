@@ -45,16 +45,46 @@ const __institution_GIAT = "GIAT";
 const __institution_IQLA = "IQLA";
 const __institution_UNIL = "University of Lausanne";
 
-// ----------------------
-// -- Locations --
-const __location_all = "All cities/countries";
-const __location_Barcelona = "Barcelona, Catalonia";
-const __location_Hangzhou = "Hangzhou, China";
-const __location_China = "China";
-const __location_Padova = "Padova, Italy";
-const __location_Lausanne = "Lausanne, Switzerland";
+// ----------
+// -- Tags --
+const __tag_all = "All tags";
+const __tag_Networks = "Networks";
+const __tag_NetworkScience = "Network Science";
+const __tag_WordOrder = "Word order";
+const __tag_RandGraphs = "Random graphs";
+const __tag_LinArr = "Linear arrangements";
+const __tag_Algos = "Algorithms";
+const __tag_Minimization = "Minimization";
+const __tag_Maximization = "Maximization";
+const __tag_Linear_Arrangement_Library = "Linear Arrangement Library (LAL)";
+const __tag_Expected_Values = "Expected Values";
+const __tag_Quantitative_Dependency_Syntax = "Quantitative Dependency Syntax";
+const __tag_Optimality = "Optimality of Dependency Distances";
+const __tag_Measuring_Learners_Proficiency = "Measuring Learners Proficiency";
 
-// --------------
+// -----------
+// -- Years --
+const __year_all = "All years";
+const __year_2019 = "2019";
+const __year_2020 = "2020";
+const __year_2021 = "2021";
+const __year_2022 = "2022";
+const __year_2023 = "2023";
+
+// ----------------------
+// -- PUBLCATIONS PAGE --
+
+// -- drop down names --
+const __pubs_dd_years_id = "pubs_ddYears";
+const __pubs_dd_tags_id = "pubs_ddClassifTags";
+const __pubs_dd_journals_insts_id = "pubs_ddJournalsInstitutions";
+const __pubs_dd_worktype_id = "pubs_ddWorkTypes";
+const __pubs_dd_authors_id = "pubs_ddAuthors";
+
+// -- other html elements --
+const __div_publist = "publications_list_div";
+const __par_pubs_item_count_id = "pubs_item_count";
+
 // -- Journals --
 const __rejoinproc_all = "All repositories/journals/institutions/proceedings";
 const __rejoinproc_short_all = __rejoinproc_all;
@@ -117,24 +147,6 @@ __rejoinproc_relate[__rejoinproc_short_SyntaxFestQuasy2021_name] = __rejoinproc_
 __rejoinproc_relate[__rejoinproc_JLM_name] = __rejoinproc_short_JLM_name;
 __rejoinproc_relate[__rejoinproc_short_JLM_name] = __rejoinproc_JLM_name;
 
-// ----------
-// -- Tags --
-const __tag_all = "All tags";
-const __tag_Networks = "Networks";
-const __tag_NetworkScience = "Network Science";
-const __tag_WordOrder = "Word order";
-const __tag_RandGraphs = "Random graphs";
-const __tag_LinArr = "Linear arrangements";
-const __tag_Algos = "Algorithms";
-const __tag_Minimization = "Minimization";
-const __tag_Maximization = "Maximization";
-const __tag_Linear_Arrangement_Library = "Linear Arrangement Library (LAL)";
-const __tag_Expected_Values = "Expected Values";
-const __tag_Quantitative_Dependency_Syntax = "Quantitative Dependency Syntax";
-const __tag_Optimality = "Optimality of Dependency Distances";
-const __tag_Measuring_Learners_Proficiency = "Measuring Learners Proficiency";
-
-// ----------------
 // -- Work types --
 const __worktype_all = "All work types";
 const __worktype_preprint = "Preprint";
@@ -143,49 +155,37 @@ const __worktype_MastersThesis = "Masters Thesis";
 const __worktype_ConferenceProceedings = "Conference Proceedings";
 
 // ----------------
+// -- TALKS PAGE --
+
+// -- drop down names --
+const __talks_dd_years_id = "talks_ddYears";
+const __talks_dd_tags_id = "talks_ddClassifTags";
+const __talks_dd_institutions = "talks_ddInstitutions";
+const __talks_dd_cities = "talks_ddCities";
+const __talks_dd_authors_id = "talks_ddAuthors";
+const __talks_dd_seminar_conference = "talks_ddSeminarConference";
+
+// -- other html elements --
+const __div_talklist = "talks_list_div";
+const __par_talks_item_count_id = "talks_item_count";
+
+// -- Locations --
+const __location_all = "All cities/countries";
+const __location_Barcelona = "Barcelona, Catalonia";
+const __location_Hangzhou = "Hangzhou, China";
+const __location_China = "China";
+const __location_Padova = "Padova, Italy";
+const __location_Lausanne = "Lausanne, Switzerland";
+
 // -- Talk types --
 const __talktype_all = "All talk types";
 const __talktype_seminar = "Seminar";
 const __talktype_conference = "Conference";
 const __talktype_workshop = "Workshop";
 
-// ----------------
 // -- Talk names --
 const __talkname_all = "All seminars/conferences";
 const __talkname_LIMDA = "LIMDA";
 const __talkname_Zheijang_University_Python_seminar = "Zheijang University -- Python Seminar";
 const __talkname_IQLA_GIAT_summer_school = "IQLA-GIAT Summer School";
 const __talkname_QUALICO = "QUALICO";
-
-// -----------
-// -- Years --
-const __year_all = "All years";
-const __year_2019 = "2019";
-const __year_2020 = "2020";
-const __year_2021 = "2021";
-const __year_2022 = "2022";
-const __year_2023 = "2023";
-
-// ---------------------------------------
-// -- PUBLCATIONS PAGE: drop down names --
-const __pubs_dd_years_id = "pubs_ddYears";
-const __pubs_dd_tags_id = "pubs_ddClassifTags";
-const __pubs_dd_journals_insts_id = "pubs_ddJournalsInstitutions";
-const __pubs_dd_worktype_id = "pubs_ddWorkTypes";
-const __pubs_dd_authors_id = "pubs_ddAuthors";
-
-// ---------------------------------
-// -- TALKS PAGE: drop down names --
-const __talks_dd_years_id = "talks_ddYears";
-const __talks_dd_tags_id = "talks_ddClassifTags";
-const __talks_dd_institutions = "talks_ddInstitutions";
-const __talks_dd_cities = "talks_ddCities";
-const __talks_dd_seminar_conference = "talks_ddSeminarConference";
-
-// -------------------
-// -- html elements --
-const __div_publist = "publications_list_div";
-const __par_pubs_item_count_id = "pubs_item_count";
-
-const __div_talklist = "talks_list_div";
-const __par_talks_item_count_id = "talks_item_count";
