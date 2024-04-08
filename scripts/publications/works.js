@@ -75,7 +75,7 @@ const works = {
 			doi : null,
 			arxiv_id : "2312.04487"
 		},
-		biblatex_citation : "@article{Alemany2023a, \n\ttitle = {{On The Maximum Linear Arrangement Problem for Trees}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and Esteban, {Juan Luis} and {Ferrer-i-Cancho}, Ramon}, \n\tjournal = {arXiv},\n\tarxivId = {2312.04487}, \n\turl = {https://arxiv.org/abs/2312.04487}, \n\tyear = {2023}\n}",
+		biblatex_citation : "@article{Alemany2023a,\n\ttitle = {{On The Maximum Linear Arrangement Problem for Trees}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and Esteban, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\tjournal = {arXiv},\n\tarxivId = {2312.04487},\n\turl = {https://arxiv.org/abs/2312.04487},\n\tyear = {2023}\n}",
 		notes : null
 	},
 	
@@ -170,7 +170,7 @@ const works = {
 			doi : null,
 			arxiv_id : "2003.03258"
 		},
-		biblatex_citation : "@article{Alemany2020c, \n\ttitle = {{Fast calculation of the variance of edge crossings in random arrangements}}, \n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and {Ferrer-i-Cancho}, Ramon}, \n\tarxivId = {2003.03258}, \n\tjournal = {arXiv},\n\turl = {https://arxiv.org/abs/2003.03258}, \n\tyear = {2020}\n}",
+		biblatex_citation : "@article{Alemany2020c,\n\ttitle = {{Fast calculation of the variance of edge crossings in random arrangements}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tarxivId = {2003.03258},\n\tjournal = {arXiv},\n\turl = {https://arxiv.org/abs/2003.03258},\n\tyear = {2020}\n}",
 		notes : null
 	},
 	
@@ -187,7 +187,7 @@ const works = {
 			doi : "10.1088/1742-5468/aba0ab",
 			arxiv_id : "2003.03353"
 		},
-		biblatex_citation : "@article{Alemany2020b, \n\ttitle = {{Reappraising the distribution of the number of edge crossings of graphs on a sphere}}, \n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and Mora, Merc\\`{e} and {Ferrer-i-Cancho}, Ramon}, \n\tjournal = {Journal of Statistical Mechanics: Theory and Experiment}\n\tdoi = {10.1088/1742-5468/aba0ab}, \n\turl = {https://arxiv.org/abs/2003.03353}, \n\tyear = 2020, \n\tmonth = {aug}, \n\tpublisher = {{IOP} {P}ublishing}, \n\tvolume = {2020}, \n\tnumber = {8}, \n\tpages = {083401}\n}",
+		biblatex_citation : "@article{Alemany2020b,\n\ttitle = {{Reappraising the distribution of the number of edge crossings of graphs on a sphere}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and Mora, Merc\\`{e} and {Ferrer-i-Cancho}, Ramon},\n\tjournal = {Journal of Statistical Mechanics: Theory and Experiment}\n\tdoi = {10.1088/1742-5468/aba0ab},\n\turl = {https://arxiv.org/abs/2003.03353},\n\tyear = 2020,\n\tmonth = {aug},\n\tpublisher = {{IOP} {P}ublishing},\n\tvolume = {2020},\n\tnumber = {8},\n\tpages = {083401}\n}",
 		notes : null
 	},
 	
@@ -204,7 +204,7 @@ const works = {
 			doi : "10.1088/1742-5468/ab6845",
 			arxiv_id : "1910.03926"
 		},
-		biblatex_citation : "@article{Alemany2020a, \n\ttitle = {{Edge crossings in random linear arrangements}}, \n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and {Ferrer-i-Cancho}, Ramon}, \n\tjournal = {Journal of Statistical Mechanics: Theory and Experiment}\n\tdoi = {10.1088/1742-5468/ab6845}, \n\turl = {https://arxiv.org/abs/1910.03926}, \n\tyear = 2020, \n\tmonth = {feb}, \n\tpublisher = {{IOP} {P}ublishing}, \n\tvolume = {2020}, \n\tnumber = {2}, \n\tpages = {023403}, \n}",
+		biblatex_citation : "@article{Alemany2020a,\n\ttitle = {{Edge crossings in random linear arrangements}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tjournal = {Journal of Statistical Mechanics: Theory and Experiment}\n\tdoi = {10.1088/1742-5468/ab6845},\n\turl = {https://arxiv.org/abs/1910.03926},\n\tyear = 2020,\n\tmonth = {feb},\n\tpublisher = {{IOP} {P}ublishing},\n\tvolume = {2020},\n\tnumber = {2},\n\tpages = {023403},\n}",
 		notes : null
 	},
 	
@@ -225,7 +225,7 @@ const works = {
 			arxiv_id : null,
 			url : "https://hdl.handle.net/2117/168124"
 		},
-		biblatex_citation : "@mastersthesis{Alemany2019a, \n\ttitle = {{Edge crossings in linear arrangements: from theory to algorithms and applications}}, \n\tauthor = {{Alemany-Puig}, Llu\\'{i}s}, \n\tmonth = {jul}, \n\tschool = {Universitat Polit{\\`{e}}cnica de Catalunya}, \n\ttype = {Master Thesis}, \n\turl = {https://hdl.handle.net/2117/168124}, \n\tyear = {2019}\n}",
+		biblatex_citation : "@mastersthesis{Alemany2019a,\n\ttitle = {{Edge crossings in linear arrangements: from theory to algorithms and applications}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s},\n\tmonth = {jul},\n\tschool = {Universitat Polit{\\`{e}}cnica de Catalunya},\n\ttype = {Master Thesis},\n\turl = {https://hdl.handle.net/2117/168124},\n\tyear = {2019}\n}",
 		notes : null
 	}
 };
