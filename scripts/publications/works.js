@@ -90,12 +90,12 @@ const works = {
 			authors : [__author_me, __author_RFerreriCancho],
 			title : "Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees",
 			journal : __rejoinproc_CL_name,
-			when : "September 2022",
-			pages : "1--25",
+			when : "Volume 48 (3). 2022",
+			pages : "491--516",
 			doi : "10.1162/coli_a_00442",
 			arxiv_id : "2107.03277"
 		},
-		biblatex_citation : "@article{Alemany2022b,\n\ttitle = {{Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tjournal = {Computational Linguistics},\n\tmonth = {09},\n\tyear = {2022},\n\tpages = {1-25},\n\tissn = {0891-2017},\n\tdoi = {10.1162/coli_a_00442},\n\turl = {https://arxiv.org/abs/2107.03277}\n}",
+		biblatex_citation : "@article{Alemany2022b,\n\ttitle = {{Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tjournal = {Computational Linguistics},\n\tvolume = {48},\n\tnumber = {3}\n\tmonth = {09},\n\tyear = {2022},\n\tpages = {491-516},\n\tissn = {0891-2017},\n\tdoi = {10.1162/coli_a_00442},\n\turl = {https://arxiv.org/abs/2107.03277}\n}",
 		notes : null
 	},
 	
