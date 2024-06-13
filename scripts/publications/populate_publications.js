@@ -36,7 +36,7 @@ function createCounter() {
 function setCounterText(n) {
 	var itemCount = document.getElementById(__par_pubs_item_count_id);
 	itemCount.innerHTML = '';
-	itemCount.appendChild(document.createTextNode("Amount of items returned: " + n.toString()));
+	itemCount.appendChild(document.createTextNode("Number of items returned: " + n.toString()));
 }
 
 function add_title_h1(div, y) {
