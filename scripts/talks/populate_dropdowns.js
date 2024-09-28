@@ -41,14 +41,6 @@ function populateDropDowns() {
 	var all_locations = [];	// cities used in 'talks'
 	var all_authors = [];		// authors in 'works'
 	
-	// default tags
-	all_years.push(__year_all);
-	all_tags.push(__tag_all);
-	all_semconf.push(__talkname_all);
-	all_insts.push(__institution_all);
-	all_locations.push(__location_all);
-	all_authors.push(__author_all);
-	
 	// traverse all talks and gather all tags
 	for (var i = 0; i < Object.keys(talks).length; ++i) {
 		var key = Object.keys(talks)[i];
@@ -86,6 +78,14 @@ function populateDropDowns() {
 			return a.localeCompare(b);
 		}
 	);
+	
+	// default tags
+	all_years.unshift(__year_all);
+	all_tags.unshift(__tag_all);
+	all_semconf.unshift(__talkname_all);
+	all_insts.unshift(__institution_all);
+	all_locations.unshift(__location_all);
+	all_authors.unshift(__author_all);
 	
 	console.log("    Add " + all_years.length + " years: " + all_years);
 	console.log("    Add " + all_tags.length + " tags: " + all_tags);

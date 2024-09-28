@@ -47,13 +47,6 @@ function populateDropDowns() {
 	var all_work_types = [];	// work types used in 'works'
 	var all_authors = [];		// authors in 'works'
 	
-	// default tags
-	all_tags.push(__tag_all);
-	all_years.push(__year_all);
-	all_rejoinproc.push(__rejoinproc_all);
-	all_work_types.push(__worktype_all);
-	all_authors.push(__author_all);
-	
 	// traverse all works
 	for (var i = 0; i < Object.keys(works).length; ++i) {
 		var key = Object.keys(works)[i];
@@ -126,6 +119,13 @@ function populateDropDowns() {
 			return a.localeCompare(b);
 		}
 	);
+	
+	// default tags
+	all_tags.unshift(__tag_all);
+	all_years.unshift(__year_all);
+	all_rejoinproc.unshift(__rejoinproc_all);
+	all_work_types.unshift(__worktype_all);
+	all_authors.unshift(__author_all);
 	
 	console.log("    Add " + all_years.length + " years: " + all_years);
 	console.log("    Add " + all_tags.length + " tags: " + all_tags);
