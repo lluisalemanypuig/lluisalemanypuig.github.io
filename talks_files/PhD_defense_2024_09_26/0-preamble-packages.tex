@@ -1,0 +1,100 @@
+% these are mandatory for the style!
+% there will be redundancies
+\usepackage{etoolbox}
+\usepackage{ifthen}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+
+% mathematical symbols
+\usepackage{amsmath,bm}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{thmtools} % theorem, lemma, proposition, corollary, definition
+
+% for optional parameters
+\usepackage{xparse}
+\usepackage{xifthen}
+\usepackage{ifmtarg}
+
+% algorithms, pseudocode
+\usepackage{algorithmic}
+\usepackage[linesnumbered,titlenumbered,ruled,vlined,resetcount,algosection]{algorithm2e}
+
+% enumerations
+\usepackage{enumerate}
+%\usepackage{enumitem}
+
+% figure-related
+\usepackage[usenames,dvipsnames,table]{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{color}
+\usepackage[labelformat=simple]{subcaption}
+
+% table-related packages
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{dcolumn}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\newcommand\mc[1]{\multicolumn{1}{c}{#1}} % handy shortcut macro
+
+% for optional parameters
+\usepackage{xparse}
+\usepackage{xifthen}
+\usepackage{ifmtarg}
+
+%~ \usepackage[disable]{todonotes}
+\usepackage{todonotes}
+\usepackage{verbatimbox}
+
+% hyperlinks in pdf
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks = true,
+	citecolor = blue,
+	linkcolor = blue,
+	urlcolor = blue
+}
+
+% strikethrough text
+\usepackage[normalem]{ulem}
+
+% BIBLIOGRAPHY
+\usepackage[
+	style=apa,
+	maxcitenames=3,
+	mincitenames=3,
+	apamaxprtauth=20,
+	sorting=ynt
+]{biblatex}
+\addbibresource{/home/lluis/Dropbox/Doctorat/presentacio/bibliography.bib}
+
+\usepackage[capitalize,noabbrev]{cleveref}
+
+\usepackage{setspace}
+
+\usepackage{minted}
+\usepackage{tcolorbox}
+\usepackage{etoolbox}
+\BeforeBeginEnvironment{minted}{\begin{tcolorbox}}
+\AfterEndEnvironment{minted}{\end{tcolorbox}}
+
+% so that we can declare the 'code' environment
+\usepackage{newfloat}
+% code environment
+\DeclareFloatingEnvironment[
+    fileext=los,
+    listname={List of Codes},
+    name=Code,
+    placement=tbhp,
+    within=section,
+]{code}
+\crefname{code}{Code}{Codes}
+

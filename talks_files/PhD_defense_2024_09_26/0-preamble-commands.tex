@@ -1,0 +1,1120 @@
+% ----------------------------------------------------------------------
+% ------------------------- LATEX COMMANDS -----------------------------
+
+\newcommand \colorcell {\cellcolor{blue!25}}
+\newcommand \linktogithub[1] {\url{https://github.com/LAL-project/#1.git}}
+
+\NewDocumentCommand \authorpaper { m O{} } {\citeauthor{#1} \cite[#2]{#1}}
+\NewDocumentCommand \authorpapershort { m O{} } {\citeauthor*{#1} \cite[#2]{#1}}
+
+% **********************************
+% REFERENCING AND FORMATTING FIGURES
+
+%~ \NewDocumentCommand \subfig { m } {$\mathpzc{#1}$}
+\NewDocumentCommand \subfig { m } { {\Large {\em #1})} }
+\NewDocumentCommand \subfigtext { m } {{\em #1})}
+\NewDocumentCommand \startsubfig { m } {{\bf {\em #1})}}
+\NewDocumentCommand \fig { m O{} } {\ifthenelse{\isempty{#2}}{\cref{#1}}{\cref{#1}{\em #2})}}
+
+% figure adapted from a particular figure of a paper
+\NewDocumentCommand \figadaptfrommsg { O{} } {Figure#1 adapted from}
+\NewDocumentCommand \figadaptfrom { m O{} } {\figadaptfrommsg[#2]{} #1}
+% figure borrowed (copied as is, not modified in the slightest) from a particular
+% figure of a paper
+\NewDocumentCommand \figsourcemsg { O{} } {Figure#1 borrowed from}
+\NewDocumentCommand \figsource { m O{} } {\figsourcemsg[#2]{} #1}
+% table adapted from a particular table of a paper
+\NewDocumentCommand \tabadaptfrommsg { O{} } {Table#1 adapted from}
+\NewDocumentCommand \tabadaptfrom { m O{} } {\tabadaptfrommsg[#2]{} #1}
+% table borrowed (copied as is, not modified in the slightest) from a particular
+% table of a paper
+\NewDocumentCommand \tabsourcemsg { O{} } {Table#1 borrowed from}
+\NewDocumentCommand \tabsource { m O{} } {\tabsourcemsg[#2]{} #1}
+
+\makeatletter
+\def\IfEmptyTF#1{%
+  \if\relax\detokenize{#1}\relax
+    \expandafter\@firstoftwo
+  \else
+    \expandafter\@secondoftwo
+  \fi}
+\makeatother
+
+% TODO notices and coloured-text
+\newcommand \lluis[1]   {\todo[inline,color=SeaGreen,caption={}]{\textbf{Lluís}: #1}}
+\newcommand \llutxt[1]  {\textcolor{blue}{#1}}
+\newcommand \llucrss[1] {\llutxt{\sout{#1}}}
+
+\newcommand \ramon[1]   {\todo[inline,color=Cyan]{\textbf{Ramon}: #1}}
+\newcommand \ramtxt[1]  {\textcolor{Magenta}{#1}}
+\newcommand \ramcrss[1] {\ramtxt{\sout{#1}}}
+
+\newcommand \TASK[1]    {\todo[inline,color=SkyBlue]{\textbf{Task}: #1}}
+
+\newcommand \red[1]     {\textcolor{red}{#1}}
+\newcommand \blue[1]    {\textcolor{blue}{#1}}
+\newcommand \purple[1]  {\textcolor{purple}{#1}}
+\newcommand \magenta[1] {\textcolor{Magenta}{#1}}
+\newcommand \brown[1]   {\textcolor{brown}{#1}}
+
+% ----------------------------------------------------------------------
+% ------------------------- PAPER COMMANDS -----------------------------
+
+% math operators
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\OPTIM}{opt}
+
+\newcommand \mdef {:=}
+
+% tikz
+\ifdefined\USETIKZ
+\usepackage{tikz}
+\fi
+
+% THEOREMS, LEMMAS, PROPOSITIONS and MORE
+\newtheoremstyle{theoremstyle}
+    {15pt} % Space above
+    {} % Space below
+    {\itshape} % Body font
+    {} % Indent amount
+    {\bfseries} % Theorem head font
+    {.} % Punctuation after theorem head
+    {.5em} % Space after theorem head
+    {} % Theorem head spec (can be left empty, meaning `normal')
+
+\theoremstyle{theoremstyle}
+
+\NewDocumentCommand \quotetext { m } {{\em``#1''}}
+\NewDocumentCommand \customproofheader { m } {Proof of \cref{#1}}
+\NewDocumentCommand \customproofheaderpage { m } {\customproofheader{#1} (stated on page \pageref{#1})}
+
+%~ \newtheorem{theorem}{Theorem}[chapter]
+%~ \newtheorem{lemma}{Lemma}[chapter]
+%~ \newtheorem{proposition}{Proposition}[chapter]
+%~ \newtheorem{corollary}{Corollary}[chapter]
+%~ \newtheorem{conjecture}{Conjecture}[chapter]
+%~ \newtheorem{property}{Property}[chapter]
+%~ \newtheorem{definition}{Definition}[chapter]
+%~ \newtheorem{remark}{Remark}[chapter]
+
+% *********************
+
+% NATURAL NUMBERS {1,2,3,...}
+\newcommand \nats {\mathbb{N}}
+% NATURAL NUMBERS and 0 {0,1,2,3,...}
+\newcommand \natsz {\mathbb{N}_0}
+% REAL NUMBERS {1,1.5,2,3,pi,...}
+\newcommand \reals {\mathbb{R}}
+% INTEGER (whole) NUMBERS {...,-2,-1,0,1,2,...}
+\newcommand \whole {\mathbb{Z}}
+\NewDocumentCommand \ith { m } {$#1$th}
+
+\NewDocumentCommand \NP {} {\textbf{NP}}
+
+% **************************
+% LABELS AND NAMES OF THINGS
+
+\NewDocumentCommand \Unconstrained  {} {{\tt Unconstrained}}
+\NewDocumentCommand \unconstrained  {} {{\tt unconstrained}}
+\NewDocumentCommand \Bipartite      {} {{\tt Bipartite}}
+\NewDocumentCommand \bipartite      {} {{\tt bipartite}}
+\NewDocumentCommand \Projective     {} {{\tt Projective}}
+\NewDocumentCommand \projective     {} {{\tt projective}}
+\NewDocumentCommand \Planar         {} {{\tt Planar}}
+\NewDocumentCommand \planar         {} {{\tt planar}}
+
+\NewDocumentCommand \ProjectivePlanar      {} {{\tt Projective/Planar}}
+
+\NewDocumentCommand \ProjectiveminLA       {} {{\tt Projective minLA}}
+\NewDocumentCommand \PlanarminLA           {} {{\tt Planar minLA}}
+\NewDocumentCommand \ProjectivePlanarminLA {} {{\tt Projective/Planar minLA}}
+\NewDocumentCommand \BipartiteminLA        {} {{\tt Bipartite minLA}}
+\NewDocumentCommand \minLA                 {} {{\tt minLA}}
+
+\NewDocumentCommand \ProjectiveMaxLA       {} {{\tt Projective MaxLA}}
+\NewDocumentCommand \PlanarMaxLA           {} {{\tt Planar MaxLA}}
+\NewDocumentCommand \BipartiteMaxLA        {} {{\tt Bipartite MaxLA}}
+\NewDocumentCommand \NonBipartiteMaxLA     {} {{\tt Non-bipartite MaxLA}}
+\NewDocumentCommand \OneThistleMaxLA       {} {{\tt 1-thistle MaxLA}}
+\NewDocumentCommand \ProjectivePlanarMaxLA {} {{\tt Projective/Planar MaxLA}}
+\NewDocumentCommand \MaxLA                 {} {{\tt MaxLA}}
+
+\NewDocumentCommand \minLAMaxLA            {} {{\tt minLA/MaxLA}}
+
+% *************************
+% ALGORITHMS AND PSEUDOCODE
+
+% asymptotic cost
+\NewDocumentCommand \bigO   { m } { O{\left(#1\right)} }
+\NewDocumentCommand \bigTh  { m } { \Theta{\left(#1\right)} }
+\NewDocumentCommand \smallo { m } { o{\left(#1\right)} }
+
+% algorithm cost (caption)
+\NewDocumentCommand \algocost { m O{} } {\ifthenelse{\isempty{#2}}{Cost: time #1.}{Cost: time #1; space #2.}}
+
+%    for highlighting lines (only the code, not the lines, not the comment)
+%    https://tex.stackexchange.com/a/579885/202783
+\SetNlSty{textbf}{\color{black}}{}
+\newcommand*{\mycommentfont}[1]{\textcolor{black}{\ttfamily#1}}
+\SetCommentSty{mycommentfont}
+
+\NewDocumentCommand \KwInTwo  { m } {\textbf{\em{In}:} #1\\}
+\NewDocumentCommand \KwOutTwo { m } {\textbf{\em{Out}:} #1\\}
+
+% ************
+% GRAPH THEORY
+
+% --------------
+% GENERAL GRAPHS
+
+\NewDocumentCommand \graph    {} { G }
+
+% ---------------------
+% FREE AND ROOTED TREES
+
+% free tree
+\NewDocumentCommand \ftree {} { T }
+\NewDocumentCommand \Root  {} { r }
+% rooted tree
+\NewDocumentCommand \rootedtree { m m }                { {#1}^{#2} }
+\NewDocumentCommand \rtree      { O{\Root} O{\ftree} } { \rootedtree{#2}{#1} }
+% subtree of a rooted tree:
+%     root of subtree, (root of tree), (tree)
+\NewDocumentCommand \SubRtree { m O{\Root} O{\ftree} } { \rootedtree{#3}{#2}_{#1} }
+
+\NewDocumentCommand \treebank       {}       { \mathcal{T} }
+\NewDocumentCommand \setrootedtrees { O{n} } { \mathcal{R}_{#1} }
+\NewDocumentCommand \setfreetrees   { O{n} } { \mathcal{F}_{#1} }
+\NewDocumentCommand \numfreetrees   { O{n} } { t_{#1} }
+
+% ---------------------
+% SEVERAL GRAPH CLASSES
+
+\NewDocumentCommand \pathgsymbol {}       { P }
+\NewDocumentCommand \pathg       {}       { \pathgsymbol }
+\NewDocumentCommand \pathgclass  { O{n} } { \mathcal{\pathg}_{#1} }
+
+\NewDocumentCommand \pathgR      { O{k} }      { \rtree[#1][\pathgsymbol] }
+\NewDocumentCommand \pathgRclass { O{k} O{n} } { \pathgclass[#2]^{#1} }
+
+\NewDocumentCommand \cyclesymbol     {}       { C }
+\NewDocumentCommand \cycle           {}       { \cyclesymbol }
+\NewDocumentCommand \cycleclass      { O{n} } { \mathcal{\cycle}_{#1} }
+
+% catalan: aranya
+\NewDocumentCommand \spidersymbol    {}       { A }
+\NewDocumentCommand \spider          {}       { \spidersymbol }
+\NewDocumentCommand \spiderclass     { O{n} } { \mathcal{\spider}_{#1} }
+
+\NewDocumentCommand \twolinearsymbol {}       { L }
+\NewDocumentCommand \twolinear       {}       { \twolinearsymbol }
+\NewDocumentCommand \twolinearclass  { O{n} } { \mathcal{\twolinear}_{#1} }
+
+\NewDocumentCommand \klinearsymbol   {}            { L }
+\NewDocumentCommand \klinear         {}            { \klinearsymbol }
+\NewDocumentCommand \klinearclass    { O{n} O{k} } { \mathcal{\klinear}_{#1}^{(#2)} }
+
+% catalan: erUga
+\NewDocumentCommand \caterpillarsymbol {}       { U }
+\NewDocumentCommand \caterpillar       {}       { \caterpillarsymbol }
+\NewDocumentCommand \caterpillarclass  { O{n} } { \mathcal{\caterpillar}_{#1} }
+
+% japanese: hoshi (星)
+\NewDocumentCommand \bistarsymbol         {}       { H }
+\NewDocumentCommand \bistar               {}       { \bistarsymbol }
+\NewDocumentCommand \bistarclass          { O{n} } { \mathcal{\bistarsymbol}_{#1} }
+
+% euskera: orekatua
+\NewDocumentCommand \balancedbistarsymbol {}       { O }
+\NewDocumentCommand \balancedbistar       {}       { \balancedbistarsymbol }
+\NewDocumentCommand \balancedbistarclass  { O{n} } { \mathcal{\balancedbistarsymbol}_{#1} }
+
+\NewDocumentCommand \stargsymbol           {}       { S }
+\NewDocumentCommand \starg                 {}       { \stargsymbol }
+\NewDocumentCommand \stargclass            { O{n} } { \mathcal{\stargsymbol}_{#1} }
+\NewDocumentCommand \starghub              {}       { \stargsymbol^h }
+\NewDocumentCommand \starghubclass         { O{n} } { \mathcal{\stargsymbol}^h_{#1} }
+\NewDocumentCommand \stargleaf             {}       { \stargsymbol^l }
+\NewDocumentCommand \stargleafclass        { O{n} } { \mathcal{\stargsymbol}^l_{#1} }
+
+\NewDocumentCommand \quasistarsymbol       {}       { Q }
+\NewDocumentCommand \quasistar             {}       { \quasistarsymbol }
+\NewDocumentCommand \quasistarclass        { O{n} } { \mathcal{\quasistarsymbol}_{#1} }
+\NewDocumentCommand \quasistarhub          {}       { \quasistarsymbol^h }
+\NewDocumentCommand \quasistarhubclass     { O{n} } { \mathcal{\quasistarsymbol}^h_{#1} }
+\NewDocumentCommand \quasistarhubleaf      {}       { \quasistarsymbol^{hl} }
+\NewDocumentCommand \quasistarhubleafclass { O{n} } { \mathcal{\quasistarsymbol}^{hl}_{#1} }
+\NewDocumentCommand \quasistarbet          {}       { \quasistarsymbol^b }
+\NewDocumentCommand \quasistarbetclass     { O{n} } { \mathcal{\quasistarsymbol}^b_{#1} }
+\NewDocumentCommand \quasistarext          {}       { \quasistarsymbol^e }
+\NewDocumentCommand \quasistarextclass     { O{n} } { \mathcal{\quasistarsymbol}^e_{#1} }
+
+\NewDocumentCommand \kquasistar            { O{k} }      { \quasistarsymbol^{(#1)} }
+\NewDocumentCommand \kquasistarclass       { O{n} O{k} } { \mathcal{\quasistarsymbol}_{#1}^{(#2)} }
+
+\NewDocumentCommand \completesymbol {}       { K }
+\NewDocumentCommand \complete       {}       { \completesymbol }
+\NewDocumentCommand \completeclass  { O{n} } { \mathcal{\completesymbol}_{#1} }
+
+\NewDocumentCommand \bipgsymbol {}       { B }
+\NewDocumentCommand \bipg       {}       { \bipgsymbol }
+\NewDocumentCommand \bipgclass  { O{n} } { \mathcal{\bipgsymbol}_{#1} }
+
+\NewDocumentCommand \completebipartitesymbol {}            { K }
+\NewDocumentCommand \completebipartite       {}            { \completebipartitesymbol }
+\NewDocumentCommand \completebipartiteclass  { O{n} O{m} } { \mathcal{\completebipartitesymbol}_{#1,#2} }
+
+% ---------------------
+% Graph properties
+
+% neighbours of a vertex
+\NewDocumentCommand \neighborssymbol {}      { \Gamma }
+\NewDocumentCommand \neighbors       { m }   { \neighborssymbol(#1) }
+\NewDocumentCommand \neighborsgraph  { m m } { \neighborssymbol_{#2}(#1) }
+\NewDocumentCommand \neighborsG      { m }   { \neighborsgraph{#1}{\graph} }
+\NewDocumentCommand \neighborsT      { m }   { \neighborsgraph{#1}{\ftree} }
+
+% degree of a vertex
+\NewDocumentCommand \degreesymbol {}      { d }
+\NewDocumentCommand \degree       { m }   { \degreesymbol(#1) }
+\NewDocumentCommand \degreegraph  { m m } { \degreesymbol_{#2}(#1) }
+\NewDocumentCommand \degreeG      { m }   { \degreegraph{#1}{\graph} }
+\NewDocumentCommand \degreeT      { m }   { \degreegraph{#1}{\ftree} }
+
+% out-neighbours of a vertex in a rooted tree
+\NewDocumentCommand \outneighbors     { m O{\Root} }   { \neighborssymbol_{#2}(#1) }
+\NewDocumentCommand \outneighborstree { m m O{\Root} } { \neighborssymbol_{\rtree[#3][#2]}(#1) }
+\NewDocumentCommand \outneighborsT    { m O{\Root} }   { \neighborssymbol_{\rtree[#2]}(#1) }
+
+% out-degree of a vertex in a rooted tree
+\NewDocumentCommand \outdegreeT { m O{\rtree} } { \degreesymbol_{#2}(#1) }
+\NewDocumentCommand \outdegree  { m O{\Root} }  { \degreesymbol_{#2}(#1) }
+
+% maximum degree of a graph
+\NewDocumentCommand \maxdegreesymbol {}      { \Delta }
+\NewDocumentCommand \maxdegreeset    { m m } { \maxdegreesymbol_{#2}(#1) }
+\NewDocumentCommand \maxdegreesetG   { m }   { \maxdegreeset{\graph}{#1} }
+\NewDocumentCommand \maxdegreesetT   { m }   { \maxdegreeset{\ftree}{#1} }
+\NewDocumentCommand \maxdegree       { m }   { \maxdegreesymbol(#1) }
+\NewDocumentCommand \maxdegreeG      {}      { \maxdegree{\graph} }
+\NewDocumentCommand \maxdegreeT      {}      { \maxdegree{\ftree} }
+
+% number of leaves of a graph
+\NewDocumentCommand \numleavessymbol {}    { L }
+\NewDocumentCommand \numleaves       { m } { \numleavessymbol(#1) }
+\NewDocumentCommand \numleavesG      {}    { \numleaves{\graph} }
+\NewDocumentCommand \numleavesT      {}    { \numleaves{\ftree} }
+
+% size of a subtree
+\NewDocumentCommand \sizesubtreesymbol {} { s }
+\NewDocumentCommand \sizesubtreeT      { m O{\Root} O{\ftree} } { \sizesubtreesymbol_{\rtree[#2][#3]}(#1) }
+\NewDocumentCommand \sizesubtree       { m m }                  { \sizesubtreesymbol_{#1}(#2) }
+\NewDocumentCommand \sizesubtreeroot   { m O{\Root} }           { \sizesubtreesymbol_{#2}(#1) }
+
+% size of largest subtree
+\NewDocumentCommand \sizelargestsubtreeT          { m m m O{\ftree} } { \sizesubtreesymbol_{\rtree[#1][#4]}(#2,#3) }
+\NewDocumentCommand \sizelargestsubtree           { m m m }           { \sizesubtreesymbol_{#1}(#2,#3) }
+\NewDocumentCommand \sizelargestimmediatesubtreeT { m m O{\ftree} }   { \sizelargestsubtreeT{#1}{#1}{#2}[#3] }
+\NewDocumentCommand \sizelargestimmediatesubtree  { m m }             { \sizelargestsubtree{#1}{#1}{#2} }
+
+% parent of a vertex
+\NewDocumentCommand \parentsymbol {}                       { p }
+\NewDocumentCommand \parentT      { m O{\Root} O{\ftree} } { \parentsymbol_{\rtree[#2][#3]}(#1) }
+\NewDocumentCommand \parent       { m O{\Root} }           { \parentsymbol_{#2}(#1) }
+
+% *******************
+% LINEAR ARRANGEMENTS
+
+% --------------------
+% TYPE OF ARRANGEMENTS
+
+\NewDocumentCommand \cons   {} { \mathrm{c} }
+\NewDocumentCommand \nonbip {} { \mathrm{n{\text -}bip} }
+\NewDocumentCommand \bip    {} { \mathrm{bip} }
+\NewDocumentCommand \proj   {} { \mathrm{pr} }
+\NewDocumentCommand \plan   {} { \mathrm{pl} }
+\NewDocumentCommand \onet   {} { 1t }
+
+\NewDocumentCommand \arr          {}                       { \pi }
+\NewDocumentCommand \arrident     { O{\arr} }              { {#1}_I }
+\NewDocumentCommand \invarr       { O{\arr} }              { {#1}^{-1} }
+\NewDocumentCommand \marr         { O{\arr} }              { \tilde{#1} }
+\NewDocumentCommand \invmarr      { O{\marr} }             { {#1}^{-1} }
+\NewDocumentCommand \oarr         {}                       { \phi }
+\NewDocumentCommand \oinvarr      { O{\oarr} }             { {#1}^{-1} }
+\NewDocumentCommand \maxarr       { O{\arr} }              { {#1}^* }
+% non-bipartite arrangements
+\NewDocumentCommand \nonbiparr    { O{\arr} }              { {#1}_{\overline{B}} }
+\NewDocumentCommand \maxnonbiparr { O{\arr} }              { \nonbiparr[#1]^* }
+\NewDocumentCommand \diffarr      { O{\ftree} O{\Delta} }  { {#2}_{#1} }
+\NewDocumentCommand \idiffarr     { O{\ftree} O{\Lambda} } { {#2}_{#1} }
+% bipartite arrangements
+\NewDocumentCommand \biparr       { O{\arr} }              { {#1}_{B} }
+\NewDocumentCommand \maxbiparr    { O{\arr} }              { \biparr[#1]^* }
+\NewDocumentCommand \imaxbiparr   { O{\arr} }              { {#1}_{+} }
+
+% PROBABILITY
+% misc
+\NewDocumentCommand \fixed      {} { \diamond }
+\NewDocumentCommand \probsymbol {} { \mathbb{P} }
+
+\NewDocumentCommand \seprob     { m m m }   { \probsymbol_{#1}^{#2}{\left(#3\right)} }
+\NewDocumentCommand \secondprob { m m m m } { \seprob{#1}{#2}{#3\;|\;#4} }
+
+\NewDocumentCommand \eprob          { m m }   { \seprob{#1}{}{#2} }
+\NewDocumentCommand \eprobfixed     { m m }   { \seprob{#1}{\fixed}{#2} }
+\NewDocumentCommand \econdprob      { m m m } { \secondprob{#1}{}{#2}{#3} }
+\NewDocumentCommand \econdprobfixed { m m m } { \secondprob{#1}{\fixed}{#2}{#3} }
+
+\NewDocumentCommand \prob          { m }   { \eprob{}{#1} }
+\NewDocumentCommand \probfixed     { m }   { \eprobfixed{}{#1} }
+\NewDocumentCommand \condprob      { m m } { \econdprob{}{#1}{#2} }
+\NewDocumentCommand \condprobfixed { m m } { \econdprobfixed{}{#1}{#2} }
+
+\NewDocumentCommand \rprob          { m }   { \eprob{\proj}{#1} }
+\NewDocumentCommand \rcondprob      { m m } { \econdprob{\proj}{#1}{#2} }
+\NewDocumentCommand \rprobfixed     { m }   { \eprobfixed{\proj}{#1} }
+\NewDocumentCommand \rcondprobfixed { m m } { \econdprobfixed{\proj}{#1}{#2} }
+
+\NewDocumentCommand \lprob          { m }   { \eprob{\plan}{#1} }
+\NewDocumentCommand \lcondprob      { m m } { \econdprob{\plan}{#1}{#2} }
+\NewDocumentCommand \lprobfixed     { m }   { \eprobfixed{\plan}{#1} }
+\NewDocumentCommand \lcondprobfixed { m m } { \econdprobfixed{\plan}{#1}{#2} }
+
+\NewDocumentCommand \bprob          { m }   { \eprob{\bip}{#1} }
+\NewDocumentCommand \bcondprob      { m m } { \econdprob{\bip}{#1}{#2} }
+\NewDocumentCommand \bprobfixed     { m }   { \eprobfixed{\bip}{#1} }
+\NewDocumentCommand \bcondprobfixed { m m } { \econdprobfixed{\bip}{#1}{#2} }
+
+% EXPECTATION
+\NewDocumentCommand \expesymbol {} { \mathbb{E} }
+
+\NewDocumentCommand \seexpe     { m m m }   { \expesymbol_{#1}^{#2}{\left[#3\right]} }
+\NewDocumentCommand \secondexpe { m m m m } { \seexpe{#1}{#2}{#3\;|\;#4} }
+
+\NewDocumentCommand \eexpe          { m m }   { \seexpe{#1}{}{#2} }
+\NewDocumentCommand \econdexpe      { m m m } { \secondexpe{#1}{}{#2}{#3} }
+\NewDocumentCommand \eexpefixed     { m m }   { \seexpe{#1}{\fixed}{#2} }
+\NewDocumentCommand \econdexpefixed { m m m } { \secondexpe{#1}{\fixed}{#2}{#3} }
+
+\NewDocumentCommand \expe          { m }   { \eexpe{}{#1} }
+\NewDocumentCommand \condexpe      { m m } { \econdexpe{}{#1}{#2} }
+\NewDocumentCommand \expefixed     { m }   { \eexpefixed{}{#1} }
+\NewDocumentCommand \condexpefixed { m m } { \econdexpefixed{}{#1}{#2} }
+
+\NewDocumentCommand \cexpe          { m }   { \eexpe{\cons}{#1} }
+\NewDocumentCommand \ccondexpe      { m m } { \econdexpe{\cons}{#1}{#2} }
+\NewDocumentCommand \cexpefixed     { m }   { \eexpefixed{\cons}{#1} }
+\NewDocumentCommand \ccondexpefixed { m m } { \econdexpefixed{\cons}{#1}{#2} }
+
+\NewDocumentCommand \rexpe          { m }   { \eexpe{\proj}{#1} }
+\NewDocumentCommand \rcondexpe      { m m } { \econdexpe{\proj}{#1}{#2} }
+\NewDocumentCommand \rexpefixed     { m }   { \eexpefixed{\proj}{#1} }
+\NewDocumentCommand \rcondexpefixed { m m } { \econdexpefixed{\proj}{#1}{#2} }
+
+\NewDocumentCommand \lexpe          { m }   { \eexpe{\plan}{#1} }
+\NewDocumentCommand \lcondexpe      { m m } { \econdexpe{\plan}{#1}{#2} }
+\NewDocumentCommand \lexpefixed     { m }   { \eexpefixed{\plan}{#1} }
+\NewDocumentCommand \lcondexpefixed { m m } { \econdexpefixed{\plan}{#1}{#2} }
+
+\NewDocumentCommand \bexpe          { m }   { \eexpe{\bip}{#1} }
+\NewDocumentCommand \bcondexpe      { m m } { \econdexpe{\bip}{#1}{#2} }
+\NewDocumentCommand \bexpefixed     { m }   { \eexpefixed{\bip}{#1} }
+\NewDocumentCommand \bcondexpefixed { m m } { \econdexpefixed{\bip}{#1}{#2} }
+
+\NewDocumentCommand \seexpeapprox     { m m m } { \tilde{\expesymbol}_{#1}^{#2}{\left[#3\right]} }
+\NewDocumentCommand \secondexpeapprox { m m m m } { \seexpeapprox{#1}{#2}{#3\;|\;#4} }
+
+\NewDocumentCommand \eexpeapprox          { m m }   { \seexpeapprox{#1}{}{#2} }
+\NewDocumentCommand \econdexpeapprox      { m m m } { \secondexpeapprox{#1}{}{#2}{#3} }
+\NewDocumentCommand \eexpeapproxfixed     { m m }   { \seexpeapprox{#1}{\fixed}{#2} }
+\NewDocumentCommand \econdexpeapproxfixed { m m m } { \secondexpeapprox{#1}{\fixed}{#2}{#3} }
+
+\NewDocumentCommand \expeapprox          { m }   { \eexpeapprox{}{#1} }
+\NewDocumentCommand \condexpeapprox      { m m } { \econdexpeapprox{}{#1}{#2} }
+\NewDocumentCommand \expeapproxfixed     { m }   { \eexpeapproxfixed{}{#1} }
+\NewDocumentCommand \condexpeapproxfixed { m m } { \econdexpeapproxfixed{}{#1}{#2} }
+
+\NewDocumentCommand \rexpeapprox          { m }   { \eexpeapprox{\proj}{#1} }
+\NewDocumentCommand \rcondexpeapprox      { m m } { \econdexpeapprox{\proj}{#1}{#2} }
+\NewDocumentCommand \rexpeapproxfixed     { m }   { \eexpeapproxfixed{\proj}{#1} }
+\NewDocumentCommand \rcondexpeapproxfixed { m m } { \econdexpeapproxfixed{\proj}{#1}{#2} }
+
+\NewDocumentCommand \lexpeapprox          { m }   { \eexpeapprox{\plan}{#1} }
+\NewDocumentCommand \lcondexpeapprox      { m m } { \econdexpeapprox{\plan}{#1}{#2} }
+\NewDocumentCommand \lexpeapproxfixed     { m }   { \eexpeapproxfixed{\plan}{#1} }
+\NewDocumentCommand \lcondexpeapproxfixed { m m } { \econdexpeapproxfixed{\plan}{#1}{#2} }
+
+% VARIANCE
+\NewDocumentCommand \varsymbol {} { \mathbb{V} }
+
+\NewDocumentCommand \sevar     { m m m }   { \varsymbol_{#1}^{#2}{\left[#3\right]} }
+\NewDocumentCommand \secondvar { m m m m } { \sevar{#1}{#2}{#3\;|\;#4} }
+
+\NewDocumentCommand \evar          { m m }   { \sevar{#1}{}{#2} }
+\NewDocumentCommand \econdvar      { m m m } { \secondvar{#1}{}{#2}{#3} }
+\NewDocumentCommand \evarfixed     { m m }   { \sevar{#1}{\fixed}{#2} }
+\NewDocumentCommand \econdvarfixed { m m m } { \secondvar{#1}{\fixed}{#2}{#3} }
+
+\NewDocumentCommand \var          { m }   { \evar{}{#1} }
+\NewDocumentCommand \condvar      { m m } { \econdvar{}{#1}{#2} }
+\NewDocumentCommand \varfixed     { m }   { \evarfixed{}{#1} }
+\NewDocumentCommand \condvarfixed { m m } { \econdvarfixed{}{#1}{#2} }
+
+\NewDocumentCommand \cvar          { m }   { \evar{\cons}{#1} }
+\NewDocumentCommand \ccondvar      { m m } { \econdvar{\cons}{#1}{#2} }
+\NewDocumentCommand \cvarfixed     { m }   { \evarfixed{\cons}{#1} }
+\NewDocumentCommand \ccondvarfixed { m m } { \econdvarfixed{\cons}{#1}{#2} }
+
+\NewDocumentCommand \rvar          { m }   { \evar{\proj}{#1} }
+\NewDocumentCommand \rcondvar      { m m } { \econdvar{\proj}{#1}{#2} }
+\NewDocumentCommand \rvarfixed     { m }   { \evarfixed{\proj}{#1} }
+\NewDocumentCommand \rcondvarfixed { m m } { \econdvarfixed{\proj}{#1}{#2} }
+
+\NewDocumentCommand \lvar          { m }   { \evar{\plan}{#1} }
+\NewDocumentCommand \lcondvar      { m m } { \econdvar{\plan}{#1}{#2} }
+\NewDocumentCommand \lvarfixed     { m }   { \evarfixed{\plan}{#1} }
+\NewDocumentCommand \lcondvarfixed { m m } { \econdvarfixed{\plan}{#1}{#2} }
+
+\NewDocumentCommand \sevarapprox     { m m m }   { \tilde{\varsymbol}_{#1}^{#2}{\left[#3\right]} }
+\NewDocumentCommand \secondvarapprox { m m m m } { \sevarapprox{#1}{#2}{#3\;|\;#4} }
+
+\NewDocumentCommand \evarapprox          { m m }   { \sevarapprox{#1}{}{#2} }
+\NewDocumentCommand \econdvarapprox      { m m m } { \secondvarapprox{#1}{}{#2}{#3} }
+\NewDocumentCommand \evarapproxfixed     { m m }   { \sevarapprox{#1}{\fixed}{#2} }
+\NewDocumentCommand \econdvarapproxfixed { m m m } { \secondvarapprox{#1}{\fixed}{#2}{#3} }
+
+\NewDocumentCommand \varapprox          { m }   { \evarapprox{}{#1} }
+\NewDocumentCommand \condvarapprox      { m m } { \econdvarapprox{}{#1}{#2} }
+\NewDocumentCommand \varapproxfixed     { m }   { \evarapproxfixed{}{#1} }
+\NewDocumentCommand \condvarapproxfixed { m m } { \econdvarapproxfixed{}{#1}{#2} }
+
+\NewDocumentCommand \rvarapprox          { m }   { \evarapprox{\proj}{#1} }
+\NewDocumentCommand \rcondvarapprox      { m m } { \econdvarapprox{\proj}{#1}{#2} }
+\NewDocumentCommand \rvarapproxfixed     { m }   { \evarapproxfixed{\proj}{#1} }
+\NewDocumentCommand \rcondvarapproxfixed { m m } { \econdvarapproxfixed{\proj}{#1}{#2} }
+
+\NewDocumentCommand \lvarapprox          { m }   { \evarapprox{\plan}{#1} }
+\NewDocumentCommand \lcondvarapprox      { m m } { \econdvarapprox{\plan}{#1}{#2} }
+\NewDocumentCommand \lvarapproxfixed     { m }   { \evarapproxfixed{\plan}{#1} }
+\NewDocumentCommand \lcondvarapproxfixed { m m } { \econdvarapproxfixed{\plan}{#1}{#2} }
+
+
+% length of an edge
+\NewDocumentCommand \edgelengthsymbol {} { \delta }
+\NewDocumentCommand \edgelength      { m O{\arr} } { \edgelengthsymbol_{#2}(#1) }
+\NewDocumentCommand \edgelengthplus  { m O{\arr} } { \edgelengthsymbol_{#2}^+(#1) }
+\NewDocumentCommand \edgelengthminus { m O{\arr} } { \edgelengthsymbol_{#2}^-(#1) }
+\NewDocumentCommand \Vedgelength { m } {
+    \ifthenelse{\isempty{#1}}
+        {\edgelengthsymbol}
+        {\edgelengthsymbol(#1)}
+}
+\NewDocumentCommand \Vedgelengthplus { m } {
+    \ifthenelse{\isempty{#1}}
+        {\edgelengthsymbol^+}
+        {\edgelengthsymbol^+(#1)}
+}
+\NewDocumentCommand \Vedgelengthminus { m } {
+    \ifthenelse{\isempty{#1}}
+        {\edgelengthsymbol^-}
+        {\edgelengthsymbol^-(#1)}
+}
+\NewDocumentCommand \Vedgelengthc { m m } {
+    \ifthenelse{\isempty{#2}}
+        {\edgelengthsymbol^{(#1)}}
+        {\edgelengthsymbol^{(#1)}(#2)}
+}
+
+\NewDocumentCommand \edgelengthp { m O{\arr} } { \edgelengthsymbol_{#2}'(#1) }
+
+% length of anchor and co-anchor
+\NewDocumentCommand \anchor        { m O{\arr} }   { \alpha_{#2}(#1) }
+\NewDocumentCommand \coanchor      { m O{\arr} }   { \beta_{#2}(#1) }
+\NewDocumentCommand \segmentlength { m m O{\arr} } {
+    \ifthenelse{\isempty{#3}}
+        {\varphi(#1; #2)}
+        {\varphi_{#3}(#1; #2)}
+}
+\NewDocumentCommand \Vanchor        { m }   { \anchor{#1}[] }
+\NewDocumentCommand \Vcoanchor      { m }   { \coanchor{#1}[] }
+\NewDocumentCommand \Vsegmentlength { m m } { \segmentlength{#1}{#2}[] }
+
+% sum of edge lengths
+\NewDocumentCommand \sumedgelengthssymbol {}            {D}
+\NewDocumentCommand \wsumedgelengthssymbol {}           {W}
+% sum of edge lengths
+\NewDocumentCommand \ssumedgelengths      { m }         { \sumedgelengthssymbol(#1) }
+\NewDocumentCommand \ssumedgelengthsG     {}            { \ssumedgelengths{\graph} }
+\NewDocumentCommand \ssumedgelengthsB     {}            { \ssumedgelengths{\bipg} }
+\NewDocumentCommand \ssumedgelengthsT     {}            { \ssumedgelengths{\ftree} }
+\NewDocumentCommand \ssumedgelengthsTr    {}            { \ssumedgelengths{\rtree} }
+% sum of edge lengths
+\NewDocumentCommand \sumedgelengths       { m m }       { \sumedgelengthssymbol_{#1}(#2) }
+\NewDocumentCommand \sumedgelengthsG      { O{\arr} }   { \sumedgelengths{#1}{\graph} }
+\NewDocumentCommand \sumedgelengthsB      { O{\arr} }   { \sumedgelengths{#1}{\bipg} }
+\NewDocumentCommand \sumedgelengthsT      { O{\arr} }   { \sumedgelengths{#1}{\ftree} }
+\NewDocumentCommand \sumedgelengthsTr     { O{\arr} }   { \sumedgelengths{#1}{\rtree} }
+\NewDocumentCommand \wsumedgelengths      { m m m }     { \wsumedgelengthssymbol_{#1}(#2;#3) }
+\NewDocumentCommand \wsumedgelengthsG     { m O{\arr} } { \wsumedgelengths{#2}{\graph}{#1} }
+\NewDocumentCommand \wsumedgelengthsB     { m O{\arr} } { \wsumedgelengths{#2}{\bipg}{#1} }
+\NewDocumentCommand \wsumedgelengthsT     { m O{\arr} } { \wsumedgelengths{#2}{\ftree}{#1} }
+\NewDocumentCommand \wsumedgelengthsTr    { m O{\arr} } { \wsumedgelengths{#2}{\rtree}{#1} }
+% standardized sum of edge lengths
+\NewDocumentCommand \ssumedgelengthsz     { m } { \sumedgelengthssymbol^z(#1) }
+\NewDocumentCommand \ssumedgelengthszG    {}    { \ssumedgelengthsz{\graph} }
+\NewDocumentCommand \ssumedgelengthszB    {}    { \ssumedgelengthsz{\bipg} }
+\NewDocumentCommand \ssumedgelengthszT    {}    { \ssumedgelengthsz{\ftree} }
+\NewDocumentCommand \ssumedgelengthszTr   {}    { \ssumedgelengthsz{\rtree} }
+% standardized sum of edge lengths
+\NewDocumentCommand \sumedgelengthsz      { m m }     { \sumedgelengthssymbol^z_{#1}(#2) }
+\NewDocumentCommand \sumedgelengthszG     { O{\arr} } { \sumedgelengthsz{#1}{\graph} }
+\NewDocumentCommand \sumedgelengthszB     { O{\arr} } { \sumedgelengthsz{#1}{\bipg} }
+\NewDocumentCommand \sumedgelengthszT     { O{\arr} } { \sumedgelengthsz{#1}{\ftree} }
+\NewDocumentCommand \sumedgelengthszTr    { O{\arr} } { \sumedgelengthsz{#1}{\rtree} }
+
+\NewDocumentCommand \Vsumedgelengths { m } {
+    \ifthenelse{\isempty{#1}}
+        {\sumedgelengthssymbol}
+        {\sumedgelengthssymbol(#1)}
+}
+\NewDocumentCommand \VsumedgelengthsG  {} { \Vsumedgelengths{\graph} }
+\NewDocumentCommand \VsumedgelengthsB  {} { \Vsumedgelengths{\bipg} }
+\NewDocumentCommand \VsumedgelengthsT  {} { \Vsumedgelengths{\ftree} }
+\NewDocumentCommand \VsumedgelengthsTr {} { \Vsumedgelengths{\rtree} }
+
+\NewDocumentCommand \Vsumedgelengthsc { m m } {
+    \ifthenelse{\isempty{#2}}
+        {\sumedgelengthssymbol^{(#1)}}
+        {\sumedgelengthssymbol^{(#1)}(#2)}
+}
+\NewDocumentCommand \VsumedgelengthscG  { m } { \Vsumedgelengthsc{#1}{\graph} }
+\NewDocumentCommand \VsumedgelengthscB  { m } { \Vsumedgelengthsc{#1}{\bipg} }
+\NewDocumentCommand \VsumedgelengthscT  { m } { \Vsumedgelengthsc{#1}{\ftree} }
+\NewDocumentCommand \VsumedgelengthscTr { m } { \Vsumedgelengthsc{#1}{\rtree} }
+
+% average edge lengths
+\NewDocumentCommand \averageedgelength  { m m }     { \langle \edgelength{#1}[#2] \rangle }
+\NewDocumentCommand \averageedgelengthG { O{\arr} } { \averageedgelength{\graph}{#1} }
+\NewDocumentCommand \averageedgelengthB { O{\arr} } { \averageedgelength{\bipg}{#1} }
+\NewDocumentCommand \averageedgelengthT { O{\arr} } { \averageedgelength{\ftree}{#1} }
+\NewDocumentCommand \Vaverageedgelength { m } {
+    \langle\ifthenelse{\isempty{#1}}
+        {\edgelengthsymbol}
+        {\edgelengthsymbol(#1)}\rangle
+}
+\NewDocumentCommand \VaverageedgelengthG  {} { \Vaverageedgelength{\graph} }
+\NewDocumentCommand \VaverageedgelengthB  {} { \Vaverageedgelength{\bipg} }
+\NewDocumentCommand \VaverageedgelengthT  {} { \Vaverageedgelength{\ftree} }
+\NewDocumentCommand \VaverageedgelengthTr {} { \Vaverageedgelength{\rtree} }
+
+\NewDocumentCommand \Vaverageedgelengthc { m m } {
+    \langle\ifthenelse{\isempty{#2}}
+        {\edgelengthsymbol^{(#1)}}
+        {\edgelengthsymbol^{(#1)}(#2)}\rangle
+}
+\NewDocumentCommand \VaverageedgelengthcG  { m } { \Vaverageedgelengthc{#1}{\graph} }
+\NewDocumentCommand \VaverageedgelengthcB  { m } { \Vaverageedgelengthc{#1}{\bipg} }
+\NewDocumentCommand \VaverageedgelengthcT  { m } { \Vaverageedgelengthc{#1}{\ftree} }
+\NewDocumentCommand \VaverageedgelengthcTr { m } { \Vaverageedgelengthc{#1}{\rtree} }
+
+% incident sum of edge lengths
+\NewDocumentCommand \incidentsumedgelengthssymbol {}                      { \gamma }
+\NewDocumentCommand \incidentsumedgelengths       { m O{\arr} }           { \incidentDsymbol_{#2}(#1) }
+\NewDocumentCommand \incidentsumedgelengthsG      { m O{\arr} } { \incidentDsymbol_{#2,\graph}(#1) }
+\NewDocumentCommand \incidentsumedgelengthsB      { m O{\arr} } { \incidentDsymbol_{#2,\bipg}(#1) }
+\NewDocumentCommand \incidentsumedgelengthsT      { m O{\arr} } { \incidentDsymbol_{#2,\ftree}(#1) }
+
+% number of crossings
+\NewDocumentCommand \crossingsymbol {}                { c }
+\NewDocumentCommand \crossing       { m m m O{\arr} } { \crossingsymbol_{#4}(#3;#1,#2) }
+\NewDocumentCommand \crossingG      { m m   O{\arr} } { \crossing{#1}{#2}{\graph}[#3] }
+\NewDocumentCommand \crossingB      { m m   O{\arr} } { \crossing{#1}{#2}{\bipg}[#3] }
+\NewDocumentCommand \crossingT      { m m   O{\arr} } { \crossing{#1}{#2}{\ftree}[#3] }
+
+\NewDocumentCommand \numedgecrossingssymbol {}            { C }
+\NewDocumentCommand \numedgecrossings   { m O{\arr} } { \numedgecrossingssymbol_{#2}(#1) }
+
+\NewDocumentCommand \numedgecrossingsG  { O{\arr} } { \numedgecrossings{\graph}[#1] }
+\NewDocumentCommand \numedgecrossingsT  { O{\arr} } { \numedgecrossings{\ftree}[#1] }
+\NewDocumentCommand \numedgecrossingsTr { O{\arr} } { \numedgecrossings{\rtree}[#1] }
+\NewDocumentCommand \Vnumedgecrossings  { m } {
+  \ifthenelse{\isempty{#1}}
+    {\numedgecrossingssymbol}
+    {\numedgecrossingssymbol(#1)}
+}
+\NewDocumentCommand \VnumedgecrossingsG  {} { \Vnumedgecrossings{\graph} }
+\NewDocumentCommand \VnumedgecrossingsB  {} { \Vnumedgecrossings{\bipg} }
+\NewDocumentCommand \VnumedgecrossingsT  {} { \Vnumedgecrossings{\ftree} }
+\NewDocumentCommand \VnumedgecrossingsTr {} { \Vnumedgecrossings{\rtree} }
+\NewDocumentCommand \Vnumedgecrossingsc  { m m } {
+  \ifthenelse{\isempty{#2}}
+    {\numedgecrossingssymbol^{(#1)}}
+    {\numedgecrossingssymbol^{(#1)}(#2)}
+}
+\NewDocumentCommand \VnumedgecrossingscG  { m } { \Vnumedgecrossingsc{#1}[\graph] }
+\NewDocumentCommand \VnumedgecrossingscB  { m } { \Vnumedgecrossingsc{#1}[\bipg] }
+\NewDocumentCommand \VnumedgecrossingscT  { m } { \Vnumedgecrossingsc{#1}[\ftree] }
+\NewDocumentCommand \VnumedgecrossingscTr { m } { \Vnumedgecrossingsc{#1}[\rtree] }
+
+% --------------------
+% OPTIMUM MaxLA, minLA
+
+\NewDocumentCommand \minimum {} { m }
+\NewDocumentCommand \maximum {} { M }
+
+% minimum sum of edge lengths of trees
+\NewDocumentCommand \gminLA      { m m }           { \minimum_{#1}{\left[\sumedgelengthssymbol(#2)\right]} }
+\NewDocumentCommand \UncminLA    { m }             { \gminLA{}{#1} }
+\NewDocumentCommand \UncminLAG   {}                { \UncminLA{\graph} }
+\NewDocumentCommand \UncminLAT   {}                { \UncminLA{\ftree} }
+\NewDocumentCommand \UncminLAk   { m m }           { \gminLA{\le #1}{#2} }
+\NewDocumentCommand \UncminLAkG  { O{k} }          { \UncminLAk{#1}{\graph} }
+\NewDocumentCommand \UncminLAkT  { O{k} }          { \UncminLAk{#1}{\ftree} }
+\NewDocumentCommand \wgminLA     { m m m }         { w\minimum_{#1}{\left[\wsumedgelengthssymbol(#2;#3)\right]} }
+\NewDocumentCommand \wUncminLA   { m m }           { \wgminLA{}{#1}{#2} }
+\NewDocumentCommand \wUncminLAG  { m }             { \wUncminLA{\graph}{#1} }
+\NewDocumentCommand \wUncminLAT  { m }             { \wUncminLA{\ftree}{#1} }
+\NewDocumentCommand \PlanminLA   { O{\ftree} }     { \gminLA{\plan}{#1} }
+\NewDocumentCommand \ProjminLA   { O{\rtree} }     { \gminLA{\proj}{#1} }
+\NewDocumentCommand \BipminLA    { m }             { \gminLA{\bip}{#1} }
+\NewDocumentCommand \BipminLAB   {}                { \BipminLA{\bipg} }
+\NewDocumentCommand \BipminLAT   {}                { \BipminLA{\ftree} }
+% maximum sum of edge lengths of trees
+\NewDocumentCommand \gMaxLA     { m m }            { \maximum_{#1}{\left[\sumedgelengthssymbol{\left(#2\right)}\right]}}
+\NewDocumentCommand \UncMaxLA   { m }              { \gMaxLA{}{#1} }
+\NewDocumentCommand \UncMaxLAG  { O{\graph} }      { \UncMaxLA{#1} }
+\NewDocumentCommand \UncMaxLAT  { O{\ftree} }      { \UncMaxLA{#1} }
+\NewDocumentCommand \UncMaxLAk  { m m }            { \gMaxLA{\le #1}{#2} }
+\NewDocumentCommand \UncMaxLAkG { O{k} O{\graph} } { \UncMaxLAk{#1}{#2} }
+\NewDocumentCommand \UncMaxLAkT { O{k} O{\ftree} } { \UncMaxLAk{#1}{#2} }
+\NewDocumentCommand \PlanMaxLA  { O{\ftree} }      { \gMaxLA{\plan}{#1} }
+\NewDocumentCommand \ProjMaxLA  { O{\rtree} }      { \gMaxLA{\proj}{#1} }
+
+\NewDocumentCommand \BipMaxLA     { m }            { \gMaxLA{\bip}{#1} }
+\NewDocumentCommand \BipMaxLAG    {}               { \BipMaxLA{\graph} }
+\NewDocumentCommand \BipMaxLAB    {}               { \BipMaxLA{\bipg} }
+\NewDocumentCommand \BipMaxLAT    {}               { \BipMaxLA{\ftree} }
+\NewDocumentCommand \OneTMaxLA    { m }            { \gMaxLA{\onet}{#1} }
+\NewDocumentCommand \OneTMaxLAG   {}               { \OneTMaxLA{\graph} }
+\NewDocumentCommand \OneTMaxLAT   {}               { \OneTMaxLA{\ftree} }
+\NewDocumentCommand \NonBipMaxLA  { m }            { \gMaxLA{\mathrm{\nonbip}}{#1} }
+\NewDocumentCommand \NonBipMaxLAG {}               { \NonBipMaxLA{\graph} }
+\NewDocumentCommand \NonBipMaxLAT {}               { \NonBipMaxLA{\ftree} }
+
+% Extremal minLA, MaxLA
+
+\NewDocumentCommand \evalminminLA { O{n} O{} } { \mathfrak{mm}_{#2}(#1) }
+\NewDocumentCommand \evalMaxminLA { O{n} O{} } { \mathfrak{Mm}_{#2}(#1) }
+\NewDocumentCommand \evalminMaxLA { O{n} O{} } { \mathfrak{mM}_{#2}(#1) }
+\NewDocumentCommand \evalMaxMaxLA { O{n} O{} } { \mathfrak{MM}_{#2}(#1) }
+
+\NewDocumentCommand \valminminLA     { O{n} }  { \evalminminLA[#1][] }
+\NewDocumentCommand \valMaxminLA     { O{n} }  { \evalMaxminLA[#1][] }
+\NewDocumentCommand \valminPlanminLA { O{n} }  { \evalminminLA[#1][\plan] }
+\NewDocumentCommand \valMaxPlanminLA { O{n} }  { \evalMaxminLA[#1][\plan] }
+\NewDocumentCommand \valminProjminLA { O{n} }  { \evalminminLA[#1][\proj] }
+\NewDocumentCommand \valMaxProjminLA { O{n} }  { \evalMaxminLA[#1][\proj] }
+
+\NewDocumentCommand \valminMaxLA     { O{n} }  { \evalminMaxLA[#1][] }
+\NewDocumentCommand \valMaxMaxLA     { O{n} }  { \evalMaxMaxLA[#1][] }
+\NewDocumentCommand \valminPlanMaxLA { O{n} }  { \evalminMaxLA[#1][\plan] }
+\NewDocumentCommand \valMaxPlanMaxLA { O{n} }  { \evalMaxMaxLA[#1][\plan] }
+\NewDocumentCommand \valminProjMaxLA { O{n} }  { \evalminMaxLA[#1][\proj] }
+\NewDocumentCommand \valMaxProjMaxLA { O{n} }  { \evalMaxMaxLA[#1][\proj] }
+
+% --------------------
+% OPTIMUM CMax
+\NewDocumentCommand \gCMaxLA  { m m } { \maximum_{#1}{\left[\numedgecrossingssymbol(#2)\right]} }
+\NewDocumentCommand \CMaxLA   { m }   { \gCMaxLA{}{#1} }
+\NewDocumentCommand \CMaxLAT  {}      { \CMaxLA{\ftree} }
+
+% --------------------
+% Symbols for sets
+\NewDocumentCommand \setsuchthat { m m } { \{ #1 \;|\; #2 \} }
+
+% *************************
+% CHAPTER-SPECIFIC COMMANDS
+
+% ----------------------------------------
+% NUMBER AND SETS OF TYPES OF ARRANGEMENTS
+
+% NUMBER OF ARRANGEMENTS
+
+\NewDocumentCommand \SetArrssymbol {}      { \Pi }
+\NewDocumentCommand \NumArrssymbol {}      { \mathbf{N} }
+% unconstrained arrangements of a graph
+\NewDocumentCommand \SetUncArrs   { m }    { \SetArrssymbol(#1) }
+\NewDocumentCommand \NumUncArrs   { m }    { \NumArrssymbol(#1) }
+\NewDocumentCommand \SetUncArrsG  {}       { \SetUncArrs{\graph} }
+\NewDocumentCommand \NumUncArrsG  {}       { \NumUncArrs{\graph} }
+\NewDocumentCommand \SetUncArrsT  {}       { \SetUncArrs{\ftree} }
+\NewDocumentCommand \NumUncArrsT  {}       { \NumUncArrs{\ftree} }
+% constrained arrangements of a graph
+\NewDocumentCommand \SetConsArrs  { m }    { \SetArrssymbol_{\cons}(#1) }
+\NewDocumentCommand \NumConsArrs  { m }    { \NumArrssymbol(#1) }
+\NewDocumentCommand \SetConsArrsG {}       { \SetConsArrs{\graph} }
+\NewDocumentCommand \NumConsArrsG {}       { \NumConsArrs{\graph} }
+\NewDocumentCommand \SetConsArrsT {}       { \SetConsArrs{\ftree} }
+\NewDocumentCommand \NumConsArrsT {}       { \NumConsArrs{\ftree} }
+% constrained (in the number of crossings) arrangements of a graph
+\NewDocumentCommand \SetUncArrsk  { m m }  { \SetArrssymbol_{\le #1}(#2) }
+\NewDocumentCommand \NumUncArrsk  { m m }  { \NumArrssymbol_{\le #1}(#2) }
+\NewDocumentCommand \SetUncArrskG { O{k} } { \SetUncArrsk{#1}{\graph} }
+\NewDocumentCommand \NumUncArrskG { O{k} } { \NumUncArrsk{#1}{\graph} }
+\NewDocumentCommand \SetUncArrskT { O{k} } { \SetUncArrsk{#1}{\ftree} }
+\NewDocumentCommand \NumUncArrskT { O{k} } { \NumUncArrsk{#1}{\ftree} }
+% non-bipartite arrangements
+\NewDocumentCommand \SetNonBipArrs         { O{\graph} }   { \SetArrssymbol_{\nonbip}(#1) }
+\NewDocumentCommand \NumNonBipArrs         { O{\graph} }   { \NumArrssymbol_{\nonbip}(#1) }
+% non-bipartite arrangements with 1 thistle
+\NewDocumentCommand \SetOneTNonBipArrs     { O{\graph} }   { \SetArrssymbol_{\onet}(#1) }
+\NewDocumentCommand \NumOneTNonBipArrs     { O{\graph} }   { \NumArrssymbol_{\onet}(#1) }
+% bipartite arrangements
+\NewDocumentCommand \SetBipArrs            { m }           { \SetArrssymbol_{\bip}(#1) }
+\NewDocumentCommand \NumBipArrs            { m }           { \NumArrssymbol_{\bip}(#1) }
+\NewDocumentCommand \SetBipArrsG           {}              { \SetArrssymbol_{\bip}(\graph) }
+\NewDocumentCommand \NumBipArrsG           {}              { \NumArrssymbol_{\bip}(\graph) }
+\NewDocumentCommand \SetBipArrsB           {}              { \SetArrssymbol_{\bip}(\bipg) }
+\NewDocumentCommand \NumBipArrsB           {}              { \NumArrssymbol_{\bip}(\bipg) }
+\NewDocumentCommand \SetBipArrsT           {}              { \SetArrssymbol_{\bip}(\ftree) }
+\NewDocumentCommand \NumBipArrsT           {}              { \NumArrssymbol_{\bip}(\ftree) }
+% projective arrangements of a tree
+\NewDocumentCommand \SetProjArrs           { O{\rtree} }   { \SetArrssymbol_{\proj}(#1) }
+\NewDocumentCommand \SetProjArrsFixed      { O{\rtree} }   { \SetArrssymbol_{\proj}^{\fixed}(#1) }
+\NewDocumentCommand \NumProjArrs           { O{\rtree} }   { \NumArrssymbol_{\proj}(#1) }
+\NewDocumentCommand \NumProjArrsFixed      { O{\rtree} }   { \NumArrssymbol_{\proj}^{\fixed}(#1) }
+% planar arrangements of a tree
+\NewDocumentCommand \SetPlanArrs           { O{\ftree}   } { \SetArrssymbol_{\plan}(#1) }
+\NewDocumentCommand \SetPlanArrsFixed      { m O{\ftree} } { \SetArrssymbol_{\plan}^{\fixed}(#2;#1) }
+\NewDocumentCommand \NumPlanArrs           { O{\ftree}   } { \NumArrssymbol_{\plan}(#1) }
+\NewDocumentCommand \NumPlanArrsFixed      { m O{\ftree} } { \NumArrssymbol_{\plan}^{\fixed}(#2;#1) }
+
+% -------------------------
+% MINIMUM PROJECTIVE/PLANAR
+
+\NewDocumentCommand \subtreesizelist {} { \Upsilon }
+
+% ---------------
+% EXPECTED VALUES
+
+\NewDocumentCommand \numsamples {}           { \rho }
+\NewDocumentCommand \setminimumtrees { O{} } { \mathcal{T}^{*}_{#1} }
+\NewDocumentCommand \numpartitions { m }     { q(#1) }
+\NewDocumentCommand \SetPartitions {}        { \mathfrak{P} }
+\NewDocumentCommand \partition {}            { \mathfrak{p} }
+
+\NewDocumentCommand \relpossymbol {}      { q }
+\NewDocumentCommand \relpos { m O{\arr} } { \relpossymbol_{#2}(#1) }
+\NewDocumentCommand \Vrelpos { m }        { \relpossymbol(#1) }
+
+\NewDocumentCommand \numsegsymbol {}      { k }
+\NewDocumentCommand \numseg { m O{\arr} } { \numsegsymbol_{#2}(#1) }
+\NewDocumentCommand \Vnumseg { m }        { \numsegsymbol(#1) }
+
+% Expectations and variance of variables
+\NewDocumentCommand \Expedcons       { O{\ftree}   }  { \cexpe{\Vaverageedgelength{#1}} }
+\NewDocumentCommand \Expedconsfixed  { O{\ftree}   }  { \cexpefixed{\Vaverageedgelength{#1}} }
+\NewDocumentCommand \Expedconscond   { m O{\ftree} }  { \ccondexpe{\Vaverageedgelength{#2}}{#1} }
+\NewDocumentCommand \Expedconsapprox { O{\ftree}   }  { \cexpeapprox{\Vaverageedgelength{#1}} }
+
+\NewDocumentCommand \ExpeDcons       { O{\ftree}   }  { \cexpe{\Vsumedgelengths{#1}} }
+\NewDocumentCommand \ExpeDconsfixed  { O{\ftree}   }  { \cexpefixed{\Vsumedgelengths{#1}} }
+\NewDocumentCommand \ExpeDconscond   { m O{\ftree} }  { \ccondexpe{\Vsumedgelengths{#2}}{#1} }
+\NewDocumentCommand \ExpeDconsapprox { O{\ftree}   }  { \cexpeapprox{\Vsumedgelengths{#1}} }
+
+\NewDocumentCommand \ExpeDProj       { O{\rtree}   }  { \rexpe{\Vsumedgelengths{#1}} }
+\NewDocumentCommand \ExpeDProjfixed  { O{\rtree}   }  { \rexpefixed{\Vsumedgelengths{#1}} }
+\NewDocumentCommand \ExpeDProjcond   { m O{\rtree} }  { \rcondexpe{\Vsumedgelengths{#2}}{#1} }
+\NewDocumentCommand \ExpeDProjApprox { O{\rtree}   }  { \rexpeapprox{\Vsumedgelengths{#1}} }
+
+\NewDocumentCommand \ExpeDPlan       { O{\ftree}   }  { \lexpe{\Vsumedgelengths{#1}} }
+\NewDocumentCommand \ExpeDPlancond   { m O{\ftree} }  { \lcondexpe{\Vsumedgelengths{#2}}{#1} }
+
+\NewDocumentCommand \ExpeDBip  { m }                  { \bexpe{\Vsumedgelengths{#1}} }
+\NewDocumentCommand \ExpeDBipB {}                     { \ExpeDBip{\bipg} }
+\NewDocumentCommand \ExpeDBipT {}                     { \ExpeDBip{\ftree} }
+
+\NewDocumentCommand \ExpeDUnc  { m }                  { \expe{\Vsumedgelengths{#1}} }
+\NewDocumentCommand \ExpeDUncG {}                     { \ExpeDUnc{\graph} }
+\NewDocumentCommand \ExpeDUncB {}                     { \ExpeDUnc{\bipg} }
+\NewDocumentCommand \ExpeDUncT {}                     { \ExpeDUnc{\ftree} }
+
+\NewDocumentCommand \ExpeDk   { O{k} O{\ftree} }      { \eexpe{\le #1}{\Vsumedgelengths{#2}} }
+\NewDocumentCommand \ExpeDgek { O{k} O{\ftree} }      { \eexpe{\ge #1}{\Vsumedgelengths{#2}} }
+
+% ---------------------
+% MAXIMUM UNCONSTRAINED
+
+\NewDocumentCommand \maxn {} {23}
+\NewDocumentCommand \minnr {} {24}
+\NewDocumentCommand \maxnr {} {45}
+
+\NewDocumentCommand \propbip {O{n}} {p_{#1}}
+\NewDocumentCommand \approxpropbip {O{n}} {\tilde{p}_{#1}}
+\NewDocumentCommand \maximizablebip {O{n}} {b_{#1}}
+\NewDocumentCommand \maximizableone {O{n}} {o_{#1}}
+\NewDocumentCommand \propone {O{n}} {q_{#1}}
+\NewDocumentCommand \approxpropone {O{n}} {\tilde{q}_{#1}}
+
+\NewDocumentCommand \maxarrset { m O{} } {\mathcal{\sumedgelengthssymbol}_{#2}^*(#1)}
+\NewDocumentCommand \maxarrsetG {} {\maxarrset{\graph}[]}
+\NewDocumentCommand \maxarrsetT {} {\maxarrset{\ftree}[]}
+
+\NewDocumentCommand \maxbiparrset  { m } {\maxarrset{#1}[\bip]}
+\NewDocumentCommand \maxbiparrsetG {}    {\maxbiparrset{\graph}}
+\NewDocumentCommand \maxbiparrsetB {}    {\maxbiparrset{\bipg}}
+\NewDocumentCommand \maxbiparrsetT {}    {\maxbiparrset{\ftree}}
+
+\NewDocumentCommand \maxnonbiparrset { m } {\maxarrset{#1}[\nonbip]}
+\NewDocumentCommand \maxnonbiparrsetG {} {\maxnonbiparrset{\graph}}
+\NewDocumentCommand \maxnonbiparrsetT {} {\maxnonbiparrset{\ftree}}
+
+\NewDocumentCommand \maxnonbiparrsetonethistle { m } {\maxarrset{#1}[\onet]}
+\NewDocumentCommand \maxnonbiparrsetonethistleG {} {\maxnonbiparrsetonethistle{\graph}}
+\NewDocumentCommand \maxnonbiparrsetonethistleT {} {\maxnonbiparrsetonethistle{\ftree}}
+
+\NewDocumentCommand \NB {} {{\em NB}}
+\NewDocumentCommand \OTk {O{k}} {$#1${\em-thistle}}
+\NewDocumentCommand \NBOTk {O{k}} {\NB$\times$\OTk[#1]}
+
+\NewDocumentCommand \incidentDsymbol {}            { \gamma }
+\NewDocumentCommand \iD              { m O{\arr} } { \incidentDsymbol_{#2}(#1) }
+
+% cuts of an arrangement
+%    cut signature
+\NewDocumentCommand \cutsignaturesymbol {} { C }
+\NewDocumentCommand \cutsignature { m O{\arr} } { \cutsignaturesymbol_{#2}(#1) }
+\NewDocumentCommand \cutsignatureG { O{\arr} } { \cutsignature{\graph}[#1] }
+\NewDocumentCommand \cutsignatureT { O{\arr} } { \cutsignature{\ftree}[#1] }
+%    cut values
+\NewDocumentCommand \cutsymbol {} { c }
+\NewDocumentCommand \cut { m O{\arr} } { \cutsymbol_{#2}(#1) }
+
+% levels of an arrangement
+%    level signature
+\NewDocumentCommand \levelsignaturesymbol {} { L }
+\NewDocumentCommand \levelsignature { m O{\arr} } { \levelsignaturesymbol_{#2}(#1) }
+\NewDocumentCommand \levelsignatureG { O{\arr} } { \levelsignature{\graph}[#1] }
+\NewDocumentCommand \levelsignatureT { O{\arr} } { \levelsignature{\ftree}[#1] }
+%    level values
+\NewDocumentCommand \levelsymbol {} {l}
+\NewDocumentCommand \level { m O{\arr} } { \levelsymbol_{#2}(#1) }
+
+% directional degrees
+\NewDocumentCommand \leftdeg { m O{\arr} } { \mathfrak{l}_{#2}(#1) }
+\NewDocumentCommand \rightdeg { m O{\arr} } { \mathfrak{r}_{#2}(#1) }
+
+% neighbours of vertices in an arrangement
+\NewDocumentCommand \neighborsarr { m m O{\arr} } { \Phi_{#3}^{#2}(#1) }
+\NewDocumentCommand \closestneighborarr { m m O{\arr} } { {cn}_{#3}^{#2}(#1) }
+
+% assignation and level function
+\NewDocumentCommand \assignation {}                  { \mathfrak{b} }
+\NewDocumentCommand \levelfunc   { O{\assignation} } { \levelsymbol_{#1} }
+
+% types of vertices
+%~ \NewDocumentCommand \thistle {} {chantrieri} % search "Tacca Chantrieri" on the internet
+% potential thistle vertices of a tree
+\NewDocumentCommand \potthistlessymbol {} { \Psi }
+\NewDocumentCommand \potthistles { m } { \potthistlessymbol(#1) }
+\NewDocumentCommand \potthistlesT {} { \potthistles{\ftree} }
+\NewDocumentCommand \numpotthistles { m } { |\potthistles{#1}| }
+\NewDocumentCommand \numpotthistlesT {} { |\potthistlesT| }
+\NewDocumentCommand \epotthistlessymbol {} { \psi }
+\NewDocumentCommand \epotthistles { m } { \epotthistlessymbol(#1) }
+\NewDocumentCommand \epotthistlesT {} { \epotthistles{\ftree} }
+\NewDocumentCommand \numepotthistles { m } { |\epotthistles{#1}| }
+\NewDocumentCommand \numepotthistlesT {} { |\epotthistlesT| }
+\NewDocumentCommand \hdv { m } { H(#1) }
+\NewDocumentCommand \hdvT {} { \hdv{\ftree} }
+\NewDocumentCommand \bridgepaths { m } { I(#1) }
+\NewDocumentCommand \bridgepathsT {} { \bridgepaths{\ftree} }
+\NewDocumentCommand \thistleset { O{\arr} } { \theta(#1) }
+\NewDocumentCommand \thistlev {} { t }
+\NewDocumentCommand \h {} { h }
+\NewDocumentCommand \g {} { g } % it's just another hub...
+\NewDocumentCommand \w {} { w_0 } % internal vertex
+\NewDocumentCommand \degreehub { m } { \degreesymbol_{#1} }
+\NewDocumentCommand \degreeh {} { \degreehub{\h} }
+\NewDocumentCommand \degreeg {} { \degreehub{\g} }
+
+% spider-specific and 2-linear-specific commands
+\NewDocumentCommand \xyamo { m m } { {n}_{#2} }
+\NewDocumentCommand \nptwo {} { \xyamo{n}{+2} }
+\NewDocumentCommand \npone {} { \xyamo{n}{+1} }
+\NewDocumentCommand \nzero {} { \xyamo{n}{0} }
+\NewDocumentCommand \nmone {} { \xyamo{n}{-1} }
+\NewDocumentCommand \nmtwo {} { \xyamo{n}{-2} }
+\NewDocumentCommand \hptwo {} { \xyamo{\h}{+2} }
+\NewDocumentCommand \hpone {} { \xyamo{\h}{+1} }
+\NewDocumentCommand \hmone {} { \xyamo{\h}{-1} }
+\NewDocumentCommand \hmtwo {} { \xyamo{\h}{-2} }
+\NewDocumentCommand \gptwo {} { \xyamo{\g}{+2} }
+\NewDocumentCommand \gpone {} { \xyamo{\g}{+1} }
+\NewDocumentCommand \gmone {} { \xyamo{\g}{-1} }
+\NewDocumentCommand \gmtwo {} { \xyamo{\g}{-2} }
+\NewDocumentCommand \mleft { m } { #1\leftarrow }
+\NewDocumentCommand \mright { m } { #1\rightarrow }
+\NewDocumentCommand \swap { m m } { #1\leftrightarrow#2 }
+\NewDocumentCommand \case {} {\rho}
+\NewDocumentCommand \agh {} {a_{\g\h}}
+\NewDocumentCommand \awh {} {a_{\w\h}}
+
+% reference the Path Optimization Lemma (POL)
+\NewDocumentCommand \pol   {} {\cref{lemma:MaxLA:unconstrained:properties_max_arr:new:POL}}
+\NewDocumentCommand \polO  {} {\cref{lemma:MaxLA:unconstrained:properties_max_arr:new:POL}(\ref{lemma:MaxLA:unconstrained:properties_max_arr:new:POL:0})}
+\NewDocumentCommand \polOO {} {Lemma \ref{lemma:MaxLA:unconstrained:properties_max_arr:new:POL}(\ref{lemma:MaxLA:unconstrained:properties_max_arr:new:POL:00})}
+
+\NewDocumentCommand \Nurse {} {\cref{propos:MaxLA:unconstrained:properties_max_arr:known:non_increasing_levsig,propos:MaxLA:unconstrained:properties_max_arr:known:no_neighbors_in_same_level,propos:MaxLA:unconstrained:properties_max_arr:known:permutation_of_equal_level}}
+
+\NewDocumentCommand \BnB {} {B\&B}
+
+% -------------------------
+% MAXIMUM PROJECTIVE/PLANAR
+
+\NewDocumentCommand \maxroots  { O{\ftree} } { V_*(#1) }
+\NewDocumentCommand \maxrootsk { O{\ftree} } { V_1(#1) }
+
+\NewDocumentCommand \maintextref { m }   { \textcolor{red}{#1} }
+\NewDocumentCommand \sumlargest  { m m } { \varepsilon_{#1}(#2) }
+
+% index of a vertex in the neighbour list of another vertex
+\NewDocumentCommand \indexof { m m } { \sigma_{#1}(#2) }
+
+\NewDocumentCommand \suppref { m } { {\em\textcolor{green}{#1}} }
+
+\NewDocumentCommand \magadjlist {} { \mathcal{M} }
+
+%                                 vertex vertex index
+\NewDocumentCommand \largestNvert { m m m } { s_{#1}(#2,#3) }
+%                                  vertex vertex index tree
+\NewDocumentCommand \largestNvertT { m m m O{\ftree} } { s_{\rtree[#1][#4]}(#2,#3) }
+%                                      vertex, index
+\NewDocumentCommand \singlelargestNvert { m m } { s_{#1}(#1,#2) }
+
+% ----------------
+% SCORES
+
+% Gamma
+\NewDocumentCommand \scoreGammasymbol {}         { \Gamma }
+\NewDocumentCommand \sscoreGamma   { m m }       { \scoreGammasymbol^{#2}(#1) }
+\NewDocumentCommand \sscoreGammaG  { O{\graph} } { \sscoreGamma{#1}{} }
+\NewDocumentCommand \sscoreGammaT  { O{\ftree} } { \sscoreGamma{#1}{} }
+\NewDocumentCommand \sscoreGammaTr { O{\rtree} } { \sscoreGamma{#1}{} }
+
+\NewDocumentCommand \scoreGamma   { m m m }             { \scoreGammasymbol_{#1}^{#3}(#2) }
+\NewDocumentCommand \scoreGammaG  { O{\arr} O{\graph} } { \scoreGamma{#1}{#2}{} }
+\NewDocumentCommand \scoreGammaT  { O{\arr} O{\ftree} } { \scoreGamma{#1}{#2}{} }
+\NewDocumentCommand \scoreGammaTr { O{\arr} O{\rtree} } { \scoreGamma{#1}{#2}{} }
+
+% Delta
+\NewDocumentCommand \scoreDeltasymbol {}         { \Delta }
+\NewDocumentCommand \sscoreDelta   { m m }       { \scoreDeltasymbol^{#2}(#1) }
+\NewDocumentCommand \sscoreDeltaG  { O{\graph} } { \sscoreDelta{#1}{} }
+\NewDocumentCommand \sscoreDeltaT  { O{\ftree} } { \sscoreDelta{#1}{} }
+\NewDocumentCommand \sscoreDeltaTr { O{\rtree} } { \sscoreDelta{#1}{} }
+
+\NewDocumentCommand \scoreDelta   { m m m }             { \scoreDeltasymbol_{#1}^{#3}(#2) }
+\NewDocumentCommand \scoreDeltaG  { O{\arr} O{\graph} } { \scoreDelta{#1}{#2}{} }
+\NewDocumentCommand \scoreDeltaT  { O{\arr} O{\ftree} } { \scoreDelta{#1}{#2}{} }
+\NewDocumentCommand \scoreDeltaTr { O{\arr} O{\rtree} } { \scoreDelta{#1}{#2}{} }
+
+% Omega
+\NewDocumentCommand \scoreOmegasymbol {}         { \Omega }
+\NewDocumentCommand \sscoreOmega   { m m }       { \scoreOmegasymbol^{#2}(#1) }
+\NewDocumentCommand \sscoreOmegaG  { O{\graph} } { \sscoreOmega{#1}{} }
+\NewDocumentCommand \sscoreOmegaT  { O{\ftree} } { \sscoreOmega{#1}{} }
+\NewDocumentCommand \sscoreOmegaTr { O{\rtree} } { \sscoreOmega{#1}{} }
+
+\NewDocumentCommand \scoreOmega   { m m m }             { \scoreOmegasymbol_{#1}^{#3}(#2) }
+\NewDocumentCommand \scoreOmegaG  { O{\arr} O{\graph} } { \scoreOmega{#1}{#2}{} }
+\NewDocumentCommand \scoreOmegaT  { O{\arr} O{\ftree} } { \scoreOmega{#1}{#2}{} }
+\NewDocumentCommand \scoreOmegaTr { O{\arr} O{\rtree} } { \scoreOmega{#1}{#2}{} }
+
+% ********************
+% tikz options for IPE
+
+\ifdefined\USETIKZ
+
+\usetikzlibrary{arrows.meta,patterns}
+\usetikzlibrary{ipe} % ipe compatibility library (see external file)
+
+\NewDocumentCommand \cir { m } {\tikz[baseline]{\node[anchor=base, draw, circle, inner sep=0, minimum width=1.0em]{{\footnotesize #1}};}}
+
+\NewDocumentCommand \casemone {} {\cir{$a$}}
+\NewDocumentCommand \casezero {} {\cir{$b$}}
+\NewDocumentCommand \casepone {} {\cir{$c$}}
+
+\tikzstyle{ipe stylesheet} = [
+  ipe import,
+  even odd rule,
+  line join=round,
+  line cap=butt,
+  ipe pen normal/.style={line width=0.4},
+  ipe pen heavier/.style={line width=0.8},
+  ipe pen fat/.style={line width=1.2},
+  ipe pen ultrafat/.style={line width=2},
+  ipe pen normal,
+  ipe mark normal/.style={ipe mark scale=3},
+  ipe mark large/.style={ipe mark scale=5},
+  ipe mark small/.style={ipe mark scale=2},
+  ipe mark tiny/.style={ipe mark scale=1.1},
+  ipe mark normal,
+  /pgf/arrow keys/.cd,
+  ipe arrow normal/.style={scale=7},
+  ipe arrow large/.style={scale=10},
+  ipe arrow small/.style={scale=5},
+  ipe arrow tiny/.style={scale=3},
+  ipe arrow normal,
+  /tikz/.cd,
+  ipe arrows, % update arrows
+  <->/.tip = ipe normal,
+  ipe dash normal/.style={dash pattern=},
+  ipe dash dotted/.style={dash pattern=on 1bp off 3bp},
+  ipe dash dashed/.style={dash pattern=on 4bp off 4bp},
+  ipe dash dash dotted/.style={dash pattern=on 4bp off 2bp on 1bp off 2bp},
+  ipe dash dash dot dotted/.style={dash pattern=on 4bp off 2bp on 1bp off 2bp on 1bp off 2bp},
+  ipe dash normal,
+  ipe node/.append style={font=\normalsize},
+  ipe stretch normal/.style={ipe node stretch=1},
+  ipe stretch normal,
+  ipe opacity 10/.style={opacity=0.1},
+  ipe opacity 30/.style={opacity=0.3},
+  ipe opacity 50/.style={opacity=0.5},
+  ipe opacity 75/.style={opacity=0.75},
+  ipe opacity opaque/.style={opacity=1},
+  ipe opacity opaque,
+]
+
+\definecolor{red}{rgb}{1,0,0}
+\definecolor{blue}{rgb}{0,0,1}
+\definecolor{green}{rgb}{0,1,0}
+\definecolor{yellow}{rgb}{1,1,0}
+\definecolor{orange}{rgb}{1,0.647,0}
+\definecolor{gold}{rgb}{1,0.843,0}
+\definecolor{purple}{rgb}{0.627,0.125,0.941}
+\definecolor{gray}{rgb}{0.745,0.745,0.745}
+\definecolor{brown}{rgb}{0.647,0.165,0.165}
+\definecolor{navy}{rgb}{0,0,0.502}
+\definecolor{pink}{rgb}{1,0.753,0.796}
+\definecolor{seagreen}{rgb}{0.18,0.545,0.341}
+\definecolor{turquoise}{rgb}{0.251,0.878,0.816}
+\definecolor{violet}{rgb}{0.933,0.51,0.933}
+\definecolor{darkblue}{rgb}{0,0,0.545}
+\definecolor{darkcyan}{rgb}{0,0.545,0.545}
+\definecolor{darkgray}{rgb}{0.663,0.663,0.663}
+\definecolor{darkgreen}{rgb}{0,0.392,0}
+\definecolor{darkmagenta}{rgb}{0.545,0,0.545}
+\definecolor{darkorange}{rgb}{1,0.549,0}
+\definecolor{darkred}{rgb}{0.545,0,0}
+\definecolor{lightblue}{rgb}{0.678,0.847,0.902}
+\definecolor{lightcyan}{rgb}{0.878,1,1}
+\definecolor{lightgray}{rgb}{0.827,0.827,0.827}
+\definecolor{lightgreen}{rgb}{0.565,0.933,0.565}
+\definecolor{lightyellow}{rgb}{1,1,0.878}
+\definecolor{black}{rgb}{0,0,0}
+\definecolor{white}{rgb}{1,1,1}
+
+\fi

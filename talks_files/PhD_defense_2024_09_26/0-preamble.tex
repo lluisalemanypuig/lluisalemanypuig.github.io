@@ -1,0 +1,44 @@
+% FONTS
+\usepackage{fontspec}
+\setmainfont{Latin Modern Sans}
+\newfontfamily\cjkfont{Noto Sans CJK TC}
+\usepackage[utf8]{inputenc}
+%~ \usepackage[T1]{fontenc}
+
+% ??
+\makeatletter
+\leftmargini 1.5em
+\leftmargin \leftmargini
+\leftmarginii  1.2em
+\leftmarginiii 1em
+\def\@listI{\leftmargin\leftmargini
+            \parsep \z@
+	    \partopsep 3pt
+	    \topsep \z@
+            \itemsep \z@}
+\@listI
+\def\@listii {\leftmargin\leftmarginii
+              \labelwidth\leftmarginii
+              \advance\labelwidth-\labelsep
+              \topsep    \z@
+              \parsep    \z@
+              \itemsep   \parsep}
+\def\@listiii{\leftmargin\leftmarginiii
+              \labelwidth\leftmarginiii
+              \advance\labelwidth-\labelsep
+              \topsep    \z@
+              \parsep    \z@
+              \partopsep \z@
+              \itemsep   \topsep}
+\makeatother
+
+\input{/home/lluis/Dropbox/Doctorat/presentacio/0-preamble-packages.tex}
+\input{/home/lluis/Dropbox/Doctorat/presentacio/0-preamble-commands.tex}
+
+% used only in the "disseny_template.pdf" file
+\newcommand \firstsection  {Introduction}
+\newcommand \secondsection {Minimum arrangements}
+\newcommand \thirdsection  {Expected values}
+\newcommand \fourthsection {Maximum arrangements}
+\newcommand \fifthsection  {Software}
+\newcommand \sixthsection  {Conclusions}

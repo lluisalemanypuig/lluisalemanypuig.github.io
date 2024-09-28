@@ -1,0 +1,406 @@
+<?xml version="1.0"?>
+<!DOCTYPE ipestyle SYSTEM "ipe.dtd">
+
+<ipestyle name="defense">
+
+<!-- COLOR NAMES -->
+<color name="red" value="1 0 0"/>
+<color name="green" value="0 1 0"/>
+<color name="blue" value="0 0 1"/>
+<color name="yellow" value="1 1 0"/>
+<color name="orange" value="1 0.647 0"/>
+<color name="gold" value="1 0.843 0"/>
+<color name="purple" value="0.627 0.125 0.941"/>
+<color name="gray" value="0.745 0.745 0.745"/>
+<color name="brown" value="0.647 0.165 0.165"/>
+<color name="navy" value="0 0 0.502"/>
+<color name="pink" value="1 0.753 0.796"/>
+<color name="seagreen" value="0.18 0.545 0.341"/>
+<color name="turquoise" value="0.251 0.878 0.816"/>
+<color name="violet" value="0.933 0.51 0.933"/>
+<color name="darkblue" value="0 0 0.545"/>
+<color name="darkcyan" value="0 0.545 0.545"/>
+<color name="darkgray" value="0.663 0.663 0.663"/>
+<color name="darkgreen" value="0 0.392 0"/>
+<color name="darkmagenta" value="0.545 0 0.545"/>
+<color name="darkorange" value="1 0.549 0"/>
+<color name="darkred" value="0.545 0 0"/>
+<color name="lightblue" value="0.678 0.847 0.902"/>
+<color name="lightcyan" value="0.878 1 1"/>
+<color name="lightgray" value="0.827 0.827 0.827"/>
+<color name="lightgreen" value="0.565 0.933 0.565"/>
+<color name="lightyellow" value="1 1 0.878"/>
+<color name="title" value="0.4 0 0.4"/>
+<color name="aquamarine1" value="0.498 1 0.831"/>
+<color name="aquamarine2" value="0.463 0.933 0.776"/>
+<color name="aquamarine3" value="0.4 0.804 0.667"/>
+<color name="aquamarine4" value="0.271 0.545 0.455"/>
+<color name="blue" value="0 0 1"/>
+<color name="blue1" value="0 0 1"/>
+<color name="blue2" value="0 0 0.933"/>
+<color name="blue3" value="0 0 0.804"/>
+<color name="coral1" value="1 0.447 0.337"/>
+<color name="cyan1" value="0 1 1"/>
+<color name="cyan2" value="0 0.933 0.933"/>
+<color name="cyan3" value="0 0.804 0.804"/>
+<color name="cyan4" value="0 0.545 0.545"/>
+<color name="darkblue" value="0 0 0.545"/>
+<color name="darkgoldenrod1" value="1 0.725 0.059"/>
+<color name="darkgreen" value="0 0.392 0"/>
+<color name="darkolivegreen" value="0.333 0.42 0.184"/>
+<color name="darkolivegreen1" value="0.792 1 0.439"/>
+<color name="darkolivegreen2" value="0.737 0.933 0.408"/>
+<color name="darkolivegreen3" value="0.635 0.804 0.353"/>
+<color name="darkolivegreen4" value="0.431 0.545 0.239"/>
+<color name="darkorange" value="1 0.549 0"/>
+<color name="deeppink1" value="1 0.078 0.576"/>
+<color name="deeppink2" value="0.933 0.071 0.537"/>
+<color name="deeppink3" value="0.804 0.063 0.463"/>
+<color name="gold" value="1 0.843 0"/>
+<color name="gray1" value="0.125"/>
+<color name="gray2" value="0.25"/>
+<color name="gray3" value="0.375"/>
+<color name="gray4" value="0.5"/>
+<color name="gray5" value="0.625"/>
+<color name="gray6" value="0.75"/>
+<color name="gray7" value="0.875"/>
+<color name="green" value="0 1 0"/>
+<color name="green1" value="0 1 0"/>
+<color name="green2" value="0 0.933 0"/>
+<color name="green3" value="0 0.804 0"/>
+<color name="green4" value="0 0.545 0"/>
+<color name="hotpink1" value="1 0.431 0.706"/>
+<color name="hotpink2" value="0.933 0.416 0.655"/>
+<color name="hotpink3" value="0.804 0.376 0.565"/>
+<color name="lightgoldenrod1" value="1 0.925 0.545"/>
+<color name="lightgoldenrod2" value="0.933 0.863 0.51"/>
+<color name="lightgoldenrod3" value="0.804 0.745 0.439"/>
+<color name="lightgoldenrod4" value="0.545 0.506 0.298"/>
+<color name="lightskyblue1" value="0.69 0.886 1"/>
+<color name="lightskyblue2" value="0.643 0.827 0.933"/>
+<color name="lightskyblue3" value="0.553 0.714 0.804"/>
+<color name="lightskyblue4" value="0.376 0.482 0.545"/>
+<color name="magenta1" value="1 0 1"/>
+<color name="magenta2" value="0.933 0 0.933"/>
+<color name="magenta3" value="0.804 0 0.804"/>
+<color name="mistyrose" value="1 0.894 0.882"/>
+<color name="orange" value="1 0.647 0"/>
+<color name="orangered" value="1 0.271 0"/>
+<color name="pink1" value="1 0.71 0.773"/>
+<color name="plum1" value="1 0.733 1"/>
+<color name="plum2" value="0.933 0.682 0.933"/>
+<color name="plum3" value="0.804 0.588 0.804"/>
+<color name="red" value="1 0 0"/>
+<color name="red1" value="1 0 0"/>
+<color name="red2" value="0.933 0 0"/>
+<color name="red3" value="0.804 0 0"/>
+<color name="red4" value="0.545 0 0"/>
+<color name="salmon1" value="1 0.549 0.412"/>
+<color name="sienna1" value="1 0.51 0.278"/>
+<color name="sienna2" value="0.933 0.475 0.259"/>
+<color name="sienna3" value="0.804 0.408 0.224"/>
+<color name="sienna4" value="0.545 0.278 0.149"/>
+<color name="springgreen1" value="0 1 0.498"/>
+<color name="springgreen2" value="0 0.933 0.463"/>
+<color name="springgreen3" value="0 0.804 0.4"/>
+<color name="springgreen4" value="0 0.545 0.271"/>
+<color name="tan1" value="1 0.647 0.31"/>
+<color name="tan2" value="0.933 0.604 0.286"/>
+<color name="tan3" value="0.804 0.522 0.247"/>
+<color name="tan4" value="0.545 0.353 0.169"/>
+<color name="tomato0" value="1 0.718 0.718"/>
+<color name="tomato1" value="1 0.388 0.278"/>
+<color name="tomato2" value="0.933 0.361 0.259"/>
+<color name="yellow" value="1 1 0"/>
+<color name="blue" value="0 0 1"/>
+<color name="gray1" value="0.125"/>
+<color name="gray2" value="0.25"/>
+<color name="gray3" value="0.375"/>
+<color name="gray4" value="0.5"/>
+<color name="gray5" value="0.625"/>
+<color name="gray6" value="0.75"/>
+<color name="gray7" value="0.875"/>
+<color name="green" value="0 1 0"/>
+<color name="red" value="1 0 0"/>
+<color name="yellow" value="1 1 0"/>
+
+<!-- DASH STYLES -->
+<dashstyle name="dashed" value="[4] 0"/>
+<dashstyle name="dotted" value="[1 3] 0"/>
+<dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
+<dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
+
+<!-- PEN THICKNESS -->
+<pen name="ultrafat (6)" value="6"/>
+<pen name="fat (4.5)" value="4.5"/>
+<pen name="heavier (3.6)" value="3.6"/>
+<pen name="heavy (2.4)" value="2.4"/>
+<pen name="thicker (2.0)" value="2.0"/>
+<pen name="thick (1.6)" value="1.6"/>
+<pen name="normal (1.2)" value="1.2"/>
+<pen name="slim (1)" value="1"/>
+<pen name="thin (0.7)" value="0.7"/>
+<pen name="thinner (0.4)" value="0.4"/>
+<pen name="thin" value="0.7"/>
+
+<!-- TEXT FONT SIZES -->
+<textsize name="footnote" value="\footnotesize"/>
+
+<textsize name="footer" value="\normalsize"/>
+<textstretch name="footer" value="1.3"/>
+
+<textsize name="smaller" value="\small"/>
+<textstretch name="smaller" value="1.8"/>
+
+<textsize name="small" value="\small"/>
+<textstretch name="small" value="2.2"/>
+
+<textsize name="normal" value="\normalsize"/>
+<textstretch name="normal" value="2.8"/>
+
+<textsize name="large" value="\large"/>
+<textstretch name="large" value="2.8"/>
+
+<textsize name="Large" value="\Large"/>
+<textstretch name="Large" value="2.8"/>
+
+<textsize name="huge" value="\huge"/>
+<textstretch name="huge" value="2.8"/>
+
+<textsize name="Huge" value="\Huge"/>
+<textstretch name="Huge" value="2.8"/>
+
+<!-- SYMBOL SIZES -->
+<symbolsize name="normal" value="9"/>
+<symbolsize name="large" value="15"/>
+<symbolsize name="small" value="6"/>
+<symbolsize name="smaller" value="4"/>
+<symbolsize name="tiny" value="3.3"/>
+<symbolsize name="tinier" value="2"/>
+<symbolsize name="minuscule" value="1"/>
+
+<!-- ARROW SIZES -->
+<arrowsize name="normal" value="15"/>
+<arrowsize name="large" value="20"/>
+<arrowsize name="small" value="10"/>
+<arrowsize name="tiny" value="6"/>
+
+<!-- GRID SIZES -->
+<gridsize name="1 pts (~0.3 mm)" value="1"/>
+<gridsize name="2 pts (~0.75 mm)" value="2"/>
+<gridsize name="4 pts (~1.5 mm)" value="4"/>
+<gridsize name="8 pts (~3 mm)" value="8"/>
+<gridsize name="10 pts (~3.5 mm)" value="10"/>
+<gridsize name="14 pts (~5 mm)" value="14"/>
+<gridsize name="16 pts (~6 mm)" value="16"/>
+<gridsize name="20 pts (~7 mm)" value="20"/>
+<gridsize name="28 pts (~10 mm)" value="28"/>
+<gridsize name="32 pts (~12 mm)" value="32"/>
+<gridsize name="56 pts (~20 mm)" value="56"/>
+
+<!-- ANGLE SIZES -->
+<anglesize name="90 deg" value="90"/>
+<anglesize name="60 deg" value="60"/>
+<anglesize name="45 deg" value="45"/>
+<anglesize name="30 deg" value="30"/>
+<anglesize name="22.5 deg" value="22.5"/>
+
+<!-- TILINGS -->
+<tiling name="falling" angle="-60" width="3" step="12"/>
+<tiling name="rising" angle="30" width="3" step="12"/>
+
+<!-- TEXT STYLES (for paragraphs) -->
+<textstyle name="center" begin="\begin{center}" end="\end{center}"/>
+<textstyle name="itemize" begin="\begin{flushleft}\begin{itemize}" end="\end{itemize}\end{flushleft}"/>
+<textstyle name="item" begin="\begin{flushleft}\begin{itemize}\item{}" end="\end{itemize}\end{flushleft}"/>
+<textstyle name="normal" begin="\begin{flushleft}" end="\end{flushleft}"/>
+
+<!-- SOME SYMBOLS -->
+<symbol name="mark/circle(sx)" transformations="translations">
+	<path fill="sym-stroke">
+	0.6 0 0 0.6 0 0 e 0.4 0 0 0.4 0 0 e
+	</path>
+</symbol>
+<symbol name="mark/disk(sx)" transformations="translations">
+	<path fill="sym-stroke">
+	0.6 0 0 0.6 0 0 e
+	</path>
+</symbol>
+<symbol name="mark/fdisk(sfx)" transformations="translations">
+	<group>
+		<path fill="sym-fill">
+		0.5 0 0 0.5 0 0 e
+		</path>
+		<path fill="sym-stroke" fillrule="eofill">
+		0.6 0 0 0.6 0 0 e 0.4 0 0 0.4 0 0 e
+		</path>
+	</group>
+</symbol>
+<symbol name="mark/box(sx)" transformations="translations">
+	<path fill="sym-stroke" fillrule="eofill">
+	-0.6 -0.6 m 0.6 -0.6 l 0.6 0.6 l -0.6 0.6 l h
+	-0.4 -0.4 m 0.4 -0.4 l 0.4 0.4 l -0.4 0.4 l h
+	</path>
+</symbol>
+<symbol name="mark/square(sx)" transformations="translations">
+	<path fill="sym-stroke">
+	-0.6 -0.6 m 0.6 -0.6 l 0.6 0.6 l -0.6 0.6 l h
+	</path>
+</symbol>
+<symbol name="mark/fsquare(sfx)" transformations="translations">
+	<group>
+		<path fill="sym-fill">
+		-0.5 -0.5 m 0.5 -0.5 l 0.5 0.5 l -0.5 0.5 l h
+		</path>
+		<path fill="sym-stroke" fillrule="eofill">
+		-0.6 -0.6 m 0.6 -0.6 l 0.6 0.6 l -0.6 0.6 l h
+		-0.4 -0.4 m 0.4 -0.4 l 0.4 0.4 l -0.4 0.4 l h
+		</path>
+	</group>
+</symbol>
+<symbol name="mark/cross(sx)" transformations="translations">
+	<group>
+		<path fill="sym-stroke">
+		-0.43 -0.57 m 0.57 0.43 l 0.43 0.57 l -0.57 -0.43 l h
+		</path>
+		<path fill="sym-stroke">
+		-0.43 0.57 m 0.57 -0.43 l 0.43 -0.57 l -0.57 0.43 l h
+		</path>
+	</group>
+</symbol>
+<symbol name="arrow/arc(spx)">
+	<path pen="sym-pen" stroke="sym-stroke" fill="sym-stroke">
+	0 0 m -1.0 0.333 l -1.0 -0.333 l h
+	</path>
+</symbol>
+<symbol name="arrow/farc(spx)">
+	<path pen="sym-pen" stroke="sym-stroke" fill="white">
+	0 0 m -1.0 0.333 l -1.0 -0.333 l h
+	</path>
+</symbol>
+<symbol name="arrow/fnormal(spx)">
+	<path pen="sym-pen" stroke="sym-stroke" fill="white">
+	0 0 m -1.0 0.333 l -1.0 -0.333 l h
+	</path>
+</symbol>
+<symbol name="arrow/pointed(spx)">
+	<path pen="sym-pen" stroke="sym-stroke" fill="sym-stroke">
+	0 0 m -1.0 0.333 l -0.8 0 l -1.0 -0.333 l h
+	</path>
+</symbol>
+<symbol name="arrow/fpointed(spx)">
+	<path pen="sym-pen" stroke="sym-stroke" fill="white">
+	0 0 m -1.0 0.333 l -0.8 0 l -1.0 -0.333 l h
+	</path>
+</symbol>
+<symbol name="arrow/linear(spx)">
+	<path pen="sym-pen" stroke="sym-stroke">
+	-1.0 0.333 m 0 0 l -1.0 -0.333 l
+	</path>
+</symbol>
+<symbol name="arrow/fdouble(spx)">
+	<path pen="sym-pen" stroke="sym-stroke" fill="white">
+	0 0 m -1.0 0.333 l -1.0 -0.333 l h
+	-1 0 m -2.0 0.333 l -2.0 -0.333 l h
+	</path>
+</symbol>
+<symbol name="arrow/double(spx)">
+	<path pen="sym-pen" stroke="sym-stroke" fill="sym-stroke">
+	0 0 m -1.0 0.333 l -1.0 -0.333 l h
+	-1 0 m -2.0 0.333 l -2.0 -0.333 l h
+	</path>
+</symbol>
+
+<!-- ARROW SIZES -->
+<opacity name="10%" value="0.1"/>
+<opacity name="30%" value="0.3"/>
+<opacity name="50%" value="0.5"/>
+<opacity name="75%" value="0.75"/>
+
+<layout paper="800 600" origin="32 0" frame="736 528" skip="32" crop="no"/>
+
+<!-- Position of slide title -->
+<titlestyle pos="368 554" size="large" color="title" halign="center" valign="baseline"/>
+
+<symbol name="Background" xform="yes">
+<group>
+
+<!--Running author (bottom left)-->
+<path fill="navy">
+-32 20 m
+-32 0 l
+132 0 l
+132 20 l
+h
+</path>
+<!-- Running author text (bottom left) -->
+<text	pos="50 6"
+		stroke="white"
+		type="label"
+		valign="baseline"
+		size="footer"
+		halign="center">
+	\ifdef{\PresentationRunningAuthors}
+	{\PresentationRunningAuthors}
+	{Missing {\tt \textbackslash PresentationRunningAuthors}}
+</text>
+
+<!--Running title (bottom center)-->
+<path fill="navy">
+132 20 m
+132 0 l
+604 0 l
+604 20 l
+h
+</path>
+<!-- Running title text (bottom center) -->
+<text	pos="372 6"
+		stroke="white"
+		type="label"
+		valign="baseline"
+		halign="center"
+		size="footer">
+	\ifdef{\PresentationRunningTitle}
+	{\PresentationRunningTitle}
+	{Missing {\tt \textbackslash PresentationRunningTitle}}
+</text>
+
+<!--Date and page number (bottom right)-->
+<path fill="blue3">
+604 20 m
+604 0 l
+768 0 l
+768 20 l
+h
+</path>
+<!-- Date and page number text (bottom right) -->
+<text	pos="665 6"
+		stroke="white"
+		type="label"
+		valign="baseline"
+		halign="center"
+		size="footer">
+	\ifdef{\PresentationDate}
+	{\PresentationDate}
+	{Missing {\tt \textbackslash PresentationDate}}
+</text>
+
+</group>
+</symbol>
+
+<!-- Position of page number -->
+<pagenumberstyle pos="765 6" size="footer" color="white" halign="right">
+% not needed since the horizontal alignment is "right"
+% \ifthenelse{ \value{ipePage}>9 } {} {\phantom{1}}
+
+% when we want to display the view number as well
+% \ipeNumber {\arabic{ipePage}} {\arabic{ipePage}} /\arabic{ipePages}
+
+\arabic{ipePage}/\arabic{ipePages}
+</pagenumberstyle>
+
+<preamble>
+\input{0-preamble.tex}
+</preamble>
+
+</ipestyle>

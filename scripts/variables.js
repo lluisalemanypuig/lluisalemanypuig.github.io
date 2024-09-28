@@ -181,6 +181,7 @@ const __location_Lausanne = "Lausanne, Switzerland";
 const __talktype_all = "All talk types";
 const __talktype_seminar = "Seminar";
 const __talktype_conference = "Conference";
+const __talktype_PhD_Defense = "Ph. D. Defense";
 const __talktype_workshop = "Workshop";
 
 // -- Talk names --
@@ -189,3 +190,4 @@ const __talkname_LIMDA = "LIMDA";
 const __talkname_Zheijang_University_Python_seminar = "Zheijang University -- Python Seminar";
 const __talkname_IQLA_GIAT_summer_school = "IQLA-GIAT Summer School";
 const __talkname_QUALICO = "QUALICO";
+const __talkname_PhD_Defense = "Ph. D. Defense";

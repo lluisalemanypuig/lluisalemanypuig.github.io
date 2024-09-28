@@ -54,6 +54,28 @@ wXX : {
 // My talks (workshops, conferences, seminars, ...)
 
 const talks = {
+	PhD_Defense_2024_09_28 : {
+		type : __talktype_PhD_Defense,
+		name : __talkname_PhD_Defense,
+		url : "https://wp.unil.ch/qualico2023/",
+		
+		title : "Theory, Algorithms and Applications of Arrangements of Trees: Generation, Expectation and Optimization",
+		authors : [__author_me],
+		
+		year : 2024,
+		date : "2024/09/28",
+		
+		slides_url : "https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/talks_files/PhD_defense_2024_09_26/defense.pdf",
+		
+		institutions : [__institution_UPC],
+		institutions_url : ["https://www.upc.edu/ca"],
+		
+		location : __location_Barcelona,
+		location_mode : "(in person)",
+		
+		tags : [__tag_LinArr, __tag_Algos, __tag_Minimization, __tag_Maximization, __tag_Linear_Arrangement_Library, __tag_Expected_Values]
+	},
+	
 	QUALICO_2023 : {
 		type : __talktype_conference,
 		name : __talkname_QUALICO,
