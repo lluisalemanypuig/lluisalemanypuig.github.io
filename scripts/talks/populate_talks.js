@@ -110,11 +110,11 @@ function makeFormattedTalk(talkid, TALK) {
 	
 	// add session number
 	if (TALK.session != null) {
-		par.appendChild(document.createTextNode(" Session: " + TALK.session + ". "));
+		par.appendChild(document.createTextNode(" Session: " + TALK.session + "."));
 	}
 	
 	// add date
-	par.appendChild(document.createTextNode(TALK.year + " (" + TALK.date + ")"));
+	par.appendChild(document.createTextNode(" " + TALK.year + " (" + TALK.date + ")"));
 	
 	// add seminar name (and url if applicable)
 	make_info_url(". ", TALK.name, TALK.url, par);
