@@ -1,4 +1,4 @@
-# Welcome to Lluís Alemany Puig's Github page
+# Welcome to my github page
 
 You reached this webpage, most likely, due to sheer curiosity. You will find my personal webpage [here](https://cqllab.upc.edu/people/lalemany/).
 
