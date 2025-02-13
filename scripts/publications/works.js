@@ -44,23 +44,6 @@ const works = {
 		notes : null
 	},
 	
-	w09 : {
-		work_type : __worktype_JournalPaper,
-		tags : [__tag_LinArr, __tag_Maximization, __tag_Algos],
-		year : 2024,
-		citation : {
-			authors : [__author_me, __author_JLEsteban, __author_RFerreriCancho],
-			title : "The maximum linear arrangement problem for trees under projectivity and planarity",
-			journal : __rejoinproc_IPL_name,
-			when : "Volume 183 (2024)",
-			pages : "106400",
-			doi : "10.1016/j.ipl.2023.106400",
-			arxiv_id : "2206.06924"
-		},
-		biblatex_citation : "@article{Alemany2024a,\n\ttitle = {{The maximum linear arrangement problem for trees under projectivity and planarity}},\n\tjournal = {Information Processing Letters},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and Esteban, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\turl = {https://arxiv.org/abs/2206.06924},\n\tvolume = {183},\n\tpages = {106400},\n\tyear = {2024},\n\tissn = {0020-0190},\n\tdoi = {10.1016/j.ipl.2023.106400}\n}",
-		notes : null
-	},
-	
 	w10 : {
 		work_type : __worktype_JournalPaper,
 		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Expected_Values, __tag_Algos],
@@ -75,6 +58,23 @@ const works = {
 			arxiv_id : "2207.05564"
 		},
 		biblatex_citation : "@article{Alemany2024b,\n\ttitle = {{The expected sum of edge lengths in planar linearizations of trees}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tjournal = {Journal of Language Modelling},\n\tarxivId = {2207.05564},\n\tdoi = {10.15398/jlm.v12i1.362},\n\turl = {https://arxiv.org/abs/2207.05564},\n\tvolume = {12},\n\tnumber = {1},\n\tpages = {1--42},\n\tmonth = {2},\n\tyear = {2024}\n}",
+		notes : null
+	},
+	
+	w09 : {
+		work_type : __worktype_JournalPaper,
+		tags : [__tag_LinArr, __tag_Maximization, __tag_Algos],
+		year : 2024,
+		citation : {
+			authors : [__author_me, __author_JLEsteban, __author_RFerreriCancho],
+			title : "The maximum linear arrangement problem for trees under projectivity and planarity",
+			journal : __rejoinproc_IPL_name,
+			when : "Volume 183 (2024)",
+			pages : "106400",
+			doi : "10.1016/j.ipl.2023.106400",
+			arxiv_id : "2206.06924"
+		},
+		biblatex_citation : "@article{Alemany2024a,\n\ttitle = {{The maximum linear arrangement problem for trees under projectivity and planarity}},\n\tjournal = {Information Processing Letters},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and Esteban, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\turl = {https://arxiv.org/abs/2206.06924},\n\tvolume = {183},\n\tpages = {106400},\n\tyear = {2024},\n\tissn = {0020-0190},\n\tdoi = {10.1016/j.ipl.2023.106400}\n}",
 		notes : null
 	},
 	
