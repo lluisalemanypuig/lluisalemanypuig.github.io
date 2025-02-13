@@ -142,7 +142,7 @@ function format_thesis(par, work) {
 	par.appendChild(document.createTextNode(" \"" + CITE.title + "\"."));
 	append_authors_list(par, CITE.authors);
 	
-	par.appendChild(document.createTextNode(". " + work.work_type));
+	par.appendChild(document.createTextNode(" " + work.work_type));
 	
 	// school
 	make_url(". School: ", CITE.school, CITE.school_url, par);
@@ -279,6 +279,9 @@ function makeFormattedCitation(workid, work) {
 		format_journal_generic(par, work);
 	}
 	else if (work.work_type == __worktype_MastersThesis) {
+		format_thesis(par, work);
+	}
+	else if (work.work_type == __worktype_PhDThesis) {
 		format_thesis(par, work);
 	}
 	else if (work.work_type == __worktype_ConferenceProceedings) {

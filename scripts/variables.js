@@ -152,6 +152,7 @@ const __worktype_all = "All work types";
 const __worktype_preprint = "Preprint";
 const __worktype_JournalPaper = "Journal Paper";
 const __worktype_MastersThesis = "Masters Thesis";
+const __worktype_PhDThesis = "Ph.D. Thesis";
 const __worktype_ConferenceProceedings = "Conference Proceedings";
 
 // ----------------

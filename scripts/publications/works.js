@@ -26,6 +26,24 @@ const works = {
 	// -----------------------------------------------------------------
 	// 2024
 	
+	w12 : {
+		work_type : __worktype_PhDThesis,
+		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Expected_Values, __tag_Algos, __tag_Minimization, __tag_Maximization, __tag_Linear_Arrangement_Library, __tag_Optimality],
+		year : 2024,
+		citation : {
+			authors : [__author_me],
+			title : "Theory, algorithms and applications of linear arrangements of trees: generation, expectation and optimization",
+			school : __rejoinproc_UPC_name,
+			school_url : "https://www.upc.edu/en",
+			when : "September 2024",
+			doi : null,
+			arxiv_id : null,
+			url : "https://hdl.handle.net/10803/693663"
+		},
+		biblatex_citation : "@phdthesis{Alemany2024c,\n\ttitle = {{Theory, algorithms and applications of linear arrangements of trees: generation, expectation and optimization}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s},\n\tmonth = {sep},\n\tschool = {Universitat Polit{\\`{e}}cnica de Catalunya},\n\ttype = {Ph.D. Thesis},\n\turl = {https://hdl.handle.net/10803/693663},\n\tyear = {2024}\n}",
+		notes : null
+	},
+	
 	w09 : {
 		work_type : __worktype_JournalPaper,
 		tags : [__tag_LinArr, __tag_Maximization, __tag_Algos],
