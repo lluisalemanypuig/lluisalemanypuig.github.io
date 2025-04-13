@@ -57,7 +57,6 @@ const talks = {
 	PhD_Defense_2024_09_28 : {
 		type : __talktype_PhD_Defense,
 		name : __talkname_PhD_Defense,
-		url : "https://wp.unil.ch/qualico2023/",
 		
 		title : "Theory, Algorithms and Applications of Arrangements of Trees: Generation, Expectation and Optimization",
 		authors : [__author_me],
