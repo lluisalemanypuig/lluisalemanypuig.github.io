@@ -295,17 +295,17 @@ function makeFormattedCitation(workid, work) {
 	// Text area with the raw biblatex citation.
 	var textarea = document.createElement("textarea");
 	textarea.textContent = work.biblatex_citation;
-	textarea.style = "resize:none";
+	textarea.style = "resize:none; width:100%";
 	
 	var rows = work.biblatex_citation.split("\n");
-	var maxRowLength = 0;
-	for (var i = 0; i < rows.length; ++i) {
-		if (maxRowLength < rows[i].length) {
-			maxRowLength = rows[i].length;
-		}
-	}
-	maxRowLength += 8; // tab size in characters
-	textarea.cols = maxRowLength;
+	//~ var maxRowLength = 0;
+	//~ for (var i = 0; i < rows.length; ++i) {
+		//~ if (maxRowLength < rows[i].length) {
+			//~ maxRowLength = rows[i].length;
+		//~ }
+	//~ }
+	//~ maxRowLength += 8; // tab size in characters
+	//~ textarea.cols = maxRowLength;
 	textarea.rows = rows.length;
 	textarea.id = "textarea_" + workid;
 	textarea.readOnly = true;
