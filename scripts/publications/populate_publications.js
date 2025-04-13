@@ -17,7 +17,7 @@
  * 
  * Contact: Lluís Alemany Puig (lluis.alemany.puig@gmail.com)
  */
- 
+
 function setSelection(dd, query) {
 	var list = [];
 	for (var i = 0; i < dd.childNodes.length; ++i) {
