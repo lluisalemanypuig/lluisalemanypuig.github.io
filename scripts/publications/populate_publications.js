@@ -387,6 +387,9 @@ function populatePublicationList() {
 		else if (work.work_type == __worktype_MastersThesis) {
 			data = work.citation.school;
 		}
+		else if (work.work_type == __worktype_PhDThesis) {
+			data = work.citation.school;
+		}
 		else if (work.work_type == __worktype_ConferenceProceedings) {
 			data = work.citation.proceedings;
 		}
