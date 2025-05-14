@@ -56,6 +56,8 @@ function createDropDowns() {
 }
 
 window.onload = function() {
+	console.log = function(str) {}
+	
 	// ****** Add the dropdowns in the appropriate 'div' class
 	console.log("Adding drop down menus...");
 	createDropDowns();
