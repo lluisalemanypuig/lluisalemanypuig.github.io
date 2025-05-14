@@ -427,6 +427,12 @@ function populatePublicationList() {
 		}
 		else {
 			console.log("        Item: " + key + " is NOT to be included in the list");
+			console.log("            Reason:");
+			console.log("                year:", filter_year(workI));
+			console.log("                tag:", filter_tag(workI));
+			console.log("                rejoinproc:", filter_rejoinproc(workI));
+			console.log("                work type:", filter_work_type(workI));
+			console.log("                author:", filter_author(workI));
 		}
 	}
 	
