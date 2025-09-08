@@ -46,17 +46,6 @@ function format_entry(li, entry) {
     li.appendChild(document.createTextNode(" (" + format_date(entry.date) + ")"));
 }
 
-function populateAllEntriesList() {
-    var div = document.getElementById("all_entries");
-
-    for (var i = directory_data.length - 1; i >= 0; --i) {
-        console.log(directory_data[i]);
-        var li = document.createElement("li");
-        format_entry(li, directory_data[i]);
-        div.appendChild(li);
-    }
-}
-
 function populateFilteredEntriesList() {
     var div = document.getElementById("filtered_entries");
 	
@@ -66,10 +55,12 @@ function populateFilteredEntriesList() {
 
     const ddProject = document.getElementById("projects_select");
 	const ddTopic = document.getElementById("topics_select");
+    const ddLanguage = document.getElementById("languages_select");
 
     function getTextDD(dd) { return dd.options[dd.selectedIndex].value; }
 	var use_project = getTextDD(ddProject);
 	var use_topic = getTextDD(ddTopic);
+    var use_language = getTextDD(ddLanguage);
 
     function filter_project(entry) {
 		if (use_project == "All projects") { return true; }
@@ -79,10 +70,18 @@ function populateFilteredEntriesList() {
 		if (use_topic == "All topics") { return true; }
 		return entry.topics.includes(use_topic);
 	}
+    function filter_language(entry) {
+		if (use_language == "All languages") { return true; }
+		return entry.languages.includes(use_topic);
+	}
 
     for (var i = directory_data.length - 1; i >= 0; --i) {
         const entry = directory_data[i];
-        const to_be_included = filter_project(entry) && filter_topic(entry);
+        const to_be_included =
+            filter_project(entry) &&
+            filter_topic(entry) &&
+            filter_language(entry);
+
         if (!to_be_included) {
             continue;
         }

@@ -37,27 +37,31 @@ async function get_tags(dir) {
 }
 
 function createDropDowns() {
-    var div = document.getElementById("filtered_entries");
+    var div = document.getElementById("entries");
     // clean up the whole thing
     div.innerHTML = '';
 
     // create the dropddowns
     var ddProject = document.createElement('select');
     var ddTopics = document.createElement('select');
+    var ddLanguages = document.createElement('select');
 
     // modify dropdowns' attributes
 
     // onChange
     ddProject.onchange = populateFilteredEntriesList;
     ddTopics.onchange = populateFilteredEntriesList;
+    ddLanguages.onchange = populateFilteredEntriesList;
 
     // ids
     ddProject.id = "projects_select";
     ddTopics.id = "topics_select";
+    ddTopics.id = "languages_select";
 
     var center = document.createElement("center");
     center.appendChild(ddProject);
     center.appendChild(ddTopics);
+    center.appendChild(ddLanguages);
     div.appendChild(center);
 }
 
@@ -75,16 +79,15 @@ window.onload = async function() {
 
     // Add the dropdowns in the appropriate 'div' class
     console.log("Adding drop down menus...");
-    createDropDowns(directory_data);
+    createDropDowns();
 
     // Populate the dropdown buttons with all the possible
     // values. These drop downs are initialised with the defaut value
     // "All tags", "All years", "All ...", ...
     console.log("Populating drop down menus...");
-    populateDropDowns(directory_data);
+    populateDropDowns();
 
     // populate the publications list
     console.log("Populating entries list...");
-    populateAllEntriesList(directory_data);
-    populateFilteredEntriesList(directory_data);
+    populateFilteredEntriesList();
 };
