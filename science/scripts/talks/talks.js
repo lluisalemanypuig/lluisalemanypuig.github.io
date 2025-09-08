@@ -114,8 +114,8 @@ const talks = {
 		institutions : [__institution_Sofia_University, __institution_IICT_BAS],
 		institutions_url : ["https://www.sofia.edu/", "https://iict.bas.bg/en/"],
 		
-		location : __location_Sofia + " (online)",
-		location_mode : "(in person)",
+		location : __location_Sofia,
+		location_mode : "(online)",
 		
 		tags : [__tag_Quantitative_Dependency_Syntax, __tag_Linear_Arrangement_Library]
 	},
