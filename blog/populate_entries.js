@@ -47,21 +47,27 @@ function format_entry(li, entry) {
 }
 
 function populateFilteredEntriesList() {
-    var div = document.getElementById("filtered_entries");
+    var div = document.getElementById("entries");
 	
 	while (div.childNodes.length > 1) {
 		div.removeChild(div.lastChild);
 	}
 
-    const ddProject = document.getElementById("projects_select");
-	const ddTopic = document.getElementById("topics_select");
-    const ddLanguage = document.getElementById("languages_select");
+    const ddYears = document.getElementById("years_select");
+    const ddProjects = document.getElementById("projects_select");
+	const ddTopics = document.getElementById("topics_select");
+    const ddLanguages = document.getElementById("languages_select");
 
     function getTextDD(dd) { return dd.options[dd.selectedIndex].value; }
-	var use_project = getTextDD(ddProject);
-	var use_topic = getTextDD(ddTopic);
-    var use_language = getTextDD(ddLanguage);
+    var use_year = getTextDD(ddYears);
+	var use_project = getTextDD(ddProjects);
+	var use_topic = getTextDD(ddTopics);
+    var use_language = getTextDD(ddLanguages);
 
+    function filter_year(entry) {
+		if (use_year == "All years") { return true; }
+		return entry.date.split("_").map(Number)[0] == use_year;
+	}
     function filter_project(entry) {
 		if (use_project == "All projects") { return true; }
 		return entry.project.includes(use_project);
@@ -72,12 +78,15 @@ function populateFilteredEntriesList() {
 	}
     function filter_language(entry) {
 		if (use_language == "All languages") { return true; }
-		return entry.languages.includes(use_topic);
+		return entry.languages.includes(use_language);
 	}
+
+    var previous_year = undefined;
 
     for (var i = directory_data.length - 1; i >= 0; --i) {
         const entry = directory_data[i];
         const to_be_included =
+            filter_year(entry) &&
             filter_project(entry) &&
             filter_topic(entry) &&
             filter_language(entry);
@@ -86,6 +95,14 @@ function populateFilteredEntriesList() {
             continue;
         }
 
+        const [year, _, __] = entry.date.split("_").map(Number);
+        if (previous_year == undefined || year != previous_year) {
+            previous_year = year;
+            const h2 = document.createElement("h2");
+            h2.appendChild(document.createTextNode(previous_year));
+            div.appendChild(h2);
+        }
+        
         var li = document.createElement("li");
         format_entry(li, entry);
         div.appendChild(li);

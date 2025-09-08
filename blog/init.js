@@ -36,35 +36,6 @@ async function get_tags(dir) {
     return tags;
 }
 
-function createDropDowns() {
-    var div = document.getElementById("entries");
-    // clean up the whole thing
-    div.innerHTML = '';
-
-    // create the dropddowns
-    var ddProject = document.createElement('select');
-    var ddTopics = document.createElement('select');
-    var ddLanguages = document.createElement('select');
-
-    // modify dropdowns' attributes
-
-    // onChange
-    ddProject.onchange = populateFilteredEntriesList;
-    ddTopics.onchange = populateFilteredEntriesList;
-    ddLanguages.onchange = populateFilteredEntriesList;
-
-    // ids
-    ddProject.id = "projects_select";
-    ddTopics.id = "topics_select";
-    ddTopics.id = "languages_select";
-
-    var center = document.createElement("center");
-    center.appendChild(ddProject);
-    center.appendChild(ddTopics);
-    center.appendChild(ddLanguages);
-    div.appendChild(center);
-}
-
 var directory_data = undefined;
 
 window.onload = async function() {
@@ -76,10 +47,6 @@ window.onload = async function() {
     }
 
     console.log = function(str) { };
-
-    // Add the dropdowns in the appropriate 'div' class
-    console.log("Adding drop down menus...");
-    createDropDowns();
 
     // Populate the dropdown buttons with all the possible
     // values. These drop downs are initialised with the defaut value
