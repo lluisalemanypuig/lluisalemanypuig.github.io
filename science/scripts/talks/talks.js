@@ -87,7 +87,7 @@ const talks = {
 		date : "2023/06/28 -- 2023/07/30",
 		session : "A5 -- Dependencies 3 -- Talk 2",
 		
-		slides_url : "https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/science/talks/files/SyntaxFest2021_LAL_poster.pdf",
+		slides_url : null,
 		
 		institutions : [__institution_IQLA, __institution_UNIL],
 		institutions_url : ["http://iqla.org/", "https://www.unil.ch/central/en/home.html"],
