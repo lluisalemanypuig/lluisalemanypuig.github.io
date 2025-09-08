@@ -63,16 +63,15 @@ function createDropDowns() {
 
 var directory_data = undefined;
 
-window.onload = function() {
-    const all_dirs = all_directories();
-    console.log("All directories:", all_dirs);
-
+window.onload = async function() {
+    const all_dirs = await all_directories();
     directory_data = [];
     for (var i = 0; i < all_dirs.length; ++i) {
-        const tags = get_tags(all_dirs[i]);
+        const tags = await get_tags(all_dirs[i]);
         directory_data.push(tags);
     }
-    console.log("Tags:", directory_data);
+
+    console.log = function(str) { };
 
     // Add the dropdowns in the appropriate 'div' class
     console.log("Adding drop down menus...");
