@@ -17,8 +17,9 @@ You can find me online at:
 
 In this Github page, you can
 
-- See a list of my publications [here](publications.html).
-- See a list of the talks I've given [here](talks.html).
+- Check out my science works:
+    - a list of my publications [here](science/publications.html).
+    - a list of the talks I've given [here](science/talks.html).
 - Browse through [my repos](https://github.com/lluisalemanypuig). Other repositories I have worked on are:
     - [LAL project](https://github.com/LAL-project).
 

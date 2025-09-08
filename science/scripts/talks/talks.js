@@ -64,7 +64,7 @@ const talks = {
 		year : 2024,
 		date : "2024/09/28",
 		
-		slides_url : "https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/talks_files/PhD_defense_2024_09_26/defense.pdf",
+		slides_url : "https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/science/talks/files/PhD_defense_2024_09_26/defense.pdf",
 		
 		institutions : [__institution_UPC],
 		institutions_url : ["https://www.upc.edu/ca"],
@@ -87,7 +87,7 @@ const talks = {
 		date : "2023/06/28 -- 2023/07/30",
 		session : "A5 -- Dependencies 3 -- Talk 2",
 		
-		slides_url : null,
+		slides_url : "https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/science/talks/files/SyntaxFest2021_LAL_poster.pdf",
 		
 		institutions : [__institution_IQLA, __institution_UNIL],
 		institutions_url : ["http://iqla.org/", "https://www.unil.ch/central/en/home.html"],
@@ -225,7 +225,7 @@ const talks = {
 		institution : __institution_UPC,
 		institution_url : "https://www.upc.edu/en",
 		
-		slides_url : "https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/talks_files/LIMDA_2019_12_18.pdf",
+		slides_url : "https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/science/talks/files/LIMDA_2019_12_18.pdf",
 		
 		location : __location_Barcelona,
 		location_mode : "(in person)",
