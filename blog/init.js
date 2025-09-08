@@ -59,12 +59,14 @@ var directory_data = undefined;
 
 window.onload = function() {
     const all_dirs = all_directories();
+    console.log("All directories:", all_dirs);
+
     directory_data = [];
     for (var i = 0; i < all_dirs.length; ++i) {
 		const tags = get_tags(all_dirs[i]);
         directory_data.push(tags);
 	}
-    console.log(directory_data);
+    console.log("Tags:", directory_data);
 
 	// Add the dropdowns in the appropriate 'div' class
 	console.log("Adding drop down menus...");
