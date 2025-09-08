@@ -40,35 +40,18 @@ function addToDropDown(dd, item, relate) {
 	dd.appendChild(opt);
 }
 
-async function all_directories() {
-    const response = await fetch("manifest.json");
-    const manifest = await response.json();
-    return manifest.directories;
-}
-
-async function get_tags(dir) {
-    const response = await fetch(dir + "/tags.json");
-    const tags = await response.json();
-    return tags;
-}
-
-function populateDropDowns() {
-    console.log("asdf");
-
-	var all_projects = ["All projects"];
-	var all_topics = ["All topics"];
+function populateDropDowns(directory_data) {
+   	var all_projects = [];
+	var all_topics = [];
 	
-    const all_dirs = all_directories();
-
 	// traverse all works
-	for (var i = 0; i < all_dirs.length; ++i) {
-		const tags = get_tags(all_dirs[i]);
-		
-        for (var i = 0; i < tags.projects.length; ++i) {
-            all_projects.push(tags.projects[i]);
+	for (var i = 0; i < directory_data.length; ++i) {
+		const dir_data = directory_data[i];
+        for (var j = 0; j < dir_data.projects.length; ++j) {
+            all_projects.push(dir_data.projects[j]);
         }
-		for (var i = 0; i < tags.topics.length; ++i) {
-            all_topics.push(tags.topics[i]);
+		for (var j = 0; j < dir_data.topics.length; ++j) {
+            all_topics.push(dir_data.topics[j]);
         }
 	}
 	
