@@ -17,6 +17,7 @@ You can find me online at:
 
 In this Github page, you can
 
+- Checkout [my blog](blog/index.html)!
 - Check out my science works:
     - a list of my publications [here](science/publications.html).
     - a list of the talks I've given [here](science/talks.html).
