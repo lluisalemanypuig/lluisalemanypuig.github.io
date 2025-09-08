@@ -18,14 +18,20 @@
  * Contact: Lluís Alemany Puig (lluis.alemany.puig@gmail.com)
  */
 
+const base_url = "https://raw.githubusercontent.com/lluisalemanypuig/lluisalemanypuig.github.io/master";
+
+function github_path(file) {
+    return `${base_url}/blog/${file}`;
+}
+
 async function all_directories() {
-    const response = await fetch("manifest.json");
+    const response = await fetch(github_path("manifest.json"));
     const manifest = await response.json();
     return manifest.directories;
 }
 
 async function get_tags(dir) {
-    const response = await fetch(dir + "/tags.json");
+    const response = await fetch(github_path(dir + "/tags.json"));
     const tags = await response.json();
     return tags;
 }
