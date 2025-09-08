@@ -44,6 +44,8 @@ const __institution_Zheihang_University = "Zeijhang University";
 const __institution_GIAT = "GIAT";
 const __institution_IQLA = "IQLA";
 const __institution_UNIL = "University of Lausanne";
+const __institution_Sofia_University = "University of Sofia";
+const __institution_IICT_BAS = "IICT-BAS";
 
 // ----------
 // -- Tags --
@@ -177,10 +179,12 @@ const __location_Hangzhou = "Hangzhou, China";
 const __location_China = "China";
 const __location_Padova = "Padova, Italy";
 const __location_Lausanne = "Lausanne, Switzerland";
+const __location_Sofia = "Sofia, Bulgaria";
 
 // -- Talk types --
 const __talktype_all = "All talk types";
 const __talktype_seminar = "Seminar";
+const __talktype_poster = "Poster";
 const __talktype_conference = "Conference";
 const __talktype_PhD_Defense = "Ph. D. Defense";
 const __talktype_workshop = "Workshop";
@@ -192,3 +196,4 @@ const __talkname_Zheijang_University_Python_seminar = "Zheijang University -- Py
 const __talkname_IQLA_GIAT_summer_school = "IQLA-GIAT Summer School";
 const __talkname_QUALICO = "QUALICO";
 const __talkname_PhD_Defense = "Ph. D. Defense";
+const __talkname_SynatxFest = "Syntax Fest";

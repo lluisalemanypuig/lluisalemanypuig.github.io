@@ -98,6 +98,28 @@ const talks = {
 		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Optimality, __tag_Measuring_Learners_Proficiency]
 	},
 	
+	SyntaxFest_2022 : {
+		type : __talktype_poster,
+		name : __talkname_SynatxFest + " (2021)",
+		url : "https://syntaxfest.github.io/syntaxfest21/",
+		
+		title : "The Linear Arrangement Library. A new tool for research on syntactic dependency structures",
+		authors : [__author_me, __author_JLEsteban, __author_RFerreriCancho],
+		
+		year : 2022,
+		date : "2022/03/21 -- 2022/03/24",
+		
+		slides_url : "https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/science/talks/files/SyntaxFest2021_LAL_poster.pdf",
+		
+		institutions : [__institution_Sofia_University, __institution_IICT_BAS],
+		institutions_url : ["https://www.sofia.edu/", "https://iict.bas.bg/en/"],
+		
+		location : __location_Sofia + " (online)",
+		location_mode : "(in person)",
+		
+		tags : [__tag_Quantitative_Dependency_Syntax, __tag_Linear_Arrangement_Library]
+	},
+
 	IQLA_GIAT_2021_07__2 : {
 		type : __talktype_workshop,
 		name : __talkname_IQLA_GIAT_summer_school,
