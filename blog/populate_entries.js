@@ -39,7 +39,7 @@ function format_date(input) {
 function format_entry(li, entry) {
     
     var url = document.createElement("a");
-    url.href = `/blog/${entry.date}/index.md`;
+    url.href = `/blog/${entry.date}`;
     url.textContent = entry.title;
     
     li.appendChild(url);
