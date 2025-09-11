@@ -1,6 +1,6 @@
 # ChatGPT bloopers -- Agree to disagree?
 
-This is the first of a series of posts of bloopers when iteracting ChatGPT. Here I will explain how I tried to solve a `constexpr` issue with `std::string` and how ChatGPT would not stop acting silly.
+This is the first of a series of posts of bloopers in my interactions with ChatGPT. Today I will explain how I tried to solve a `constexpr` issue with `std::string` and how ChatGPT would not stop acting silly.
 
 ## In a galaxy, far far away...
 
