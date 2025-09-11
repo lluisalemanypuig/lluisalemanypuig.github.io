@@ -43,9 +43,7 @@ function addToDropDown(dd, item, relate) {
 function populateDropDown(id, what, tag_all) {
     var all_values = manifest_data.unique_tags[what]
 
-    console.log(manifest_data);
-    console.log(all_values);
-
+    all_values = all_values.filter(onlyUnique);
     all_values.sort(
         function(a,b) {
             if (a == tag_all) { return -1; }
@@ -54,11 +52,10 @@ function populateDropDown(id, what, tag_all) {
         }
     );
     all_values.unshift(tag_all);
-    console.log(`    Add ${all_values.length} ${what}: ${all_values}`);
+    
     var dd = document.getElementById(id);
     dd.textContent = '';
     all_values.forEach(function(item) { addToDropDown(dd, item, null); });
-    console.log(`    Values in ${what} drop down: ${dd.childNodes.length}`);
 }
 
 function populateDropDowns() {

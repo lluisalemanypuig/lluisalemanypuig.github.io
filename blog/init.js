@@ -32,16 +32,28 @@ async function get_manifest_data() {
     return manifest;
 }
 
+function setDropDownsEvents() {
+    var ddYears = document.getElementById("years_select");
+    var ddProjects = document.getElementById("projects_select");
+    var ddTopics = document.getElementById("topics_select");
+    var ddLanguages = document.getElementById("languages_select");
+
+    ddYears.onchange = populateFilteredEntriesList;
+    ddProjects.onchange = populateFilteredEntriesList;
+    ddTopics.onchange = populateFilteredEntriesList;
+    ddLanguages.onchange = populateFilteredEntriesList;
+}
+
 window.onload = async function() {
     manifest_data = await get_manifest_data();
     
+    setDropDownsEvents();
+
     // Populate the dropdown buttons with all the possible
     // values. These drop downs are initialised with the defaut value
     // "All tags", "All years", "All ...", ...
-    console.log("Populating drop down menus...");
     populateDropDowns();
 
     // populate the publications list
-    console.log("Populating entries list...");
     populateFilteredEntriesList();
 };

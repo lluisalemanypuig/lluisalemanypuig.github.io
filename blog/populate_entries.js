@@ -37,7 +37,6 @@ function format_date(input) {
 }
 
 function format_entry(li, entry) {
-    
     var url = document.createElement("a");
     url.href = `/blog/${entry.date}`;
     url.textContent = entry.title;
@@ -49,7 +48,7 @@ function format_entry(li, entry) {
 function populateFilteredEntriesList() {
     var div = document.getElementById("entries");
 	
-	while (div.childNodes.length > 1) {
+	while (div.childNodes.length > 0) {
 		div.removeChild(div.lastChild);
 	}
 
@@ -84,7 +83,7 @@ function populateFilteredEntriesList() {
     var previous_year = undefined;
 
     const directory_data = manifest_data["directories"];
-    for (var i = directory_data.length - 1; i >= 0; --i) {
+    for (var i = 0; i < directory_data.length; ++i) {
         const entry = directory_data[i];
         const to_be_included =
             filter_year(entry) &&
