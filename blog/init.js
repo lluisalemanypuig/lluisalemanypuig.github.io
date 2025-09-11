@@ -20,31 +20,20 @@
 
 const base_url = "https://raw.githubusercontent.com/lluisalemanypuig/lluisalemanypuig.github.io/master";
 
+var manifest_data = undefined;
+
 function github_path(file) {
     return `${base_url}/blog/${file}`;
 }
 
-async function all_directories() {
+async function get_manifest_data() {
     const response = await fetch(github_path("manifest.json"));
     const manifest = await response.json();
     return manifest.directories;
 }
 
-async function get_tags(dir) {
-    const response = await fetch(github_path(dir + "/tags.json"));
-    const tags = await response.json();
-    return tags;
-}
-
-var directory_data = undefined;
-
 window.onload = async function() {
-    const all_dirs = await all_directories();
-    directory_data = [];
-    for (var i = 0; i < all_dirs.length; ++i) {
-        const tags = await get_tags(all_dirs[i]);
-        directory_data.push(tags);
-    }
+    manifest_data = await get_manifest_data();
 
     console.log = function(str) { };
 

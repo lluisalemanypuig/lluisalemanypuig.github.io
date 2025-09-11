@@ -40,94 +40,26 @@ function addToDropDown(dd, item, relate) {
     dd.appendChild(opt);
 }
 
+function populateDropDown(id, what, tag_all) {
+    var all_values = manifest_data["unique_tags"][what]
+    all_values.sort(
+        function(a,b) {
+            if (a == tag_all) { return -1; }
+            if (b == tag_all) { return  1; }
+            return b - a;
+        }
+    );
+    all_values.unshift(tag_all);
+    console.log(`    Add ${all_values.length} ${what}: ${all_values}`);
+    var dd = document.getElementById(id);
+    dd.textContent = '';
+    all_values.forEach(function(item) { addToDropDown(dd, item, null); });
+    console.log(`    Values in ${what} drop down: ${dd.childNodes.length}`);
+}
+
 function populateDropDowns() {
-    var all_years = [];
-    var all_projects = [];
-    var all_topics = [];
-    var all_languages = [];
-    
-    // traverse all works
-    for (var i = 0; i < directory_data.length; ++i) {
-        const dir_data = directory_data[i];
-        
-        const [year, _, __] = dir_data.date.split("_").map(Number);
-        all_years.push(year);
-
-        for (var j = 0; j < dir_data.projects.length; ++j) {
-            all_projects.push(dir_data.projects[j]);
-        }
-        for (var j = 0; j < dir_data.topics.length; ++j) {
-            all_topics.push(dir_data.topics[j]);
-        }
-        for (var j = 0; j < dir_data.languages.length; ++j) {
-            all_languages.push(dir_data.languages[j]);
-        }
-    }
-
-    // keep unique tags only
-    all_years = all_years.filter(onlyUnique);
-    all_projects = all_projects.filter(onlyUnique);
-    all_topics = all_topics.filter(onlyUnique);
-    all_languages = all_languages.filter(onlyUnique);
-    
-    // post process tags
-    all_years.sort(
-        function(a,b) {
-            if (a == "All years") { return -1; }
-            if (b == "All years") { return  1; }
-            return b - a;
-        }
-    );
-    all_projects.sort(
-        function(a,b) {
-            if (a == "All projects") { return -1; }
-            if (b == "All projects") { return  1; }
-            return b - a;
-        }
-    );
-    all_topics.sort(
-        function(a,b) {
-            if (a == "All topics") { return -1; }
-            if (b == "All topics") { return  1; }
-            return a.localeCompare(b);
-        }
-    );
-    all_languages.sort(
-        function(a,b) {
-            if (a == "All languages") { return -1; }
-            if (b == "All languages") { return  1; }
-            return a.localeCompare(b);
-        }
-    );
-    
-    // default tags
-    all_years.unshift("All years");
-    all_projects.unshift("All projects");
-    all_topics.unshift("All topics");
-    all_languages.unshift("All languages");
-    
-    console.log("    Add " + all_years.length + " years: " + all_years);
-    console.log("    Add " + all_projects.length + " projects: " + all_projects);
-    console.log("    Add " + all_topics.length + " topics: " + all_topics);
-    console.log("    Add " + all_languages.length + " languages: " + all_languages);
-    
-    var ddYears = document.getElementById("years_select");
-    var ddProjects = document.getElementById("projects_select");
-    var ddTopics = document.getElementById("topics_select");
-    var ddLanguages = document.getElementById("languages_select");
-    
-    ddYears.textContent = '';
-    ddProjects.textContent = '';
-    ddTopics.textContent = '';
-    ddLanguages.textContent = '';
-    
-    all_years.forEach(function(item) { addToDropDown(ddYears, item, null); });
-    all_projects.forEach(function(item) { addToDropDown(ddProjects, item, null); });
-    all_topics.forEach(function(item) { addToDropDown(ddTopics, item, null); });
-    all_languages.forEach(function(item) { addToDropDown(ddLanguages, item, null); });
-    
-    console.log("    Values in years drop down: " + ddYears.childNodes.length);
-    console.log("    Values in projects drop down: " + ddProjects.childNodes.length);
-    console.log("    Values in topics drop down: " + ddTopics.childNodes.length);
-    console.log("    Values in languages drop down: " + ddLanguages.childNodes.length);
+    populateDropDown("years_select", "years", "All years");
+    populateDropDown("projects_select", "projects", "All projects");
+    populateDropDown("topics_select", "topics", "All topics");
+    populateDropDown("languages_select", "languages", "All languages");
 }

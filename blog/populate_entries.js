@@ -83,6 +83,7 @@ function populateFilteredEntriesList() {
 
     var previous_year = undefined;
 
+    const directory_data = manifest_data["directories"];
     for (var i = directory_data.length - 1; i >= 0; --i) {
         const entry = directory_data[i];
         const to_be_included =
