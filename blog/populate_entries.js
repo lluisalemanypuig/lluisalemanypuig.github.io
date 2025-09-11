@@ -20,7 +20,7 @@
 
 function get_ordinal(n) {
     const s = ["", "st", "nd", "rd"];
-    const r = n % 10;
+    const r = (n < 10 || n > 19 ? n % 10 : n);
     return n + (1 <= r && r <= 3 ? s[r] : "th");
 }
 
