@@ -41,7 +41,11 @@ function addToDropDown(dd, item, relate) {
 }
 
 function populateDropDown(id, what, tag_all) {
-    var all_values = manifest_data["unique_tags"][what]
+    var all_values = manifest_data.unique_tags[what]
+
+    console.log(manifest_data);
+    console.log(all_values);
+
     all_values.sort(
         function(a,b) {
             if (a == tag_all) { return -1; }

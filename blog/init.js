@@ -29,14 +29,12 @@ function github_path(file) {
 async function get_manifest_data() {
     const response = await fetch(github_path("manifest.json"));
     const manifest = await response.json();
-    return manifest.directories;
+    return manifest;
 }
 
 window.onload = async function() {
     manifest_data = await get_manifest_data();
-
-    console.log = function(str) { };
-
+    
     // Populate the dropdown buttons with all the possible
     // values. These drop downs are initialised with the defaut value
     // "All tags", "All years", "All ...", ...
