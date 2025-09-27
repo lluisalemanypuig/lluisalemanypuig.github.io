@@ -69,7 +69,7 @@ function populateFilteredEntriesList() {
 	}
     function filter_project(entry) {
 		if (use_project == "All projects") { return true; }
-		return entry.project.includes(use_project);
+		return entry.projects.includes(use_project);
 	}
 	function filter_topic(entry) {
 		if (use_topic == "All topics") { return true; }
