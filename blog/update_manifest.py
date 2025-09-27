@@ -25,7 +25,7 @@ for d in filter(lambda p: os.path.isdir(p), os.listdir(".")):
     unique_tags["topics"] += tags["topics"]
     unique_tags["languages"] += tags["languages"]
 
-unique_tags["date"] = list(set(unique_tags["years"]))
+unique_tags["years"] = list(set(unique_tags["years"]))
 unique_tags["title"] = list(set(unique_tags["title"]))
 unique_tags["projects"] = list(set(unique_tags["projects"]))
 unique_tags["topics"] = list(set(unique_tags["topics"]))
