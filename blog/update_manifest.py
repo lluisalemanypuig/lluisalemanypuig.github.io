@@ -7,14 +7,16 @@ def print_dict(d):
 
 def read_tags(dir):
     str = ""
-    with open(dir + "/tags.json", 'r') as f:
+    with open(dir + "/tags.json", "r") as f:
         for line in f:
             str += line
     return eval(str)
 
 directory_tags = []
 unique_tags = {"years": [], "title": [], "projects": [], "topics": [], "languages": []}
-for d in filter(lambda p: os.path.isdir(p), os.listdir(".")):
+
+dirs_list = reversed(sorted(filter(lambda p: os.path.isdir(p), os.listdir("."))))
+for d in dirs_list:
 
     tags = read_tags(d)
     directory_tags += [deepcopy(tags)]
@@ -35,7 +37,7 @@ with open("manifest.json", "w") as f:
     data = dict([])
     data["directories"] = directory_tags
     data["unique_tags"] = unique_tags
-    
+
     s = str(data)
-    s = s.replace("'", "\"")
+    s = s.replace("'", '"')
     f.write(s)
