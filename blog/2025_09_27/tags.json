@@ -1,0 +1,7 @@
+{
+  "date": "2025_09_27",
+  "title": "Yet another instrumentator for your C++ projects",
+  "projects": ["flame-charts"],
+  "topics": ["Code Instrumentation"],
+  "languages": ["C++"]
+}
