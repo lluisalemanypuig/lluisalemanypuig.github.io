@@ -21,6 +21,7 @@
 const base_url = "https://raw.githubusercontent.com/lluisalemanypuig/lluisalemanypuig.github.io/master";
 
 var manifest_data = undefined;
+var display_tags = true;
 
 function github_path(file) {
     return `${base_url}/blog/${file}`;
@@ -32,7 +33,7 @@ async function get_manifest_data() {
     return manifest;
 }
 
-function setDropDownsEvents() {
+function configureFilterElements() {
     var ddYears = document.getElementById("years_select");
     var ddProjects = document.getElementById("projects_select");
     var ddTopics = document.getElementById("topics_select");
@@ -42,12 +43,23 @@ function setDropDownsEvents() {
     ddProjects.onchange = populateFilteredEntriesList;
     ddTopics.onchange = populateFilteredEntriesList;
     ddLanguages.onchange = populateFilteredEntriesList;
+
+    var show_tags = document.getElementById("show_tags");
+    show_tags.onclick = function(_event) {
+        display_tags = !display_tags;
+        populateFilteredEntriesList();
+    };
+
+    var show_tags_label = document.getElementById("show_tags_label");
+    show_tags_label.onclick = function(_event) {
+        show_tags.click();
+    };
 }
 
 window.onload = async function() {
     manifest_data = await get_manifest_data();
     
-    setDropDownsEvents();
+    configureFilterElements();
 
     // Populate the dropdown buttons with all the possible
     // values. These drop downs are initialised with the defaut value

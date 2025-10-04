@@ -45,6 +45,83 @@ function format_entry(li, entry) {
     li.appendChild(document.createTextNode(" (" + format_date(entry.date) + ")"));
 }
 
+function projectNameClicked(event) {
+    const project = event.target.value;
+    const ddProjects = document.getElementById("projects_select");
+    ddProjects.value = project;
+    ddProjects.onchange();
+}
+
+function topicNameClicked(event) {
+    const topic = event.target.value;
+    const ddTopics = document.getElementById("topics_select");
+    ddTopics.value = topic;
+    ddTopics.onchange();
+}
+
+function make_tab_span() {
+    const bullet_span = document.createElement("span");
+    bullet_span.style.display = "inline-block";
+    bullet_span.style.width = "1em";
+    bullet_span.style.height = "1em";
+    bullet_span.style.verticalAlign = "middle";
+    return bullet_span;
+}
+
+function format_tags(div, entry) {
+    
+    if (entry.projects.length > 0) {
+        var li = document.createElement("li");
+        li.style.listStyleType = "none";
+        
+        li.appendChild(make_tab_span());
+        li.appendChild(document.createTextNode("Projects:"));
+
+        for (var [index, project] of entry.projects.entries()) {
+            var project_name = document.createElement("span");
+            project_name.textContent = ` ${project}`;
+            project_name.style.color = "green";
+            project_name.value = project;
+            project_name.onclick = projectNameClicked;
+            li.appendChild(project_name);
+
+            var url = document.createElement("a");
+            url.href = `https://github.com/lluisalemanypuig/${project}`;
+            url.textContent = "🔗";
+            url.style.color = "green";
+            li.appendChild(url);
+            if (index < entry.projects.length - 1) {
+                li.appendChild(document.createTextNode(","));
+            }
+        }
+
+        div.appendChild(li);
+    }
+
+    if (entry.topics.length > 0) {
+        var li = document.createElement("li");
+        li.style.listStyleType = "none";
+        
+        li.appendChild(make_tab_span());
+        li.appendChild(document.createTextNode("Topics:"));
+
+        for (var [index, topic] of entry.topics.entries()) {
+            var topic_name = document.createElement("span");
+            topic_name.textContent = ` ${topic}`;
+            topic_name.style.color = "purple";
+            topic_name.value = topic;
+            topic_name.onclick = topicNameClicked;
+
+            li.appendChild(topic_name);
+            if (index < entry.topics.length - 1) {
+                li.appendChild(document.createTextNode(","));
+            }
+        }
+
+        div.appendChild(li);
+    }
+}
+
 function populateFilteredEntriesList() {
     var div = document.getElementById("entries");
 	
@@ -106,5 +183,9 @@ function populateFilteredEntriesList() {
         var li = document.createElement("li");
         format_entry(li, entry);
         div.appendChild(li);
+
+        if (display_tags) {
+            format_tags(div, entry);
+        }
     }
 }
