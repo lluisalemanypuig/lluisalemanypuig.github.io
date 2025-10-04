@@ -1,0 +1,7 @@
+{
+  "date": "2025_10_04",
+  "title": "Premature optimizations and late optimizations in a chess puzzle database",
+  "projects": ["chesspebase", "classification-tree"],
+  "topics": ["Optimization"],
+  "languages": ["C++", "C++23"]
+}
