@@ -2,7 +2,6 @@
 
 Here I post stuff like scripts for my work webpage to use and interesting documents, such as the slides of (some of) my talks.
 My work webpages are (or have been):
-- UdL (Universitat de Lleida): _available soon?_. From April 2025 until September 2025.
 - UPC (Universitat Politècnica de Catalunya): [here](https://cqllab.upc.edu/people/lalemany/). From September 2019 until April 2025.
 
 You can contact me at
