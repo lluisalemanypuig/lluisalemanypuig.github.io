@@ -21,11 +21,11 @@ The classification tree can be used in a chess puzzle database, [chesspebase](ht
 
 ## The performance issues
 
-First, I would like to show the time that it takes to load several databases of varying sizes, each 10 times larger than the previous, each of which is a random subset of the full database, which was downloaded from [lichess](https://database.lichess.org/#puzzles) on March 2025.
+First, I would like to show the average time (over a number of executions) that it takes to load several databases of varying sizes, each 10 times larger than the previous. Each of these databases is a random subset of the full database, which was downloaded from [lichess](https://database.lichess.org/#puzzles) on March 2025.
 
 
 | Database  | Execution time (s)  | Runs |
-| --------: | ------------------: | :--- |
+| --------: | ------------------: | ---: |
 | 100       |  0.00026259         | 100  |
 | 1000      |  0.00166805         | 100  |
 | 10000     |  0.00972439         | 100  |
@@ -87,7 +87,7 @@ That for loop is correct. But didn't we have billions of branches? And most of t
 
 ## The fix
 
-Then I realized that we are comparing 64 bytes. This is actually 8 integer of 8 bytes each. So we can compare the pieces board as if they were integers, thus reducing the number of comparisons by a factor of 8. Let's fix this, then. I will use `reinterpret_cast<const int64_t*>`. Notice, that this would have been perceived as a premature optimization.
+Then I realized that we are comparing 64 bytes. This is actually 8 integer values of 8 bytes each. So we can compare the pieces board as if they were integers, thus reducing the number of comparisons by a factor of 8. Let's try this, then. I will use `reinterpret_cast<const int64_t*>`. Notice, that this would have been perceived as a premature optimization.
 
 ```c++
 [[nodiscard]] constexpr bool operator== (const position& p) const noexcept
