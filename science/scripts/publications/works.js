@@ -39,7 +39,7 @@ const works = {
 			arxiv_id : null,
 			url : "https://doi.org/10.1016/B978-0-323-95504-1.00961-3"
 		},
-		biblatex_citation : "Coming soon",
+		biblatex_citation : "@incollection{Alemany2025a,\n\ttitle = {{Baselines in Dependency Synatx}},\n\tauthor = {{Alemany-Puig}, Llu\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tbooktitle = {{Reference Collection in Social Sciences}},\n\tyear = {2025},\n\tdoi = {10.1016/B978-0-323-95504-1.00961-3},\n\tpages = {??}\n}",
 		notes : null
 	},
 	
