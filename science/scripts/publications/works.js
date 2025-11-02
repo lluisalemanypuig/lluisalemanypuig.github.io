@@ -24,6 +24,26 @@
 const works = {
 	
 	// -----------------------------------------------------------------
+	// 2025
+	
+	w13 : {
+		work_type : __worktype_Chapter,
+		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Expected_Values, __tag_Algos, __tag_Minimization, __tag_Maximization, __tag_Optimality],
+		year : 2025,
+		citation : {
+			authors : [__author_me, __author_RFerreriCancho],
+			title : "Baselines in Dependency Syntax",
+			enciclopedia : __publishedin_RCSocialSciences_name,
+			when : "October 2025",
+			doi : "10.1016/B978-0-323-95504-1.00961-3",
+			arxiv_id : null,
+			url : "https://doi.org/10.1016/B978-0-323-95504-1.00961-3"
+		},
+		biblatex_citation : "Coming soon",
+		notes : null
+	},
+	
+	// -----------------------------------------------------------------
 	// 2024
 	
 	w12 : {
@@ -33,7 +53,7 @@ const works = {
 		citation : {
 			authors : [__author_me],
 			title : "Theory, algorithms and applications of linear arrangements of trees: generation, expectation and optimization",
-			school : __rejoinproc_UPC_name,
+			school : __publishedin_UPC_name,
 			school_url : "https://www.upc.edu/en",
 			when : "September 2024",
 			doi : null,
@@ -51,7 +71,7 @@ const works = {
 		citation : {
 			authors : [__author_me, __author_RFerreriCancho],
 			title : "The expected sum of edge lengths in planar linearizations of trees",
-			journal : __rejoinproc_JLM_name,
+			journal : __publishedin_JLM_name,
 			when : "12.1 (Feb. 2024)",
 			pages : "1--42",
 			doi : "10.15398/jlm.v12i1.362",
@@ -68,7 +88,7 @@ const works = {
 		citation : {
 			authors : [__author_me, __author_JLEsteban, __author_RFerreriCancho],
 			title : "The maximum linear arrangement problem for trees under projectivity and planarity",
-			journal : __rejoinproc_IPL_name,
+			journal : __publishedin_IPL_name,
 			when : "Volume 183 (2024)",
 			pages : "106400",
 			doi : "10.1016/j.ipl.2023.106400",
@@ -88,7 +108,7 @@ const works = {
 		citation : {
 			authors : [__author_me, __author_JLEsteban, __author_RFerreriCancho],
 			title : "On The Maximum Linear Arrangement Problem for Trees",
-			repository : __rejoinproc_ARXIV_name,
+			repository : __publishedin_ARXIV_name,
 			when : "2023",
 			doi : null,
 			arxiv_id : "2312.04487"
@@ -107,7 +127,7 @@ const works = {
 		citation : {
 			authors : [__author_me, __author_RFerreriCancho],
 			title : "Linear-time calculation of the expected sum of edge lengths in random projective linearizations of trees",
-			journal : __rejoinproc_CL_name,
+			journal : __publishedin_CL_name,
 			when : "Volume 48 (3). 2022",
 			pages : "491--516",
 			doi : "10.1162/coli_a_00442",
@@ -124,7 +144,7 @@ const works = {
 		citation : {
 			authors : [__author_RFerreriCancho, __author_CGomezRodriguez, __author_JLEsteban, __author_me],
 			title : "The optimality of syntactic dependency distances",
-			journal : __rejoinproc_PRE_name,
+			journal : __publishedin_PRE_name,
 			when : "Volume 105 (1) -- 18 January",
 			pages : "014308",
 			doi : "10.1103/PhysRevE.105.014308",
@@ -141,7 +161,7 @@ const works = {
 		citation : {
 			authors : [__author_me, __author_JLEsteban, __author_RFerreriCancho],
 			title : "Minimum projective linearization of trees in linear time",
-			journal : __rejoinproc_IPL_name,
+			journal : __publishedin_IPL_name,
 			when : "Volume 174 (2022)",
 			pages : "106204",
 			doi : "10.1016/j.ipl.2021.106204",
@@ -161,7 +181,7 @@ const works = {
 		citation : {
 			authors : [__author_me, __author_JLEsteban, __author_RFerreriCancho],
 			title : "The Linear Arrangement Library. A new tool for research on syntactic dependency structures",
-			proceedings : __rejoinproc_SyntaxFestQuasy2021_name,
+			proceedings : __publishedin_SyntaxFestQuasy2021_name,
 			when : "2021",
 			doi : null,
 			arxiv_id : "2112.02512",
@@ -183,7 +203,7 @@ const works = {
 		citation : {
 			authors : [__author_me, __author_RFerreriCancho],
 			title : "Fast calculation of the variance of edge crossings in random arrangements",
-			repository : __rejoinproc_ARXIV_name,
+			repository : __publishedin_ARXIV_name,
 			when : "2020",
 			doi : null,
 			arxiv_id : "2003.03258"
@@ -199,7 +219,7 @@ const works = {
 		citation : {
 			authors : [__author_me, __author_MMora, __author_RFerreriCancho],
 			title : "Reappraising the distribution of the number of edge crossings of graphs on a sphere",
-			journal : __rejoinproc_JSTAT_name,
+			journal : __publishedin_JSTAT_name,
 			when : "2020.8 (Aug 2020)",
 			pages : "083401",
 			doi : "10.1088/1742-5468/aba0ab",
@@ -216,7 +236,7 @@ const works = {
 		citation : {
 			authors : [__author_me, __author_RFerreriCancho],
 			title : "Edge crossings in random linear arrangements",
-			journal : __rejoinproc_JSTAT_name,
+			journal : __publishedin_JSTAT_name,
 			when : "2020.2 (Feb 2020)",
 			pages : "023403",
 			doi : "10.1088/1742-5468/ab6845",
@@ -236,7 +256,7 @@ const works = {
 		citation : {
 			authors : [__author_me],
 			title : "Edge crossings in linear arrangements: from theory to algorithms and applications",
-			school : __rejoinproc_UPC_name,
+			school : __publishedin_UPC_name,
 			school_url : "https://www.upc.edu/en",
 			when : "July 2019",
 			doi : null,

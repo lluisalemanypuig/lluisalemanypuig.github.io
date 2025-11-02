@@ -135,6 +135,35 @@ function make_tags_list(tag_list) {
 	return tags;
 }
 
+function format_chapter(par, work) {
+	var CITE = work.citation;
+	
+	// title and author
+	par.appendChild(document.createTextNode(" \"" + CITE.title + "\"."));
+	append_authors_list(par, CITE.authors);
+	
+	par.appendChild(document.createTextNode(" " + work.work_type));
+	
+	// where published
+	par.appendChild(document.createTextNode(" in Enciclopedia "));
+	{
+	var enciclopedia_italics = document.createElement("i");
+	enciclopedia_italics.textContent =
+		full_name_plus_short(CITE.enciclopedia, __publishedin_relate[CITE.enciclopedia]);
+	
+	par.appendChild(enciclopedia_italics);
+	}
+	
+	// when published
+	par.appendChild(document.createTextNode(". " + CITE.when));
+	
+	// DOI
+	make_DOI_url(CITE.doi, par, ".");
+	// arXiv url
+	make_ARXIV_url(CITE.arxiv_id, par, ".");
+	par.appendChild(document.createTextNode("."));
+}
+
 function format_thesis(par, work) {
 	var CITE = work.citation;
 	
@@ -170,7 +199,7 @@ function format_preprint_generic(par, work) {
 	{
 	par.appendChild(document.createTextNode(" In repository: "));
 	var preprint_italics = document.createElement("i");
-	preprint_italics.textContent = full_name_plus_short(CITE.repository, __rejoinproc_relate[CITE.repository]);
+	preprint_italics.textContent = full_name_plus_short(CITE.repository, __publishedin_relate[CITE.repository]);
 	par.appendChild(preprint_italics);
 	}
 	
@@ -198,7 +227,7 @@ function format_journal_generic(par, work) {
 	{
 	var journal_italics = document.createElement("i");
 	journal_italics.textContent =
-		full_name_plus_short(CITE.journal, __rejoinproc_relate[CITE.journal]);
+		full_name_plus_short(CITE.journal, __publishedin_relate[CITE.journal]);
 	
 	par.appendChild(journal_italics);
 	}
@@ -238,7 +267,7 @@ function format_conference_proceedings(par, work) {
 		
 		var url_ref = document.createElement("a");
 		url_ref.textContent =
-			full_name_plus_short(CITE.proceedings, __rejoinproc_relate[CITE.proceedings]);
+			full_name_plus_short(CITE.proceedings, __publishedin_relate[CITE.proceedings]);
 		
 		url_ref.href = CITE.proceedings_url;
 		
@@ -248,7 +277,7 @@ function format_conference_proceedings(par, work) {
 	else {
 		var proceedings_italics = document.createElement("i");
 		proceedings_italics.textContent =
-			full_name_plus_short(CITE.proceedings, __rejoinproc_relate[CITE.proceedings]);
+			full_name_plus_short(CITE.proceedings, __publishedin_relate[CITE.proceedings]);
 		
 		par.appendChild(proceedings_italics);
 	}
@@ -286,6 +315,9 @@ function makeFormattedCitation(workid, work) {
 	}
 	else if (work.work_type == __worktype_ConferenceProceedings) {
 		format_conference_proceedings(par, work);
+	}
+	else if (work.work_type == __worktype_Chapter) {
+		format_chapter(par, work);
 	}
 	else {
 		console.error("        Formatting of citation for work type '" + work.work_type + "' not implemented.");
@@ -375,7 +407,7 @@ function populatePublicationList() {
 		return work.tags.includes(use_tag);
 	}
 	function filter_rejoinproc(work) {
-		if (use_rejoinproc == __rejoinproc_all) { return true; }
+		if (use_rejoinproc == __publishedin_all) { return true; }
 		
 		var data = null;
 		if (work.work_type == __worktype_preprint) {

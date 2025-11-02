@@ -87,67 +87,73 @@ const __pubs_dd_authors_id = "pubs_ddAuthors";
 const __div_publist = "publications_list_div";
 const __par_pubs_item_count_id = "pubs_item_count";
 
-// -- Journals --
-const __rejoinproc_all = "All repositories/journals/institutions/proceedings";
-const __rejoinproc_short_all = __rejoinproc_all;
+// -- Published in --
+const __publishedin_all = "All publication targets";
+const __publishedin_short_all = __publishedin_all;
 
-const __rejoinproc_ARXIV_name = "arXiv";
-const __rejoinproc_short_ARXIV_name = "arXiv";
+const __publishedin_ARXIV_name = "arXiv";
+const __publishedin_short_ARXIV_name = "arXiv";
 
-const __rejoinproc_JSCS_name = "Journal of Statistical Computation and Simulation";
-const __rejoinproc_short_JSCS_name = "JSCS";
+const __publishedin_JSCS_name = "Journal of Statistical Computation and Simulation";
+const __publishedin_short_JSCS_name = "JSCS";
 
-const __rejoinproc_JSTAT_name = "Journal of Statistical Mechanics: Theory and Experiment";
-const __rejoinproc_short_JSTAT_name = "JSTAT";
+const __publishedin_JSTAT_name = "Journal of Statistical Mechanics: Theory and Experiment";
+const __publishedin_short_JSTAT_name = "JSTAT";
 
-const __rejoinproc_UPC_name = "Universitat Politècnica de Catalunya";
-const __rejoinproc_short_UPC_name = "UPC";
+const __publishedin_UPC_name = "Universitat Politècnica de Catalunya";
+const __publishedin_short_UPC_name = "UPC";
 
-const __rejoinproc_IPL_name = "Information Processing Letters";
-const __rejoinproc_short_IPL_name = "IPL";
+const __publishedin_IPL_name = "Information Processing Letters";
+const __publishedin_short_IPL_name = "IPL";
 
-const __rejoinproc_PRE_name = "Physical Review E";
-const __rejoinproc_short_PRE_name = "PRE";
+const __publishedin_PRE_name = "Physical Review E";
+const __publishedin_short_PRE_name = "PRE";
 
-const __rejoinproc_CL_name = "Computational Linguistics";
-const __rejoinproc_short_CL_name = "CL";
+const __publishedin_CL_name = "Computational Linguistics";
+const __publishedin_short_CL_name = "CL";
 
-const __rejoinproc_SyntaxFestQuasy2021_name = "Proceedings of the Second Workshop on Quantitative Syntax (Quasy, SyntaxFest 2021)";
-const __rejoinproc_short_SyntaxFestQuasy2021_name = "Quasy, SyntaxFest 2021";
+const __publishedin_SyntaxFestQuasy2021_name = "Proceedings of the Second Workshop on Quantitative Syntax (Quasy, SyntaxFest 2021)";
+const __publishedin_short_SyntaxFestQuasy2021_name = "Quasy, SyntaxFest 2021";
 
-const __rejoinproc_JLM_name = "Journal of Language Modelling";
-const __rejoinproc_short_JLM_name = "JLM";
+const __publishedin_JLM_name = "Journal of Language Modelling";
+const __publishedin_short_JLM_name = "JLM";
 
-var __rejoinproc_relate = {};
-__rejoinproc_relate[__rejoinproc_all] = __rejoinproc_short_all;
-__rejoinproc_relate[__rejoinproc_short_all] = __rejoinproc_all;
+const __publishedin_RCSocialSciences_name = "Reference Collection in Social Sciences";
+const __publishedin_short_RCSocialSciences_name = "RCSS";
 
-__rejoinproc_relate[__rejoinproc_ARXIV_name] = __rejoinproc_short_ARXIV_name;
-__rejoinproc_relate[__rejoinproc_short_ARXIV_name] = __rejoinproc_ARXIV_name;
+var __publishedin_relate = {};
+__publishedin_relate[__publishedin_all] = __publishedin_short_all;
+__publishedin_relate[__publishedin_short_all] = __publishedin_all;
 
-__rejoinproc_relate[__rejoinproc_JSCS_name] = __rejoinproc_short_JSCS_name;
-__rejoinproc_relate[__rejoinproc_short_JSCS_name] = __rejoinproc_JSCS_name;
+__publishedin_relate[__publishedin_ARXIV_name] = __publishedin_short_ARXIV_name;
+__publishedin_relate[__publishedin_short_ARXIV_name] = __publishedin_ARXIV_name;
 
-__rejoinproc_relate[__rejoinproc_JSTAT_name] = __rejoinproc_short_JSTAT_name;
-__rejoinproc_relate[__rejoinproc_short_JSTAT_name] = __rejoinproc_JSTAT_name;
+__publishedin_relate[__publishedin_JSCS_name] = __publishedin_short_JSCS_name;
+__publishedin_relate[__publishedin_short_JSCS_name] = __publishedin_JSCS_name;
 
-__rejoinproc_relate[__rejoinproc_UPC_name] = __rejoinproc_short_UPC_name;
-__rejoinproc_relate[__rejoinproc_short_UPC_name] = __rejoinproc_UPC_name;
+__publishedin_relate[__publishedin_JSTAT_name] = __publishedin_short_JSTAT_name;
+__publishedin_relate[__publishedin_short_JSTAT_name] = __publishedin_JSTAT_name;
 
-__rejoinproc_relate[__rejoinproc_IPL_name] = __rejoinproc_short_IPL_name;
-__rejoinproc_relate[__rejoinproc_short_IPL_name] = __rejoinproc_IPL_name;
+__publishedin_relate[__publishedin_UPC_name] = __publishedin_short_UPC_name;
+__publishedin_relate[__publishedin_short_UPC_name] = __publishedin_UPC_name;
 
-__rejoinproc_relate[__rejoinproc_PRE_name] = __rejoinproc_short_PRE_name;
-__rejoinproc_relate[__rejoinproc_short_PRE_name] = __rejoinproc_PRE_name;
+__publishedin_relate[__publishedin_IPL_name] = __publishedin_short_IPL_name;
+__publishedin_relate[__publishedin_short_IPL_name] = __publishedin_IPL_name;
 
-__rejoinproc_relate[__rejoinproc_CL_name] = __rejoinproc_short_CL_name;
-__rejoinproc_relate[__rejoinproc_short_CL_name] = __rejoinproc_CL_name;
+__publishedin_relate[__publishedin_PRE_name] = __publishedin_short_PRE_name;
+__publishedin_relate[__publishedin_short_PRE_name] = __publishedin_PRE_name;
 
-__rejoinproc_relate[__rejoinproc_SyntaxFestQuasy2021_name] = __rejoinproc_short_SyntaxFestQuasy2021_name;
-__rejoinproc_relate[__rejoinproc_short_SyntaxFestQuasy2021_name] = __rejoinproc_SyntaxFestQuasy2021_name;
+__publishedin_relate[__publishedin_CL_name] = __publishedin_short_CL_name;
+__publishedin_relate[__publishedin_short_CL_name] = __publishedin_CL_name;
 
-__rejoinproc_relate[__rejoinproc_JLM_name] = __rejoinproc_short_JLM_name;
-__rejoinproc_relate[__rejoinproc_short_JLM_name] = __rejoinproc_JLM_name;
+__publishedin_relate[__publishedin_SyntaxFestQuasy2021_name] = __publishedin_short_SyntaxFestQuasy2021_name;
+__publishedin_relate[__publishedin_short_SyntaxFestQuasy2021_name] = __publishedin_SyntaxFestQuasy2021_name;
+
+__publishedin_relate[__publishedin_JLM_name] = __publishedin_short_JLM_name;
+__publishedin_relate[__publishedin_short_JLM_name] = __publishedin_JLM_name;
+
+__publishedin_relate[__publishedin_RCSocialSciences_name] = __publishedin_short_RCSocialSciences_name;
+__publishedin_relate[__publishedin_short_RCSocialSciences_name] = __publishedin_RCSocialSciences_name;
 
 // -- Work types --
 const __worktype_all = "All work types";
@@ -156,6 +162,7 @@ const __worktype_JournalPaper = "Journal Paper";
 const __worktype_MastersThesis = "Masters Thesis";
 const __worktype_PhDThesis = "Ph.D. Thesis";
 const __worktype_ConferenceProceedings = "Conference Proceedings";
+const __worktype_Chapter = "Chapter";
 
 // ----------------
 // -- TALKS PAGE --
