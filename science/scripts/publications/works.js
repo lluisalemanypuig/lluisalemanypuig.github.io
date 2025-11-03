@@ -24,22 +24,22 @@
 const works = {
 	
 	// -----------------------------------------------------------------
-	// 2025
+	// 2026
 	
 	w13 : {
 		work_type : __worktype_Chapter,
 		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Expected_Values, __tag_Algos, __tag_Minimization, __tag_Maximization, __tag_Optimality],
-		year : 2025,
+		year : 2026,
 		citation : {
 			authors : [__author_me, __author_RFerreriCancho],
 			title : "Baselines in Dependency Syntax",
 			enciclopedia : __publishedin_RCSocialSciences_name,
-			when : "October 2025",
+			when : "June 2026",
 			doi : "10.1016/B978-0-323-95504-1.00961-3",
 			arxiv_id : null,
 			url : "https://doi.org/10.1016/B978-0-323-95504-1.00961-3"
 		},
-		biblatex_citation : "@incollection{Alemany2025a,\n\ttitle = {{Baselines in Dependency Synatx}},\n\tauthor = {{Alemany-Puig}, Llu\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tbooktitle = {{Reference Collection in Social Sciences}},\n\tyear = {2025},\n\tdoi = {10.1016/B978-0-323-95504-1.00961-3},\n\tpages = {??}\n}",
+		biblatex_citation : "@incollection{Alemany2025a,\n\ttitle = {{Baselines in Dependency Synatx}},\n\tauthor = {{Alemany-Puig}, Llu\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tbooktitle = {{Reference Collection in Social Sciences}},\n\tyear = {2026},\n\tmonth={06},\n\tdoi = {10.1016/B978-0-323-95504-1.00961-3},\n\tpages = {??}\n}",
 		notes : null
 	},
 	
