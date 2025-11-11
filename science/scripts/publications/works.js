@@ -36,8 +36,7 @@ const works = {
 			enciclopedia : __publishedin_RCSocialSciences_name,
 			when : "June 2026",
 			doi : "10.1016/B978-0-323-95504-1.01024-3",
-			arxiv_id : null,
-			url : "https://doi.org/10.1016/B978-0-323-95504-1.01024-3"
+			arxiv_id : null
 		},
 		biblatex_citation : "@incollection{Gomez2026a,\n\ttitle = {{Formal Constraints on Dependency Syntax}},\n\tauthor = {{G\'{o}mez-Rodr\'{i}guez}, Carlos and {Alemany-Puig}, Llu\'{i}s},\n\tbooktitle = {{Reference Collection in Social Sciences}},\n\tyear = {2026},\n\tmonth={06},\n\tdoi = {10.1016/B978-0-323-95504-1.01024-3},\n\tpages = {??}\n}",
 		notes : null
@@ -53,8 +52,7 @@ const works = {
 			enciclopedia : __publishedin_RCSocialSciences_name,
 			when : "June 2026",
 			doi : "10.1016/B978-0-323-95504-1.00961-3",
-			arxiv_id : null,
-			url : "https://doi.org/10.1016/B978-0-323-95504-1.00961-3"
+			arxiv_id : null
 		},
 		biblatex_citation : "@incollection{Alemany2026a,\n\ttitle = {{Baselines in Dependency Synatx}},\n\tauthor = {{Alemany-Puig}, Llu\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tbooktitle = {{Reference Collection in Social Sciences}},\n\tyear = {2026},\n\tmonth={06},\n\tdoi = {10.1016/B978-0-323-95504-1.00961-3},\n\tpages = {??}\n}",
 		notes : null
