@@ -26,6 +26,23 @@ const works = {
 	// -----------------------------------------------------------------
 	// 2026
 	
+	w14 : {
+		work_type : __worktype_Chapter,
+		tags : [__tag_WordOrder, __tag_Formal_constraints, __tag_LinArr, __tag_Algos],
+		year : 2026,
+		citation : {
+			authors : [__author_CGomezRodriguez, __author_me],
+			title : "Formal Constraints on Dependency Syntax",
+			enciclopedia : __publishedin_RCSocialSciences_name,
+			when : "June 2026",
+			doi : "10.1016/B978-0-323-95504-1.01024-3",
+			arxiv_id : null,
+			url : "https://doi.org/10.1016/B978-0-323-95504-1.01024-3"
+		},
+		biblatex_citation : "@incollection{Gomez2026a,\n\ttitle = {{Formal Constraints on Dependency Syntax}},\n\tauthor = {{G\'{o}mez-Rodr\'{i}guez}, Carlos and {Alemany-Puig}, Llu\'{i}s},\n\tbooktitle = {{Reference Collection in Social Sciences}},\n\tyear = {2026},\n\tmonth={06},\n\tdoi = {10.1016/B978-0-323-95504-1.01024-3},\n\tpages = {??}\n}",
+		notes : null
+	},
+	
 	w13 : {
 		work_type : __worktype_Chapter,
 		tags : [__tag_Quantitative_Dependency_Syntax, __tag_LinArr, __tag_Expected_Values, __tag_Algos, __tag_Minimization, __tag_Maximization, __tag_Optimality],
@@ -39,7 +56,7 @@ const works = {
 			arxiv_id : null,
 			url : "https://doi.org/10.1016/B978-0-323-95504-1.00961-3"
 		},
-		biblatex_citation : "@incollection{Alemany2025a,\n\ttitle = {{Baselines in Dependency Synatx}},\n\tauthor = {{Alemany-Puig}, Llu\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tbooktitle = {{Reference Collection in Social Sciences}},\n\tyear = {2026},\n\tmonth={06},\n\tdoi = {10.1016/B978-0-323-95504-1.00961-3},\n\tpages = {??}\n}",
+		biblatex_citation : "@incollection{Alemany2026a,\n\ttitle = {{Baselines in Dependency Synatx}},\n\tauthor = {{Alemany-Puig}, Llu\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tbooktitle = {{Reference Collection in Social Sciences}},\n\tyear = {2026},\n\tmonth={06},\n\tdoi = {10.1016/B978-0-323-95504-1.00961-3},\n\tpages = {??}\n}",
 		notes : null
 	},
 	
