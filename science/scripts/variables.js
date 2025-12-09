@@ -200,7 +200,7 @@ const __talktype_workshop = "Workshop";
 // -- Talk names --
 const __talkname_all = "All seminars/conferences";
 const __talkname_LIMDA = "LIMDA";
-const __talkname_Zheijang_University_Python_seminar = "Zheijang University -- Python Seminar";
+const __talkname_Zhejiang_University_Python_seminar = "Zhejiang University -- Python Seminar";
 const __talkname_IQLA_GIAT_summer_school = "IQLA-GIAT Summer School";
 const __talkname_QUALICO = "QUALICO";
 const __talkname_PhD_Defense = "Ph. D. Defense";

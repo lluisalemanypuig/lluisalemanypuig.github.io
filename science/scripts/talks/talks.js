@@ -171,7 +171,7 @@ const talks = {
 	
 	CHINA_2021_06_04 : {
 		type : __talktype_workshop,
-		name : __talkname_Zheijang_University_Python_seminar,
+		name : __talkname_Zhejiang_University_Python_seminar,
 		url : "https://cqllab.upc.edu/lal/course_china_june_2021/",
 		
 		title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
@@ -193,7 +193,7 @@ const talks = {
 	},
 	CHINA_2021_06_03 : {
 		type : __talktype_workshop,
-		name : __talkname_Zheijang_University_Python_seminar,
+		name : __talkname_Zhejiang_University_Python_seminar,
 		url : "https://cqllab.upc.edu/lal/course_china_june_2021/",
 		
 		title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
@@ -215,7 +215,7 @@ const talks = {
 	},
 	CHINA_2021_06_01 : {
 		type : __talktype_workshop,
-		name : __talkname_Zheijang_University_Python_seminar,
+		name : __talkname_Zhejiang_University_Python_seminar,
 		url : "https://cqllab.upc.edu/lal/course_china_june_2021/",
 		
 		title : "Quantitative Dependency Syntax with the Linear Arrangement Library (LAL). An introduction",
