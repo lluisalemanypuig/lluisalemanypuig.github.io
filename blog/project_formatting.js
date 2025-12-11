@@ -19,32 +19,32 @@
  */
 
 function makeProjectTagText(repo, project) {
-    if (repo == "lluisalemanypuig") {
-        return `${project}`;
-    }
-    return `${repo}@${project}`;
+	if (repo == "lluisalemanypuig") {
+		return `${project}`;
+	}
+	return `${repo}@${project}`;
 }
 
 function makeProjectDropdownText(repo, project) {
-    if (repo == "lluisalemanypuig") {
-        return project;
-    }
-    return `${repo}@${project}`;
+	if (repo == "lluisalemanypuig") {
+		return project;
+	}
+	return `${repo}@${project}`;
 }
 
 function makeProjectValue(repo, project) {
-    return `${repo}@${project}`;
+	return `${repo}@${project}`;
 }
 
 function retrieveProjectRaw(address_project) {
-    var [repo, project_name] = address_project.split("@");
-    if (project_name == undefined) {
-        project_name = repo;
-        repo = "lluisalemanypuig";
-    }
-    return [repo, project_name];
+	var [repo, project_name] = address_project.split("@");
+	if (project_name == undefined) {
+		project_name = repo;
+		repo = "lluisalemanypuig";
+	}
+	return [repo, project_name];
 }
 
 function retrieveProjectDropdownValue(value) {
-    return address_project.split("@");
+	return address_project.split("@");
 }

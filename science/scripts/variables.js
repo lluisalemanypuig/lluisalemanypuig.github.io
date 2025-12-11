@@ -1,20 +1,20 @@
 /*
  * Personal webpage's scripts
  * Copyright (C) 2020  Lluís Alemany Puig
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published
  * by the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
- * 
+ *
  * Contact: Lluís Alemany Puig (lluis.alemany.puig@gmail.com)
  */
 
@@ -39,7 +39,8 @@ const __url_publications = __url_lalemany + "/publications";
 // -----------------
 // -- Institutions --
 const __institution_all = "All institutions";
-const __institution_UPC = "Universitat Politècnica de Catalunya - BarcelonaTech (UPC)";
+const __institution_UPC =
+	"Universitat Politècnica de Catalunya - BarcelonaTech (UPC)";
 const __institution_Zheihang_University = "Zeijhang University";
 const __institution_GIAT = "GIAT";
 const __institution_IQLA = "IQLA";
@@ -95,10 +96,12 @@ const __publishedin_short_all = __publishedin_all;
 const __publishedin_ARXIV_name = "arXiv";
 const __publishedin_short_ARXIV_name = "arXiv";
 
-const __publishedin_JSCS_name = "Journal of Statistical Computation and Simulation";
+const __publishedin_JSCS_name =
+	"Journal of Statistical Computation and Simulation";
 const __publishedin_short_JSCS_name = "JSCS";
 
-const __publishedin_JSTAT_name = "Journal of Statistical Mechanics: Theory and Experiment";
+const __publishedin_JSTAT_name =
+	"Journal of Statistical Mechanics: Theory and Experiment";
 const __publishedin_short_JSTAT_name = "JSTAT";
 
 const __publishedin_UPC_name = "Universitat Politècnica de Catalunya";
@@ -113,13 +116,15 @@ const __publishedin_short_PRE_name = "PRE";
 const __publishedin_CL_name = "Computational Linguistics";
 const __publishedin_short_CL_name = "CL";
 
-const __publishedin_SyntaxFestQuasy2021_name = "Proceedings of the Second Workshop on Quantitative Syntax (Quasy, SyntaxFest 2021)";
+const __publishedin_SyntaxFestQuasy2021_name =
+	"Proceedings of the Second Workshop on Quantitative Syntax (Quasy, SyntaxFest 2021)";
 const __publishedin_short_SyntaxFestQuasy2021_name = "Quasy, SyntaxFest 2021";
 
 const __publishedin_JLM_name = "Journal of Language Modelling";
 const __publishedin_short_JLM_name = "JLM";
 
-const __publishedin_RCSocialSciences_name = "Reference Collection in Social Sciences";
+const __publishedin_RCSocialSciences_name =
+	"Reference Collection in Social Sciences";
 const __publishedin_short_RCSocialSciences_name = "RCSS";
 
 var __publishedin_relate = {};
@@ -147,14 +152,18 @@ __publishedin_relate[__publishedin_short_PRE_name] = __publishedin_PRE_name;
 __publishedin_relate[__publishedin_CL_name] = __publishedin_short_CL_name;
 __publishedin_relate[__publishedin_short_CL_name] = __publishedin_CL_name;
 
-__publishedin_relate[__publishedin_SyntaxFestQuasy2021_name] = __publishedin_short_SyntaxFestQuasy2021_name;
-__publishedin_relate[__publishedin_short_SyntaxFestQuasy2021_name] = __publishedin_SyntaxFestQuasy2021_name;
+__publishedin_relate[__publishedin_SyntaxFestQuasy2021_name] =
+	__publishedin_short_SyntaxFestQuasy2021_name;
+__publishedin_relate[__publishedin_short_SyntaxFestQuasy2021_name] =
+	__publishedin_SyntaxFestQuasy2021_name;
 
 __publishedin_relate[__publishedin_JLM_name] = __publishedin_short_JLM_name;
 __publishedin_relate[__publishedin_short_JLM_name] = __publishedin_JLM_name;
 
-__publishedin_relate[__publishedin_RCSocialSciences_name] = __publishedin_short_RCSocialSciences_name;
-__publishedin_relate[__publishedin_short_RCSocialSciences_name] = __publishedin_RCSocialSciences_name;
+__publishedin_relate[__publishedin_RCSocialSciences_name] =
+	__publishedin_short_RCSocialSciences_name;
+__publishedin_relate[__publishedin_short_RCSocialSciences_name] =
+	__publishedin_RCSocialSciences_name;
 
 // -- Work types --
 const __worktype_all = "All work types";
@@ -200,7 +209,8 @@ const __talktype_workshop = "Workshop";
 // -- Talk names --
 const __talkname_all = "All seminars/conferences";
 const __talkname_LIMDA = "LIMDA";
-const __talkname_Zhejiang_University_Python_seminar = "Zhejiang University -- Python Seminar";
+const __talkname_Zhejiang_University_Python_seminar =
+	"Zhejiang University -- Python Seminar";
 const __talkname_IQLA_GIAT_summer_school = "IQLA-GIAT Summer School";
 const __talkname_QUALICO = "QUALICO";
 const __talkname_PhD_Defense = "Ph. D. Defense";
