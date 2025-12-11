@@ -26,21 +26,15 @@ function onlyUnique(value, index, self) {
 
 // populate dropdown: use long names for the text, and the short
 // names for the values.
-function addToDropDown(dd, item, relate) {
+function addToDropDown(dd, item, tag_all, func) {
     var opt = document.createElement('option');
-    
-    if (relate == null) {
-        opt.text = item;
-        opt.value = item;
-    }
-    else {
-        opt.text = relate[item];
-        opt.value = item;
-    }
+    const [text, value] = func(item, tag_all);
+    opt.text = text;
+    opt.value = value;
     dd.appendChild(opt);
 }
 
-function populateDropDown(id, what, tag_all) {
+function populateDropDown(id, what, tag_all, func) {
     var all_values = manifest_data.unique_tags[what]
 
     all_values = all_values.filter(onlyUnique);
@@ -55,12 +49,34 @@ function populateDropDown(id, what, tag_all) {
     
     var dd = document.getElementById(id);
     dd.textContent = '';
-    all_values.forEach(function(item) { addToDropDown(dd, item, null); });
+    all_values.forEach(function(item) { addToDropDown(dd, item, tag_all, func); });
+}
+
+function identity(value, _tag_all) { return [value, value]; }
+
+function repositoryProject(value, tag_all) {
+    if (value == tag_all) {
+        return [tag_all, tag_all];
+    }
+    const [repo, project] = retrieveProjectRaw(value);
+    const dropdown_text = makeProjectDropdownText(repo, project);
+    const dropdown_value = makeProjectValue(repo, project);
+    return [dropdown_text, dropdown_value];
 }
 
 function populateDropDowns() {
-    populateDropDown("years_select", "years", "All years");
-    populateDropDown("projects_select", "projects", "All projects");
-    populateDropDown("topics_select", "topics", "All topics");
-    populateDropDown("languages_select", "languages", "All languages");
+    populateDropDown("years_select", "years", "All years", identity);
+    populateDropDown(
+      "projects_select",
+      "projects",
+      "All projects",
+      repositoryProject
+    );
+    populateDropDown("topics_select", "topics", "All topics", identity);
+    populateDropDown(
+      "languages_select",
+      "languages",
+      "All languages",
+      identity
+    );
 }
