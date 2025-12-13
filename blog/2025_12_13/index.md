@@ -17,7 +17,7 @@ and we want to write a whole `matrix` into standard output. This is the way to d
 ```c++
 std::ostream& operator<< (std::ostream& os, const matrix& M)
 {
-	for (int i = 0; i < M.n; ++i) {
+    for (int i = 0; i < M.n; ++i) {
         os << 'x';
         for (int j = 1; j < M.m; ++j) {
             os << " x";
@@ -26,7 +26,7 @@ std::ostream& operator<< (std::ostream& os, const matrix& M)
             os << "\n";
         }
     }
-	return os;
+    return os;
 }
 ```
 
@@ -60,14 +60,14 @@ I eventually figured out that I could create a singleton class that lives in the
 ```c++
 class decorator {
 public:
-	std::string_view tabulator_string;
+    std::string_view tabulator_string;
     static decorator& get_instance() noexcept
-	{
-		static decorator i;
-		return i;
-	}
+    {
+        static decorator i;
+        return i;
+    }
 private:
-	decorator() noexcept = default;
+    decorator() noexcept = default;
 };
 ```
 
@@ -77,7 +77,7 @@ And I just had to update the `operator<<` like this
 std::ostream& operator<< (std::ostream& os, const matrix& M)
 {
     auto& f = decorator::get_instance();
-	for (int i = 0; i < M.n; ++i) {
+    for (int i = 0; i < M.n; ++i) {
         os << f.tabulator_string;
         os << 'x';
         for (int j = 1; j < M.m; ++j) {
@@ -88,7 +88,7 @@ std::ostream& operator<< (std::ostream& os, const matrix& M)
         }
     }
     f.tabulator_string = "";
-	return os;
+    return os;
 }
 ```
 And, the following produces the desired output
@@ -108,7 +108,7 @@ struct wrapper {
 
 wrapper operator""_tab (const char *str, const std::size_t s) noexcept
 {
-	return wrapper{.s = std::string_view{str, s}};
+    return wrapper{.s = std::string_view{str, s}};
 }
 
 std::ostream& operator<< (std::ostream& os, const wrapper& w)
@@ -132,9 +132,9 @@ First define
 ```c++
 template <typename T>
 struct decorator {
-	std::string_view prefix;
-	const T& value;
-	std::string_view suffix;
+    std::string_view prefix;
+    const T& value;
+    std::string_view suffix;
 };
 ```
 (I have added the `suffix` to illustrate the flexibility of the method.)
@@ -144,7 +144,7 @@ The application of expression templates here is simple: define several `operator
 ```c++
 std::ostream& operator<< (std::ostream& os, const decorator<matrix>& M)
 {
-	const auto& prefix = p.prefix;
+    const auto& prefix = p.prefix;
     const matrix& M = p.value;
     const auto& suffix = p.suffix;
     for (int i = 0; i < M.n; ++i) {
@@ -157,7 +157,7 @@ std::ostream& operator<< (std::ostream& os, const decorator<matrix>& M)
             os << '\n';
         }
     }
-	return os;
+    return os;
 }
 ```
 
@@ -167,30 +167,30 @@ The operators are:
 template <typename T>
 decorator<T> operator+ (std::string_view w, const T& t) noexcept
 {
-	return decorator<T>{.prefix = w, .value = t, .suffix = ""};
+    return decorator<T>{.prefix = w, .value = t, .suffix = ""};
 }
 
 // Allows writing: M + "   |"
 template <typename T>
 decorator<T> operator+ (const T& t, std::string_view w) noexcept
 {
-	return decorator<T>{.prefix = "", .value = t, .suffix = w};
+    return decorator<T>{.prefix = "", .value = t, .suffix = w};
 }
 
 // Allows writing: ("|   " + M) + "   |"
 template <typename T>
 decorator<T> operator+ (decorator<T> t, std::string_view w) noexcept
 {
-	t.suffix = w;
-	return t;
+    t.suffix = w;
+    return t;
 }
 
 // Allows writing: "|   " + (M + "   |")
 template <typename T>
 decorator<T> operator+ (std::string_view w, decorator<T> t) noexcept
 {
-	t.prefix = w;
-	return t;
+    t.prefix = w;
+    return t;
 }
 ```
 
@@ -221,4 +221,4 @@ Long live expression templates. This specialized application into formatted outp
 - creating _independent_ objects in different threads,
 - creating _lightweight_ objects since the actual value to be printed is taken as a `const &` and the prefix and suffix strings are simple `std::string_view` objects.
 
-The full solution using expression templates is attached to this blog post in [this file](https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blog/2025_12_13/code.cpp). There is implemented the `std::formatter` so that `decorator` can be printed using `std::print` and `std::format` in C++23.
+The full solution using expression templates is attached to this blog post in [this file](/blog/2025_12_13/code.cpp). There is implemented the `std::formatter` so that `decorator` can be printed using `std::print` and `std::format` in C++23.
