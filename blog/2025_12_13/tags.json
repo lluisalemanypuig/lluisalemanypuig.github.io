@@ -1,0 +1,7 @@
+{
+  "date": "2025_12_13",
+  "title": "A better decorator for 'formatted' output",
+  "projects": ["LAL-project@linear-arrangement-library"],
+  "topics": ["Formatted output"],
+  "languages": ["C++", "C++23"]
+}
