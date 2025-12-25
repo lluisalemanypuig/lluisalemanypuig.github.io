@@ -12,6 +12,14 @@ def read_tags(dir):
             str += line
     return eval(str)
 
+def remove_quotes(l):
+    if isinstance(l, str):
+        return l.replace('"', r'\"').replace("'", r'\"')
+    
+    k = list(map(lambda s : s.replace('"', r'\"'), l))
+    k = list(map(lambda s : s.replace("'", r'\"'), k))
+    return k
+
 directory_tags = []
 unique_tags = {"years": [], "title": [], "projects": [], "topics": [], "languages": []}
 
@@ -19,6 +27,12 @@ dirs_list = reversed(sorted(filter(lambda p: os.path.isdir(p), os.listdir(".")))
 for d in dirs_list:
 
     tags = read_tags(d)
+
+    tags["title"] = remove_quotes(tags["title"])
+    tags["projects"] = remove_quotes(tags["projects"])
+    tags["topics"] = remove_quotes(tags["topics"])
+    tags["languages"] = remove_quotes(tags["languages"])
+
     directory_tags += [deepcopy(tags)]
 
     unique_tags["years"].append(tags["date"][0:4])
@@ -38,6 +52,5 @@ with open("manifest.json", "w") as f:
     data["directories"] = directory_tags
     data["unique_tags"] = unique_tags
 
-    s = str(data)
-    s = s.replace("'", '"')
+    s = str(data).replace("'", '"').replace("\\\\", "\\")
     f.write(s)
