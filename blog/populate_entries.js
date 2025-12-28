@@ -89,7 +89,6 @@ function format_tags(div, entry) {
 		li.appendChild(document.createTextNode("Projects:"));
 
 		for (var [index, address_project] of entry.projects.entries()) {
-			console.log(address_project);
 			var project_name_field = document.createElement("span");
 
 			const [repo, project] = retrieveProjectRaw(address_project);
@@ -164,7 +163,7 @@ function populateFilteredEntriesList() {
 		if (use_year == "All years") {
 			return true;
 		}
-		return entry.date.split("_").map(Number)[0] == use_year;
+		return entry.date.split("/").map(Number)[0] == use_year;
 	}
 	function filter_by_project(entry) {
 		if (use_project == "All projects") {
