@@ -50,11 +50,11 @@ We can get a better intuition more easily through an example. Consider the order
 
 You can already see that what we get is some kind of tree of interpolation operations. At the leaves we have our points, in the next level there are the curves $B_i^{(1)}$, in the next level the curves $B_i^{(2)}$, and so on and so forth.
 
-<img src="/graphics/tree.png" alt="The tree of interpolation operations for the points A, B, C, D, E, F" width="400"/>
+<img src="graphics/tree.png" alt="The tree of interpolation operations for the points A, B, C, D, E, F" width="400"/>
 
 In the following figure you can see an example with points $A=(0,0)$, $B=(2,3)$, $C=(4,3)$, $D=(6,-3)$, $E=(8,-3)$, $F=(10,0)$.
 
-<img src="/graphics/curve.png" alt="An example of a Bézier curve with 6 points" width="400"/>
+<img src="graphics/curve.png" alt="An example of a Bézier curve with 6 points" width="400"/>
 
 I have included a [geogebra file](/graphics/bezier.ggb) for you to play with this specific Bézier curve interactively.
 
@@ -172,7 +172,7 @@ $$
 
 This can be represented graphically with the following figure.
 
-<img src="/graphics/point_bezier.png" alt="Interpolating a point and a segment, or three points" width="400"/>
+<img src="graphics/point_bezier.png" alt="Interpolating a point and a segment, or three points" width="400"/>
 
 This time the result is a `bezier` object. This is how we can do this:
 
