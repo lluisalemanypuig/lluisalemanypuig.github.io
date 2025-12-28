@@ -1,6 +1,15 @@
 import os
 from copy import deepcopy
 
+def list_directories():
+    years_list = reversed(sorted(filter(lambda p: os.path.isdir(p), os.listdir("."))))
+    for y in years_list:
+        months_list = reversed(sorted( os.listdir(f"./{y}/")))
+        for m in months_list:
+            days_list = reversed(sorted(os.listdir(f"./{y}/{m}/")))
+            for d in days_list:
+                yield f"{y}/{m}/{d}"
+
 def print_dict(d):
     for v, k in d.items():
         print(f"{v} : {k}")
@@ -23,8 +32,7 @@ def remove_quotes(l):
 directory_tags = []
 unique_tags = {"years": [], "title": [], "projects": [], "topics": [], "languages": []}
 
-dirs_list = reversed(sorted(filter(lambda p: os.path.isdir(p), os.listdir("."))))
-for d in dirs_list:
+for d in list_directories():
 
     tags = read_tags(d)
 
