@@ -30,7 +30,7 @@ def remove_quotes(l):
     return k
 
 directory_tags = []
-unique_tags = {"years": [], "title": [], "projects": [], "topics": [], "languages": []}
+unique_tags = {"years": [], "projects": [], "topics": [], "languages": []}
 
 for d in list_directories():
 
@@ -44,13 +44,11 @@ for d in list_directories():
     directory_tags += [deepcopy(tags)]
 
     unique_tags["years"].append(tags["date"][0:4])
-    unique_tags["title"].append(tags["title"])
     unique_tags["projects"] += tags["projects"]
     unique_tags["topics"] += tags["topics"]
     unique_tags["languages"] += tags["languages"]
 
 unique_tags["years"] = list(set(unique_tags["years"]))
-unique_tags["title"] = list(set(unique_tags["title"]))
 unique_tags["projects"] = list(set(unique_tags["projects"]))
 unique_tags["topics"] = list(set(unique_tags["topics"]))
 unique_tags["languages"] = list(set(unique_tags["languages"]))
