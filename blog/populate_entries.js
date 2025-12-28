@@ -18,14 +18,18 @@
  * Contact: Lluís Alemany Puig (lluis.alemany.puig@gmail.com)
  */
 
+function date_split(date) {
+	return date.split("/");
+}
+
 function get_ordinal(n) {
 	const s = ["", "st", "nd", "rd"];
 	const r = n < 10 || n > 19 ? n % 10 : n;
 	return n + (1 <= r && r <= 3 ? s[r] : "th");
 }
 
-function format_date(input) {
-	const [year, month, day] = input.split("/").map(Number);
+function format_date(date) {
+	const [year, month, day] = date_split(date).map(Number);
 
 	const month_names = [
 		"January",
@@ -163,7 +167,7 @@ function populateFilteredEntriesList() {
 		if (use_year == "All years") {
 			return true;
 		}
-		return entry.date.split("/").map(Number)[0] == use_year;
+		return date_split(entry.date).map(Number)[0] == use_year;
 	}
 	function filter_by_project(entry) {
 		if (use_project == "All projects") {
@@ -205,7 +209,7 @@ function populateFilteredEntriesList() {
 			continue;
 		}
 
-		const [year, _, __] = entry.date.split("_").map(Number);
+		const [year, _, __] = date_split(date).map(Number);
 		if (previous_year == undefined || year != previous_year) {
 			previous_year = year;
 			const h2 = document.createElement("h2");
