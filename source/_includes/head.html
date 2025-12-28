@@ -1,0 +1,21 @@
+<!-- 
+From: https://github.com/VincentTam/vincenttam.github.io/blob/source/source/_includes/head.html
+
+-->
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>{% if page.title %}{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %} - {% endif %}{{ site.title }}</title>
+    <meta name="author" content="{{ site.author }}">
+
+    <meta name="description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
+
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$','$'], ['\\(','\\)']] }
+        };
+    </script>
+    <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js">
+    </script>
+</head>
