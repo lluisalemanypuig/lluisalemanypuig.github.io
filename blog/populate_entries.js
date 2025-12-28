@@ -209,7 +209,7 @@ function populateFilteredEntriesList() {
 			continue;
 		}
 
-		const [year, _, __] = date_split(date).map(Number);
+		const [year, _, __] = date_split(entry.date).map(Number);
 		if (previous_year == undefined || year != previous_year) {
 			previous_year = year;
 			const h2 = document.createElement("h2");
