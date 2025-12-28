@@ -35,11 +35,11 @@ unique_tags = {"years": [], "projects": [], "topics": [], "languages": []}
 for d in list_directories():
 
     tags = read_tags(d)
-
+    tags["date"] = tags["date"].replace('_', '/')
     tags["title"] = remove_quotes(tags["title"])
-    tags["projects"] = remove_quotes(tags["projects"])
-    tags["topics"] = remove_quotes(tags["topics"])
-    tags["languages"] = remove_quotes(tags["languages"])
+    tags["projects"] = sorted(remove_quotes(tags["projects"]))
+    tags["topics"] = sorted(remove_quotes(tags["topics"]))
+    tags["languages"] = sorted(remove_quotes(tags["languages"]))
 
     directory_tags += [deepcopy(tags)]
 
@@ -48,10 +48,10 @@ for d in list_directories():
     unique_tags["topics"] += tags["topics"]
     unique_tags["languages"] += tags["languages"]
 
-unique_tags["years"] = list(set(unique_tags["years"]))
-unique_tags["projects"] = list(set(unique_tags["projects"]))
-unique_tags["topics"] = list(set(unique_tags["topics"]))
-unique_tags["languages"] = list(set(unique_tags["languages"]))
+unique_tags["years"] = sorted(list(set(unique_tags["years"])))
+unique_tags["projects"] = sorted(list(set(unique_tags["projects"])))
+unique_tags["topics"] = sorted(list(set(unique_tags["topics"])))
+unique_tags["languages"] = sorted(list(set(unique_tags["languages"])))
 
 with open("manifest.json", "w") as f:
     data = dict([])
