@@ -25,7 +25,7 @@ function get_ordinal(n) {
 }
 
 function format_date(input) {
-	const [year, month, day] = input.split("_").map(Number);
+	const [year, month, day] = input.split("/").map(Number);
 
 	const month_names = [
 		"January",
