@@ -2,6 +2,6 @@
   "date": "2025_12_27",
   "title": "Expression templates applied to Bézier curves",
   "projects": [],
-  "topics": ["Expression templates", "Compilation time"],
+  "topics": ["Expression templates", "Compilation time", "Template metaprogramming"],
   "languages": ["C++", "C++20"]
 }
