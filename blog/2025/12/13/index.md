@@ -221,4 +221,4 @@ Long live expression templates. This specialized application into formatted outp
 - creating _independent_ objects in different threads,
 - creating _lightweight_ objects since the actual value to be printed is taken as a `const &` and the prefix and suffix strings are simple `std::string_view` objects.
 
-The full solution using expression templates is attached to this blog post in [this file](/blog/2025_12_13/code.cpp). There is implemented the `std::formatter` so that `decorator` can be printed using `std::print` and `std::format` in C++23.
+The full solution using expression templates is attached to this blog post in [this file](/blog/2025/12/13/code.cpp). There is implemented the `std::formatter` so that `decorator` can be printed using `std::print` and `std::format` in C++23.
