@@ -1,0 +1,7 @@
+{
+  "date": "2026_01_20",
+  "title": "When calling descructors is necessary (maybe)",
+  "projects": ["chesspebase"],
+  "topics": ["Concurrency", "Memory management", "Placement new", "Destructors"],
+  "languages": ["C++"]
+}
