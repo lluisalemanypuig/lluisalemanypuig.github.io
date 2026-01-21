@@ -1,0 +1,7 @@
+{
+  "date": "2026_01_21",
+  "title": "Placement new operator is more useful than you think",
+  "projects": [],
+  "topics": ["Memory management", "Placement new", "Destructors"],
+  "languages": ["C++" ,"C++17"]
+}
