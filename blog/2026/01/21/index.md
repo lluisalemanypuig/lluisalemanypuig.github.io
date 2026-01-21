@@ -1,6 +1,6 @@
 # Placement new operator is more useful than you think
 
-In [my last post](blog/2026/01/20) I wrote about a case where calling the destructor of a class is necessary to avoid memory leaks. That came about from moving a `std::vector` into an array `char[]` using placement new, and then choosing one of two options
+In [my last post](/blog/2026/01/20) I wrote about a case where calling the destructor of a class is necessary to avoid memory leaks. That came about from moving a `std::vector` into an array `char[]` using placement new, and then choosing one of two options
 - retrieving the `std::vector` in an easier way, which leads to needing to call the destructor,
 - retrieving the `std::vector` in a more difficult way, which uses the placement new operator, which removes the need to call the destructor.
 
