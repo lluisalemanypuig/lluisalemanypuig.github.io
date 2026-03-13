@@ -123,6 +123,10 @@ const __publishedin_short_SyntaxFestQuasy2021_name = "Quasy, SyntaxFest 2021";
 const __publishedin_JLM_name = "Journal of Language Modelling";
 const __publishedin_short_JLM_name = "JLM";
 
+const __publishedin_InternationalEncyclopediaOfLinguistics_name =
+	"International Encyclopedia of Language and Linguistics";
+const __publishedin_short_InternationalEncyclopediaOfLinguistics_name = "IELL";
+
 const __publishedin_RCSocialSciences_name =
 	"Reference Collection in Social Sciences";
 const __publishedin_short_RCSocialSciences_name = "RCSS";
@@ -159,6 +163,11 @@ __publishedin_relate[__publishedin_short_SyntaxFestQuasy2021_name] =
 
 __publishedin_relate[__publishedin_JLM_name] = __publishedin_short_JLM_name;
 __publishedin_relate[__publishedin_short_JLM_name] = __publishedin_JLM_name;
+
+__publishedin_relate[__publishedin_InternationalEncyclopediaOfLinguistics_name] =
+	__publishedin_short_InternationalEncyclopediaOfLinguistics_name;
+__publishedin_relate[__publishedin_short_InternationalEncyclopediaOfLinguistics_name] =
+	__publishedin_InternationalEncyclopediaOfLinguistics_name;
 
 __publishedin_relate[__publishedin_RCSocialSciences_name] =
 	__publishedin_short_RCSocialSciences_name;

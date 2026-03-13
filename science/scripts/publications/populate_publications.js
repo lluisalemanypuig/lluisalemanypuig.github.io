@@ -154,12 +154,22 @@ function format_chapter(par, work) {
 	par.appendChild(document.createTextNode(" " + work.work_type));
 
 	// where published
-	par.appendChild(document.createTextNode(" in Enciclopedia "));
+	par.appendChild(document.createTextNode(" in "));
 	{
 		var enciclopedia_italics = document.createElement("i");
 		enciclopedia_italics.textContent = full_name_plus_short(
 			CITE.enciclopedia,
 			__publishedin_relate[CITE.enciclopedia]
+		);
+
+		par.appendChild(enciclopedia_italics);
+	}
+	par.appendChild(document.createTextNode(". In series "));
+	{
+		var enciclopedia_italics = document.createElement("i");
+		enciclopedia_italics.textContent = full_name_plus_short(
+			CITE.series,
+			__publishedin_relate[CITE.series]
 		);
 
 		par.appendChild(enciclopedia_italics);

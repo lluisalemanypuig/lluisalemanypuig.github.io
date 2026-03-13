@@ -37,13 +37,15 @@ const works = {
 		citation: {
 			authors: [__author_CGomezRodriguez, __author_me],
 			title: "Formal Constraints on Dependency Syntax",
-			enciclopedia: __publishedin_RCSocialSciences_name,
+			enciclopedia: __publishedin_InternationalEncyclopediaOfLinguistics_name,
+			edition: "3rd",
+			series: __publishedin_RCSocialSciences_name,
 			when: "June 2026",
 			doi: "10.1016/B978-0-323-95504-1.01024-3",
 			arxiv_id: null,
 		},
 		biblatex_citation:
-			"@incollection{Gomez2026a,\n\ttitle = {{Formal Constraints on Dependency Syntax}},\n\tauthor = {{G'{o}mez-Rodr'{i}guez}, Carlos and {Alemany-Puig}, Llu'{i}s},\n\tbooktitle = {{Reference Collection in Social Sciences}},\n\tyear = {2026},\n\tmonth={06},\n\tdoi = {10.1016/B978-0-323-95504-1.01024-3},\n\tpages = {??}\n}",
+			"@incollection{Gomez2026a,\n\ttitle = {{Formal Constraints on Dependency Syntax}},\n\tauthor = {{G'{o}mez-Rodr'{i}guez}, Carlos and {Alemany-Puig}, Llu'{i}s},\n\tbooktitle = {{International Encyclopedia of Language and Linguistics}},\n\tseries = {{Reference Collection in Social Sciences}},\n\tpublisher = {Elsevier},\n\tyear = {2026},\n\tmonth = {06},\n\tdoi = {10.1016/B978-0-323-95504-1.01024-3},\n\tpages = {??}\n}",
 		notes: null,
 	},
 
@@ -62,13 +64,15 @@ const works = {
 		citation: {
 			authors: [__author_me, __author_RFerreriCancho],
 			title: "Baselines in Dependency Syntax",
-			enciclopedia: __publishedin_RCSocialSciences_name,
+			enciclopedia: __publishedin_InternationalEncyclopediaOfLinguistics_name,
+			edition: "3rd",
+			series: __publishedin_RCSocialSciences_name,
 			when: "June 2026",
 			doi: "10.1016/B978-0-323-95504-1.00961-3",
 			arxiv_id: null,
 		},
 		biblatex_citation:
-			"@incollection{Alemany2026a,\n\ttitle = {{Baselines in Dependency Synatx}},\n\tauthor = {{Alemany-Puig}, Llu'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tbooktitle = {{Reference Collection in Social Sciences}},\n\tyear = {2026},\n\tmonth={06},\n\tdoi = {10.1016/B978-0-323-95504-1.00961-3},\n\tpages = {??}\n}",
+			"@incollection{Alemany2026a,\n\ttitle = {{Baselines in Dependency Synatx}},\n\tauthor = {{Alemany-Puig}, Llu'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tbooktitle = {{International Encyclopedia of Language and Linguistics}},\n\tseries = {{Reference Collection in Social Sciences}},\n\tpublisher = {Elsevier},\n\tyear = {2026},\n\tmonth = {06},\n\tdoi = {10.1016/B978-0-323-95504-1.00961-3},\n\tpages = {??}\n}",
 		notes: null,
 	},
 
