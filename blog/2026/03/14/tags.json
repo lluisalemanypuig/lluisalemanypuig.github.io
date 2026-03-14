@@ -1,0 +1,7 @@
+{
+  "date": "2026_03_14",
+  "title": "Proper creation and concatenation of strings at compile time",
+  "projects": [],
+  "topics": ["Compilation time", "Template metaprogramming", "String concatenation"],
+  "languages": ["C++", "C++20"]
+}
