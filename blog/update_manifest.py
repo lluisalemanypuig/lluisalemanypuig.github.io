@@ -32,7 +32,7 @@ def remove_quotes(l):
     k = list(map(lambda s : s.replace("'", r'\"'), k))
     return k
 
-directory_tags = []
+post_tags = []
 unique_tags = {"years": [], "projects": [], "topics": [], "languages": []}
 
 for d in list_directories():
@@ -44,7 +44,7 @@ for d in list_directories():
     tags["topics"] = sorted(remove_quotes(tags["topics"]))
     tags["languages"] = sorted(remove_quotes(tags["languages"]))
 
-    directory_tags += [deepcopy(tags)]
+    post_tags += [deepcopy(tags)]
 
     unique_tags["years"].append(tags["date"][0:4])
     unique_tags["projects"] += tags["projects"]
@@ -58,7 +58,7 @@ unique_tags["languages"] = sorted(list(set(unique_tags["languages"])))
 
 with open("manifest.json", "w") as f:
     data = dict([])
-    data["directories"] = directory_tags
+    data["posts"] = post_tags
     data["unique_tags"] = unique_tags
 
     s = str(data).replace("'", '"').replace("\\\\", "\\")
