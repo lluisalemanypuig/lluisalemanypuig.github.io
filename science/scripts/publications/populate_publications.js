@@ -318,9 +318,9 @@ function format_conference_proceedings(par, work) {
 	// arXiv url
 	make_ARXIV_url(CITE.arxiv_id, par, ".");
 	// url to proceedings paper
-	make_url(". Online at: ", CITE.paper_url, CITE.paper_url, par);
+	make_url(". Proceedings paper online ", "here", CITE.paper_url, par);
 	// url to poster paper
-	make_url(". Poster: ", CITE.poster_url, CITE.poster_url, par);
+	make_url(". Poster online ", "here", CITE.poster_url, par);
 
 	// finish
 	par.appendChild(document.createTextNode("."));
