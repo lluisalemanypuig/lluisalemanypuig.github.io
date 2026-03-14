@@ -2,6 +2,6 @@
   "date": "2025_09_11",
   "title": "ChatGPT bloopers -- Agree to disagree?",
   "projects": [],
-  "topics": ["ChatGPT"],
+  "topics": ["ChatGPT", "String concatenation"],
   "languages": ["C++", "C++20"]
 }
