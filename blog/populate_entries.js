@@ -141,6 +141,29 @@ function format_tags(div, entry) {
 
 		div.appendChild(li);
 	}
+
+	if (entry.crossreferences.length > 0) {
+		var li = document.createElement("li");
+		li.style.listStyleType = "none";
+
+		li.appendChild(make_tab_span());
+		li.appendChild(document.createTextNode("Cross-posts:"));
+
+		for (var [index, reference] of entry.crossreferences.entries()) {
+			var url = document.createElement("a");
+			url.href = `https://lluisalemanypuig.github.io/blog/${reference}`;
+			url.textContent = `${reference}`;
+			url.style.color = "orange";
+			li.appendChild(document.createTextNode(" "));
+			li.appendChild(url);
+
+			if (index < entry.crossreferences.length - 1) {
+				li.appendChild(document.createTextNode(","));
+			}
+		}
+
+		div.appendChild(li);
+	}
 }
 
 function populateFilteredEntriesList() {
@@ -196,7 +219,7 @@ function populateFilteredEntriesList() {
 
 	var previous_year = undefined;
 
-	const directory_data = manifest_data["directories"];
+	const directory_data = manifest_data["posts"];
 	for (var i = 0; i < directory_data.length; ++i) {
 		const entry = directory_data[i];
 		const to_be_included =
