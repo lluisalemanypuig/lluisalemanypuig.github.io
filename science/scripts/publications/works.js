@@ -37,7 +37,8 @@ const works = {
 		citation: {
 			authors: [__author_CGomezRodriguez, __author_me],
 			title: "Formal Constraints on Dependency Syntax",
-			enciclopedia: __publishedin_InternationalEncyclopediaOfLinguistics_name,
+			enciclopedia:
+				__publishedin_InternationalEncyclopediaOfLinguistics_name,
 			edition: "3rd",
 			series: __publishedin_RCSocialSciences_name,
 			when: "June 2026",
@@ -64,7 +65,8 @@ const works = {
 		citation: {
 			authors: [__author_me, __author_RFerreriCancho],
 			title: "Baselines in Dependency Syntax",
-			enciclopedia: __publishedin_InternationalEncyclopediaOfLinguistics_name,
+			enciclopedia:
+				__publishedin_InternationalEncyclopediaOfLinguistics_name,
 			edition: "3rd",
 			series: __publishedin_RCSocialSciences_name,
 			when: "June 2026",
@@ -263,7 +265,7 @@ const works = {
 			proceedings_url: "https://aclanthology.org/volumes/2021.quasy-1/",
 			paper_url: "https://aclanthology.org/2021.quasy-1.1/",
 			poster_url:
-				"https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/talks_files/SyntaxFest2021_LAL_poster.pdf",
+				"https://github.com/lluisalemanypuig/lluisalemanypuig.github.io/blob/master/science/talks/files/SyntaxFest2021_LAL_poster.pdf",
 		},
 		biblatex_citation:
 			"@inproceedings{Alemany2021a,\n\ttitle = {{The Linear Arrangement Library. A new tool for research on syntactic dependency structures}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and Esteban, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\tarxivId = {2112.02512},\n\tbooktitle = {{P}roceedings of the {S}econd {W}orkshop on {Q}uantitative {S}yntax ({Q}uasy, {S}yntaxFest 2021)},\n\turl = {https://aclanthology.org/2021.quasy-1.1},\n\tmonth = {dec},\n\tyear = {2021},\n\taddress = {Sofia, Bulgaria},\n\tpublisher = {Association for Computational Linguistics},\n\tpages = {1--16}\n}",

@@ -86,7 +86,7 @@ const talks = {
 	QUALICO_2023: {
 		type: __talktype_conference,
 		name: __talkname_QUALICO,
-		url: "https://wp.unil.ch/qualico2023/",
+		url: "https://www.unil.ch/events/en/1686236546152",
 
 		title: "Syntactic development and optimality of dependency distances for Japanese as a second language",
 		authors: [
