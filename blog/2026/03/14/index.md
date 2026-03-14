@@ -76,7 +76,7 @@ The answer proposed by think-cell in the aforementioned video is simple
 * in order to concatenate two strings, create a new container whose type contains the concatenated strings, and
 * put the values in the type of the container into a variable that has type `const char *`.
 
-In a [previous blog post](/blog/2025/12/27) I showed how types play an important role when constructing Bézier curves at compile time.
+In a [previous post](/blog/2025/12/27) I showed how types play an important role when constructing Bézier curves at compile time.
 
 The explanations below show a simplified version of think-cell's code in their library, only the code below this line was taken from there.
 
