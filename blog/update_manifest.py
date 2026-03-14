@@ -4,6 +4,9 @@ from copy import deepcopy
 def list_directories():
     years_list = reversed(sorted(filter(lambda p: os.path.isdir(p), os.listdir("."))))
     for y in years_list:
+        if y == "20xx":
+            continue
+
         months_list = reversed(sorted( os.listdir(f"./{y}/")))
         for m in months_list:
             days_list = reversed(sorted(os.listdir(f"./{y}/{m}/")))
@@ -33,7 +36,7 @@ directory_tags = []
 unique_tags = {"years": [], "projects": [], "topics": [], "languages": []}
 
 for d in list_directories():
-
+   
     tags = read_tags(d)
     tags["date"] = tags["date"].replace('_', '/')
     tags["title"] = remove_quotes(tags["title"])
