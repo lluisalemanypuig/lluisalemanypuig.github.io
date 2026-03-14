@@ -3,5 +3,6 @@
   "title": "Expression templates applied to Bézier curves",
   "projects": [],
   "topics": ["Expression templates", "Compilation time", "Template metaprogramming"],
+  "crossreferences": ["2025/12/13"],
   "languages": ["C++", "C++20"]
 }

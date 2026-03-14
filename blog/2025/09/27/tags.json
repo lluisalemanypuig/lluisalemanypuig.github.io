@@ -3,5 +3,6 @@
   "title": "Yet another instrumentator for your C++ projects",
   "projects": ["flame-charts"],
   "topics": ["Code Instrumentation"],
+  "crossreferences": [],
   "languages": ["C++"]
 }

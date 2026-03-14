@@ -3,5 +3,6 @@
   "title": "A better decorator for 'formatted' output",
   "projects": ["LAL-project@linear-arrangement-library"],
   "topics": ["Formatted output", "Expression templates"],
+  "crossreferences": [],
   "languages": ["C++", "C++23"]
 }

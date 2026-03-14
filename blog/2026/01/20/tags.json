@@ -3,5 +3,6 @@
   "title": "When calling descructors is necessary (maybe)",
   "projects": ["chesspebase"],
   "topics": ["Concurrency", "Memory management", "Placement new", "Destructors"],
+  "crossreferences": [],
   "languages": ["C++", "C++17"]
 }

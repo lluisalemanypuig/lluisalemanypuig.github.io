@@ -3,5 +3,6 @@
   "title": "Placement new operator is more useful than you think",
   "projects": [],
   "topics": ["Memory management", "Placement new", "Destructors"],
+  "crossreferences": ["2026/01/20"],
   "languages": ["C++", "C++17"]
 }
