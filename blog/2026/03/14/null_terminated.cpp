@@ -19,9 +19,9 @@ int main()
 	std::string_view full_name{full_name_str};
 	std::string_view partial_name{&full_name_str[0], &full_name_str[4]};
 
-	std::ifstream fin2(full_name.data());
-	print_entire_file(fin2);
-
-	std::ifstream fin1(partial_name.data());
+	std::ifstream fin1(full_name.data());
 	print_entire_file(fin1);
+
+	std::ifstream fin2(partial_name.data());
+	print_entire_file(fin2);
 }
