@@ -34,11 +34,11 @@ int main()
 	std::string_view full_name{full_name_str};
 	std::string_view partial_name{&full_name_str[0], &full_name_str[4]};
 
-	std::ifstream fin2(full_name.data());
-	print_entire_file(fin2);
-
-	std::ifstream fin1(partial_name.data());
+	std::ifstream fin1(full_name.data());
 	print_entire_file(fin1);
+
+	std::ifstream fin2(partial_name.data());
+	print_entire_file(fin2);
 }
 ```
 
@@ -78,7 +78,7 @@ The answer proposed by think-cell in the aforementioned video is simple
 
 In a [previous post](/blog/2025/12/27) I showed how types play an important role when constructing Bézier curves at compile time.
 
-The explanations below show a simplified version of think-cell's code in their library, only the code below this line was taken from there.
+The explanations below show a [simplified version](/blog/2026/03/14/code_advanced.cpp) of think-cell's code in their library, only the code below this line was taken from there.
 
 ### The string in a type
 
