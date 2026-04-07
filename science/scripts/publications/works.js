@@ -47,7 +47,7 @@ const works = {
 		},
 		biblatex_citation:
 			"@incollection{Gomez2026a,\n\ttitle = {{Formal Constraints on Dependency Syntax}},\n\tauthor = {{G\\'{o}mez-Rodr\\'{i}guez}, Carlos and {Alemany-Puig}, Llu\\'{i}s},\n\tbooktitle = {{International Encyclopedia of Language and Linguistics}},\n\tseries = {{Reference Collection in Social Sciences}},\n\tpublisher = {Elsevier},\n\tisbn = {978-0-443-15785-1},\n\tyear = {2026},\n\tmonth = {06},\n\tdoi = {10.1016/B978-0-323-95504-1.01024-3},\n\turl = {https://arxiv.org/abs/2604.04542},\n\tpages = {??}\n}",
-		notes: null,
+		notes: "My contribution to this paper was limited to making the figures and proofreading the text.",
 	},
 
 	w13: {
@@ -106,7 +106,7 @@ const works = {
 		},
 		biblatex_citation:
 			"@phdthesis{Alemany2024c,\n\ttitle = {{Theory, algorithms and applications of linear arrangements of trees: generation, expectation and optimization}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s},\n\tmonth = {sep},\n\tschool = {Universitat Polit{\\`{e}}cnica de Catalunya},\n\ttype = {Ph.D. Thesis},\n\turl = {https://hdl.handle.net/10803/693663},\n\tyear = {2024}\n}",
-		notes: null,
+		notes: "Awarded highest honors.",
 	},
 
 	w10: {
@@ -222,7 +222,7 @@ const works = {
 		},
 		biblatex_citation:
 			"@article{Ferrer2022a,\n\ttitle = {{Optimality of syntactic dependency distances}},\n\tauthor = {{Ferrer-i-Cancho}, Ramon and {G\\'{o}mez-Rodr\\'{i}guez}, Carlos and Esteban, {Juan Luis} and {Alemany-Puig}, Llu\\'{i}s},\n\tjournal = {Physical Review E},\n\tvolume = {105},\n\tissue = {1},\n\tpages = {014308},\n\tnumpages = {34},\n\tyear = {2022},\n\tmonth = {Jan},\n\tpublisher = {American Physical Society},\n\tdoi = {10.1103/PhysRevE.105.014308},\n\turl = {https://arxiv.org/abs/2007.15342}\n}",
-		notes: "Minor contribution to the paper.",
+		notes: "My contribution was limited to helping devise an efficient method to calculate the minimum value of the Omega score. More concretely, I helped in obtaining algorithms and exact formulas for the calculation of the Maximum Linear Arrangement Problem.",
 	},
 
 	w08: {
