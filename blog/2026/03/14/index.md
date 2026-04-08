@@ -2,7 +2,7 @@
 
 In a [previous post](/blog/2025/09/11) I wrote how I tried to create some code to create compile-time strings, how I failed and then I tried using ChatGPT, which also failed, and quite funnily by the way. Recently, I came across a way of doing so, and so I thought I would write about this here.
 
-This post is not sponsored by, but it would not have been possible by think-cell, who posted a [video](https://www.youtube.com/watch?v=8rmnpuAh568) to showcase what it's like to work there (and, also, as part of their advertising campaign so that everybody knows the company, their products, and want to work there). In that video, Jonathan Müller explains how to obtain better string literals at compile time. In this post I wnat to dissect what's important from that explanation and provide a simple base code so that you can try it out. This post also uses code from [think-cell's library](github.com/think-cell/think-cell-library).
+This post is not sponsored by, but it would not have been possible by think-cell, who posted a [video](https://www.youtube.com/watch?v=8rmnpuAh568) to showcase what it's like to work there (and, also, as part of their advertising campaign so that everybody knows the company, their products, and want to work there). In that video, Jonathan Müller explains how to obtain better string literals at compile time. In this post I want to dissect what's important from that explanation and provide a simple base code so that you can try it out. This post also uses code from [think-cell's library](github.com/think-cell/think-cell-library).
 
 ## What we want
 
