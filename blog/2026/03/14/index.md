@@ -10,7 +10,7 @@ We want to produce strings so that (1) they are null-terminated, and (2) no allo
 
 ### Why null-terminated?
 
-Null-terminated strings are _mandatory_ if you want to use API calls such as opening a file. Consider the [following code](blog/2026/03/14/null_terminated.cpp):
+Null-terminated strings are _mandatory_ if you want to use API calls such as opening a file. Consider the [following code](/blog/2026/03/14/null_terminated.cpp):
 
 ```c++
 #include <string_view>
