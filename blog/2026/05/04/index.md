@@ -150,26 +150,26 @@ And what now? Well, everything we did before: `field` is a similar object to `x_
 #include <meta>
 
 struct S {
-    int x;
-    double y;
-    std::string z;
+	int x;
+	double y;
+	std::string z;
 };
 
 int main() {
-    constexpr auto ctx = std::meta::access_context::unchecked();
-    static constexpr auto fields = std::define_static_array(
-        std::meta::nonstatic_data_members_of(^^S, ctx)
-    );
+	constexpr auto ctx = std::meta::access_context::unchecked();
+	static constexpr auto fields = std::define_static_array(
+		std::meta::nonstatic_data_members_of(^^S, ctx)
+	);
 
-    template for (constexpr auto field : fields) {
-        
-        constexpr std::string_view field_name = std::meta::identifier_of(field);
-        
-        constexpr auto field_type = std::meta::type_of(field);
-        constexpr auto type_name = std::meta::display_string_of(field_type);
+	template for (constexpr auto field : fields) {
+		
+		constexpr std::string_view field_name = std::meta::identifier_of(field);
+		
+		constexpr auto field_type = std::meta::type_of(field);
+		constexpr auto type_name = std::meta::display_string_of(field_type);
 
-        std::println("Member variable {} is a {}.", field_name, type_name);
-    }
+		std::println("Member variable {} is a {}.", field_name, type_name);
+	}
 }
 ```
 
@@ -192,17 +192,17 @@ struct S {
 int main() {
 	S s{.x = 1, .y = 1.3, .z = "asdf"};
 
-    constexpr auto ctx = std::meta::access_context::unchecked();
-    static constexpr auto fields = std::define_static_array(
-        std::meta::nonstatic_data_members_of(^^S, ctx)
-    );
+	constexpr auto ctx = std::meta::access_context::unchecked();
+	static constexpr auto fields = std::define_static_array(
+		std::meta::nonstatic_data_members_of(^^S, ctx)
+	);
 
-    template for (constexpr auto field : fields) {
-        
-        constexpr std::string_view field_name = std::meta::identifier_of(field);
-        
-        constexpr auto field_type = std::meta::type_of(field);
-        constexpr auto type_name = std::meta::display_string_of(field_type);
+	template for (constexpr auto field : fields) {
+		
+		constexpr std::string_view field_name = std::meta::identifier_of(field);
+		
+		constexpr auto field_type = std::meta::type_of(field);
+		constexpr auto type_name = std::meta::display_string_of(field_type);
 
 		const auto& value = s.[: field :];
         std::println(
