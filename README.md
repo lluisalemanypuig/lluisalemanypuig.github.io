@@ -20,6 +20,7 @@ In this Github page, you can
 - Check out my science works:
     - a list of my publications [here](science/publications.html).
     - a list of the talks I've given [here](science/talks.html).
+    - a list of publications that acknowledge for whatever reason [here](science/acknowledgements.html).
 - Browse through [my repos](https://github.com/lluisalemanypuig). Other repositories I have worked on are:
     - [LAL project](https://github.com/LAL-project).
 
