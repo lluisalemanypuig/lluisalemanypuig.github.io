@@ -24,6 +24,8 @@ const __author_all = "All authors";
 const __author_me = "L. Alemany-Puig";
 const __author_JLEsteban = "J. L. Esteban";
 const __author_RFerreriCancho = "R. Ferrer-i-Cancho";
+const __author_MHChristiansen = "M. H. Christiansen";
+const __author_SNamboodiripad = "S. Namboodiripad";
 const __author_MMora = "M. Mora";
 const __author_CGomezRodriguez = "C. Gómez-Rodríguez";
 const __author_MSugiura = "M. Sugiura";
@@ -104,6 +106,12 @@ const __publishedin_JSTAT_name =
 	"Journal of Statistical Mechanics: Theory and Experiment";
 const __publishedin_short_JSTAT_name = "JSTAT";
 
+const __publishedin_Glottometrics_name = "Glottometrics";
+const __publishedin_short_Glottometrics_name = "Glottometrics";
+
+const __publishedin_JQL_name = "Journal of Quantitative Linguistics";
+const __publishedin_short_JQL_name = "JQL";
+
 const __publishedin_UPC_name = "Universitat Politècnica de Catalunya";
 const __publishedin_short_UPC_name = "UPC";
 
@@ -140,6 +148,12 @@ __publishedin_relate[__publishedin_short_ARXIV_name] = __publishedin_ARXIV_name;
 
 __publishedin_relate[__publishedin_JSCS_name] = __publishedin_short_JSCS_name;
 __publishedin_relate[__publishedin_short_JSCS_name] = __publishedin_JSCS_name;
+
+__publishedin_relate[__publishedin_Glottometrics_name] = __publishedin_short_Glottometrics_name;
+__publishedin_relate[__publishedin_short_Glottometrics_name] = __publishedin_Glottometrics_name;
+
+__publishedin_relate[__publishedin_JQL_name] = __publishedin_short_JQL_name;
+__publishedin_relate[__publishedin_short_JQL_name] = __publishedin_JQL_name;
 
 __publishedin_relate[__publishedin_JSTAT_name] = __publishedin_short_JSTAT_name;
 __publishedin_relate[__publishedin_short_JSTAT_name] = __publishedin_JSTAT_name;
