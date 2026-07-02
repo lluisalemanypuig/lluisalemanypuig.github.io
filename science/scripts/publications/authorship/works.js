@@ -25,6 +25,23 @@ const works = {
 	// -----------------------------------------------------------------
 	// 2026
 
+	w15: {
+		work_type: __worktype_preprint,
+		tags: [__tag_LinArr, __tag_Maximization, __tag_Algos],
+		year: 2026,
+		citation: {
+			authors: [__author_me, __author_JLEsteban, __author_RFerreriCancho],
+			title: "Maximum Linear Arrangement: exact algorithms for specific classes of graphs and approximation algorithms for wide classes of graphs",
+			repository: __publishedin_ARXIV_name,
+			when: "2026",
+			doi: null,
+			arxiv_id: "2312.04487v6",
+		},
+		biblatex_citation:
+			"@article{Alemany2026b,\n\ttitle = {{Maximum Linear Arrangement: exact algorithms for specific classes of graphs and approximation algorithms for wide classes of graphs}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and Esteban, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\tjournal = {arXiv},\n\tarxivId = {2312.04487},\n\turl = {https://arxiv.org/abs/2312.04487v5},\n\tyear = {2026}\n}",
+		notes: "This article is half of the article 'On The Maximum Linear Arrangement Problem for Trees' (see below) focused on the algorithms and theory therein, with some extra results and corrections.",
+	},
+
 	w14: {
 		work_type: __worktype_Chapter,
 		tags: [
@@ -163,10 +180,10 @@ const works = {
 			repository: __publishedin_ARXIV_name,
 			when: "2023",
 			doi: null,
-			arxiv_id: "2312.04487",
+			arxiv_id: "2312.04487v5",
 		},
 		biblatex_citation:
-			"@article{Alemany2023a,\n\ttitle = {{On The Maximum Linear Arrangement Problem for Trees}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and Esteban, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\tjournal = {arXiv},\n\tarxivId = {2312.04487},\n\turl = {https://arxiv.org/abs/2312.04487},\n\tyear = {2023}\n}",
+			"@article{Alemany2023a,\n\ttitle = {{On The Maximum Linear Arrangement Problem for Trees}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and Esteban, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\tjournal = {arXiv},\n\tarxivId = {2312.04487},\n\turl = {https://arxiv.org/abs/2312.04487v5},\n\tyear = {2023}\n}",
 		notes: null,
 	},
 
