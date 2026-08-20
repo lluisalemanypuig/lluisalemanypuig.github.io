@@ -102,6 +102,9 @@ const __publishedin_JSCS_name =
 	"Journal of Statistical Computation and Simulation";
 const __publishedin_short_JSCS_name = "JSCS";
 
+const __publishedin_JOCO_name = "Journal of Combinatorial Optimization";
+const __publishedin_short_JOCO_name = "JOCO";
+
 const __publishedin_JSTAT_name =
 	"Journal of Statistical Mechanics: Theory and Experiment";
 const __publishedin_short_JSTAT_name = "JSTAT";
@@ -146,11 +149,16 @@ __publishedin_relate[__publishedin_short_all] = __publishedin_all;
 __publishedin_relate[__publishedin_ARXIV_name] = __publishedin_short_ARXIV_name;
 __publishedin_relate[__publishedin_short_ARXIV_name] = __publishedin_ARXIV_name;
 
+__publishedin_relate[__publishedin_JOCO_name] = __publishedin_short_JOCO_name;
+__publishedin_relate[__publishedin_short_JOCO_name] = __publishedin_JOCO_name;
+
 __publishedin_relate[__publishedin_JSCS_name] = __publishedin_short_JSCS_name;
 __publishedin_relate[__publishedin_short_JSCS_name] = __publishedin_JSCS_name;
 
-__publishedin_relate[__publishedin_Glottometrics_name] = __publishedin_short_Glottometrics_name;
-__publishedin_relate[__publishedin_short_Glottometrics_name] = __publishedin_Glottometrics_name;
+__publishedin_relate[__publishedin_Glottometrics_name] =
+	__publishedin_short_Glottometrics_name;
+__publishedin_relate[__publishedin_short_Glottometrics_name] =
+	__publishedin_Glottometrics_name;
 
 __publishedin_relate[__publishedin_JQL_name] = __publishedin_short_JQL_name;
 __publishedin_relate[__publishedin_short_JQL_name] = __publishedin_JQL_name;
@@ -178,10 +186,12 @@ __publishedin_relate[__publishedin_short_SyntaxFestQuasy2021_name] =
 __publishedin_relate[__publishedin_JLM_name] = __publishedin_short_JLM_name;
 __publishedin_relate[__publishedin_short_JLM_name] = __publishedin_JLM_name;
 
-__publishedin_relate[__publishedin_InternationalEncyclopediaOfLinguistics_name] =
-	__publishedin_short_InternationalEncyclopediaOfLinguistics_name;
-__publishedin_relate[__publishedin_short_InternationalEncyclopediaOfLinguistics_name] =
-	__publishedin_InternationalEncyclopediaOfLinguistics_name;
+__publishedin_relate[
+	__publishedin_InternationalEncyclopediaOfLinguistics_name
+] = __publishedin_short_InternationalEncyclopediaOfLinguistics_name;
+__publishedin_relate[
+	__publishedin_short_InternationalEncyclopediaOfLinguistics_name
+] = __publishedin_InternationalEncyclopediaOfLinguistics_name;
 
 __publishedin_relate[__publishedin_RCSocialSciences_name] =
 	__publishedin_short_RCSocialSciences_name;

@@ -26,19 +26,20 @@ const works = {
 	// 2026
 
 	w15: {
-		work_type: __worktype_preprint,
+		work_type: __worktype_JournalPaper,
 		tags: [__tag_LinArr, __tag_Maximization, __tag_Algos],
 		year: 2026,
 		citation: {
 			authors: [__author_me, __author_JLEsteban, __author_RFerreriCancho],
 			title: "Maximum Linear Arrangement: exact algorithms for specific classes of graphs and approximation algorithms for wide classes of graphs",
-			repository: __publishedin_ARXIV_name,
-			when: "2026",
-			doi: null,
+			journal: __publishedin_JOCO_name,
+			when: "Volume 52, issue 16 (2026)",
+			pages: "1--42",
+			doi: "10.1007/s10878-026-01454-z",
 			arxiv_id: "2312.04487v6",
 		},
 		biblatex_citation:
-			"@article{Alemany2026b,\n\ttitle = {{Maximum Linear Arrangement: exact algorithms for specific classes of graphs and approximation algorithms for wide classes of graphs}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and Esteban, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\tjournal = {arXiv},\n\tarxivId = {2312.04487},\n\turl = {https://arxiv.org/abs/2312.04487v5},\n\tyear = {2026}\n}",
+			"@article{Alemany2026b,\n\ttitle = {{Maximum linear arrangement: exact algorithms for specific classes of graphs and approximation algorithms for wide classes of graphs}},\n\tauthor = {{Alemany-Puig}, Llu\'{i}s and Esteban, {Juan Luis} and {Ferrer-i-Cancho}, Ramon},\n\tvolume = {52},\n\tISSN = {1573-2886},\n\tDOI = {10.1007/s10878-026-01454-z},\n\tnumber = {16},\n\tjournal = {Journal of Combinatorial Optimization},\n\tpublisher = {Springer Science and Business Media LLC},\n\tyear = {2026},\n\tmonth = {09}\n}",
 		notes: "This article is half of the article 'On The Maximum Linear Arrangement Problem for Trees' (see below) focused on the algorithms and theory therein, with some extra results and corrections.",
 	},
 
