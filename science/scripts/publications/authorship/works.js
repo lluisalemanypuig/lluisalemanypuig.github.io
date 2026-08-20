@@ -64,7 +64,7 @@ const works = {
 			arxiv_id: "2604.04542",
 		},
 		biblatex_citation:
-			"@incollection{Gomez2026a,\n\ttitle = {{Formal Constraints on Dependency Syntax}},\n\tauthor = {{G\\'{o}mez-Rodr\\'{i}guez}, Carlos and {Alemany-Puig}, Llu\\'{i}s},\n\tbooktitle = {{International Encyclopedia of Language and Linguistics}},\n\tseries = {{Reference Collection in Social Sciences}},\n\tpublisher = {Elsevier},\n\tisbn = {978-0-443-15785-1},\n\tyear = {2026},\n\tmonth = {06},\n\tdoi = {10.1016/B978-0-323-95504-1.01024-3},\n\turl = {https://arxiv.org/abs/2604.04542},\n\tpages = {??}\n}",
+			"@incollection{Gomez2026a,\n\ttitle = {{Formal Constraints on Dependency Syntax}},\n\tauthor = {{G\'{o}mez-Rodr\'{i}guez}, Carlos and {Alemany-Puig}, Llu\'{i}s},\n\teditor = {Hilary Nesi and Petar Milin},\n\tbooktitle = {International Encyclopedia of Language and Linguistics (Third Edition)},\n\tpublisher = {Elsevier},\n\tedition = {Third Edition},\n\taddress = {London},\n\tpages = {221-232},\n\tyear = {2026},\n\tisbn = {978-0-443-22286-3},\n\tdoi = {10.1016/B978-0-323-95504-1.01024-3},\n\turl = {https://arxiv.org/abs/2604.04542}\n}",
 		notes: "My contribution to this paper was limited to making the figures and proofreading the text.",
 	},
 
@@ -92,7 +92,7 @@ const works = {
 			arxiv_id: null,
 		},
 		biblatex_citation:
-			"@incollection{Alemany2026a,\n\ttitle = {{Baselines in Dependency Syntax}},\n\tauthor = {{Alemany-Puig}, Llu\\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\tbooktitle = {{International Encyclopedia of Language and Linguistics}},\n\tseries = {{Reference Collection in Social Sciences}},\n\tpublisher = {Elsevier},\n\tisbn = {978-0-443-15785-1},\n\tyear = {2026},\n\tmonth = {06},\n\tdoi = {10.1016/B978-0-323-95504-1.00961-3},\n\tpages = {??}\n}",
+			"@incollection{Alemany2026a,\n\ttitle = {{Baselines in Dependency Syntax}},\n\tauthor = {{Alemany-Puig}, Llu\'{i}s and {Ferrer-i-Cancho}, Ramon},\n\teditor = {Hilary Nesi and Petar Milin},\n\tbooktitle = {International Encyclopedia of Language and Linguistics (Third Edition)},\n\tpublisher = {Elsevier},\n\tedition = {Third Edition},\n\taddress = {London},\n\tpages = {233-240},\n\tyear = {2026},\n\tisbn = {978-0-443-22286-3},\n\tdoi = {10.1016/B978-0-323-95504-1.00961-3},\n}",
 		notes: null,
 	},
 
